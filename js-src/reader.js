@@ -26,9 +26,9 @@ var events = ['monocle:incompatible', 'monocle:initializing', 'monocle:loading',
 
 events.forEach(function(evtName){
 	Monocle.Events.listen('reader', evtName, function(evt){
-		// console.log(evt.type);
+		console.log(evt.type);
 		if (evt.type === 'monocle:controlshow') {
-			// console.log(evt.m.control);
+			console.log(evt.m.control);
 		}
 	});
 });
@@ -53,7 +53,7 @@ App.reader = Monocle.Reader(
 		panels: Monocle.Panels.Marginal,
 		stylesheet: 
 			'body { font-family: Domine; line-height: 28px; color: #222; padding-top: 20px; } ' +
-			'.sentence {cursor: pointer;} .sentence:hover {background-color: #FFF4A2;} ' +
+			'.s {cursor: pointer;} .s:hover {background-color: #FFF4A2;} ' +
 			'.highlight { background-color: #FFF4A2; } ',
 		flipper: Monocle.Flippers.Scroller
 	},
@@ -338,7 +338,7 @@ App.reader.listen('monocle:pagechange', function(evt) {
 	var doc = iframe.contentDocument;
 	
 	var t = -1;
-	$(doc).find('.sentence').each(function(i){
+	$(doc).find('.s').each(function(i){
 		var position = $(this).position();
 		if (position.left === pageOffset) {
 			// Prevent collisions:
