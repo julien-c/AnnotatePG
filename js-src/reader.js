@@ -61,7 +61,7 @@ App.reader = Monocle.Reader(
 		Monocle.scrubber = new Monocle.Controls.Scrubber(reader);
 		reader.addControl(Monocle.scrubber, 'standard', {container: 'scrubber'});
 		
-		/* PAGE NUMBER RUNNING HEAD */
+		
 		var pageNumber = {
 			runners: [],
 			createControlElements: function (page) {
@@ -136,14 +136,12 @@ $(document).ready(function(){
 
 // Chapter title :
 
-App.reader.listen('monocle:pagechange',
-	function (evt) {
-		var place = App.reader.getPlace(evt.m.page);
-		if (place) {
-			$('.chapter-title').text(place.chapterTitle());
-		}
+Monocle.Events.listen('reader', 'monocle:pagechange', function (evt) {
+	var place = App.reader.getPlace(evt.m.page);
+	if (place) {
+		$('.chapter-title').text(place.chapterTitle());
 	}
-);
+});
 
 // Ranges and Sentences:
 
@@ -165,7 +163,7 @@ Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 });
 
 ['monocle:pagechange', 'monocle:boundarystart', 'monocle:boundaryend'].forEach(function(evtName){
-	App.reader.listen(evtName, function(evt){
+	Monocle.Events.listen('reader', evtName, function(evt){
 		App.panel.retract();
 	});
 });
@@ -270,17 +268,12 @@ App.bar = {
 };
 
 
-Monocle.locus = {};
 
-App.reader.listen('monocle:pagechange', function(evt) {
+Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 	$('.ctrl-bar').empty();
 	
-	if (Monocle.locus.componentId && evt.m.locus.componentId === Monocle.locus.componentId && evt.m.locus.page === Monocle.locus.page - 1) {
-		var pageOffset = evt.m.page.m.dimensions.locusToOffset({page: evt.m.pageNumber - 1});
-	}
-	else {
-		var pageOffset = evt.m.page.m.dimensions.locusToOffset({page: evt.m.pageNumber});
-	}
+	var pageOffset     = evt.m.page.m.dimensions.locusToOffset({page: evt.m.pageNumber});
+	var nextPageOffset = evt.m.page.m.dimensions.locusToOffset({page: evt.m.pageNumber + 1});
 	
 	var iframe = evt.m.page.m.activeFrame;
 	// @see http://stackoverflow.com/a/11107977/593036
@@ -289,7 +282,8 @@ App.reader.listen('monocle:pagechange', function(evt) {
 	var t = -1;
 	$(doc).find('span.s').each(function(i){
 		var position = $(this).position();
-		if (position.left === pageOffset) {
+		if (position.left >= pageOffset && position.left < nextPageOffset) {
+			console.log(this);
 			// Prevent collisions:
 			if (position.top >= t) {
 				t = position.top;
@@ -305,9 +299,6 @@ App.reader.listen('monocle:pagechange', function(evt) {
 		}
 	});
 	
-	Monocle.locus = evt.m.locus;
-	
 });
-
 
 
