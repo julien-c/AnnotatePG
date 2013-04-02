@@ -1,11 +1,7 @@
 var App = App || {};
 
-if (window.location.hostname === 'localhost') {
-	App.API = 'http://localhost/reaaad-api/';
-}
-else {
-	App.API = 'http://reaaad-api.julien-c.fr/';
-}
+App.API = (window.location.hostname === 'localhost') ? 'http://localhost/AnnotatePG-api/' : 'http://api.annotatepg.com/';
+
 
 App.Utils = {
 	postJSON: function(url, data){
