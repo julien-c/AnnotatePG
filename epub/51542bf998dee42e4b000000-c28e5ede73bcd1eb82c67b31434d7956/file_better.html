@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Better Bayesian Filtering</title></head><body>
+  <h2><span class="s s1">Better Bayesian Filtering</span></h2>
+<div><div>
+<p><span class="s s2">January 2003</span></p>
+<p><span class="s s3">(This article was given as a talk at the 2003 Spam Conference.</span>
+<span class="s s4">It describes the work I've done to improve the performance of
+the algorithm described in A Plan for Spam,
+and what I plan to do in the future.</span><span class="s s5">)</span></p>
+<p><span class="s s6">The first discovery I'd like to present here is an algorithm for
+lazy evaluation of research papers.</span> <span class="s s7">Just
+write whatever you want and don't cite any previous work, and
+indignant readers will send you references to all the papers you
+should have cited.</span> <span class="s s8">I discovered this algorithm
+after ``A Plan for Spam'' [1] was on Slashdot.</span></p>
+<p><span class="s s9">Spam filtering is a subset of text classification,
+which is a well established field, but the first papers about
+Bayesian
+spam filtering per se seem to have been two
+given at the same conference in 1998,
+one by Pantel and Lin [2],
+and another by a group from
+Microsoft Research [3].</span></p>
+<p><span class="s s10">When I heard about this work I was a bit surprised.</span> <span class="s s11">If
+people had been onto Bayesian filtering four years ago,
+why wasn't everyone using it?</span>
+<span class="s s12">When I read the papers I found out why.</span> <span class="s s13">Pantel and Lin's filter was the
+more effective of the two, but it
+only caught 92% of spam, with 1.</span><span class="s s14">16% false positives.</span></p>
+<p><span class="s s15">When I tried writing a Bayesian spam filter,
+it caught 99.</span><span class="s s16">5% of spam with less than .</span><span class="s s17">03% false
+positives [4].</span>
+<span class="s s18">It's always alarming when two people
+trying the same experiment get widely divergent results.</span>
+<span class="s s19">It's especially alarming here because those two sets of numbers
+might yield opposite conclusions.</span>
+<span class="s s20">Different users have different requirements, but I think for
+many people a filtering rate of 92% with 1.</span><span class="s s21">16% false positives means
+that filtering is not an acceptable solution, whereas
+99.</span><span class="s s22">5% with less than .</span><span class="s s23">03% false positives means that it is.</span></p>
+<p><span class="s s24">So why did we get such different numbers?</span>
+<span class="s s25">I haven't tried to reproduce Pantel and Lin's results, but
+from reading the paper I see five things that probably account
+for the difference.</span></p>
+<p><span class="s s26">One is simply that they trained their filter on very little
+data: 160 spam and 466 nonspam mails.</span>
+<span class="s s27">Filter performance should still be climbing with data
+sets that small.</span> <span class="s s28">So their numbers may not even be an accurate
+measure of the performance of their algorithm, let alone of
+Bayesian spam filtering in general.</span></p>
+<p><span class="s s29">But I think the most important difference is probably
+that they ignored message headers.</span> <span class="s s30">To anyone who has worked
+on spam filters, this will seem a perverse decision.</span>
+<span class="s s31">And yet in the very first filters I tried writing, I ignored the
+headers too.</span> <span class="s s32">Why?</span> <span class="s s33">Because I wanted to keep the problem neat.</span>
+<span class="s s34">I didn't know much about mail headers then, and they seemed to me
+full of random stuff.</span> <span class="s s35">There is a lesson here for filter
+writers: don't ignore data.</span> <span class="s s36">You'd think this lesson would
+be too obvious to mention, but I've had to learn it several times.</span></p>
+<p><span class="s s37">Third, Pantel and Lin stemmed the tokens, meaning they reduced e.</span><span class="s s38">g.</span> <span class="s s39">both
+``mailing'' and ``mailed'' to the root ``mail''.</span> <span class="s s40">They may
+have felt they were forced to do this by the small size
+of their corpus, but if so this is a kind of premature 
+optimization.</span></p>
+<p><span class="s s41">Fourth, they calculated probabilities differently.</span>
+<span class="s s42">They used all the tokens, whereas I only
+use the 15 most significant.</span> <span class="s s43">If you use all the tokens
+you'll tend to miss longer spams, the type where someone tells you their life
+story up to the point where they got rich from some multilevel
+marketing scheme.</span> <span class="s s44">And such an algorithm
+would be easy for spammers to spoof: just add a big
+chunk of random text to counterbalance the spam terms.</span></p>
+<p><span class="s s45">Finally, they didn't bias against false positives.</span>
+<span class="s s46">I think
+any spam filtering algorithm ought to have a convenient
+knob you can twist to decrease the
+false positive rate at the expense of the filtering rate.</span>
+<span class="s s47">I do this by counting the occurrences
+of tokens in the nonspam corpus double.</span> 
+</p>
+<p><span class="s s49">I don't think it's a good idea to treat spam filtering as
+a straight text classification problem.</span> <span class="s s50">You can use
+text classification techniques, but solutions can and should
+reflect the fact that the text is email, and spam
+in particular.</span> <span class="s s51">Email is not just text; it has structure.</span>
+<span class="s s52">Spam filtering is not just classification, because
+false positives are so much worse than false negatives
+that you should treat them as a different kind of error.</span>
+<span class="s s53">And the source of error is not just random variation, but
+a live human spammer working actively to defeat your filter.</span></p>
+<p><span class="s s54">Tokens</span></p>
+<p><span class="s s55">Another project I heard about
+after the Slashdot article was Bill Yerazunis' 
+CRM114 [5].</span>
+<span class="s s56">This is the counterexample to the design principle I
+just mentioned.</span> <span class="s s57">It's a straight text classifier,
+but such a stunningly effective one that it manages to filter
+spam almost perfectly without even knowing that's
+what it's doing.</span></p>
+<p><span class="s s58">Once I understood how CRM114 worked, it seemed
+inevitable that I would eventually have to move from filtering based
+on single words to an approach like this.</span> <span class="s s59">But first, I thought,
+I'll see how far I can get with single words.</span> <span class="s s60">And the answer is,
+surprisingly far.</span></p>
+<p><span class="s s61">Mostly I've been working on smarter tokenization.</span> <span class="s s62">On
+current spam, I've been able to achieve filtering rates that
+approach CRM114's.</span> <span class="s s63">These techniques are mostly orthogonal to Bill's;
+an optimal solution might incorporate both.</span></p>
+<p><span class="s s64">``A Plan for Spam'' uses a very simple
+definition of a token.</span> <span class="s s65">Letters, digits, dashes, apostrophes,
+and dollar signs are constituent characters, and everything
+else is a token separator.</span> <span class="s s66">I also ignored case.</span></p>
+<p><span class="s s67">Now I have a more complicated definition of a token:
+</span></p><span class="s s68">&nbsp; Case is preserved. Exclamation points are constituent characters. Periods and commas are constituents if they occur
+ between two digits. This lets me get ip addresses
+ and prices intact. A price range like $20-25 yields two tokens,
+ $20 and $25. Tokens that occur within the
+ To, From, Subject, and Return-Path lines, or within urls,
+ get marked accordingly. E.g. ``foo'' in the Subject line
+ becomes ``Subject*foo''. (The asterisk could
+ be any character you don't allow as a constituent.)
+&nbsp;
+Such measures increase the filter's vocabulary, which
+makes it more discriminating. For example, in the current
+filter, ``free'' in the Subject line
+has a spam probability of 98%, whereas the same token
+in the body has a spam probability of only 65%.</span><p><span class="s s69">Here are some of the current probabilities [6]:</span></p>
+<p>
+<span class="s s70">Subject*FREE 0.</span><span class="s s71">9999
+free!</span><span class="s s72">!</span> <span class="s s73">0.</span><span class="s s74">9999
+To*free 0.</span><span class="s s75">9998
+Subject*free 0.</span><span class="s s76">9782
+free!</span> <span class="s s77">0.</span><span class="s s78">9199
+Free 0.</span><span class="s s79">9198
+Url*free 0.</span><span class="s s80">9091
+FREE 0.</span><span class="s s81">8747
+From*free 0.</span><span class="s s82">7636
+free 0.</span><span class="s s83">6546
+In the Plan for Spam filter, all these tokens would have had the
+same probability, .</span><span class="s s84">7602.</span> <span class="s s85">That filter recognized about 23,000
+tokens.</span> <span class="s s86">The current one recognizes about 187,000.</span></p>
+<p><span class="s s87">The disadvantage of having a larger universe of tokens
+is that there is more
+chance of misses.</span>
+<span class="s s88">Spreading your corpus out over more tokens
+has the same effect as making it smaller.</span>
+<span class="s s89">If you consider exclamation points as
+constituents, for example, then you could end up
+not having a spam probability for free with seven exclamation
+points, even though you know that free with just two 
+exclamation points has a probability of 99.</span><span class="s s90">99%.</span></p>
+<p><span class="s s91">One solution to this is what I call degeneration.</span> <span class="s s92">If you
+can't find an exact match for a token,
+treat it as if it were a less specific
+version.</span> <span class="s s93">I consider terminal exclamation
+points, uppercase letters, and occurring in one of the
+five marked contexts as making a token more specific.</span>
+<span class="s s94">For example, if I don't find a probability for
+``Subject*free!</span><span class="s s95">'</span><span class="s s96">', I look for probabilities for
+``Subject*free'', ``free!</span><span class="s s97">'</span><span class="s s98">', and ``free'', and take whichever one
+is farthest from .</span><span class="s s99">5.</span></p>
+<p><span class="s s100">Here are the alternatives [7]
+considered if the filter sees ``FREE!!!'' in the
+Subject line and doesn't have a probability for it.</span></p>
+<p>
+<span class="s s101">Subject*Free!</span><span class="s s102">!</span><span class="s s103">!</span>
+<span class="s s104">Subject*free!</span><span class="s s105">!</span><span class="s s106">!</span>
+<span class="s s107">Subject*FREE!</span>
+<span class="s s108">Subject*Free!</span>
+<span class="s s109">Subject*free!</span>
+<span class="s s110">Subject*FREE
+Subject*Free
+Subject*free
+FREE!</span><span class="s s111">!</span><span class="s s112">!</span>
+<span class="s s113">Free!</span><span class="s s114">!</span><span class="s s115">!</span>
+<span class="s s116">free!</span><span class="s s117">!</span><span class="s s118">!</span>
+<span class="s s119">FREE!</span>
+<span class="s s120">Free!</span>
+<span class="s s121">free!</span>
+<span class="s s122">FREE
+Free
+free 
+If you do this, be sure to consider versions with initial
+caps as well as all uppercase and all lowercase.</span> <span class="s s123">Spams
+tend to have more sentences in imperative mood, and in
+those the first word is a verb.</span> <span class="s s124">So verbs with initial caps
+have higher spam probabilities than they would in all 
+lowercase.</span> <span class="s s125">In my filter, the spam probability of ``Act''
+is 98% and for ``act'' only 62%.</span></p>
+<p><span class="s s126">If you increase your filter's vocabulary, you can end up
+counting the same word multiple times, according to your old
+definition of ``same''.</span>
+<span class="s s127">Logically, they're not the
+same token anymore.</span> <span class="s s128">But if this still bothers you, let
+me add from experience that the words you seem to be
+counting multiple times tend to be exactly the ones you'd
+want to.</span></p>
+<p><span class="s s129">Another effect of a larger vocabulary is that when you
+look at an incoming mail you find more interesting tokens,
+meaning those with probabilities far from .</span><span class="s s130">5.</span> <span class="s s131">I use the
+15 most interesting to decide if mail is spam.</span>
+<span class="s s132">But you can run into a problem when you use a fixed number
+like this.</span> <span class="s s133">If you find a lot of maximally interesting tokens,
+the result can end up being decided by whatever random factor
+determines the ordering of equally interesting tokens.</span>
+<span class="s s134">One way to deal with this is to treat some
+as more interesting than others.</span></p>
+<p><span class="s s135">For example, the
+token ``dalco'' occurs 3 times in my spam corpus and never
+in my legitimate corpus.</span> <span class="s s136">The token ``Url*optmails''
+(meaning ``optmails'' within a url) occurs 1223 times.</span>
+<span class="s s137">And yet, as I used to calculate probabilities for tokens,
+both would have the same spam probability, the threshold of .</span><span class="s s138">99.</span></p>
+<p><span class="s s139">That doesn't feel right.</span> <span class="s s140">There are theoretical
+arguments for giving these two tokens substantially different
+probabilities (Pantel and Lin do), but I haven't tried that yet.</span>
+<span class="s s141">It does seem at least that if we find more than 15 tokens
+that only occur in one corpus or the other, we ought to
+give priority to the ones that occur a lot.</span> <span class="s s142">So now
+there are two threshold values.</span> <span class="s s143">For tokens that occur only
+in the spam corpus, the probability is .</span><span class="s s144">9999 if they
+occur more than 10 times and .</span><span class="s s145">9998 otherwise.</span> <span class="s s146">Ditto
+at the other end of the scale for tokens found
+only in the legitimate corpus.</span></p>
+<p><span class="s s147">I may later scale token probabilities substantially,
+but this tiny amount of scaling at least ensures that 
+tokens get sorted the right way.</span></p>
+<p><span class="s s148">Another possibility would be to consider not
+just 15 tokens, but all the tokens over a certain
+threshold of interestingness.</span> <span class="s s149">Steven Hauser does this
+in his statistical spam filter [8].</span>
+<span class="s s150">If you use a threshold, make it very high, or
+spammers could spoof you by packing messages with
+more innocent words.</span></p>
+<p><span class="s s151">Finally, what should one do
+about html?</span> <span class="s s152">I've tried the whole spectrum of options, from
+ignoring it to parsing it all.</span> <span class="s s153">Ignoring html is a bad idea,
+because it's full of useful spam signs.</span> <span class="s s154">But if you parse 
+it all, your filter might degenerate into a mere html 
+recognizer.</span> <span class="s s155">The most effective approach
+seems to be the middle course, to notice some tokens but not
+others.</span> <span class="s s156">I look at a, img, and font tags, and ignore the
+rest.</span> <span class="s s157">Links and images you should certainly look at, because
+they contain urls.</span></p>
+<p><span class="s s158">I could probably be smarter about dealing with html, but I
+don't think it's worth putting a lot of time into this.</span>
+<span class="s s159">Spams full of html are easy to filter.</span> <span class="s s160">The smarter
+spammers already avoid it.</span> <span class="s s161">So
+performance in the future should not depend much on how
+you deal with html.</span></p>
+<p><span class="s s162">Performance</span></p>
+<p><span class="s s163">Between December 10 2002 and January 10 2003 I got about
+1750 spams. 
+Of these, 4 got through. That's a filtering
+rate of about 99.75%.</span></p>
+<p><span class="s s164">Two of the four spams I missed got through because they
+happened to use words that occur often in my legitimate
+email.</span></p>
+<p><span class="s s165">The third was one of those that exploit
+an insecure cgi script to send mail to third parties.</span>
+<span class="s s166">They're hard to filter based just
+on the content because the headers are innocent and 
+they're careful about the words they use.</span> <span class="s s167">Even so I can
+usually catch them.</span> <span class="s s168">This one squeaked by with a
+probability of .</span><span class="s s169">88, just under the threshold of .</span><span class="s s170">9.</span></p>
+<p><span class="s s171">Of course, looking at multiple token sequences
+would catch it easily. ``Below is the result of
+your feedback form'' is an instant giveaway.</span></p>
+<p><span class="s s172">The fourth spam was what I call
+a spam-of-the-future, because this is what I expect spam to
+evolve into: some completely neutral
+text followed by a url.</span> <span class="s s173">In this case it was was from
+someone saying they had finally finished their homepage
+and would I go look at it.</span> <span class="s s174">(The page was of course an 
+ad for a porn site.</span><span class="s s175">)</span></p>
+<p><span class="s s176">If the spammers are careful about the headers and use a
+fresh url, there is nothing in spam-of-the-future for filters
+to notice.</span> <span class="s s177">We can of course counter by sending a
+crawler to look at the page.</span> <span class="s s178">But that might not be necessary.</span>
+<span class="s s179">The response rate for spam-of-the-future must
+be low, or everyone would be doing it.</span>
+<span class="s s180">If it's low enough,
+it won't pay for spammers to send it, and we won't 
+have to work too hard on filtering it.</span></p>
+<p><span class="s s181">Now for the really shocking news: during that same one-month
+period I got three false positives.</span></p>
+<p><span class="s s182">In a way it's
+a relief to get some false positives.</span> <span class="s s183">When I wrote ``A Plan
+for Spam'' I hadn't had any, and I didn't know what they'd
+be like.</span> <span class="s s184">Now that I've had a few, I'm relieved to find
+they're not as bad as I feared.</span>
+<span class="s s185">False positives yielded by statistical
+filters turn out to be mails that sound a lot like spam, and
+these tend to be the ones you would least mind missing [9].</span></p>
+<p><span class="s s186">Two of the false positives were newsletters
+from companies I've bought things from.</span> <span class="s s187">I never
+asked to receive them, so arguably they
+were spams, but I count them as false positives because
+I hadn't been deleting them as spams before.</span> <span class="s s188">The reason
+the filters caught them was that both companies in 
+January switched to commercial email senders
+instead of sending the mails from their own servers, 
+and both the headers and the bodies became much spammier.</span></p>
+<p><span class="s s189">The third false positive was a bad one, though.</span> <span class="s s190">It was 
+from someone in Egypt and written in all uppercase.</span> <span class="s s191">This was
+a direct result of making tokens case sensitive; the Plan
+for Spam filter wouldn't have caught it.</span></p>
+<p><span class="s s192">It's hard to say what the overall false positive rate is,
+because we're up in the noise, statistically.</span>
+<span class="s s193">Anyone who has worked on filters (at least, effective filters) will
+be aware of this problem.</span>
+<span class="s s194">With some emails it's
+hard to say whether they're spam or not, and these are
+the ones you end up looking at when you get filters 
+really tight.</span> <span class="s s195">For example, so far the filter has
+caught two emails that were sent to my address because
+of a typo, and one sent to me in the belief that I was 
+someone else.</span> <span class="s s196">Arguably, these are neither my spam
+nor my nonspam mail.</span></p>
+<p><span class="s s197">Another false positive was from a vice president at Virtumundo.</span>
+<span class="s s198">I wrote to them pretending to be a customer,
+and since the reply came back through Virtumundo's 
+mail servers it had the most incriminating
+headers imaginable.</span> <span class="s s199">Arguably this isn't a real false
+positive either, but a sort of Heisenberg uncertainty
+effect: I only got it because I was writing about spam 
+filtering.</span></p>
+<p><span class="s s200">Not counting these, I've had a total of five false positives
+so far, out of about 7740 legitimate emails, a rate of .</span><span class="s s201">06%.</span>
+<span class="s s202">The other two were a notice that something I bought
+was back-ordered, and a party reminder from Evite.</span></p>
+<p><span class="s s203">I don't think this number can be trusted, partly
+because the sample is so small, and partly because
+I think I can fix the filter not to catch
+some of these.</span></p>
+<p><span class="s s204">False positives seem to me a different kind of error from
+false negatives.</span>
+<span class="s s205">Filtering rate is a measure of performance.</span> <span class="s s206">False
+positives I consider more like bugs.</span> <span class="s s207">I approach improving the
+filtering rate as optimization, and decreasing false
+positives as debugging.</span></p>
+<p><span class="s s208">So these five false positives are my bug list.</span> <span class="s s209">For example, 
+the mail from Egypt got nailed because the uppercase text
+made it look to the filter like a Nigerian spam.</span>
+<span class="s s210">This really is kind of a bug.</span> <span class="s s211">As with
+html, the email being all uppercase is really conceptually one
+feature, not one for each word.</span> <span class="s s212">I need to handle case in a
+more sophisticated way.</span></p>
+<p><span class="s s213">So what to make of this .</span><span class="s s214">06%?</span> <span class="s s215">Not much, I think.</span> <span class="s s216">You could
+treat it as an upper bound, bearing in mind the small sample size.</span>
+<span class="s s217">But at this stage it is more a measure of the bugs
+in my implementation than some intrinsic false positive rate
+of Bayesian filtering.</span></p>
+<p><span class="s s218">Future</span></p>
+<p><span class="s s219">What next?</span> <span class="s s220">Filtering is an optimization problem,
+and the key to optimization is profiling.</span> <span class="s s221">Don't
+try to guess where your code is slow, because you'll
+guess wrong.</span> <span class="s s222">Look at where your code is slow,
+and fix that.</span> <span class="s s223">In filtering, this translates to: 
+look at the spams you miss, and figure out what you
+could have done to catch them.</span></p>
+<p><span class="s s224">For example, spammers are now working aggressively to 
+evade filters, and one of the things they're doing is
+breaking up and misspelling words to prevent filters from
+recognizing them.</span> <span class="s s225">But working on this is not my first
+priority, because I still have no trouble catching these
+spams [10].</span></p>
+<p><span class="s s226">There are two kinds of spams I currently do
+have trouble with.</span>
+<span class="s s227">One is the type that pretends to be an email from 
+a woman inviting you to go chat with her or see her profile on a dating
+site.</span> <span class="s s228">These get through because they're the one type of
+sales pitch you can make without using sales talk.</span> <span class="s s229">They use
+the same vocabulary as ordinary email.</span></p>
+<p><span class="s s230">The other kind of spams I have trouble filtering are those
+from companies in e.</span><span class="s s231">g.</span> <span class="s s232">Bulgaria offering contract programming 
+services.</span> <span class="s s233">These get through because I'm a programmer too, and
+the spams are full of the same words as my real mail.</span></p>
+<p><span class="s s234">I'll probably focus on the personal ad type first.</span> <span class="s s235">I think if
+I look closer I'll be able to find statistical differences
+between these and my real mail.</span> <span class="s s236">The style of writing is
+certainly different, though it may take multiword filtering
+to catch that.</span>
+<span class="s s237">Also, I notice they tend to repeat the url,
+and someone including a url in a legitimate mail wouldn't do that [11].</span></p>
+<p><span class="s s238">The outsourcing type are going to be hard to catch.</span> <span class="s s239">Even if 
+you sent a crawler to the site, you wouldn't find a smoking
+statistical gun.</span>
+<span class="s s240">Maybe the only answer is a central list of
+domains advertised in spams [12].</span> <span class="s s241">But there can't be that
+many of this type of mail.</span> <span class="s s242">If the only
+spams left were unsolicited offers of contract programming
+services from Bulgaria, we could all probably move on to
+working on something else.</span></p>
+<p><span class="s s243">Will statistical filtering actually get us to that point?</span>
+<span class="s s244">I don't know.</span> <span class="s s245">Right now, for me personally, spam is
+not a problem.</span> <span class="s s246">But spammers haven't yet made a serious
+effort to spoof statistical filters.</span> <span class="s s247">What will happen when they do?</span></p>
+<p><span class="s s248">I'm not optimistic about filters that work at the
+network level [13].</span>
+<span class="s s249">When there is a static obstacle worth getting past, spammers
+are pretty efficient at getting past it.</span> <span class="s s250">There
+is already a company called Assurance Systems that will
+run your mail through Spamassassin and tell you whether 
+it will get filtered out.</span></p>
+<p><span class="s s251">Network-level filters won't be completely useless.</span>
+<span class="s s252">They may be enough to kill all the "opt-in"
+spam, meaning spam from companies like Virtumundo and
+Equalamail who claim that they're really running opt-in lists.</span>
+<span class="s s253">You can filter those based just on the headers, no
+matter what they say in the body.</span> <span class="s s254">But anyone willing to
+falsify headers or use open relays, presumably including
+most porn spammers, should be able to get some message past
+network-level filters if they want to.</span> <span class="s s255">(By no means the
+message they'd like to send though, which is something.</span><span class="s s256">)</span></p>
+<p><span class="s s257">The kind of filters I'm optimistic about are ones that
+calculate probabilities based on each individual user's mail.</span>
+<span class="s s258">These can be much more effective, not only in
+avoiding false positives, but in filtering too: for example,
+finding the recipient's email address base-64 encoded anywhere in
+a message is a very good spam indicator.</span></p>
+<p><span class="s s259">But the real advantage of individual filters is that they'll all be
+different.</span> <span class="s s260">If everyone's filters have different probabilities,
+it will make the spammers' optimization loop, what programmers
+would call their edit-compile-test cycle, appallingly slow.</span> 
+<span class="s s261">Instead of just tweaking a spam till it gets through a copy of
+some filter they have on their desktop, they'll have to do a
+test mailing for each tweak.</span> <span class="s s262">It would be like programming in
+a language without an interactive toplevel, 
+and I wouldn't wish that
+on anyone.</span></p>
+<p><span class="s s263">Notes</span></p>
+<p><span class="s s264">[1]
+Paul Graham. ``A Plan for Spam.'' August 2002.
+http://paulgraham.com/spam.html.</span></p>
+<p><span class="s s265">Probabilities in this algorithm are
+calculated using a degenerate case of Bayes' Rule.</span> <span class="s s266">There are
+two simplifying assumptions: that the probabilities
+of features (i.</span><span class="s s267">e.</span> <span class="s s268">words) are independent, and that we know
+nothing about the prior probability of an email being
+spam.</span></p>
+<p><span class="s s269">The first assumption is widespread in text classification.
+Algorithms that use it are called ``naive Bayesian.''</span></p>
+<p><span class="s s270">The second assumption I made because the proportion of spam in
+my incoming mail fluctuated so much from day to day (indeed,
+from hour to hour) that the overall prior ratio seemed
+worthless as a predictor.</span> <span class="s s271">If you assume that P(spam) and
+P(nonspam) are both .</span><span class="s s272">5, they cancel out and you can
+remove them from the formula.</span></p>
+<p><span class="s s273">If you were doing Bayesian filtering in a situation where 
+the ratio of spam to nonspam was consistently very high or
+(especially) very low, you could probably improve filter
+performance by incorporating prior probabilities.</span> <span class="s s274">To do
+this right you'd have to track ratios by time of day, because
+spam and legitimate mail volume both have distinct daily
+patterns.</span></p>
+<p><span class="s s275">[2]
+Patrick Pantel and Dekang Lin.</span> <span class="s s276">``SpamCop-- A Spam
+Classification &amp; Organization Program.</span><span class="s s277">'</span><span class="s s278">' Proceedings of AAAI-98
+Workshop on Learning for Text Categorization.</span></p>
+<p><span class="s s279">[3]
+Mehran Sahami, Susan Dumais, David Heckerman and Eric Horvitz.</span>
+<span class="s s280">``A Bayesian Approach to Filtering Junk E-Mail.</span><span class="s s281">'</span><span class="s s282">' Proceedings of AAAI-98
+Workshop on Learning for Text Categorization.</span></p>
+<p><span class="s s283">[4] At the time I had zero false positives out of about 4,000 
+legitimate emails.</span> <span class="s s284">If the next legitimate email was
+a false positive, this would give us .</span><span class="s s285">03%.</span> <span class="s s286">These false positive
+rates are untrustworthy, as I explain later.</span> <span class="s s287">I quote
+a number here only to emphasize that whatever the false positive rate
+is, it is less than 1.</span><span class="s s288">16%.</span>
+</p>
+<p><span class="s s290">[5] Bill Yerazunis. ``Sparse Binary Polynomial Hash Message
+Filtering and The CRM114 Discriminator.'' Proceedings of 2003
+Spam Conference.</span></p>
+<p><span class="s s291">[6] In ``A Plan for Spam'' I used thresholds of .</span><span class="s s292">99 and .</span><span class="s s293">01.</span>
+<span class="s s294">It seems justifiable to use thresholds proportionate to the
+size of the corpora.</span> <span class="s s295">Since I now have on the order of 10,000 of each
+type of mail, I use .</span><span class="s s296">9999 and .</span><span class="s s297">0001.</span></p>
+<p><span class="s s298">[7] There is a flaw here I should probably fix.</span> <span class="s s299">Currently,
+when ``Subject*foo'' degenerates to just ``foo'', what that means is
+you're getting the stats for occurrences of ``foo'' in
+the body or header lines other than those I mark.</span>
+<span class="s s300">What I should do is keep track of statistics for ``foo''
+overall as well as specific versions, and degenerate from
+``Subject*foo'' not to ``foo'' but to ``Anywhere*foo''.</span> <span class="s s301">Ditto for
+case: I should degenerate from uppercase to any-case, not
+lowercase.</span></p>
+<p><span class="s s302">It would probably be a win to do this with prices
+too, e.g. to degenerate from ``$129.99'' to ``$--9.99'', ``$--.99'',
+and ``$--''.</span></p>
+<p><span class="s s303">You could also degenerate from words to their stems,
+but this would probably only improve filtering rates early on 
+when you had small corpora.</span></p>
+<p><span class="s s304">[8] Steven Hauser. ``Statistical Spam Filter Works for Me.''
+http://www.sofbot.com.</span></p>
+<p><span class="s s305">[9] False positives are not all equal, and we should remember
+this when comparing techniques for stopping spam.</span>
+<span class="s s306">Whereas many of the false positives caused by filters
+will be near-spams that you wouldn't mind missing,
+false positives caused by blacklists, for example, will be just
+mail from people who chose the wrong ISP.</span> <span class="s s307">In both
+cases you catch mail that's near spam, but for blacklists nearness
+is physical, and for filters it's textual.</span>
+</p>
+<p><span class="s s309">[10] If spammers get good enough at obscuring tokens 
+for this to be a problem, we can respond by simply removing
+whitespace, periods, commas, etc.</span> <span class="s s310">and using a dictionary to
+pick the words out of the resulting sequence.</span>
+<span class="s s311">And of course finding words this way that weren't visible in
+the original text would in itself be evidence of spam.</span></p>
+<p><span class="s s312">Picking out the words won't be trivial.</span> <span class="s s313">It will require 
+more than just reconstructing word boundaries; spammers
+both add (``xHot nPorn cSite'') and omit (``P#rn'') letters.</span>
+<span class="s s314">Vision research may be useful here, since human vision is
+the limit that such tricks will approach.</span></p>
+<p><span class="s s315">[11] 
+In general, spams are more repetitive than regular email.</span> 
+<span class="s s316">They want to pound that message home.</span> <span class="s s317">I currently don't
+allow duplicates in the top 15 tokens, because
+you could get a false positive if the sender happens to use
+some bad word multiple times.</span> <span class="s s318">(In my current filter, ``dick'' has
+a spam probabilty of .</span><span class="s s319">9999, but it's also a name.</span><span class="s s320">)
+It seems we should at least notice duplication though,
+so I may try allowing up to two of each token, as Brian Burton does in
+SpamProbe.</span></p>
+<p><span class="s s321">[12] This is what approaches like Brightmail's will
+degenerate into once spammers are pushed into using mad-lib
+techniques to generate everything else in the message.</span></p>
+<p><span class="s s322">[13]
+It's sometimes argued that we should be working on filtering
+at the network level, because it is more efficient.</span> <span class="s s323">What people
+usually mean when they say this is: we currently filter at the
+network level, and we don't want to start over from scratch.</span>
+<span class="s s324">But you can't dictate the problem to fit your solution.</span></p>
+<p><span class="s s325">Historically, scarce-resource arguments have been the losing
+side in debates about software design.</span>
+<span class="s s326">People only tend to use them to justify choices
+(inaction in particular) made for other reasons.</span></p>
+<p><span class="s s327">Thanks to Sarah Harlin, Trevor Blackwell, and
+Dan Giffin for reading drafts of this paper, and to Dan again
+for most of the infrastructure that this filter runs on.</span></p>
+<p><span class="s s328">Related:</span></p>
+</div></div>
+  </body></html>

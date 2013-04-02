@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Hackers and Painters</title></head><body>
+  <h2><span class="s s1">Hackers and Painters</span></h2>
+<div><div>
+<p><span class="s s2">May 2003</span></p>
+<p><span class="s s3">(This essay is derived from a guest lecture at Harvard, which incorporated
+an earlier talk at Northeastern.)</span></p>
+<p><span class="s s4">When I finished grad school in computer science I went
+to art school to study painting.</span> <span class="s s5">A lot of people seemed surprised
+that someone interested in computers would also be interested in painting.</span>
+<span class="s s6">They seemed to think that
+hacking and painting were very different kinds of work-- that
+hacking was cold, precise, and methodical, and that
+painting was the frenzied expression of some primal urge.</span></p>
+<p><span class="s s7">Both of these images are wrong.</span> <span class="s s8">Hacking and painting have a
+lot in common.</span> <span class="s s9">In fact, of all the different types of people I've
+known, hackers and painters are among the most alike.</span></p>
+<p><span class="s s10">What hackers and painters have in common is that they're
+both makers.</span> <span class="s s11">Along with composers, architects, and writers,
+what hackers and painters are trying to do is make good things.</span>
+<span class="s s12">They're not doing research per se, though if in the course of
+trying to make good things they discover some new technique,
+so much the better.</span></p>
+<p><span class="s s13">I've never liked the term "computer science.</span><span class="s s14">"</span> <span class="s s15">The main
+reason I don't like it is that there's no such thing.</span>
+<span class="s s16">Computer science is a
+grab bag of tenuously related areas thrown together
+by an accident of history, like Yugoslavia.</span>
+<span class="s s17">At one end you have people who are really mathematicians,
+but call what they're doing computer science so they can get DARPA grants.</span>
+<span class="s s18">In the middle you have people working on
+something like the natural history of computers-- studying the
+behavior of algorithms for routing data through
+networks, for example.</span> <span class="s s19">And then at the other extreme you
+have the hackers, who are trying to
+write interesting software, and for whom computers are just a
+medium of expression, as concrete is for architects or
+paint for painters.</span> <span class="s s20">It's as if
+mathematicians, physicists, and architects all had to be in
+the same department.</span></p>
+<p><span class="s s21">Sometimes what the hackers do is called "software engineering,"
+but this term is just as misleading.</span>
+<span class="s s22">Good software designers are no more engineers than architects are.</span>
+<span class="s s23">The border between architecture and engineering is not sharply
+defined, but it's there.</span>
+<span class="s s24">It falls between what and how: architects decide what to do,
+and engineers figure out how to do it.</span></p>
+<p><span class="s s25">What and how should not be kept too separate.</span> <span class="s s26">You're
+asking for trouble if you try to decide what to do without
+understanding how to do it.</span>
+<span class="s s27">But hacking can certainly be more than just deciding how to
+implement some spec.</span> <span class="s s28">At its best, it's creating the spec-- though
+it turns out the best way to do that is to implement it.</span></p>
+<p><span class="s s29">Perhaps one day
+"computer science" will, like Yugoslavia, get broken up into its
+component parts.</span> <span class="s s30">That might be a good thing.</span> <span class="s s31">Especially if it
+meant independence for my native land, hacking.</span></p>
+<p><span class="s s32">Bundling all these different types of work together in one
+department may be convenient administratively, but it's confusing
+intellectually.</span> <span class="s s33">That's the other reason I don't like the name
+"computer science.</span><span class="s s34">"</span> <span class="s s35">Arguably the people in the middle are doing
+something like an experimental science.</span> <span class="s s36">But the people at either
+end, the hackers and the mathematicians, are not actually doing science.</span></p>
+<p><span class="s s37">The mathematicians don't seem bothered by this.</span> <span class="s s38">They happily
+set to work proving theorems like the other mathematicians
+over in the math department, and probably soon stop noticing
+that the building they work in says ``computer science'' on the
+outside.</span> <span class="s s39">But for the hackers this label is a problem.</span>
+<span class="s s40">If what they're doing is called science, it makes them feel they
+ought to be acting scientific.</span>
+<span class="s s41">So instead of doing what they really want to do, which is 
+to design beautiful software, hackers in universities and
+research labs feel they ought to be writing research papers.</span></p>
+<p><span class="s s42">In the best case, the papers are just a formality.</span> <span class="s s43">Hackers write
+cool software, and then write a paper about it, and the paper
+becomes a proxy for the achievement represented by the software.</span>
+<span class="s s44">But often this mismatch causes problems. It's easy to
+drift away from building beautiful things toward building ugly
+things that make more suitable subjects for research papers.</span></p>
+<p><span class="s s45">Unfortunately, beautiful things don't always make the
+best subjects for papers.</span>
+<span class="s s46">Number one, research must be original-- and
+as anyone who has written a PhD dissertation knows, the way to
+be sure that you're exploring virgin territory is to to stake
+out a piece of ground that no one wants.</span> <span class="s s47">Number two, research must be
+substantial-- and awkward systems yield meatier papers,
+because you can write about the obstacles you have to overcome
+in order to get things done.</span> <span class="s s48">Nothing yields meaty problems like
+starting with the wrong assumptions.</span> <span class="s s49">Most of AI is an example
+of this rule; if you assume that knowledge can be represented
+as a list of predicate logic expressions whose arguments represent
+abstract concepts, you'll have a lot of
+papers to write about how to make this work.</span> <span class="s s50">As Ricky Ricardo
+used to say, "Lucy, you got a lot of explaining to do.</span><span class="s s51">"</span></p>
+<p><span class="s s52">The way to create something beautiful is often to make subtle
+tweaks to something that already exists, or to combine existing
+ideas in a slightly new way.</span> <span class="s s53">This kind of work is hard to
+convey in a research paper.</span></p>
+<p><span class="s s54">So why do universities and research labs continue to judge
+hackers by publications?</span>
+<span class="s s55">For the same reason that "scholastic aptitude"
+gets measured by simple-minded standardized tests, or
+the productivity of programmers gets measured in lines of code.</span>
+<span class="s s56">These tests
+are easy to apply, and there is nothing so tempting as an easy test
+that kind of works.</span></p>
+<p><span class="s s57">Measuring what hackers are actually trying to do, designing
+beautiful software, would be much more difficult.</span> <span class="s s58">You need
+a good sense of design to judge 
+good design.</span> <span class="s s59">And
+there is no correlation, except possibly
+a negative 
+one, between people's ability to recognize good
+design and their confidence that they can.</span></p>
+<p><span class="s s60">The only external test is time.</span> <span class="s s61">Over time, beautiful
+things tend to thrive, and ugly
+things tend to get discarded.</span> <span class="s s62">Unfortunately, the amounts of time
+involved can be longer than human lifetimes.</span> <span class="s s63">Samuel Johnson
+said it took a hundred years for a writer's reputation to
+converge.</span> <span class="s s64">You have to wait for the writer's
+influential friends to die, and then for all their followers
+to die.</span></p>
+<p><span class="s s65">I think hackers just have to resign themselves to having a large random
+component in their reputations.</span> <span class="s s66">In this they are no different
+from other makers.</span> <span class="s s67">In fact, they're lucky by comparison.</span> 
+<span class="s s68">The influence of fashion is not nearly so great in hacking as it
+is in painting.</span></p>
+<p><span class="s s69">There are worse things than having people misunderstand your
+work.</span> <span class="s s70">A worse danger is that you
+will yourself misunderstand your work.</span> <span class="s s71">Related fields are
+where you go looking for ideas.</span> <span class="s s72">If you find yourself in the computer science
+department, there is a natural temptation to believe, for example,
+that hacking is the applied version of what theoretical computer
+science is the theory of.</span> <span class="s s73">All
+the time I was in graduate school I had an uncomfortable feeling
+in the back of my mind that I ought to know more theory,
+and that it was very remiss of me to have forgotten all that
+stuff within three weeks of the final exam.</span></p>
+<p><span class="s s74">Now I realize I was
+mistaken.</span> <span class="s s75">Hackers need to understand the theory of computation
+about as much as painters need to understand paint chemistry.</span>
+<span class="s s76">You need to know how to calculate time and
+space complexity and about
+Turing completeness.</span> <span class="s s77">You might also want to remember at
+least the concept of a state machine, in case you have to write
+a parser or a regular expression library.</span> <span class="s s78">Painters in fact 
+have to remember a good deal more about paint chemistry than 
+that.</span></p>
+<p><span class="s s79">I've found that the best sources of ideas
+are not the other fields that have the word "computer" in
+their names, but the other fields inhabited by makers.</span>
+<span class="s s80">Painting has been a much richer source of ideas than the
+theory of computation.</span></p>
+<p><span class="s s81">For example, I was taught in college
+that one ought to figure out a program
+completely on paper
+before even going near a computer.</span> <span class="s s82">I found that I did not
+program this way.</span> <span class="s s83">I found that I liked to program
+sitting in front of a computer, not a piece of paper.</span> <span class="s s84">Worse
+still, instead of patiently writing out a complete program
+and assuring myself it was correct, I tended to just spew
+out code that was hopelessly broken, and gradually beat it into
+shape.</span> <span class="s s85">Debugging, I was taught, was a kind of final pass where
+you caught typos and oversights.</span> <span class="s s86">The way I worked, it
+seemed like programming consisted of debugging.</span></p>
+<p><span class="s s87">For a long time I felt bad about this, just as I once
+felt bad that I didn't hold my pencil the way they taught me
+to in elementary school.</span>
+<span class="s s88">If I had only looked over at
+the other makers, the painters or the architects, I would
+have realized that there was a name for what I was doing:
+sketching.</span> <span class="s s89">As far as I can tell, the
+way they taught me to program in college was all wrong.</span>
+<span class="s s90">You should figure out programs as you're writing them,
+just as writers and painters and architects do.</span></p>
+<p><span class="s s91">Realizing this has real implications for software design.</span>
+<span class="s s92">It means that a programming language should, above all, be
+malleable.</span> <span class="s s93">A programming language is for 
+thinking of
+programs, not for expressing programs you've already thought
+of.</span> <span class="s s94">It should be a pencil, not a pen.</span> <span class="s s95">Static typing would
+be a fine idea if people actually did write programs the way
+they taught me to in college.</span> <span class="s s96">But that's not how any of the 
+hackers I know write programs. We need a language that lets us
+scribble and smudge and smear, not a language where you have
+to sit with a teacup of types balanced on your knee and make
+polite conversation with a strict old aunt of a compiler.</span></p>
+<p><span class="s s97">While we're on the subject of static typing, identifying with
+the makers will save us from another problem that afflicts
+the sciences: math envy.</span> <span class="s s98">Everyone in the sciences
+secretly believes that mathematicians are smarter than they are.</span> 
+<span class="s s99">I think mathematicians also believe this.</span> <span class="s s100">At any rate,
+the result is that scientists tend to make their
+work look as mathematical as possible.</span> <span class="s s101">In a field like
+physics this probably doesn't do much harm, but the further you
+get from the natural sciences, the more of a problem it
+becomes.</span></p>
+<p><span class="s s102">A page of formulas just looks so impressive.</span>
+<span class="s s103">(Tip: for extra impressiveness, use Greek variables.</span><span class="s s104">) And
+so there is a great temptation to work on problems you
+can treat formally, rather than problems that are, say,
+important.</span></p>
+<p><span class="s s105">If hackers identified with other makers, like writers and
+painters, they wouldn't feel tempted to do 
+this.</span> <span class="s s106">Writers and painters don't suffer from math envy.</span>
+<span class="s s107">They feel as if they're doing something completely unrelated.</span>
+<span class="s s108">So are hackers, I think.</span></p>
+<p><span class="s s109">If universities and research labs keep hackers from doing
+the kind of work they want to do,
+perhaps the place for them is in companies.</span>
+<span class="s s110">Unfortunately, most companies won't let hackers do what they
+want either.</span> <span class="s s111">Universities and research labs force hackers
+to be scientists, and companies force them to be engineers.</span></p>
+<p><span class="s s112">I only discovered this myself quite recently.</span> <span class="s s113">When Yahoo bought
+Viaweb, they asked me what I wanted to do.</span> <span class="s s114">I had never
+liked the business side very much, and said that I just wanted to
+hack.</span> <span class="s s115">When I got to Yahoo, I found that what hacking meant
+to them was implementing software, not designing it.</span> <span class="s s116">Programmers
+were seen as technicians who translated the visions (if
+that is the word) of product managers into code.</span></p>
+<p><span class="s s117">This seems to be the
+default plan in big companies.</span> <span class="s s118">They do it because
+it decreases the standard deviation of the outcome.</span>
+<span class="s s119">Only a small percentage of hackers can actually design software,
+and it's hard for the
+people running a company to pick these out.</span> <span class="s s120">So instead of
+entrusting the future of the software to
+one brilliant hacker, most companies set things up so that it is
+designed by committee, and the hackers merely
+implement the design.</span></p>
+<p><span class="s s121">If you want to make money at some point, remember this,
+because this is one of the reasons startups win.</span> <span class="s s122">Big companies want
+to decrease the standard deviation of design outcomes because they
+want to avoid disasters.</span> <span class="s s123">But when you damp oscillations, you
+lose the high points as well as the low.</span> <span class="s s124">This is not a problem for
+big companies, because they don't win by making great
+products.</span> <span class="s s125">Big companies win by sucking less than other big companies.</span></p>
+<p><span class="s s126">So if you can figure out a way to get in a
+design war with a company big enough that its software is 
+designed by product managers, they'll never be able to keep up
+with you.</span> <span class="s s127">These opportunities are not easy to find, though.</span>
+<span class="s s128">It's hard to engage a big company in a design war,
+just as it's hard to engage an opponent inside a castle in hand
+to hand combat.</span> <span class="s s129">It would be pretty easy to write a better
+word processor than Microsoft Word, for example, but Microsoft,
+within the castle of their operating system monopoly,
+probably wouldn't even notice if you did.</span></p>
+<p><span class="s s130">The place to fight design wars is in new markets, where no one
+has yet managed to establish any fortifications.</span> <span class="s s131">That's where
+you can win big by taking the bold approach to design, and
+having the same people both design and implement the product.</span> 
+<span class="s s132">Microsoft themselves did this at the start.</span> <span class="s s133">So did Apple.</span>
+<span class="s s134">And Hewlett-Packard.</span> <span class="s s135">I suspect almost every successful startup
+has.</span></p>
+<p><span class="s s136">So one way to build great software is to start your own
+startup.</span> <span class="s s137">There are two problems with this, though.</span> <span class="s s138">One is
+that in a startup you have to do so much besides write software.</span>
+<span class="s s139">At Viaweb I considered myself lucky if I
+got to hack a quarter of the time.</span> <span class="s s140">And the things I had to 
+do the other three quarters of the time ranged from tedious
+to terrifying.</span> <span class="s s141">I have a benchmark for this, because I
+once had to leave a board meeting to have
+some cavities filled.</span> <span class="s s142">I remember sitting back in the
+dentist's chair, waiting for the drill, and feeling like
+I was on vacation.</span></p>
+<p><span class="s s143">The other problem with startups is that there is not much
+overlap between the kind of software that makes money and the
+kind that's interesting to write.</span> <span class="s s144">Programming languages
+are interesting to write, and Microsoft's first product was
+one, in fact, but no one will pay for programming languages
+now.</span> <span class="s s145">If you want to make money, you tend to be forced to work
+on problems that are too nasty for anyone to solve for free.</span></p>
+<p><span class="s s146">All makers face this problem.</span> <span class="s s147">Prices are
+determined by supply and demand, and there is just not as much
+demand for things that are fun to work on as there is for
+things that solve the mundane problems of individual customers.</span>
+<span class="s s148">Acting in off-Broadway plays just doesn't pay as well as
+wearing a gorilla suit in someone's booth at a
+trade show.</span> <span class="s s149">Writing novels doesn't pay as well as writing
+ad copy for garbage disposals.</span>
+<span class="s s150">And hacking programming languages doesn't pay as well
+as figuring out how to connect some company's
+legacy database to their Web server.</span></p>
+<p><span class="s s151">I think the answer to this problem, in the case of software,
+is a concept known to nearly all makers: the day job.</span>
+<span class="s s152">This phrase began with musicians, who
+perform at night.</span> <span class="s s153">More generally, it means that you have one
+kind of work you do for money, and another for love.</span></p>
+<p><span class="s s154">Nearly all makers have day jobs early in their careers.</span>
+<span class="s s155">Painters and writers notoriously do.</span> <span class="s s156">If you're lucky
+you can get a day job that's closely
+related to your real work.</span> <span class="s s157">Musicians often
+seem to work in record stores.</span> <span class="s s158">A hacker working on some
+programming language or operating system might likewise be able to
+get a day job using it.</span> <span class="s s159">[1]</span></p>
+<p><span class="s s160">When I say that the answer is for hackers to have day jobs, 
+and work on beautiful software on the side, I'm not proposing
+this as a new idea.</span> <span class="s s161">This is what open-source hacking is all 
+about.</span> <span class="s s162">What I'm saying is that open-source is probably the right
+model, because it has been independently confirmed by all the 
+other makers.</span></p>
+<p><span class="s s163">It seems surprising to me that any employer would be reluctant
+to let hackers work on open-source projects.</span>
+<span class="s s164">At Viaweb, we would have been reluctant to hire anyone
+who didn't.</span> <span class="s s165">When we interviewed
+programmers, the main
+thing we cared about was what kind of software they
+wrote in their spare time.</span>
+<span class="s s166">You can't do anything really well unless
+you love it, and if you love to hack you'll inevitably
+be working on projects of your own.</span> <span class="s s167">[2]</span></p>
+<p><span class="s s168">Because hackers are makers rather than scientists,
+the right place to look for metaphors is not in the
+sciences, but among other kinds of makers.</span> <span class="s s169">What else can painting
+teach us about hacking?</span></p>
+<p><span class="s s170">One thing we can learn, or at least confirm, from the
+example of painting is how to learn to hack.</span> <span class="s s171">You learn to
+paint mostly by doing it.</span>
+<span class="s s172">Ditto for hacking.</span> <span class="s s173">Most hackers don't learn to hack by
+taking college courses in programming.</span> <span class="s s174">They learn to hack
+by writing programs of their own at age thirteen.</span> <span class="s s175">Even in 
+college classes, you learn to hack mostly by hacking.</span> <span class="s s176">[3]</span></p>
+<p><span class="s s177">Because painters leave a trail of work behind them, you
+can watch them learn by doing.</span> <span class="s s178">If you look at the work
+of a painter in chronological order, you'll find that each 
+painting builds on things that have been learned in previous
+ones.</span> <span class="s s179">When there's something in
+a painting that works very well, you can usually find version 
+1 of it in a smaller form in some earlier painting.</span></p>
+<p><span class="s s180">I think most makers work this way.</span> <span class="s s181">Writers and architects seem
+to as well.</span> <span class="s s182">Maybe it would be good for hackers
+to act more like painters, and regularly start over from scratch,
+instead of continuing to work for years on one project, and
+trying to incorporate all their later ideas as revisions.</span></p>
+<p><span class="s s183">The fact that hackers learn to hack by doing it is another
+sign of how different hacking is from the sciences.</span> <span class="s s184">Scientists
+don't learn science by doing it, but by doing labs and problem sets.</span>
+<span class="s s185">Scientists start out doing work that's perfect, in the sense
+that they're just trying to reproduce work someone else has 
+already done for them.</span>
+<span class="s s186">Eventually, they get
+to the point where they can do original work.</span>
+<span class="s s187">Whereas hackers, from the start, are doing original work; it's
+just very bad.</span> <span class="s s188">So hackers start original, and get good, and
+scientists start good, and get original.</span></p>
+<p><span class="s s189">The other way makers learn is from examples.</span>
+<span class="s s190">For a painter, a museum is a reference library of techniques.</span>
+<span class="s s191">For hundreds of years it has been part of the traditional
+education of painters to copy the works of the great masters,
+because copying forces you to look closely
+at the way a painting is made.</span></p>
+<p><span class="s s192">Writers do this too.</span>
+<span class="s s193">Benjamin Franklin learned to write by summarizing the points 
+in the essays of Addison and Steele and then trying to
+reproduce them.</span> <span class="s s194">Raymond Chandler did the same thing
+with detective stories.</span></p>
+<p><span class="s s195">Hackers, likewise, can learn to program by looking at 
+good programs-- not just at what they do, but the source
+code too.</span> <span class="s s196">One of the less publicized benefits
+of the open-source movement is that it has made it easier
+to learn to program.</span> <span class="s s197">When I learned to program, we had to rely
+mostly on examples in books.</span> <span class="s s198">The one big chunk of
+code available then was Unix, but even this was not 
+open source.</span> <span class="s s199">Most of the people who read the source
+read it in illicit photocopies of John Lions' book, which
+though written in 1977 was not allowed to be published
+until 1996.</span></p>
+<p><span class="s s200">Another example we can take from painting is the way that
+paintings are created by gradual refinement.</span> <span class="s s201">Paintings usually
+begin with a sketch.</span>
+<span class="s s202">Gradually the details get filled in.</span>
+<span class="s s203">But it is not merely a process of filling in.</span> <span class="s s204">Sometimes 
+the original plans turn out to be mistaken.</span>
+<span class="s s205">Countless paintings,
+when you look at them in xrays, turn out to have limbs that
+have been moved or facial features that have been readjusted.</span></p>
+<p><span class="s s206">Here's a case where we can learn from painting.</span> <span class="s s207">I think hacking
+should work this way too.</span> <span class="s s208">It's unrealistic
+to expect that the specifications for a program will be
+perfect.</span> <span class="s s209">You're
+better off if you admit this up front, and write programs in
+a way that allows specifications to change on the fly.</span></p>
+<p><span class="s s210">(The structure of large companies makes this hard for them
+to do, so here is another place where startups have an advantage.)</span></p>
+<p><span class="s s211">Everyone by now presumably knows about the danger of premature
+optimization.</span> <span class="s s212">I think we should be just as worried about
+premature design-- deciding too early what
+a program should do.</span></p>
+<p><span class="s s213">The right tools can help us avoid
+this danger.</span>
+<span class="s s214">A good programming language should, like oil paint, make it
+easy to change your mind.</span> <span class="s s215">Dynamic typing is a win here because
+you don't have to
+commit to specific data representations up front.</span>
+<span class="s s216">But the key to flexibility, I think, is to make the language
+very abstract.</span>
+<span class="s s217">The easiest program to change is one that's very short.</span></p>
+<p><span class="s s218">This sounds like a paradox, but a great painting
+has to be better than it has to be.</span>
+<span class="s s219">For example, when Leonardo
+painted the portrait of Ginevra de Benci
+in the National Gallery, he put a juniper bush behind her head.</span>
+<span class="s s220">In it he carefully
+painted each individual leaf.</span> <span class="s s221">Many painters might have thought,
+this is just something to put in the background to frame
+her head.</span> <span class="s s222">No one will look that closely at it.</span></p>
+<p><span class="s s223">Not Leonardo.</span> <span class="s s224">How hard he worked on part of a painting didn't
+depend at all on how closely he expected anyone to look at it.</span>
+<span class="s s225">He was like Michael Jordan.</span> <span class="s s226">Relentless.</span></p>
+<p><span class="s s227">Relentlessness wins because, in the aggregate, unseen details
+become visible.</span>
+<span class="s s228">When people walk by the portrait of Ginevra de Benci,
+their attention is often immediately arrested by it,
+even before they look at the label and notice that it says
+Leonardo da Vinci.</span> <span class="s s229">All those unseen details combine to produce
+something that's just stunning, like a thousand barely audible
+voices all singing in tune.</span></p>
+<p><span class="s s230">Great software, likewise, requires a fanatical devotion to
+beauty.</span> <span class="s s231">If you look inside good software, you find that
+parts no one is ever supposed to see are beautiful too.</span>
+<span class="s s232">I'm not claiming I write great software, but I
+know that when it comes to code I behave in a way that would
+make me eligible for prescription drugs if I approached everyday
+life the same way.</span>
+<span class="s s233">It drives me crazy to see code that's badly indented,
+or that uses ugly variable names.</span></p>
+<p><span class="s s234">If a hacker were a mere implementor, turning a spec into code, then
+he could just work his way through it from one end to the other like
+someone digging a ditch.</span> <span class="s s235">But if the hacker is a creator, we have
+to take inspiration into account.</span></p>
+<p><span class="s s236">In hacking, like painting,
+work comes in cycles.</span> <span class="s s237">Sometimes you get excited about some
+new project and you want to work sixteen hours a day on it.</span> 
+<span class="s s238">Other times nothing seems interesting.</span></p>
+<p><span class="s s239">To do good work you have to take these cycles into
+account, because they're affected by how you react to them.</span>
+<span class="s s240">When you're driving a
+car with a manual transmission on a hill, you have to back off
+the clutch sometimes to avoid stalling.</span> <span class="s s241">Backing
+off can likewise prevent ambition from stalling.</span>
+<span class="s s242">In both painting and hacking there are some
+tasks that are terrifyingly ambitious, and others that are
+comfortingly routine.</span> <span class="s s243">It's a good idea to save some easy
+tasks for moments when you would otherwise stall.</span></p>
+<p><span class="s s244">In hacking, this can literally mean saving up bugs.</span>
+<span class="s s245">I like debugging: it's the
+one time that hacking is as straightforward as 
+people think it is.</span> <span class="s s246">You have a
+totally constrained problem, and all you have to do is solve
+it.</span> <span class="s s247">Your program is supposed to do x.</span> <span class="s s248">Instead it does y.</span>
+<span class="s s249">Where does it go wrong?</span> <span class="s s250">You know you're going to win
+in the end.</span> <span class="s s251">It's as relaxing as painting a wall.</span></p>
+<p><span class="s s252">The example of painting can teach us not only how to manage our
+own work, but how to work together.</span> <span class="s s253">A lot of the
+great art of the past is the work of multiple hands, though
+there may only be one name on the wall next to it in the
+museum.</span> <span class="s s254">Leonardo was an apprentice in the workshop of
+Verrocchio and painted one of the angels in his Baptism of
+Christ.</span> <span class="s s255">This sort of thing was the rule, not the exception.</span>
+<span class="s s256">Michelangelo was considered especially dedicated for insisting
+on painting all the figures on the ceiling of the Sistine
+Chapel himself.</span></p>
+<p><span class="s s257">As far as I know, when painters worked together on a painting,
+they never worked on the same parts.</span> <span class="s s258">It was common
+for the master to paint the principal figures and for assistants
+to paint the others and the background.</span> <span class="s s259">But you never had
+one guy painting over the work of another.</span></p>
+<p><span class="s s260">I think this is the right model for collaboration in software
+too.</span> <span class="s s261">Don't push it too far.</span> <span class="s s262">When a piece of code is
+being hacked by three or four different people, no one of whom
+really owns it, it will end up being like a common-room.</span> <span class="s s263">It will
+tend to feel bleak and abandoned, and accumulate cruft.</span>
+<span class="s s264">The right
+way to collaborate, I think, is to divide projects into sharply
+defined modules, each with a definite owner, and with interfaces
+between them that are as carefully designed and, if possible,
+as articulated as programming languages.</span></p>
+<p><span class="s s265">Like painting, most software is intended for
+a human audience.</span> <span class="s s266">And so hackers, like painters, must have
+empathy to do really great work.</span> <span class="s s267">You have to be able to see
+things from the user's point of view.</span></p>
+<p><span class="s s268">When I was a kid I was always being told to look at things from
+someone else's point of view.</span> <span class="s s269">What this always meant in
+practice was to do what someone else wanted, instead of what
+I wanted.</span> <span class="s s270">This of course gave empathy a bad name, and I made a
+point of not cultivating it.</span></p>
+<p><span class="s s271">Boy, was I wrong.</span> <span class="s s272">It turns out that looking at things from 
+other people's point of view is practically the secret of
+success.</span> <span class="s s273">It doesn't necessarily mean being self-sacrificing.</span>
+<span class="s s274">Far from it.</span> <span class="s s275">Understanding how someone else sees things
+doesn't imply that you'll act in his interest; in some
+situations-- in war, for example-- you want to do exactly
+the opposite.</span> <span class="s s276">[4]</span></p>
+<p><span class="s s277">Most makers make things for a human audience.</span>
+<span class="s s278">And to engage an audience you have to understand what they need.</span>
+<span class="s s279">Nearly all the greatest paintings are paintings of people,
+for example, because people are what people are interested in.</span></p>
+<p><span class="s s280">Empathy is probably the single most important difference
+between a good hacker and a great one.</span> <span class="s s281">Some hackers
+are quite smart, but when it comes to empathy are
+practically solipsists.</span> <span class="s s282">It's hard for such 
+people to design great software [5], because they can't
+see things from the user's point of view.</span></p>
+<p><span class="s s283">One way to tell how good people are at empathy is to watch
+them explain a technical question to someone without a technical
+background.</span> <span class="s s284">We probably all know people who, though otherwise smart,
+are just comically bad at this.</span> <span class="s s285">If someone asks them at
+a dinner party what a programming language is, they'll
+say something like ``Oh, a high-level language is what
+the compiler uses as input to generate object code.</span><span class="s s286">'</span><span class="s s287">'
+High-level language?</span> <span class="s s288">Compiler?</span> <span class="s s289">Object code?</span> <span class="s s290">Someone who 
+doesn't know what a programming language is obviously doesn't
+know what these things are, either.</span></p>
+<p><span class="s s291">Part of what software has to do is explain itself.</span> <span class="s s292">So to 
+write good software you have to understand how little users 
+understand.</span>
+<span class="s s293">They're going to walk up to the software with no preparation, and
+it had better do what they guess it will, because they're
+not going to read the manual.</span> <span class="s s294">The best system I've ever seen 
+in this respect was the original Macintosh, in 1985.</span>
+<span class="s s295">It did what software almost never does: it just worked.</span> <span class="s s296">[6]</span></p>
+<p><span class="s s297">Source code, too, should explain itself.</span> <span class="s s298">If I could get people to
+remember just one quote about programming, it would be the
+one at the beginning of Structure and Interpretation of Computer
+Programs.</span> 
+</p><span class="s s299">&nbsp;
+Programs should be written for people to read, and
+only incidentally for machines to execute.
+&nbsp;
+You need to have 
+empathy not just for your users, but for your readers. It's in 
+your interest, because you'll be one of them.
+Many a hacker has written a program only to
+find on returning to it six months later that he has no idea 
+how it works. I know several people who've sworn off Perl after
+such experiences. [7]</span><p><span class="s s300">Lack of empathy is associated with intelligence, to the point
+that there is even something of a fashion for it in some places.</span>
+<span class="s s301">But I don't think there's any correlation.</span>
+<span class="s s302">You can do well in math and
+the natural sciences without having to learn empathy, and people in these
+fields tend to be smart, so the two qualities have come to be
+associated.</span> <span class="s s303">But there are plenty of dumb people who are bad at
+empathy too.</span> <span class="s s304">Just listen to the people who call in with questions on
+talk shows.</span> <span class="s s305">They ask whatever it is they're asking in
+such a roundabout way
+that the hosts often have to rephrase the question for them.</span></p>
+<p><span class="s s306">So, if hacking works like painting and writing, is it as cool?</span>
+<span class="s s307">After all, you only get one life.</span>
+<span class="s s308">You might as well spend it working on something great.</span></p>
+<p><span class="s s309">Unfortunately, the question is hard to answer.</span> <span class="s s310">There is always
+a big time lag in prestige.</span> <span class="s s311">It's like light from a distant star.</span>
+<span class="s s312">Painting has prestige now because of great work people did five hundred
+years ago.</span> <span class="s s313">At the time, no one thought
+these paintings were as important as we do today.</span> <span class="s s314">It would have
+seemed very odd to people at the time that Federico da Montefeltro,
+the Duke of Urbino, would one day be known mostly as the guy
+with the strange nose in a painting 
+by Piero della Francesca.</span></p>
+<p><span class="s s315">So while I admit that hacking doesn't seem as cool as painting now,
+we should remember that painting itself didn't seem as cool in
+its glory days as it does now.</span></p>
+<p><span class="s s316">What we can say with some confidence is that these are the glory
+days of hacking.</span> <span class="s s317">In most fields the great work is done early on.</span>
+<span class="s s318">The paintings made between 1430 and 1500 are still unsurpassed.</span>
+<span class="s s319">Shakespeare appeared just as professional theater was being born,
+
+and pushed the medium
+so far that every playwright since has had to live in his shadow.</span>
+<span class="s s320">Albrecht Durer did the same thing with engraving, and Jane Austen
+with the novel.</span></p>
+<p><span class="s s321">Over and over we see the same pattern.</span> <span class="s s322">A new medium appears, and
+people are so excited about it that they explore most of its
+possibilities in the first couple generations.</span> <span class="s s323">Hacking seems
+to be in this phase now.</span></p>
+<p><span class="s s324">Painting was not, in Leonardo's time, as cool as his work
+helped make it.</span>
+<span class="s s325">How cool hacking turns out to be will depend on what we can
+do with this new medium.</span> 
+</p>
+<p><span class="s s327">Notes</span></p>
+<p><span class="s s328">[1] The greatest damage that photography has done
+to painting may be the fact that it killed the best day job.</span>
+<span class="s s329">Most of the great painters in history supported
+themselves by painting portraits.</span> </p>
+<p><span class="s s331">[2] I've been told that Microsoft discourages
+employees from contributing to open-source projects, even in
+their spare time.</span>
+<span class="s s332">But so many of the best hackers work on open-source
+projects now that the main effect of this policy may be
+to ensure that they won't be able to hire any first-rate
+programmers.</span></p>
+<p><span class="s s333">[3] What you learn about programming in college is much like
+what you learn about books or clothes or dating: what bad taste you
+had in high school.</span></p>
+<p><span class="s s334">[4] Here's an example of applied empathy.</span>
+<span class="s s335">At Viaweb, if we couldn't decide between two alternatives, we'd
+ask, what would our competitors hate most?</span> <span class="s s336">At one point a
+competitor added a feature to their software that was basically
+useless, but since it was one of few they had that we didn't, they
+made much of it in the trade press.</span>
+<span class="s s337">We could have tried to explain that the feature was useless,
+but we decided it would annoy our competitor more if we
+just implemented it ourselves, so we hacked together our own
+version that afternoon.</span></p>
+<p><span class="s s338">[5] Except text editors and compilers. Hackers don't need empathy to
+design these, because they are themselves typical users.</span></p>
+<p><span class="s s339">[6] Well, almost.</span> <span class="s s340">They overshot the available RAM somewhat,
+causing much inconvenient disk swapping, but this could be fixed
+within a few months by buying an additional disk drive.</span></p>
+<p><span class="s s341">[7] The way to make programs easy to read is not to
+stuff them with comments.</span> <span class="s s342">I would take Abelson and Sussman's
+quote a step further.</span> <span class="s s343">Programming languages should be designed
+to express algorithms, and only incidentally to tell computers
+how to execute them.</span> <span class="s s344">A good programming language
+ought to be better for explaining software than English.</span>
+<span class="s s345">You should only
+need comments when there is some kind of kludge you need to warn
+readers about, just as on a road there are only
+arrows on parts with unexpectedly sharp curves.</span>
+</p>
+<p><span class="s s347">Thanks to Trevor Blackwell, Robert Morris, Dan Giffin, and Lisa
+Randall for reading drafts of this, and to Henry Leitner
+and Larry Finkelstein for inviting me to speak.</span></p>
+</div></div>
+  </body></html>

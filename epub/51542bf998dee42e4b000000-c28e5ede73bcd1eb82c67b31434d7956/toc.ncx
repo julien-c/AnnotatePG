@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+    <meta name="dtb:depth" content="1"/>
+    <meta name="dtb:uid" content="4761799"/>
+  </head>
+  <docTitle>
+    <text>Essays by Paul Graham</text>
+  </docTitle>
+  <navMap>
+    <navPoint playOrder="1" id="navPoint-1">
+      <navLabel>
+        <text>Subject: Airbnb</text>
+      </navLabel>
+      <content src="file_airbnb.html"/>
+    </navPoint>
+    <navPoint playOrder="2" id="navPoint-2">
+      <navLabel>
+        <text>Founder Control</text>
+      </navLabel>
+      <content src="file_control.html"/>
+    </navPoint>
+    <navPoint playOrder="3" id="navPoint-3">
+      <navLabel>
+        <text>Tablets</text>
+      </navLabel>
+      <content src="file_tablets.html"/>
+    </navPoint>
+    <navPoint playOrder="4" id="navPoint-4">
+      <navLabel>
+        <text>What We Look for in Founders</text>
+      </navLabel>
+      <content src="file_founders.html"/>
+    </navPoint>
+    <navPoint playOrder="5" id="navPoint-5">
+      <navLabel>
+        <text>The New Funding Landscape</text>
+      </navLabel>
+      <content src="file_superangels.html"/>
+    </navPoint>
+    <navPoint playOrder="6" id="navPoint-6">
+      <navLabel>
+        <text>Where to See Silicon Valley</text>
+      </navLabel>
+      <content src="file_seesv.html"/>
+    </navPoint>
+    <navPoint playOrder="7" id="navPoint-7">
+      <navLabel>
+        <text>High Resolution Fundraising </text>
+      </navLabel>
+      <content src="file_hiresfund.html"/>
+    </navPoint>
+    <navPoint playOrder="8" id="navPoint-8">
+      <navLabel>
+        <text>What Happened to Yahoo </text>
+      </navLabel>
+      <content src="file_yahoo.html"/>
+    </navPoint>
+    <navPoint playOrder="9" id="navPoint-9">
+      <navLabel>
+        <text>The Future of Startup Funding </text>
+      </navLabel>
+      <content src="file_future.html"/>
+    </navPoint>
+    <navPoint playOrder="10" id="navPoint-10">
+      <navLabel>
+        <text>The Acceleration of Addictiveness</text>
+      </navLabel>
+      <content src="file_addiction.html"/>
+    </navPoint>
+    <navPoint playOrder="11" id="navPoint-11">
+      <navLabel>
+        <text>The Top Idea in Your Mind </text>
+      </navLabel>
+      <content src="file_top.html"/>
+    </navPoint>
+    <navPoint playOrder="12" id="navPoint-12">
+      <navLabel>
+        <text>How to Lose Time and Money </text>
+      </navLabel>
+      <content src="file_selfindulgence.html"/>
+    </navPoint>
+    <navPoint playOrder="13" id="navPoint-13">
+      <navLabel>
+        <text>Organic Startup Ideas</text>
+      </navLabel>
+      <content src="file_organic.html"/>
+    </navPoint>
+    <navPoint playOrder="14" id="navPoint-14">
+      <navLabel>
+        <text>Apple's Mistake</text>
+      </navLabel>
+      <content src="file_apple.html"/>
+    </navPoint>
+    <navPoint playOrder="15" id="navPoint-15">
+      <navLabel>
+        <text>What Startups Are Really Like</text>
+      </navLabel>
+      <content src="file_really.html"/>
+    </navPoint>
+    <navPoint playOrder="16" id="navPoint-16">
+      <navLabel>
+        <text>Persuade xor Discover </text>
+      </navLabel>
+      <content src="file_discover.html"/>
+    </navPoint>
+    <navPoint playOrder="17" id="navPoint-17">
+      <navLabel>
+        <text>Post-Medium Publishing</text>
+      </navLabel>
+      <content src="file_publishing.html"/>
+    </navPoint>
+    <navPoint playOrder="18" id="navPoint-18">
+      <navLabel>
+        <text>The List of N Things</text>
+      </navLabel>
+      <content src="file_nthings.html"/>
+    </navPoint>
+    <navPoint playOrder="19" id="navPoint-19">
+      <navLabel>
+        <text>The Anatomy of Determination </text>
+      </navLabel>
+      <content src="file_determination.html"/>
+    </navPoint>
+    <navPoint playOrder="20" id="navPoint-20">
+      <navLabel>
+        <text>What Kate Saw in Silicon Valley  </text>
+      </navLabel>
+      <content src="file_kate.html"/>
+    </navPoint>
+    <navPoint playOrder="21" id="navPoint-21">
+      <navLabel>
+        <text>The Trouble with the Segway</text>
+      </navLabel>
+      <content src="file_segway.html"/>
+    </navPoint>
+    <navPoint playOrder="22" id="navPoint-22">
+      <navLabel>
+        <text>Ramen Profitable</text>
+      </navLabel>
+      <content src="file_ramenprofitable.html"/>
+    </navPoint>
+    <navPoint playOrder="23" id="navPoint-23">
+      <navLabel>
+        <text>Maker's Schedule, Manager's Schedule </text>
+      </navLabel>
+      <content src="file_makersschedule.html"/>
+    </navPoint>
+    <navPoint playOrder="24" id="navPoint-24">
+      <navLabel>
+        <text>A Local Revolution?</text>
+      </navLabel>
+      <content src="file_revolution.html"/>
+    </navPoint>
+    <navPoint playOrder="25" id="navPoint-25">
+      <navLabel>
+        <text>The Founder Visa</text>
+      </navLabel>
+      <content src="file_foundervisa.html"/>
+    </navPoint>
+    <navPoint playOrder="26" id="navPoint-26">
+      <navLabel>
+        <text>Five Founders</text>
+      </navLabel>
+      <content src="file_5founders.html"/>
+    </navPoint>
+    <navPoint playOrder="27" id="navPoint-27">
+      <navLabel>
+        <text>Relentlessly Resourceful</text>
+      </navLabel>
+      <content src="file_relres.html"/>
+    </navPoint>
+    <navPoint playOrder="28" id="navPoint-28">
+      <navLabel>
+        <text>How to Be an Angel Investor</text>
+      </navLabel>
+      <content src="file_angelinvesting.html"/>
+    </navPoint>
+    <navPoint playOrder="29" id="navPoint-29">
+      <navLabel>
+        <text>Why TV Lost</text>
+      </navLabel>
+      <content src="file_convergence.html"/>
+    </navPoint>
+    <navPoint playOrder="30" id="navPoint-30">
+      <navLabel>
+        <text>Can You Buy a Silicon Valley?  Maybe.</text>
+      </navLabel>
+      <content src="file_maybe.html"/>
+    </navPoint>
+    <navPoint playOrder="31" id="navPoint-31">
+      <navLabel>
+        <text>What I've Learned from Hacker News</text>
+      </navLabel>
+      <content src="file_hackernews.html"/>
+    </navPoint>
+    <navPoint playOrder="32" id="navPoint-32">
+      <navLabel>
+        <text>Startups in 13 Sentences</text>
+      </navLabel>
+      <content src="file_13sentences.html"/>
+    </navPoint>
+    <navPoint playOrder="33" id="navPoint-33">
+      <navLabel>
+        <text>Keep Your Identity Small  </text>
+      </navLabel>
+      <content src="file_identity.html"/>
+    </navPoint>
+    <navPoint playOrder="34" id="navPoint-34">
+      <navLabel>
+        <text>After Credentials</text>
+      </navLabel>
+      <content src="file_credentials.html"/>
+    </navPoint>
+    <navPoint playOrder="35" id="navPoint-35">
+      <navLabel>
+        <text>Could VC be a Casualty of the Recession?</text>
+      </navLabel>
+      <content src="file_divergence.html"/>
+    </navPoint>
+    <navPoint playOrder="36" id="navPoint-36">
+      <navLabel>
+        <text>The High-Res Society</text>
+      </navLabel>
+      <content src="file_highres.html"/>
+    </navPoint>
+    <navPoint playOrder="37" id="navPoint-37">
+      <navLabel>
+        <text>The Other Half of "Artists Ship"  </text>
+      </navLabel>
+      <content src="file_artistsship.html"/>
+    </navPoint>
+    <navPoint playOrder="38" id="navPoint-38">
+      <navLabel>
+        <text>Why to Start a Startup in a Bad Economy</text>
+      </navLabel>
+      <content src="file_badeconomy.html"/>
+    </navPoint>
+    <navPoint playOrder="39" id="navPoint-39">
+      <navLabel>
+        <text>A Fundraising Survival Guide</text>
+      </navLabel>
+      <content src="file_fundraising.html"/>
+    </navPoint>
+    <navPoint playOrder="40" id="navPoint-40">
+      <navLabel>
+        <text>The Pooled-Risk Company Management Company</text>
+      </navLabel>
+      <content src="file_prcmc.html"/>
+    </navPoint>
+    <navPoint playOrder="41" id="navPoint-41">
+      <navLabel>
+        <text>Cities and Ambition</text>
+      </navLabel>
+      <content src="file_cities.html"/>
+    </navPoint>
+    <navPoint playOrder="42" id="navPoint-42">
+      <navLabel>
+        <text>Disconnecting Distraction</text>
+      </navLabel>
+      <content src="file_distraction.html"/>
+    </navPoint>
+    <navPoint playOrder="43" id="navPoint-43">
+      <navLabel>
+        <text>Lies We Tell Kids</text>
+      </navLabel>
+      <content src="file_lies.html"/>
+    </navPoint>
+    <navPoint playOrder="44" id="navPoint-44">
+      <navLabel>
+        <text>Be Good</text>
+      </navLabel>
+      <content src="file_good.html"/>
+    </navPoint>
+    <navPoint playOrder="45" id="navPoint-45">
+      <navLabel>
+        <text>Why There Aren't More Googles</text>
+      </navLabel>
+      <content src="file_googles.html"/>
+    </navPoint>
+    <navPoint playOrder="46" id="navPoint-46">
+      <navLabel>
+        <text>Some Heroes</text>
+      </navLabel>
+      <content src="file_heroes.html"/>
+    </navPoint>
+    <navPoint playOrder="47" id="navPoint-47">
+      <navLabel>
+        <text>How to Disagree</text>
+      </navLabel>
+      <content src="file_disagree.html"/>
+    </navPoint>
+    <navPoint playOrder="48" id="navPoint-48">
+      <navLabel>
+        <text>You Weren't Meant to Have a Boss</text>
+      </navLabel>
+      <content src="file_boss.html"/>
+    </navPoint>
+    <navPoint playOrder="49" id="navPoint-49">
+      <navLabel>
+        <text>A New Venture Animal</text>
+      </navLabel>
+      <content src="file_ycombinator.html"/>
+    </navPoint>
+    <navPoint playOrder="50" id="navPoint-50">
+      <navLabel>
+        <text>Trolls</text>
+      </navLabel>
+      <content src="file_trolls.html"/>
+    </navPoint>
+    <navPoint playOrder="51" id="navPoint-51">
+      <navLabel>
+        <text>Six Principles for Making New Things</text>
+      </navLabel>
+      <content src="file_newthings.html"/>
+    </navPoint>
+    <navPoint playOrder="52" id="navPoint-52">
+      <navLabel>
+        <text>Why to Move to a Startup Hub</text>
+      </navLabel>
+      <content src="file_startuphubs.html"/>
+    </navPoint>
+    <navPoint playOrder="53" id="navPoint-53">
+      <navLabel>
+        <text>The Future of Web Startups</text>
+      </navLabel>
+      <content src="file_webstartups.html"/>
+    </navPoint>
+    <navPoint playOrder="54" id="navPoint-54">
+      <navLabel>
+        <text>How to Do Philosophy</text>
+      </navLabel>
+      <content src="file_philosophy.html"/>
+    </navPoint>
+    <navPoint playOrder="55" id="navPoint-55">
+      <navLabel>
+        <text>News from the Front</text>
+      </navLabel>
+      <content src="file_colleges.html"/>
+    </navPoint>
+    <navPoint playOrder="56" id="navPoint-56">
+      <navLabel>
+        <text>How Not to Die</text>
+      </navLabel>
+      <content src="file_die.html"/>
+    </navPoint>
+    <navPoint playOrder="57" id="navPoint-57">
+      <navLabel>
+        <text>Holding a Program in One's Head</text>
+      </navLabel>
+      <content src="file_head.html"/>
+    </navPoint>
+    <navPoint playOrder="58" id="navPoint-58">
+      <navLabel>
+        <text>Stuff</text>
+      </navLabel>
+      <content src="file_stuff.html"/>
+    </navPoint>
+    <navPoint playOrder="59" id="navPoint-59">
+      <navLabel>
+        <text>The Equity Equation</text>
+      </navLabel>
+      <content src="file_equity.html"/>
+    </navPoint>
+    <navPoint playOrder="60" id="navPoint-60">
+      <navLabel>
+        <text>An Alternative Theory of Unions</text>
+      </navLabel>
+      <content src="file_unions.html"/>
+    </navPoint>
+    <navPoint playOrder="61" id="navPoint-61">
+      <navLabel>
+        <text>The Hacker's Guide to Investors</text>
+      </navLabel>
+      <content src="file_guidetoinvestors.html"/>
+    </navPoint>
+    <navPoint playOrder="62" id="navPoint-62">
+      <navLabel>
+        <text>Two Kinds of Judgement</text>
+      </navLabel>
+      <content src="file_judgement.html"/>
+    </navPoint>
+    <navPoint playOrder="63" id="navPoint-63">
+      <navLabel>
+        <text>Microsoft is Dead</text>
+      </navLabel>
+      <content src="file_microsoft.html"/>
+    </navPoint>
+    <navPoint playOrder="64" id="navPoint-64">
+      <navLabel>
+        <text>Why to Not Not Start a Startup</text>
+      </navLabel>
+      <content src="file_notnot.html"/>
+    </navPoint>
+    <navPoint playOrder="65" id="navPoint-65">
+      <navLabel>
+        <text>Is It Worth Being Wise?</text>
+      </navLabel>
+      <content src="file_wisdom.html"/>
+    </navPoint>
+    <navPoint playOrder="66" id="navPoint-66">
+      <navLabel>
+        <text>Learning from Founders</text>
+      </navLabel>
+      <content src="file_foundersatwork.html"/>
+    </navPoint>
+    <navPoint playOrder="67" id="navPoint-67">
+      <navLabel>
+        <text>How Art Can Be Good</text>
+      </navLabel>
+      <content src="file_goodart.html"/>
+    </navPoint>
+    <navPoint playOrder="68" id="navPoint-68">
+      <navLabel>
+        <text>The 18 Mistakes That Kill Startups</text>
+      </navLabel>
+      <content src="file_startupmistakes.html"/>
+    </navPoint>
+    <navPoint playOrder="69" id="navPoint-69">
+      <navLabel>
+        <text>A Student's Guide to Startups</text>
+      </navLabel>
+      <content src="file_mit.html"/>
+    </navPoint>
+    <navPoint playOrder="70" id="navPoint-70">
+      <navLabel>
+        <text>How to Present to Investors</text>
+      </navLabel>
+      <content src="file_investors.html"/>
+    </navPoint>
+    <navPoint playOrder="71" id="navPoint-71">
+      <navLabel>
+        <text>Copy What You Like</text>
+      </navLabel>
+      <content src="file_copy.html"/>
+    </navPoint>
+    <navPoint playOrder="72" id="navPoint-72">
+      <navLabel>
+        <text>The Island Test</text>
+      </navLabel>
+      <content src="file_island.html"/>
+    </navPoint>
+    <navPoint playOrder="73" id="navPoint-73">
+      <navLabel>
+        <text>The Power of the Marginal</text>
+      </navLabel>
+      <content src="file_marginal.html"/>
+    </navPoint>
+    <navPoint playOrder="74" id="navPoint-74">
+      <navLabel>
+        <text>Why Startups Condense in America</text>
+      </navLabel>
+      <content src="file_america.html"/>
+    </navPoint>
+    <navPoint playOrder="75" id="navPoint-75">
+      <navLabel>
+        <text>How to Be Silicon Valley</text>
+      </navLabel>
+      <content src="file_siliconvalley.html"/>
+    </navPoint>
+    <navPoint playOrder="76" id="navPoint-76">
+      <navLabel>
+        <text>The Hardest Lessons for Startups to Learn</text>
+      </navLabel>
+      <content src="file_startuplessons.html"/>
+    </navPoint>
+    <navPoint playOrder="77" id="navPoint-77">
+      <navLabel>
+        <text>See Randomness</text>
+      </navLabel>
+      <content src="file_randomness.html"/>
+    </navPoint>
+    <navPoint playOrder="78" id="navPoint-78">
+      <navLabel>
+        <text>Are Software Patents Evil?</text>
+      </navLabel>
+      <content src="file_softwarepatents.html"/>
+    </navPoint>
+    <navPoint playOrder="79" id="navPoint-79">
+      <navLabel>
+        <text>6,631,372</text>
+      </navLabel>
+      <content src="file_6631327.html"/>
+    </navPoint>
+    <navPoint playOrder="80" id="navPoint-80">
+      <navLabel>
+        <text>Why YC</text>
+      </navLabel>
+      <content src="file_whyyc.html"/>
+    </navPoint>
+    <navPoint playOrder="81" id="navPoint-81">
+      <navLabel>
+        <text>How to Do What You Love</text>
+      </navLabel>
+      <content src="file_love.html"/>
+    </navPoint>
+    <navPoint playOrder="82" id="navPoint-82">
+      <navLabel>
+        <text>Good and Bad Procrastination</text>
+      </navLabel>
+      <content src="file_procrastination.html"/>
+    </navPoint>
+    <navPoint playOrder="83" id="navPoint-83">
+      <navLabel>
+        <text>Web 2.0</text>
+      </navLabel>
+      <content src="file_web20.html"/>
+    </navPoint>
+    <navPoint playOrder="84" id="navPoint-84">
+      <navLabel>
+        <text>How to Fund a Startup</text>
+      </navLabel>
+      <content src="file_startupfunding.html"/>
+    </navPoint>
+    <navPoint playOrder="85" id="navPoint-85">
+      <navLabel>
+        <text>The Venture Capital Squeeze</text>
+      </navLabel>
+      <content src="file_vcsqueeze.html"/>
+    </navPoint>
+    <navPoint playOrder="86" id="navPoint-86">
+      <navLabel>
+        <text>Ideas for Startups</text>
+      </navLabel>
+      <content src="file_ideas.html"/>
+    </navPoint>
+    <navPoint playOrder="87" id="navPoint-87">
+      <navLabel>
+        <text>What I Did this Summer</text>
+      </navLabel>
+      <content src="file_sfp.html"/>
+    </navPoint>
+    <navPoint playOrder="88" id="navPoint-88">
+      <navLabel>
+        <text>Inequality and Risk</text>
+      </navLabel>
+      <content src="file_inequality.html"/>
+    </navPoint>
+    <navPoint playOrder="89" id="navPoint-89">
+      <navLabel>
+        <text>After the Ladder</text>
+      </navLabel>
+      <content src="file_ladder.html"/>
+    </navPoint>
+    <navPoint playOrder="90" id="navPoint-90">
+      <navLabel>
+        <text>What Business Can Learn from Open Source</text>
+      </navLabel>
+      <content src="file_opensource.html"/>
+    </navPoint>
+    <navPoint playOrder="91" id="navPoint-91">
+      <navLabel>
+        <text>Hiring is Obsolete</text>
+      </navLabel>
+      <content src="file_hiring.html"/>
+    </navPoint>
+    <navPoint playOrder="92" id="navPoint-92">
+      <navLabel>
+        <text>The Submarine</text>
+      </navLabel>
+      <content src="file_submarine.html"/>
+    </navPoint>
+    <navPoint playOrder="93" id="navPoint-93">
+      <navLabel>
+        <text>Why Smart People Have Bad Ideas</text>
+      </navLabel>
+      <content src="file_bronze.html"/>
+    </navPoint>
+    <navPoint playOrder="94" id="navPoint-94">
+      <navLabel>
+        <text>Return of the Mac</text>
+      </navLabel>
+      <content src="file_mac.html"/>
+    </navPoint>
+    <navPoint playOrder="95" id="navPoint-95">
+      <navLabel>
+        <text>Writing,  Briefly</text>
+      </navLabel>
+      <content src="file_writing44.html"/>
+    </navPoint>
+    <navPoint playOrder="96" id="navPoint-96">
+      <navLabel>
+        <text>Undergraduation</text>
+      </navLabel>
+      <content src="file_college.html"/>
+    </navPoint>
+    <navPoint playOrder="97" id="navPoint-97">
+      <navLabel>
+        <text>A Unified Theory of VC Suckage</text>
+      </navLabel>
+      <content src="file_venturecapital.html"/>
+    </navPoint>
+    <navPoint playOrder="98" id="navPoint-98">
+      <navLabel>
+        <text>How to Start a Startup</text>
+      </navLabel>
+      <content src="file_start.html"/>
+    </navPoint>
+    <navPoint playOrder="99" id="navPoint-99">
+      <navLabel>
+        <text>What You'll Wish You'd Known</text>
+      </navLabel>
+      <content src="file_hs.html"/>
+    </navPoint>
+    <navPoint playOrder="100" id="navPoint-100">
+      <navLabel>
+        <text>Made in USA</text>
+      </navLabel>
+      <content src="file_usa.html"/>
+    </navPoint>
+    <navPoint playOrder="101" id="navPoint-101">
+      <navLabel>
+        <text>It's Charisma, Stupid</text>
+      </navLabel>
+      <content src="file_charisma.html"/>
+    </navPoint>
+    <navPoint playOrder="102" id="navPoint-102">
+      <navLabel>
+        <text>Bradley's Ghost</text>
+      </navLabel>
+      <content src="file_polls.html"/>
+    </navPoint>
+    <navPoint playOrder="103" id="navPoint-103">
+      <navLabel>
+        <text>A Version 1.0</text>
+      </navLabel>
+      <content src="file_laundry.html"/>
+    </navPoint>
+    <navPoint playOrder="104" id="navPoint-104">
+      <navLabel>
+        <text>What the Bubble Got Right</text>
+      </navLabel>
+      <content src="file_bubble.html"/>
+    </navPoint>
+    <navPoint playOrder="105" id="navPoint-105">
+      <navLabel>
+        <text>The Age of the Essay</text>
+      </navLabel>
+      <content src="file_essay.html"/>
+    </navPoint>
+    <navPoint playOrder="106" id="navPoint-106">
+      <navLabel>
+        <text>The Python Paradox</text>
+      </navLabel>
+      <content src="file_pypar.html"/>
+    </navPoint>
+    <navPoint playOrder="107" id="navPoint-107">
+      <navLabel>
+        <text>Great Hackers</text>
+      </navLabel>
+      <content src="file_gh.html"/>
+    </navPoint>
+    <navPoint playOrder="108" id="navPoint-108">
+      <navLabel>
+        <text>Mind the Gap</text>
+      </navLabel>
+      <content src="file_gap.html"/>
+    </navPoint>
+    <navPoint playOrder="109" id="navPoint-109">
+      <navLabel>
+        <text>How to Make Wealth</text>
+      </navLabel>
+      <content src="file_wealth.html"/>
+    </navPoint>
+    <navPoint playOrder="110" id="navPoint-110">
+      <navLabel>
+        <text>The Word "Hacker"</text>
+      </navLabel>
+      <content src="file_gba.html"/>
+    </navPoint>
+    <navPoint playOrder="111" id="navPoint-111">
+      <navLabel>
+        <text>What You Can't Say</text>
+      </navLabel>
+      <content src="file_say.html"/>
+    </navPoint>
+    <navPoint playOrder="112" id="navPoint-112">
+      <navLabel>
+        <text>Filters that Fight Back</text>
+      </navLabel>
+      <content src="file_ffb.html"/>
+    </navPoint>
+    <navPoint playOrder="113" id="navPoint-113">
+      <navLabel>
+        <text>Hackers and Painters</text>
+      </navLabel>
+      <content src="file_hp.html"/>
+    </navPoint>
+    <navPoint playOrder="114" id="navPoint-114">
+      <navLabel>
+        <text>If Lisp is So Great</text>
+      </navLabel>
+      <content src="file_iflisp.html"/>
+    </navPoint>
+    <navPoint playOrder="115" id="navPoint-115">
+      <navLabel>
+        <text>The Hundred-Year Language</text>
+      </navLabel>
+      <content src="file_hundred.html"/>
+    </navPoint>
+    <navPoint playOrder="116" id="navPoint-116">
+      <navLabel>
+        <text>Why Nerds are Unpopular</text>
+      </navLabel>
+      <content src="file_nerds.html"/>
+    </navPoint>
+    <navPoint playOrder="117" id="navPoint-117">
+      <navLabel>
+        <text>Better Bayesian Filtering</text>
+      </navLabel>
+      <content src="file_better.html"/>
+    </navPoint>
+    <navPoint playOrder="118" id="navPoint-118">
+      <navLabel>
+        <text>Design and Research</text>
+      </navLabel>
+      <content src="file_desres.html"/>
+    </navPoint>
+    <navPoint playOrder="119" id="navPoint-119">
+      <navLabel>
+        <text>A Plan for Spam</text>
+      </navLabel>
+      <content src="file_spam.html"/>
+    </navPoint>
+    <navPoint playOrder="120" id="navPoint-120">
+      <navLabel>
+        <text>Revenge of the Nerds</text>
+      </navLabel>
+      <content src="file_icad.html"/>
+    </navPoint>
+    <navPoint playOrder="121" id="navPoint-121">
+      <navLabel>
+        <text>Succinctness is Power</text>
+      </navLabel>
+      <content src="file_power.html"/>
+    </navPoint>
+    <navPoint playOrder="122" id="navPoint-122">
+      <navLabel>
+        <text>What Languages Fix</text>
+      </navLabel>
+      <content src="file_fix.html"/>
+    </navPoint>
+    <navPoint playOrder="123" id="navPoint-123">
+      <navLabel>
+        <text>Taste for Makers</text>
+      </navLabel>
+      <content src="file_taste.html"/>
+    </navPoint>
+    <navPoint playOrder="124" id="navPoint-124">
+      <navLabel>
+        <text>Why Arc Isn't Especially Object-Oriented</text>
+      </navLabel>
+      <content src="file_noop.html"/>
+    </navPoint>
+    <navPoint playOrder="125" id="navPoint-125">
+      <navLabel>
+        <text>What Made Lisp Different</text>
+      </navLabel>
+      <content src="file_diff.html"/>
+    </navPoint>
+    <navPoint playOrder="126" id="navPoint-126">
+      <navLabel>
+        <text>The Other Road Ahead</text>
+      </navLabel>
+      <content src="file_road.html"/>
+    </navPoint>
+    <navPoint playOrder="127" id="navPoint-127">
+      <navLabel>
+        <text>The Roots of Lisp</text>
+      </navLabel>
+      <content src="file_rootsoflisp.html"/>
+    </navPoint>
+    <navPoint playOrder="128" id="navPoint-128">
+      <navLabel>
+        <text>Five Questions about Language Design</text>
+      </navLabel>
+      <content src="file_langdes.html"/>
+    </navPoint>
+    <navPoint playOrder="129" id="navPoint-129">
+      <navLabel>
+        <text>Being Popular</text>
+      </navLabel>
+      <content src="file_popular.html"/>
+    </navPoint>
+    <navPoint playOrder="130" id="navPoint-130">
+      <navLabel>
+        <text>Java's Cover</text>
+      </navLabel>
+      <content src="file_javacover.html"/>
+    </navPoint>
+    <navPoint playOrder="131" id="navPoint-131">
+      <navLabel>
+        <text>Beating the Averages</text>
+      </navLabel>
+      <content src="file_avg.html"/>
+    </navPoint>
+    <navPoint playOrder="132" id="navPoint-132">
+      <navLabel>
+        <text>Lisp for Web-Based Applications</text>
+      </navLabel>
+      <content src="file_lwba.html"/>
+    </navPoint>
+    <navPoint playOrder="133" id="navPoint-133">
+      <navLabel>
+        <text>Programming Bottom-Up</text>
+      </navLabel>
+      <content src="file_progbot.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

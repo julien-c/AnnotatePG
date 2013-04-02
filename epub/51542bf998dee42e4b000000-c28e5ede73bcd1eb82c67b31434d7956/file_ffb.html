@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Filters that Fight Back</title></head><body>
+  <h2><span class="s s1">Filters that Fight Back</span></h2>
+<div><div>
+<p><span class="s s2">August 2003</span></p>
+<p>
+<span class="s s3">We may be able to improve the accuracy of Bayesian spam filters
+by having them follow links to see what's
+waiting at the other end.</span> <span class="s s4">Richard Jowsey of
+death2spam now does
+this in borderline cases, and reports that it works well.</span></p>
+<p><span class="s s5">Why only do it in borderline cases? And why only do it once?</span></p>
+<p><span class="s s6">As I mentioned in Will Filters Kill Spam?</span><span class="s s7">,
+following all the urls in
+a spam would have an amusing side-effect.</span> <span class="s s8">If popular email clients
+did this in order to filter spam, the spammer's servers
+would take a serious pounding.</span> <span class="s s9">The more I think about this,
+the better an idea it seems. This isn't just amusing; it
+would be hard to imagine a more perfectly targeted counterattack
+on spammers.</span></p>
+<p><span class="s s10">So I'd like to suggest an additional feature to those
+working on spam filters: a "punish" mode which,
+if turned on, would spider every url
+in a suspected spam n times, where n could be set by the user.</span> <span class="s s11">[1]</span></p>
+<p><span class="s s12">As many people have noted, one of the problems with the
+current email system is that it's too passive.</span> <span class="s s13">It does
+whatever you tell it.</span> <span class="s s14">So far all the suggestions for fixing
+the problem seem to involve new protocols.</span> <span class="s s15">This one 
+wouldn't.</span></p>
+<p><span class="s s16">If widely used, auto-retrieving spam filters would make
+the email system rebound.</span> <span class="s s17">The huge volume of the
+spam, which has so far worked in the spammer's favor,
+would now work against him, like a branch snapping back in 
+his face.</span> <span class="s s18">Auto-retrieving spam filters would drive the
+spammer's 
+costs up, 
+and his sales down: his bandwidth usage
+would go through the roof, and his servers would grind to a
+halt under the load, which would make them unavailable
+to the people who would have responded to the spam.</span></p>
+<p><span class="s s19">Pump out a million emails an hour, get a
+million hits an hour on your servers.</span></p>
+<p>
+<span class="s s20">We would want to ensure that this is only done to
+suspected spams. As a rule, any url sent to millions of
+people is likely to be a spam url, so submitting every http
+request in every email would work fine nearly all the time.</span>
+<span class="s s21">But there are a few cases where this isn't true: the urls
+at the bottom of mails sent from free email services like
+Yahoo Mail and Hotmail, for example.</span></p>
+<p><span class="s s22">To protect such sites, and to prevent abuse, auto-retrieval
+should be combined with blacklists of spamvertised sites.</span>
+<span class="s s23">Only sites on a blacklist would get crawled, and
+sites would be blacklisted
+only after being inspected by humans.</span> <span class="s s24">The lifetime of a spam
+must be several hours at least, so
+it should be easy to update such a list in time to
+interfere with a spam promoting a new site.</span> <span class="s s25">[2]</span></p>
+<p><span class="s s26">High-volume auto-retrieval would only be practical for users
+on high-bandwidth
+connections, but there are enough of those to cause spammers
+serious trouble.</span> <span class="s s27">Indeed, this solution neatly
+mirrors the problem.</span> <span class="s s28">The problem with spam is that in
+order to reach a few gullible people the spammer sends 
+mail to everyone.</span> <span class="s s29">The non-gullible recipients
+are merely collateral damage.</span> <span class="s s30">But the non-gullible majority
+won't stop getting spam until they can stop (or threaten to
+stop) the gullible
+from responding to it.</span> <span class="s s31">Auto-retrieving spam filters offer
+them a way to do this.</span></p>
+<p><span class="s s32">Would that kill spam?</span> <span class="s s33">Not quite.</span> <span class="s s34">The biggest spammers
+could probably protect their servers against auto-retrieving 
+filters.</span> <span class="s s35">However, the easiest and cheapest way for them
+to do it would be to include working unsubscribe links in 
+their mails.</span> <span class="s s36">And this would be a necessity for smaller fry,
+and for "legitimate" sites that hired spammers to promote
+them.</span> <span class="s s37">So if auto-retrieving filters became widespread,
+they'd become auto-unsubscribing filters.</span></p>
+<p><span class="s s38">In this scenario, spam would, like OS crashes, viruses, and
+popups, become one of those plagues that only afflict people
+who don't bother to use the right software.</span></p>
+<p><span class="s s39">Notes</span></p>
+<p><span class="s s40">[1] Auto-retrieving filters will have to follow redirects,
+and should in some cases (e.</span><span class="s s41">g.</span> <span class="s s42">a page that just says
+"click here") follow more than one level of links.</span>
+<span class="s s43">Make sure too that
+the http requests are indistinguishable from those of
+popular Web browsers, including the order and referrer.</span></p>
+<p><span class="s s44">If the response
+doesn't come back within x amount of time, default to
+some fairly high spam probability.</span></p>
+<p><span class="s s45">Instead of making n constant, it might be a good idea to
+make it a function of the number of spams that have been
+seen mentioning the site.</span> <span class="s s46">This would add a further level of
+protection against abuse and accidents.</span></p>
+<p><span class="s s47">[2] The original version of this article used the term
+"whitelist" instead of "blacklist".</span> <span class="s s48">Though they were
+to work like blacklists, I preferred to call them whitelists
+because it might make them less vulnerable to legal attack.</span>
+<span class="s s49">This just seems to have confused readers, though.</span></p>
+<p><span class="s s50">There should probably be multiple blacklists. A single point
+of failure would be vulnerable both to attack and abuse.</span></p>
+<p><span class="s s51">Thanks to Brian Burton, Bill Yerazunis, Dan Giffin,
+Eric Raymond, and Richard Jowsey for reading drafts of this.</span></p>
+</div></div>
+  </body></html>

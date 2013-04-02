@@ -1,0 +1,641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Revenge of the Nerds</title></head><body>
+  <h2><span class="s s1">Revenge of the Nerds</span></h2>
+<div><div>
+<span class="s s2">May 2002
+"We were after the C++ programmers.</span> <span class="s s3">We managed to drag a 
+lot of them about halfway to Lisp.</span><span class="s s4">"</span><span class="s s5">- Guy Steele, co-author of the Java spec
+In the software business there is an ongoing
+struggle between the pointy-headed academics, and another
+equally formidable force, the pointy-haired bosses.</span> <span class="s s6">Everyone
+knows who the pointy-haired boss is, right?</span> <span class="s s7">I think most
+people in the technology world not only recognize this
+cartoon character, but know the actual person in their company
+that he is modelled upon.</span><span class="s s8">The pointy-haired boss miraculously combines two qualities
+that are common by themselves, but rarely seen together:
+(a) he knows nothing whatsoever about technology, and
+(b) he has very strong opinions about it.</span><span class="s s9">Suppose, for example, you need to write a piece of software.</span>
+<span class="s s10">The pointy-haired boss has no idea how this software
+has to work, and can't tell one programming language from
+another, and yet he knows what language you should write it in.</span>
+<span class="s s11">Exactly.</span> <span class="s s12">He thinks you should write it in Java.</span><span class="s s13">Why does he think this?</span> <span class="s s14">Let's
+take a look inside the brain of the pointy-haired boss.</span> <span class="s s15">What
+he's thinking is something like this.</span> <span class="s s16">Java is a standard.</span>
+<span class="s s17">I know it must be, because I read about it in the press all the time.</span>
+<span class="s s18">Since it is a standard, I won't get in trouble for using it.</span>
+<span class="s s19">And that also means there will always be lots of Java programmers,
+so if the programmers working for me now quit, as programmers
+working for me mysteriously always do, I can easily replace
+them.</span><span class="s s20">Well, this doesn't sound that unreasonable.</span> <span class="s s21">But it's all
+based on one unspoken assumption, and that assumption
+turns out to be false.</span> <span class="s s22">The pointy-haired boss believes that all
+programming languages are pretty much equivalent.</span>
+<span class="s s23">If that were true, he would be right on
+target.</span> <span class="s s24">If languages are all equivalent, sure, use whatever 
+language everyone else is using.</span><span class="s s25">But all languages are not equivalent, and I think I can prove
+this to you without even getting into the differences between them.</span>
+<span class="s s26">If you asked the pointy-haired boss in 1992 what language 
+software should be written in, he would have answered with as
+little hesitation as he does today.</span> <span class="s s27">Software should be 
+written in C++.</span> <span class="s s28">But if languages are all equivalent, why should the
+pointy-haired boss's opinion ever change?</span> <span class="s s29">In fact, why should
+the developers of Java have even bothered to create a new
+language?</span><span class="s s30">Presumably, if you create a new language, it's because you think
+it's better in some way than what people already had.</span> <span class="s s31">And in fact, Gosling
+makes it clear in the first Java white paper that Java
+was designed to fix some problems with C++.</span>
+<span class="s s32">So there you have it: languages are not all equivalent.</span>
+<span class="s s33">If you follow the
+trail through the pointy-haired boss's brain to Java and then
+back through Java's history to its origins, you end up holding
+an idea that contradicts the assumption you started with.</span><span class="s s34">So, who's right?</span> <span class="s s35">James Gosling, or the pointy-haired boss?</span>
+<span class="s s36">Not surprisingly, Gosling is right.</span> <span class="s s37">Some languages are better,
+for certain problems, than others.</span> <span class="s s38">And you know, that raises some
+interesting questions.</span> <span class="s s39">Java was designed to be better, for certain
+problems, than C++.</span> <span class="s s40">What problems?</span> <span class="s s41">When is Java better and 
+when is C++?</span> <span class="s s42">Are there situations where other languages are
+better than either of them?</span><span class="s s43">Once you start considering this question, you have opened a
+real can of worms. If the pointy-haired boss had to think
+about the problem in its full complexity, it would make his
+brain explode.</span> <span class="s s44">As long as he considers all languages 
+equivalent, all he has to do is choose the one
+that seems to have the most momentum, and since that is more
+a question of fashion than technology, even he
+can probably get the right answer.</span>
+<span class="s s45">But if languages vary, he suddenly
+has to solve two simultaneous equations, trying to find
+an optimal balance between two things he knows nothing 
+about: the relative suitability of the twenty or so leading
+languages for the problem he needs to solve, and the odds of
+finding programmers, libraries, etc.</span> <span class="s s46">for each.</span>
+<span class="s s47">If that's what's on the other side of the door, it
+is no surprise that the pointy-haired boss doesn't want to open it.</span><span class="s s48">The disadvantage of believing that all programming languages
+are equivalent is that it's not true.</span> <span class="s s49">But the advantage is 
+that it makes your life a lot simpler.</span>
+<span class="s s50">And I think that's the main reason the idea is so widespread.</span>
+<span class="s s51">It is a comfortable idea.</span><span class="s s52">We know that Java must be pretty good, because it is the
+cool, new programming language.</span> <span class="s s53">Or is it?</span> <span class="s s54">If you look at the world of
+programming languages from a distance, it looks like Java is
+the latest thing.</span> <span class="s s55">(From far enough away, all you can see is
+the large, flashing billboard paid for by Sun.</span><span class="s s56">)
+But if you look at this world
+up close, you find that there are degrees of coolness.</span> <span class="s s57">Within
+the hacker subculture, there is another language called Perl
+that is considered a lot cooler than Java.</span> <span class="s s58">Slashdot, for
+example, is generated by Perl.</span> <span class="s s59">I don't think you would find
+those guys using Java Server Pages.</span> <span class="s s60">But there is another,
+newer language, called Python, whose users tend to look down on Perl,
+and more waiting in the wings.</span><span class="s s61">If you look at these languages in order, Java, Perl, Python,
+you notice an interesting pattern.</span> <span class="s s62">At least, you notice this
+pattern if you are a Lisp hacker.</span> <span class="s s63">Each one is progressively 
+more like Lisp.</span> <span class="s s64">Python copies even features
+that many Lisp hackers consider to be mistakes.</span>
+<span class="s s65">You could translate simple Lisp programs into Python line for line.</span>
+<span class="s s66">It's 2002, and programming languages have almost caught up 
+with 1958.</span><span class="s s67">Catching Up with MathWhat I mean is that
+Lisp was first discovered by John McCarthy in 1958,
+and popular programming languages are only now
+catching up with the ideas he developed then.</span><span class="s s68">Now, how could that be true?</span> <span class="s s69">Isn't computer technology something
+that changes very rapidly?</span> <span class="s s70">I mean, in 1958, computers were
+refrigerator-sized behemoths with the processing power of 
+a wristwatch.</span> <span class="s s71">How could any technology that old even be
+relevant, let alone superior to the latest developments?</span><span class="s s72">I'll tell you how.</span> <span class="s s73">It's because Lisp was not really
+designed to be a programming language, at least not in the sense
+we mean today.</span> <span class="s s74">What we mean by a programming language is
+something we use to tell a computer what to do.</span> <span class="s s75">McCarthy
+did eventually intend to develop a programming language in
+this sense, but the Lisp that we actually ended up with was based
+on something separate that he did as a 
+theoretical exercise-- an effort
+to define a more convenient alternative to the Turing Machine.</span>
+<span class="s s76">As McCarthy said later,
+Another way to show that Lisp was neater than Turing machines
+was to write a universal Lisp function
+and show that it is briefer and more comprehensible than the
+description of a universal Turing machine.</span>
+<span class="s s77">This was the Lisp function eval.</span><span class="s s78">.</span><span class="s s79">.</span><span class="s s80">, 
+which computes the value of
+a Lisp expression.</span><span class="s s81">.</span><span class="s s82">.</span><span class="s s83">.</span>
+<span class="s s84">Writing eval required inventing a notation representing Lisp
+functions as Lisp data, and such a notation
+was devised for the purposes of the paper with no thought that
+it would be used to express Lisp programs in practice.</span>
+<span class="s s85">What happened next was that, some time in late 1958, Steve Russell,
+one of McCarthy's
+grad students, looked at this definition of eval and realized 
+that if he translated it into machine language, the result
+would be a Lisp interpreter.</span><span class="s s86">This was a big surprise at the time.</span>
+<span class="s s87">Here is what McCarthy said about it later in an interview:
+Steve Russell said, look, why don't I program this eval.</span><span class="s s88">.</span><span class="s s89">.</span><span class="s s90">, and
+I said to him, ho, ho, you're confusing theory with practice,
+this eval is intended for reading, not for
+computing.</span> <span class="s s91">But he went ahead and did it.</span> <span class="s s92">That is, he compiled the eval
+in my paper into [IBM] 704 machine
+code, fixing bugs, and then advertised this as a Lisp interpreter,
+which it certainly was.</span> <span class="s s93">So at that point Lisp
+had essentially the form that it has today.</span><span class="s s94">.</span><span class="s s95">.</span><span class="s s96">.</span>
+<span class="s s97">Suddenly, in a matter of weeks I think, McCarthy found his theoretical
+exercise transformed into an actual programming language-- and a
+more powerful one than he had intended.</span><span class="s s98">So the short explanation of why this 1950s language is not
+obsolete is that it was not technology but math, and
+math doesn't get stale.</span> <span class="s s99">The right thing to compare Lisp
+to is not 1950s hardware, but, say, the Quicksort
+algorithm, which was discovered in 1960 and is still
+the fastest general-purpose sort.</span><span class="s s100">There is one other language still
+surviving from the 1950s, Fortran, and it represents the
+opposite approach to language design.</span> <span class="s s101">Lisp was a
+piece of theory that unexpectedly got turned into a
+programming language.</span> <span class="s s102">Fortran was developed intentionally as
+a programming language, but what we would now consider a
+very low-level one.</span><span class="s s103">Fortran I, the language that was
+developed in 1956, was a very different animal from present-day
+Fortran.</span> <span class="s s104">Fortran I was pretty much assembly
+language with math.</span> <span class="s s105">In some ways it was less
+powerful than more recent assembly languages; there were no 
+subroutines, for example, only branches.</span>
+<span class="s s106">Present-day Fortran is now arguably closer to Lisp than to
+Fortran I.</span><span class="s s107">Lisp and Fortran were the trunks of two separate evolutionary trees, 
+one rooted in math and one rooted in machine architecture.</span>
+<span class="s s108">These two trees have been converging ever since.</span>
+<span class="s s109">Lisp started out powerful, and over the next twenty years
+got fast.</span> <span class="s s110">So-called mainstream languages started out
+fast, and over the next forty years gradually got more powerful,
+until now the most advanced
+of them are fairly close to Lisp.</span>
+<span class="s s111">Close, but they are still missing a few things.</span><span class="s s112">.</span><span class="s s113">.</span><span class="s s114">.</span><span class="s s115">What Made Lisp DifferentWhen it was first developed, Lisp embodied nine new
+ideas.</span> <span class="s s116">Some of these we now take for granted, others are
+only seen in more advanced languages, and two are still
+unique to Lisp.</span> <span class="s s117">The nine ideas are, in order of their
+adoption by the mainstream,
+ Conditionals.</span> <span class="s s118">A conditional is an if-then-else
+construct.</span> <span class="s s119">We take these for granted now, but Fortran I
+didn't have them.</span> <span class="s s120">It had only a conditional goto
+closely based on the underlying machine instruction.</span> <span class="s s121">A function type.</span> <span class="s s122">In Lisp, functions are
+a data type just like integers or strings.</span>
+<span class="s s123">They have a literal representation, can be stored in variables,
+can be passed as arguments, and so on.</span> <span class="s s124">Recursion.</span> <span class="s s125">Lisp was the first programming language to
+support it.</span> <span class="s s126">Dynamic typing.</span> <span class="s s127">In Lisp, all variables
+are effectively pointers.</span> <span class="s s128">Values are what
+have types, not variables, and assigning or binding
+variables means copying pointers, not what they point to.</span> <span class="s s129">Garbage-collection.</span> <span class="s s130">Programs composed of expressions.</span> <span class="s s131">Lisp programs are
+trees of expressions, each of which returns a value.</span>
+<span class="s s132">This is in contrast to Fortran
+and most succeeding languages, which distinguish between
+expressions and statements.</span><span class="s s133">It was natural to have this
+distinction in Fortran I because
+you could not nest statements.</span> <span class="s s134">And
+so while you needed expressions for math to work, there was
+no point in making anything else return a value, because
+there could not be anything waiting for it.</span><span class="s s135">This limitation
+went away with the arrival of block-structured languages,
+but by then it was too late.</span> <span class="s s136">The distinction between
+expressions and statements was entrenched.</span> <span class="s s137">It spread from
+Fortran into Algol and then to both their descendants.</span> <span class="s s138">A symbol type.</span> <span class="s s139">Symbols are effectively pointers to strings
+stored in a hash table.</span> <span class="s s140">So
+you can test equality by comparing a pointer,
+instead of comparing each character.</span> <span class="s s141">A notation for code using trees of symbols and constants.</span> <span class="s s142">The whole language there all the time.</span> <span class="s s143">There is
+no real distinction between read-time, compile-time, and runtime.</span>
+<span class="s s144">You can compile or run code while reading, read or run code
+while compiling, and read or compile code at runtime.</span><span class="s s145">Running code at read-time lets users reprogram Lisp's syntax;
+running code at compile-time is the basis of macros; compiling
+at runtime is the basis of Lisp's use as an extension
+language in programs like Emacs; and reading at runtime
+enables programs to communicate using s-expressions, an
+idea recently reinvented as XML.</span>
+<span class="s s146">When Lisp first appeared, these ideas were far
+removed from ordinary programming practice, which was
+dictated largely by the hardware available in the late 1950s.</span>
+<span class="s s147">Over time, the default language, embodied
+in a succession of popular languages, has
+gradually evolved toward Lisp.</span> <span class="s s148">Ideas 1-5 are now widespread.</span>
+<span class="s s149">Number 6 is starting to appear in the mainstream.</span> 
+<span class="s s150">Python has a form of 7, though there doesn't seem to be 
+any syntax for it.</span><span class="s s151">As for number 8, this may be the most interesting of the
+lot.</span> <span class="s s152">Ideas 8 and 9 only became part of Lisp
+by accident, because Steve Russell implemented
+something McCarthy had never intended to be implemented.</span>
+<span class="s s153">And yet these ideas turn out to be responsible for
+both Lisp's strange appearance and its most distinctive
+features.</span> <span class="s s154">Lisp looks strange not so much because
+it has a strange syntax as because it has no syntax;
+you express programs directly in the parse trees that
+get built behind the scenes when other languages are
+parsed, and these trees are made
+of lists, which are Lisp data structures.</span><span class="s s155">Expressing the language in its own data structures turns
+out to be a very powerful feature.</span> <span class="s s156">Ideas 8 and 9
+together mean that you
+can write programs that write programs. That may sound
+like a bizarre idea, but it's an everyday thing in Lisp.</span> 
+<span class="s s157">The most common way to do it is with something called a 
+macro.</span><span class="s s158">The term "macro" does not mean in Lisp what it means in other
+languages.</span>
+<span class="s s159">A Lisp macro can be anything from an abbreviation
+to a compiler for a new language.</span>
+<span class="s s160">If you want to really understand Lisp,
+or just expand your programming horizons, I would 
+learn more about macros.</span><span class="s s161">Macros (in the Lisp sense) are still, as far as
+I know, unique to Lisp.</span>
+<span class="s s162">This is partly because in order to have macros you
+probably have to make your language look as strange as
+Lisp.</span> <span class="s s163">It may also be because if you do add that final
+increment of power, you can no
+longer claim to have invented a new language, but only
+a new dialect of Lisp.</span><span class="s s164">I mention this mostly
+as a joke, but it is quite true.</span> <span class="s s165">If you define
+a language that has car, cdr, cons, quote, cond, atom,
+eq, and
+a notation for functions expressed as lists, then you
+can build all the rest of Lisp out of it.</span> <span class="s s166">That is in
+fact the defining quality of Lisp: it was in order to
+make this so that McCarthy gave Lisp the shape it has.</span><span class="s s167">Where Languages MatterSo suppose Lisp does represent a kind of limit 
+that mainstream languages are approaching asymptotically-- does
+that mean you should actually use it to write software?</span>
+<span class="s s168">How much do you lose by using a less powerful language?</span>
+<span class="s s169">Isn't it wiser, sometimes, not to be
+at the very edge of innovation?</span>
+<span class="s s170">And isn't popularity to some extent
+its own justification?</span> <span class="s s171">Isn't the pointy-haired boss right,
+for example, to want to use a language for which he can easily
+hire programmers?</span><span class="s s172">There are, of course, projects where the choice of programming
+language doesn't matter much.</span> <span class="s s173">As a
+rule, the more demanding the application, the more
+leverage you get from using a powerful language.</span> <span class="s s174">But
+plenty of projects are not demanding at all.</span>
+<span class="s s175">Most programming probably consists of writing 
+little glue programs, and for 
+little glue programs you
+can use any language that you're already
+familiar with and that has good libraries for whatever you
+need to do.</span> <span class="s s176">If you just need to feed data from one 
+Windows app to another, sure, use Visual Basic.</span><span class="s s177">You can write little glue programs in Lisp too
+(I use it as a desktop calculator), but the biggest win
+for languages like Lisp is at the other end of
+the spectrum, where you need to write sophisticated
+programs to solve hard problems in the face of fierce competition.</span>
+<span class="s s178">A good example is the
+airline fare search program that ITA Software licenses to
+Orbitz.</span> <span class="s s179">These
+guys entered a market already dominated by two big,
+entrenched competitors, Travelocity and Expedia, and 
+seem to have just humiliated them technologically.</span><span class="s s180">The core of ITA's application is a 200,000 line Common Lisp program
+that searches many orders of magnitude more possibilities
+than their competitors, who apparently
+are still using mainframe-era programming techniques.</span>
+<span class="s s181">(Though ITA is also in a sense
+using a mainframe-era programming language.</span><span class="s s182">)
+I have never seen any of ITA's code, but according to
+one of their top hackers they use a lot of macros,
+and I am not surprised to hear it.</span><span class="s s183">Centripetal ForcesI'm not saying there is no cost to using uncommon 
+technologies.</span> <span class="s s184">The pointy-haired boss is not completely
+mistaken to worry about this.</span> <span class="s s185">But because he doesn't understand
+the risks, he tends to magnify them.</span><span class="s s186">I can think of three problems that could arise from using
+less common languages.</span> <span class="s s187">Your programs might not work well with
+programs written in other languages.</span> <span class="s s188">You might have fewer
+libraries at your disposal.</span> <span class="s s189">And you might have trouble
+hiring programmers.</span><span class="s s190">How much of a problem is each of these?</span> <span class="s s191">The importance of
+the first varies depending on whether you have control
+over the whole system.</span> <span class="s s192">If you're writing software that has
+to run on a remote user's machine on top of a buggy,
+closed operating system (I mention no names), there may be
+advantages to writing your application in the
+same language as the OS.</span>
+<span class="s s193">But if you control the whole system and
+have the source code of all the parts, as ITA presumably does, you
+can use whatever languages you want.</span> <span class="s s194">If
+any incompatibility arises, you can fix it yourself.</span><span class="s s195">In server-based applications you can
+get away with using the most advanced technologies,
+and I think this is the main
+cause of what Jonathan Erickson calls the "programming language
+renaissance.</span><span class="s s196">"</span> <span class="s s197">This is why we even hear about new
+languages like Perl and Python.</span> <span class="s s198">We're not hearing about these
+languages because people are using them to write Windows
+apps, but because people are using them on servers.</span> <span class="s s199">And as
+software shifts 
+off the desktop and onto servers (a future even
+Microsoft seems resigned to), there will be less
+and less pressure to use middle-of-the-road technologies.</span><span class="s s200">As for libraries, their importance also
+depends on the application.</span> <span class="s s201">For less demanding problems,
+the availability of libraries can outweigh the intrinsic power
+of the language.</span> <span class="s s202">Where is the breakeven point?</span> <span class="s s203">Hard to say
+exactly, but wherever it is, it is short of anything you'd
+be likely to call an application.</span> <span class="s s204">If a company considers
+itself to be in the software business, and they're writing
+an application that will be one of their products,
+then it will probably involve several hackers and take at
+least six months to write.</span> <span class="s s205">In a project of that
+size, powerful languages probably start to outweigh
+the convenience of pre-existing libraries.</span><span class="s s206">The third worry of the pointy-haired boss, the difficulty
+of hiring programmers, I think is a red herring.</span> <span class="s s207">How many
+hackers do you need to hire, after all?</span> <span class="s s208">Surely by now we
+all know that software is best developed by teams of less
+than ten people.</span> <span class="s s209">And you shouldn't have trouble hiring
+hackers on that scale for any language anyone has ever heard
+of.</span> <span class="s s210">If you can't find ten Lisp hackers, then your company is
+probably based in the wrong city for developing software.</span><span class="s s211">In fact, choosing a more powerful language probably decreases the
+size of the team you need, because (a) if you use a more powerful
+language you probably won't need as many hackers,
+and (b) hackers who work in more advanced languages are likely
+to be smarter.</span><span class="s s212">I'm not saying that you won't get a lot of pressure to use
+what are perceived as "standard" technologies.</span> <span class="s s213">At Viaweb
+(now Yahoo Store),
+we raised some eyebrows among VCs and potential acquirers by
+using Lisp.</span> <span class="s s214">But we also raised eyebrows by using
+generic Intel boxes as servers instead of
+"industrial strength" servers like Suns, for using a
+then-obscure open-source Unix variant called FreeBSD instead
+of a real commercial OS like Windows NT, for ignoring
+a supposed e-commerce standard called 
+SET that no one now
+even remembers, and so on.</span><span class="s s215">You can't let the suits make technical decisions for you.</span>
+<span class="s s216">Did it
+alarm some potential acquirers that we used Lisp?</span> <span class="s s217">Some, slightly,
+but if we hadn't used Lisp, we wouldn't have been
+able to write the software that made them want to buy us.</span>
+<span class="s s218">What seemed like an anomaly to them was in fact
+cause and effect.</span><span class="s s219">If you start a startup, don't design your product to please
+VCs or potential acquirers.</span> <span class="s s220">Design your product to please
+the users.</span> <span class="s s221">If you win the users, everything else will
+follow.</span> <span class="s s222">And if you don't, no one will care
+how comfortingly orthodox your technology choices were.</span><span class="s s223">The Cost of Being AverageHow much do you lose by using a less powerful language?</span> 
+<span class="s s224">There is actually some data out there about that.</span><span class="s s225">The most convenient measure of power is probably 
+code size.</span>
+<span class="s s226">The point of high-level
+languages is to give you bigger abstractions-- bigger bricks,
+as it were, so you don't need as many to build
+a wall of a given size.</span>
+<span class="s s227">So the more powerful
+the language, the shorter the program (not simply in
+characters, of course, but in distinct elements).</span><span class="s s228">How does a more powerful language enable you to write
+shorter programs?</span> <span class="s s229">One technique you can use, if the language will
+let you, is something called 
+bottom-up programming.</span> <span class="s s230">Instead of
+simply writing your application in the base language, you
+build on top of the base language a language for writing
+programs like yours, then write your program
+in it.</span> <span class="s s231">The combined code can be much shorter than if you
+had written your whole program in the base language-- indeed,
+this is how most compression algorithms work.</span>
+<span class="s s232">A bottom-up program should be easier to modify as well, 
+because in many cases the language layer won't have to change
+at all.</span><span class="s s233">Code size is important, because the time it takes
+to write a program depends mostly on its length.</span>
+<span class="s s234">If your program would be three times as long in another
+language, it will take three times as long to write-- and
+you can't get around this by hiring more people, because
+beyond a certain size new hires are actually a net lose.</span>
+<span class="s s235">Fred Brooks described this phenomenon in his famous
+book The Mythical Man-Month, and everything I've seen
+has tended to confirm what he said.</span><span class="s s236">So how much shorter are your programs if you write them in
+Lisp?</span> <span class="s s237">Most of the numbers I've heard for Lisp
+versus C, for example, have been around 7-10x.</span>
+<span class="s s238">But a recent article about ITA in 
+New
+Architect magazine said that
+"one line of Lisp can replace 20 lines of C," and since
+this article was full of quotes from ITA's president, I
+assume they got this number from ITA.</span> <span class="s s239">If so then
+we can put some faith in it; ITA's software includes a lot
+of C and C++ as well as Lisp, so they are speaking from
+experience.</span><span class="s s240">My guess is that these multiples aren't even constant.</span>
+<span class="s s241">I think they increase when
+you face harder problems and also when you have smarter
+programmers.</span> <span class="s s242">A really good hacker can squeeze more
+out of better tools.</span><span class="s s243">As one data point on the curve, at any rate,
+if you were to compete with ITA and
+chose to write your software in C, they would be able to develop
+software twenty times faster than you.</span>
+<span class="s s244">If you spent a year on a new feature, they'd be able to
+duplicate it in less than three weeks.</span> <span class="s s245">Whereas if they spent
+just three months developing something new, it would be
+five years before you had it too.</span><span class="s s246">And you know what?</span> <span class="s s247">That's the best-case scenario.</span>
+<span class="s s248">When you talk about code-size ratios, you're implicitly assuming
+that you can actually write the program in the weaker language.</span>
+<span class="s s249">But in fact there are limits on what programmers can do.</span>
+<span class="s s250">If you're trying to solve a hard problem with a language that's
+too low-level, you reach a point where there is just too 
+much to keep in your head at once.</span><span class="s s251">So when I say it would take ITA's imaginary
+competitor five years to duplicate something ITA could
+write in Lisp in three months, I mean five years
+if nothing goes wrong.</span> <span class="s s252">In fact, the way things work in 
+most companies, any
+development project that would take five years is
+likely never to get finished at all.</span><span class="s s253">I admit this is an extreme case.</span> <span class="s s254">ITA's hackers seem to
+be unusually smart, and C is a pretty low-level language.</span>
+<span class="s s255">But in a competitive market, even a differential of two or
+three to one would
+be enough to guarantee that you'd always be behind.</span><span class="s s256">A RecipeThis is the kind of possibility that the pointy-haired boss
+doesn't even want to think about.</span> <span class="s s257">And so most of them don't.</span>
+<span class="s s258">Because, you know, when it comes down to it, the pointy-haired
+boss doesn't mind if his company gets their ass kicked, so
+long as no one can prove it's his fault.</span>
+<span class="s s259">The safest plan for him personally
+is to stick close to the center of the herd.</span><span class="s s260">Within large organizations, the phrase used to
+describe this approach is "industry best practice.</span><span class="s s261">"</span>
+<span class="s s262">Its purpose is to shield the pointy-haired
+boss from responsibility: if he chooses
+something that is "industry best practice," and the company
+loses, he can't be blamed.</span> <span class="s s263">He didn't choose, the industry did.</span><span class="s s264">I believe this term was originally used to describe
+accounting methods and so on.</span> <span class="s s265">What it means, roughly,
+is don't do anything weird.</span> <span class="s s266">And in accounting that's
+probably a good idea.</span> <span class="s s267">The terms "cutting-edge" and 
+"accounting" do not sound good together.</span> <span class="s s268">But when you import
+this criterion into decisions about technology, you start
+to get the wrong answers.</span><span class="s s269">Technology often should be
+cutting-edge.</span> <span class="s s270">In programming languages, as Erann Gat
+has pointed out, what "industry best practice" actually
+gets you is not the best, but merely the
+average.</span> <span class="s s271">When a decision causes you to develop software at
+a fraction of the rate of more aggressive competitors, 
+"best practice" is a misnomer.</span><span class="s s272">So here we have two pieces of information that I think are
+very valuable.</span> <span class="s s273">In fact, I know it from my own experience.</span>
+<span class="s s274">Number 1, languages vary in power.</span> <span class="s s275">Number 2, most managers
+deliberately ignore this.</span> <span class="s s276">Between them, these two facts
+are literally a recipe for making money.</span> <span class="s s277">ITA is an example
+of this recipe in action.</span>
+<span class="s s278">If you want to win in a software
+business, just take on the hardest problem you can find,
+use the most powerful language you can get, and wait for
+your competitors' pointy-haired bosses to revert to the mean.</span><span class="s s279">Appendix: PowerAs an illustration of what I mean about the relative power
+of programming languages, consider the following problem.</span>
+<span class="s s280">We want to write a function that generates accumulators-- a
+function that takes a number n, and
+returns a function that takes another number i and
+returns n incremented by i.</span><span class="s s281">(That's incremented by, not plus.</span> <span class="s s282">An accumulator
+has to accumulate.</span><span class="s s283">)In Common Lisp this would be
+(defun foo (n)
+ (lambda (i) (incf n i)))
+and in Perl 5,
+sub foo { 
+ my ($n) = @_;
+ sub {$n += shift}
+}
+which has more elements than the Lisp version because
+you have to extract parameters manually in Perl.</span><span class="s s284">In Smalltalk the code is slightly longer than in Lisp
+foo: n 
+ |s| 
+ s := n.</span> 
+ <span class="s s285">^[:i| s := s+i.</span> <span class="s s286">] 
+because although in general lexical variables work, you can't
+do an assignment to a parameter, so you have to create a
+new variable s.</span><span class="s s287">In Javascript the example is, again, slightly longer, because 
+Javascript retains
+the distinction between statements and
+expressions, so you need explicit return statements
+to return values:
+function foo(n) { 
+ return function (i) { 
+ return n += i } }
+(To be fair, Perl also retains
+this distinction, but deals with it in typical Perl fashion
+by letting you omit returns.</span><span class="s s288">)If you try to translate the Lisp/Perl/Smalltalk/Javascript code into 
+Python you run into some limitations.</span> <span class="s s289">Because Python
+doesn't fully support lexical variables,
+you have to create a data structure to hold the value of n.</span>
+<span class="s s290">And although
+Python does have a function data type, there is no
+literal representation for one (unless the body is
+only a single expression) so you need to create a named
+function to return.</span> <span class="s s291">This is what you end up with:
+def foo(n):
+ s = [n]
+ def bar(i):
+ s[0] += i
+ return s[0] 
+ return bar
+Python users might legitimately ask why they can't
+just write
+def foo(n):
+ return lambda i: return n += i
+or even
+def foo(n):
+ lambda i: n += i
+and my guess is that they probably will, one day.</span>
+<span class="s s292">(But if they don't want to wait for Python to evolve the rest
+of the way into Lisp, they could always just.</span><span class="s s293">.</span><span class="s s294">.</span><span class="s s295">)
+In OO languages, you can, to a limited extent, simulate
+a closure (a function that refers to variables defined in
+enclosing scopes) by defining a class with one method
+and a field to replace each variable from an enclosing
+scope.</span> <span class="s s296">This makes the programmer do the kind of code
+analysis that would be done by the compiler in a language
+with full support for lexical scope, and it won't work
+if more than one function refers to the same variable,
+but it is enough in simple cases like this.</span><span class="s s297">Python experts seem to agree that this is the
+preferred way to solve the problem in Python, writing
+either
+def foo(n):
+ class acc:
+ def __init__(self, s):
+ self.</span><span class="s s298">s = s
+ def inc(self, i):
+ self.</span><span class="s s299">s += i
+ return self.</span><span class="s s300">s
+ return acc(n).</span><span class="s s301">inc
+or
+class foo:
+ def __init__(self, n):
+ self.</span><span class="s s302">n = n
+ def __call__(self, i):
+ self.</span><span class="s s303">n += i
+ return self.</span><span class="s s304">n
+I include these because I wouldn't want Python
+advocates to say I was misrepresenting the language, 
+but both seem to me more complex than the first 
+version.</span> <span class="s s305">You're doing the same thing, setting up
+a separate place to hold the accumulator; it's just
+a field in an object instead of the head of a list.</span>
+<span class="s s306">And the use of these special,
+reserved field names, especially __call__, seems
+a bit of a hack.</span><span class="s s307">In the rivalry between Perl and Python, the claim of the
+Python hackers seems to be that
+that Python is a more elegant alternative to Perl, but what
+this case shows is that power is the ultimate elegance:
+the Perl program is simpler (has fewer elements), even if the
+syntax is a bit uglier.</span><span class="s s308">How about other languages?</span> <span class="s s309">In the other languages
+mentioned in this talk-- Fortran, C, C++, Java, and
+Visual Basic-- it is not clear whether you can actually
+solve this problem.</span>
+<span class="s s310">Ken Anderson says that the following code is about as close
+as you can get in Java:
+public interface Inttoint {
+ public int call(int i);
+}
+public static Inttoint foo(final int n) {
+ return new Inttoint() {
+ int s = n;
+ public int call(int i) {
+ s = s + i;
+ return s;
+ }};
+}
+This falls short of the spec because it only works for
+integers.</span> <span class="s s311">After many email exchanges with Java hackers,
+I would say that writing a properly polymorphic version
+that behaves like the preceding examples is somewhere
+between damned awkward and impossible.</span> <span class="s s312">If anyone wants to
+write one I'd be very curious to see it, but I personally
+have timed out.</span><span class="s s313">It's not literally true that you can't solve this
+problem in other languages, of course.</span> <span class="s s314">The fact
+that all these languages are Turing-equivalent means
+that, strictly speaking, you can write any program in
+any of them.</span> <span class="s s315">So how would you do it?</span> <span class="s s316">In the limit case,
+by writing a Lisp
+interpreter in the less powerful language.</span><span class="s s317">That sounds like a joke, but it happens so often to
+varying degrees in large programming projects that
+there is a name for the phenomenon, Greenspun's Tenth
+Rule:
+ Any sufficiently
+ complicated C or Fortran program contains an ad hoc
+ informally-specified bug-ridden slow implementation of half of
+ Common Lisp.</span>
+<span class="s s318">If you try to solve a
+hard problem, the question is not whether you will use
+a powerful enough language, but whether you will (a)
+use a powerful language, (b) write a de facto interpreter
+for one, or (c) yourself become a human compiler for one.</span>
+<span class="s s319">We see this already
+begining to happen in the Python example, where we are
+in effect simulating the code that a compiler
+would generate to implement a lexical variable.</span><span class="s s320">This practice is not only common, but institutionalized.</span> <span class="s s321">For example,
+in the OO world you hear a good deal about 
+"patterns".</span>
+<span class="s s322">I wonder if these patterns are not sometimes evidence of case (c),
+the human compiler, at work.</span> <span class="s s323">When I see patterns in my programs,
+I consider it a sign of trouble.</span> <span class="s s324">The shape of a program
+should reflect only the problem it needs to solve.</span>
+<span class="s s325">Any other regularity in the code is a sign, to me at
+least, that I'm using abstractions that aren't powerful
+enough-- often that I'm generating by hand the
+expansions of some macro that I need to write.</span><span class="s s326">Notes The IBM 704 CPU was about the size of a refrigerator,
+but a lot heavier.</span> <span class="s s327">The CPU weighed 3150 pounds,
+and the 4K of RAM was in a separate
+box weighing another 4000 pounds.</span> <span class="s s328">The
+Sub-Zero 690, one of the largest household refrigerators,
+weighs 656 pounds.</span> <span class="s s329">Steve Russell also wrote the first (digital) computer
+game, Spacewar, in 1962.</span> <span class="s s330">If you want to trick a pointy-haired boss into letting you
+write software in Lisp, you could try telling him it's XML.</span> <span class="s s331">Here is the accumulator generator in other Lisp dialects:
+Scheme: (define (foo n) 
+ (lambda (i) (set!</span> <span class="s s332">n (+ n i)) n))
+Goo: (df foo (n) (op incf n _)))
+Arc: (def foo (n) [++ n _])
+ Erann Gat's sad tale about
+"industry best practice" at JPL inspired me to address
+this generally misapplied phrase.</span> <span class="s s333">Peter Norvig found that
+16 of the 23 patterns in Design Patterns were 
+"invisible
+or simpler" in Lisp.</span> <span class="s s334">Thanks to the many people who answered my questions about
+various languages and/or read drafts of this, including
+Ken Anderson, Trevor Blackwell, Erann Gat, Dan Giffin, Sarah Harlin,
+Jeremy Hylton, Robert Morris, Peter Norvig, Guy Steele, and Anton
+van Straaten.</span>
+<span class="s s335">They bear no blame for any opinions expressed.</span><span class="s s336">Related:Many people have responded to this talk,
+so I have set up an additional page to deal with the issues they have
+raised: Re: Revenge of the Nerds.</span><span class="s s337">It also set off an extensive and often useful discussion on the 
+LL1
+mailing list.</span> <span class="s s338">See particularly the mail by Anton van Straaten on semantic
+compression.</span><span class="s s339">Some of the mail on LL1 led me to try to go deeper into the subject
+of language power in Succinctness is Power.</span><span class="s s340">A larger set of canonical implementations of the accumulator
+generator benchmark are collected together on their own page.</span><span class="s s341">Japanese Translation, Spanish
+Translation, 
+Chinese Translation</span></div></div>
+  </body></html>

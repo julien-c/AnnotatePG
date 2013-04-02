@@ -1,0 +1,1162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>The Other Road Ahead</title></head><body>
+  <h2><span class="s s1">The Other Road Ahead</span></h2>
+<div><div>
+<p><span class="s s2">September 2001</span></p>
+<p>
+<span class="s s3">(This article explains why much of the next generation of software
+may be server-based, what that will mean for programmers,
+and why this new kind of software is a great opportunity for startups.</span>
+<span class="s s4">It's derived from a talk at BBN Labs.</span><span class="s s5">)</span>
+</p>
+<p><span class="s s6">In the summer of 1995, my friend Robert Morris and I decided to
+start a startup.</span> <span class="s s7">The PR campaign leading up to Netscape's IPO was
+running full blast then, and there was a lot of talk in the press
+about online commerce.</span> <span class="s s8">At the time there might have been thirty
+actual stores on the Web, all made by hand.</span> <span class="s s9">If there were going
+to be a lot of online stores, there would need to be software for making
+them, so we decided to write some.</span></p>
+<p><span class="s s10">For the first week or so we intended to make this an ordinary 
+desktop application.</span> <span class="s s11">Then one day we had the idea of making the
+software run on our Web server, using the browser as an
+interface.</span> <span class="s s12">We tried rewriting the software to work over
+the Web, and it was clear that this was the way to go.</span>
+<span class="s s13">If we wrote our software to run on the server, it would be a lot easier
+for the users and for us as well.</span></p>
+<p><span class="s s14">This turned out to be a good plan. Now, as 
+Yahoo Store, this
+software is the most popular online store builder, with
+about 14,000 users.</span></p>
+<p><span class="s s15">When we started Viaweb, hardly anyone understood what we meant when
+we said that the software ran on the server.</span> <span class="s s16">It was not until
+Hotmail was launched a year later that people started to get it.</span>
+<span class="s s17">Now everyone knows that this is a valid approach.</span> <span class="s s18">There is
+a name now for what we were: an Application Service Provider,
+or ASP.</span></p>
+<p><span class="s s19">I think that a lot of the next generation of software will be
+written on this model.</span> <span class="s s20">Even Microsoft, who have the most to
+lose, seem to see the inevitablity of moving some things off
+the desktop.</span> <span class="s s21">If software moves
+off the desktop and onto servers, it will mean a very different
+world for developers.</span> <span class="s s22">This article describes the surprising
+things we saw, as some of the first visitors to this new world.</span>
+<span class="s s23">To the extent software does move onto
+servers, what I'm describing here is the future.</span></p>
+<p><span class="s s24">The Next Thing?</span></p>
+<p><span class="s s25">When we look back on the desktop software era, I think we'll marvel
+at the inconveniences people put up with, just as we marvel now at
+what early car owners put up with.</span> <span class="s s26">For the first twenty or thirty
+years, you had to be a car expert to own a car.</span> <span class="s s27">But cars were such
+a big win that lots of people who weren't car experts wanted to
+have them as well.</span></p>
+<p><span class="s s28">Computers are in this phase now.</span> <span class="s s29">When you own a desktop computer,
+you end up learning a lot more than you wanted to know about what's
+happening inside it.</span> <span class="s s30">But more than half the households in the US
+own one.</span> <span class="s s31">My mother has a computer that she uses for email and for
+keeping accounts.</span> <span class="s s32">About a year ago she was alarmed to receive a
+letter from Apple, offering her a discount on a new version of the
+operating system.</span> <span class="s s33">There's something wrong when a sixty-five year
+old woman who wants to use a computer for email and accounts has
+to think about installing new operating sytems. Ordinary users
+shouldn't even know the words "operating system," much less "device
+driver" or "patch.</span><span class="s s34">"</span></p>
+<p><span class="s s35">There is now another way to deliver software that will save users
+from becoming system administrators.</span> <span class="s s36">Web-based applications are
+programs that run on Web servers and use Web pages as the user
+interface.</span> <span class="s s37">For the average user this new kind of software will be
+easier, cheaper, more mobile, more reliable, and often more powerful
+than desktop software.</span></p>
+<p><span class="s s38">With Web-based software, most users won't have to think about
+anything except the applications they use.</span> <span class="s s39">All the messy, changing
+stuff will be sitting on a server somewhere, maintained by the kind
+of people who are good at that kind of thing.</span> <span class="s s40">And so you won't
+ordinarily need a computer, per se, to use software.</span> <span class="s s41">All you'll
+need will be something with a keyboard, a screen, and a Web browser.</span>
+<span class="s s42">Maybe it will have wireless Internet access.</span> <span class="s s43">Maybe it will also
+be your cell phone.</span> <span class="s s44">Whatever it is, it will be consumer electronics:
+something that costs about $200, and that people choose mostly
+based on how the case looks.</span> <span class="s s45">You'll pay more for Internet services
+than you do for the hardware, just as you do now with telephones.</span> <span class="s s46">[1]</span></p>
+<p><span class="s s47">It will take about a tenth of a second for a click to get to the
+server and back, so users of heavily interactive software, like
+Photoshop, will still want to have the computations happening on
+the desktop.</span> <span class="s s48">But if you look at the kind of things most people
+use computers for, a tenth of a second latency would not be a
+problem.</span> <span class="s s49">My mother doesn't really need a desktop computer, and
+there are a lot of people like her.</span></p>
+<p><span class="s s50">The Win for Users</span></p>
+<p><span class="s s51">Near my house there is a car with a bumper sticker that reads "death
+before inconvenience.</span><span class="s s52">"</span> <span class="s s53">Most people, most of the time, will take
+whatever choice requires least work.</span> <span class="s s54">If Web-based software wins,
+it will be because it's more convenient.</span> <span class="s s55">And it looks as if it
+will be, for users and developers both.</span></p>
+<p><span class="s s56">To use a purely Web-based application, all you need is a browser
+connected to the Internet.</span> <span class="s s57">So you can use a Web-based application
+anywhere.</span> <span class="s s58">When you install software on your desktop computer, you
+can only use it on that computer.</span> <span class="s s59">Worse still, your files are
+trapped on that computer.</span> <span class="s s60">The inconvenience of this model becomes
+more and more evident as people get used to networks.</span></p>
+<p><span class="s s61">The thin end of the wedge here was Web-based email.</span> <span class="s s62">Millions of
+people now realize that you should have access to email messages
+no matter where you are.</span> <span class="s s63">And if you can see your email, why not
+your calendar?</span> 
+<span class="s s64">If you can discuss a document with your colleagues,
+why can't you edit it?</span> <span class="s s65">Why should any of your data be trapped on
+some computer sitting on a faraway desk?</span></p>
+<p><span class="s s66">The whole idea of "your computer" is going away, and being replaced
+with "your data.</span><span class="s s67">"</span> <span class="s s68">You should be able to get at your data from any
+computer.</span> <span class="s s69">Or rather, any client, and a client doesn't have to be
+a computer.</span></p>
+<p><span class="s s70">Clients shouldn't store data; they should be like telephones.</span> <span class="s s71">In
+fact they may become telephones, or vice versa.</span> <span class="s s72">And as clients
+get smaller, you have another reason not to keep your data on them:
+something you carry around with you can be lost or stolen.</span> <span class="s s73">Leaving
+your PDA in a taxi is like a disk crash, except that your data is
+handed to someone else 
+instead of being vaporized.</span></p>
+<p><span class="s s74">With purely Web-based software, neither your data nor the applications
+are kept on the client.</span> <span class="s s75">So you don't have to install anything to
+use it.</span> <span class="s s76">And when there's no installation, you don't have to worry
+about installation going wrong.</span> <span class="s s77">There can't be incompatibilities
+between the application and your operating system, because the
+software doesn't run on your operating system.</span></p>
+<p><span class="s s78">Because it needs no installation, it will be easy, and common, to
+try Web-based software before you "buy" it.</span> <span class="s s79">You should expect to
+be able to test-drive any Web-based application for free, just by
+going to the site where it's offered.</span> <span class="s s80">At Viaweb our whole site
+was like a big arrow pointing users to the test drive.</span></p>
+<p><span class="s s81">After trying the demo, signing up for the service should require
+nothing more than filling out a brief form (the briefer the better).</span>
+<span class="s s82">And that should be the last work the user has to do.</span> <span class="s s83">With Web-based
+software, you should get new releases without paying extra, or
+doing any work, or possibly even knowing about it.</span></p>
+<p><span class="s s84">Upgrades won't be the big shocks they are now.</span> <span class="s s85">Over time applications
+will quietly grow more powerful.</span> <span class="s s86">This will take some effort on
+the part of the developers.</span> <span class="s s87">They will have to design software so
+that it can be updated without confusing the users.</span> <span class="s s88">That's a new
+problem, but there are ways to solve it.</span></p>
+<p><span class="s s89">With Web-based applications, everyone uses the same version, and
+bugs can be fixed as soon as they're discovered.</span> <span class="s s90">So Web-based
+software should have far fewer bugs than desktop software.</span> <span class="s s91">At
+Viaweb, I doubt we ever had ten known bugs at any one time.</span> <span class="s s92">That's
+orders of magnitude better than desktop software.</span></p>
+<p><span class="s s93">Web-based applications can be used by several people at the same
+time.</span> <span class="s s94">This is an obvious win for collaborative applications, but
+I bet users will start to want this in most applications once they
+realize it's possible.</span> <span class="s s95">It will often be useful to let two people
+edit the same document, for example.</span> <span class="s s96">Viaweb let multiple users
+edit a site simultaneously, more because that was the right way to
+write the software than because we expected users to want to, but
+it turned out that many did.</span></p>
+<p><span class="s s97">When you use a Web-based application, your data will be safer.</span>
+<span class="s s98">Disk crashes won't be a thing of the past, but users won't hear
+about them anymore.</span> <span class="s s99">They'll happen within server farms. And
+companies offering Web-based applications will actually do backups--
+not only because they'll have real system administrators worrying
+about such things, but because an ASP that does lose people's data
+will be in big, big trouble.</span> <span class="s s100">When people lose their own data in
+a disk crash, they can't get that mad, because they only have
+themselves to be mad at.</span> <span class="s s101">When a company loses their data for them,
+they'll get a lot madder.</span></p>
+<p><span class="s s102">Finally, Web-based software should be less vulnerable to viruses.</span>
+<span class="s s103">If the client doesn't run anything except a browser, there's less
+chance of running viruses, and no data locally to damage.</span> <span class="s s104">And a
+program that attacked the servers themselves should find them very
+well defended.</span> <span class="s s105">[2]</span></p>
+<p><span class="s s106">For users, Web-based software will be less stressful.</span> <span class="s s107">I think if
+you looked inside the average Windows user you'd find a huge and
+pretty much untapped desire for software meeting that description.</span>
+<span class="s s108">Unleashed, it could be a powerful force.</span></p>
+<p><span class="s s109">City of Code</span></p>
+<p><span class="s s110">To developers, the most conspicuous difference between Web-based
+and desktop software is that a Web-based application is not a single
+piece of code.</span> <span class="s s111">It will be a collection of programs of different
+types rather than a single big binary.</span> <span class="s s112">And so designing Web-based
+software is like desiging a city rather than a building: as well
+as buildings you need roads, street signs, utilities, police and
+fire departments, and plans for both growth and various kinds of
+disasters.</span></p>
+<p><span class="s s113">At Viaweb, software included fairly big applications that users
+talked to directly, programs that those programs used, programs
+that ran constantly in the background looking for problems, programs
+that tried to restart things if they broke, programs that ran
+occasionally to compile statistics or build indexes for searches,
+programs we ran explicitly to garbage-collect resources or to move
+or restore data, programs that pretended to be users (to measure
+performance or expose bugs), programs for diagnosing network
+troubles, programs for doing backups, interfaces to outside services,
+software that drove an impressive collection of dials displaying
+real-time server statistics (a hit with visitors, but indispensable
+for us too), modifications (including bug fixes) to open-source
+software, and a great many configuration files and settings.</span> <span class="s s114">Trevor
+Blackwell wrote a spectacular program for moving stores to new
+servers across the country, without shutting them down, after we
+were bought by Yahoo.</span> <span class="s s115">Programs paged us, sent faxes and email to
+users, conducted transactions with credit card processors, and
+talked to one another through sockets, pipes, http requests, ssh,
+udp packets, shared memory, and files.</span> <span class="s s116">Some of Viaweb even consisted
+of the absence of programs, since one of the keys to Unix security
+is not to run unnecessary utilities that people might use to break
+into your servers.</span></p>
+<p><span class="s s117">It did not end with software.</span> <span class="s s118">We spent a lot of time thinking
+about server configurations.</span> <span class="s s119">We built the servers ourselves, from
+components-- partly to save money, and partly to get exactly what
+we wanted.</span> <span class="s s120">We had to think about whether our upstream ISP had fast
+enough connections to all the backbones.</span> <span class="s s121">We serially 
+dated
+RAID suppliers.</span></p>
+<p><span class="s s122">But hardware is not just something to worry about.</span> <span class="s s123">When you control
+it you can do more for users.</span> <span class="s s124">With a desktop application, you can
+specify certain minimum hardware, but you can't add more.</span> <span class="s s125">If you
+administer the servers, you can in one step enable all your users
+to page people, or send faxes, or send commands by phone, or process
+credit cards, etc, just by installing the relevant hardware.</span> <span class="s s126">We
+always looked for new ways to add features with hardware, not just
+because it pleased users, but also as a way to distinguish ourselves
+from competitors who (either because they sold desktop software,
+or resold Web-based applications through ISPs) didn't have direct
+control over the hardware.</span></p>
+<p><span class="s s127">Because the software in a Web-based application will be a collection
+of programs rather than a single binary, it can be written in any
+number of different languages.</span> <span class="s s128">When you're writing desktop software,
+you're practically forced to write the application in the same
+language as the underlying operating system-- meaning C and C++.</span>
+<span class="s s129">And so these languages (especially among nontechnical people like
+managers and VCs) got to be considered as the languages for "serious"
+software development.</span> <span class="s s130">But that was just an artifact of the way
+desktop software had to be delivered.</span> <span class="s s131">For server-based software
+you can use any language you want.</span> <span class="s s132">[3] Today a lot of the top
+hackers are using languages far removed from C and C++: Perl,
+Python, and even Lisp.</span></p>
+<p><span class="s s133">With server-based software, no one can tell you what language to
+use, because you control the whole system, right down to the
+hardware.</span> <span class="s s134">Different languages are good for different tasks.</span> <span class="s s135">You
+can use whichever is best for each.</span> <span class="s s136">And when you have competitors,
+"you can" means "you must" (we'll return to this later), because
+if you don't take advantage of this possibility, your competitors
+will.</span></p>
+<p><span class="s s137">Most of our competitors used C and C++, and this made their software
+visibly inferior because (among other things), they had no way
+around the statelessness of CGI scripts.</span> <span class="s s138">If you were going to
+change something, all the changes had to happen on one page, with
+an Update button at the bottom.</span> <span class="s s139">As I've written elsewhere, by
+using Lisp, which many people still consider 
+a research language,
+we could make the Viaweb editor behave more like desktop software.</span></p>
+<p><span class="s s140">Releases</span></p>
+<p><span class="s s141">One of the most important changes in this new world is the way you
+do releases.</span> <span class="s s142">In the desktop software business, doing a release is
+a huge trauma, in which the whole company sweats and strains to
+push out a single, giant piece of code.</span> <span class="s s143">Obvious comparisons suggest
+themselves, both to the process and the resulting product.</span></p>
+<p><span class="s s144">With server-based software, you can make changes almost as you
+would in a program you were writing for yourself.</span> <span class="s s145">You release
+software as a series of incremental changes instead of an occasional
+big explosion.</span> <span class="s s146">A typical desktop software company might do one or
+two releases a year.</span> <span class="s s147">At Viaweb we often did three to five releases
+a day.</span></p>
+<p><span class="s s148">When you switch to this new model, you realize how much software
+development is affected by the way it is released.</span> <span class="s s149">Many of the
+nastiest problems you see in the desktop software business are due
+to catastrophic nature of releases.</span></p>
+<p><span class="s s150">When you release only one new version a year, you tend to deal with
+bugs wholesale.</span> <span class="s s151">Some time before the release date you assemble a
+new version in which half the code has been torn out and replaced,
+introducing countless bugs.</span> <span class="s s152">Then a squad of QA people step in and
+start counting them, and the programmers work down the list, fixing
+them.</span> <span class="s s153">They do not generally get to the end of the list, and indeed,
+no one is sure where the end is.</span> <span class="s s154">It's like fishing rubble out of
+a pond.</span> <span class="s s155">You never really know what's happening inside the software.</span>
+<span class="s s156">At best you end up with a statistical sort of correctness.</span></p>
+<p><span class="s s157">With server-based software, most of the change is small and
+incremental.</span> <span class="s s158">That in itself is less likely to introduce bugs.</span> <span class="s s159">It
+also means you know what to test most carefully when you're about
+to release software: the last thing you changed.</span> <span class="s s160">You end up with
+a much firmer grip on the code.</span> <span class="s s161">As a general rule, you do know
+what's happening inside it.</span> <span class="s s162">You don't have the source code memorized,
+of course, but when you read the source you do it like a pilot
+scanning the instrument panel, not like a detective trying to
+unravel some mystery.</span></p>
+<p><span class="s s163">Desktop software breeds a certain fatalism about bugs.</span> <span class="s s164">You know
+that you're shipping something loaded with bugs, and you've even
+set up mechanisms to compensate for it (e.</span><span class="s s165">g.</span> <span class="s s166">patch releases).</span> <span class="s s167">So
+why worry about a few more?</span> <span class="s s168">Soon you're releasing whole features
+you know are broken.</span> 
+<span class="s s169">Apple 
+did this earlier this year.</span> <span class="s s170">They felt
+under pressure to release their new OS, whose release date had
+already slipped four times, but some of the software (support for
+CDs and DVDs) wasn't ready.</span> <span class="s s171">The solution?</span> <span class="s s172">They released the OS
+without the unfinished parts, and users will have to install them
+later.</span></p>
+<p><span class="s s173">With Web-based software, you never have to release software before
+it works, and you can release it as soon as it does work.</span></p>
+<p><span class="s s174">The industry veteran may be thinking, it's a fine-sounding idea to
+say that you never have to release software before it works, but
+what happens when you've promised to deliver a new version of your
+software by a certain date?</span> <span class="s s175">With Web-based software, you wouldn't
+make such a promise, because there are no versions.</span> <span class="s s176">Your software
+changes gradually and continuously.</span> <span class="s s177">Some changes might be bigger
+than others, but the idea of versions just doesn't naturally fit
+onto Web-based software.</span></p>
+<p><span class="s s178">If anyone remembers Viaweb this might sound odd, because we were
+always announcing new versions.</span> <span class="s s179">This was done entirely for PR
+purposes.</span> <span class="s s180">The trade press, we learned, thinks in version numbers.</span>
+<span class="s s181">They will give you major coverage for a major release, meaning a
+new first digit on the version number, and generally a paragraph
+at most for a point release, meaning a new digit after the decimal
+point.</span></p>
+<p><span class="s s182">Some of our competitors were offering desktop software and actually
+had version numbers.</span> <span class="s s183">And for these releases, the mere fact of
+which seemed to us evidence of their backwardness, they would get
+all kinds of publicity.</span> <span class="s s184">We didn't want to miss out, so we started
+giving version numbers to our software too.</span> <span class="s s185">When we wanted some
+publicity, we'd make a list of all the features we'd added since
+the last "release," stick a new version number on the software,
+and issue a press release saying that the new version was available
+immediately.</span> <span class="s s186">Amazingly, no one ever called us on it.</span></p>
+<p><span class="s s187">By the time we were bought, we had done this three times, so we
+were on Version 4.</span> <span class="s s188">Version 4.</span><span class="s s189">1 if I remember correctly.</span> <span class="s s190">After
+Viaweb became Yahoo Store, there was no longer such a desperate
+need for publicity, so although the software continued to evolve,
+the whole idea of version numbers was quietly dropped.</span></p>
+<p><span class="s s191">Bugs</span></p>
+<p><span class="s s192">The other major technical advantage of Web-based software is that
+you can reproduce most bugs.</span> <span class="s s193">You have the users' data right there
+on your disk.</span> <span class="s s194">If someone breaks your software, you don't have to
+try to guess what's going on, as you would with desktop software:
+you should be able to reproduce the error while they're on the
+phone with you.</span> <span class="s s195">You might even know about it already, if you have
+code for noticing errors built into your application.</span></p>
+<p><span class="s s196">Web-based software gets used round the clock, so everything you do
+is immediately put through the wringer. Bugs turn up quickly.</span></p>
+<p><span class="s s197">Software companies are sometimes accused of letting the users debug
+their software.</span> <span class="s s198">And that is just what I'm advocating.</span> <span class="s s199">For Web-based
+software it's actually a good plan, because the bugs are fewer and
+transient.</span> <span class="s s200">When you release software gradually you get far fewer
+bugs to start with.</span> <span class="s s201">And when you can reproduce errors and release
+changes instantly, you can find and fix most bugs as soon as they
+appear.</span> <span class="s s202">We never had enough bugs at any one time to bother with
+a formal bug-tracking system.</span></p>
+<p><span class="s s203">You should test changes before you release them, of course, so no
+major bugs should get released.</span> <span class="s s204">Those few that inevitably slip
+through will involve borderline cases and will only affect the few
+users that encounter them before someone calls in to complain.</span> <span class="s s205">As
+long as you fix bugs right away, the net effect, for the average
+user, is far fewer bugs.</span> <span class="s s206">I doubt the average Viaweb user ever saw
+a bug.</span></p>
+<p><span class="s s207">Fixing fresh bugs is easier than fixing old ones.</span> <span class="s s208">It's usually
+fairly quick to find a bug in code you just wrote.</span> <span class="s s209">When it turns
+up you often know what's wrong before you even look at the source,
+because you were already worrying about it subconsciously.</span> <span class="s s210">Fixing
+a bug in something you wrote six months ago (the average case if
+you release once a year) is a lot more work.</span> <span class="s s211">And since you don't
+understand the code as well, you're more likely to fix it in an
+ugly way, or even introduce more bugs.</span> <span class="s s212">[4]</span></p>
+<p><span class="s s213">When you catch bugs early, you also get fewer compound bugs.</span>
+<span class="s s214">Compound bugs are two separate bugs that interact: you trip going
+downstairs, and when you reach for the handrail it comes off in
+your hand.</span> <span class="s s215">In software this kind of bug is the hardest to find,
+and also tends to have the worst consequences.</span> <span class="s s216">[5] The traditional
+"break everything and then filter out the bugs" approach inherently
+yields a lot of compound bugs.</span> <span class="s s217">And software that's released in a
+series of small changes inherently tends not to.</span> <span class="s s218">The floors are
+constantly being swept clean of any loose objects that might later
+get stuck in something.</span></p>
+<p><span class="s s219">It helps if you use a technique called functional programming.</span>
+<span class="s s220">Functional programming means avoiding side-effects.</span> <span class="s s221">It's something
+you're more likely to see in research papers than commercial
+software, but for Web-based applications it turns out to be really
+useful.</span> <span class="s s222">It's hard to write entire programs as purely functional
+code, but you can write substantial chunks this way.</span> <span class="s s223">It makes
+those parts of your software easier to test, because they have no
+state, and that is very convenient in a situation where you are
+constantly making and testing small modifications.</span> <span class="s s224">I wrote much
+of Viaweb's editor in this style, and we made our scripting language,
+RTML, 
+a purely functional language.</span></p>
+<p><span class="s s225">People from the desktop software business will find this hard to
+credit, but at Viaweb bugs became almost a game.</span> <span class="s s226">Since most released
+bugs involved borderline cases, the users who encountered them were
+likely to be advanced users, pushing the envelope.</span> <span class="s s227">Advanced users
+are more forgiving about bugs, especially since you probably
+introduced them in the course of adding some feature they were
+asking for.</span> <span class="s s228">In fact, because bugs were rare and you had to be
+doing sophisticated things to see them, advanced users were often
+proud to catch one.</span> <span class="s s229">They would call support in a spirit more of
+triumph than anger, as if they had scored points off us.</span></p>
+<p><span class="s s230">Support</span></p>
+<p><span class="s s231">When you can reproduce errors, it changes your approach to customer
+support.</span> <span class="s s232">At most software companies, support is offered as a way
+to make customers feel better.</span> <span class="s s233">They're either calling you about
+a known bug, or they're just doing something wrong and you have to
+figure out what.</span> <span class="s s234">In either case there's not much you can learn
+from them.</span> <span class="s s235">And so you tend to view support calls as a pain in the
+ass that you want to isolate from your developers as much as
+possible.</span></p>
+<p><span class="s s236">This was not how things worked at Viaweb.</span> <span class="s s237">At Viaweb, support was
+free, because we wanted to hear from customers.</span> <span class="s s238">If someone had a
+problem, we wanted to know about it right away so that we could
+reproduce the error and release a fix.</span></p>
+<p><span class="s s239">So at Viaweb the developers were always in close contact with
+support.</span> <span class="s s240">The customer support people were about thirty feet away
+from the programmers, and knew that they could always interrupt
+anything with a report of a genuine bug.</span> <span class="s s241">We would leave a board
+meeting to fix a serious bug.</span></p>
+<p><span class="s s242">Our approach to support made everyone happier.</span> <span class="s s243">The customers were
+delighted.</span> <span class="s s244">Just imagine how it would feel to call a support line
+and be treated as someone bringing important news.</span> <span class="s s245">The customer
+support people liked it because it meant they could help the users,
+instead of reading scripts to them.</span> <span class="s s246">And the programmers liked it
+because they could reproduce bugs instead of just hearing vague
+second-hand reports about them.</span></p>
+<p><span class="s s247">Our policy of fixing bugs on the fly changed the relationship
+between customer support people and hackers.</span> <span class="s s248">At most software
+companies, support people are underpaid human shields, and hackers
+are little copies of God the Father, creators of the world.</span> <span class="s s249">Whatever
+the procedure for reporting bugs, it is likely to be one-directional:
+support people who hear about bugs fill out some form that eventually
+gets passed on (possibly via QA) to programmers, who put it on
+their list of things to do.</span> <span class="s s250">It was very different at Viaweb.</span>
+<span class="s s251">Within a minute of hearing about a bug from a customer, the support
+people could be standing next to a programmer hearing him say "Shit,
+you're right, it's a bug.</span><span class="s s252">"</span> <span class="s s253">It delighted the support people to hear
+that "you're right" from the hackers.</span> <span class="s s254">They used to bring us bugs
+with the same expectant air as a cat bringing you a mouse it has
+just killed.</span> <span class="s s255">It also made them more careful in judging the
+seriousness of a bug, because now their honor was on the line.</span></p>
+<p><span class="s s256">After we were bought by Yahoo, the customer support people were
+moved far away from the programmers.</span> <span class="s s257">It was only then that we
+realized that they were effectively QA and to some extent marketing
+as well.</span> <span class="s s258">In addition to catching bugs, they were the keepers of
+the knowledge of vaguer, buglike things, like features that confused
+users.</span> <span class="s s259">[6] They were also a kind of proxy focus group; we could
+ask them which of two new features users wanted more, and they were
+always right.</span></p>
+<p><span class="s s260">Morale</span></p>
+<p><span class="s s261">Being able to release software immediately is a big motivator.</span>
+<span class="s s262">Often as I was walking to work I would think of some change I wanted
+to make to the software, and do it that day.</span> <span class="s s263">This worked for bigger
+features as well.</span> <span class="s s264">Even if something was going to take two weeks
+to write (few projects took longer), I knew I could see the effect
+in the software as soon as it was done.</span></p>
+<p><span class="s s265">If I'd had to wait a year for the next release, I would have shelved
+most of these ideas, for a while at least.</span> <span class="s s266">The thing about ideas,
+though, is that they lead to more ideas.</span> <span class="s s267">Have you ever noticed
+that when you sit down to write something, half the ideas that end
+up in it are ones you thought of while writing it?</span> <span class="s s268">The same thing
+happens with software.</span> <span class="s s269">Working to implement one idea gives you
+more ideas.</span> <span class="s s270">So shelving an idea costs you not only that delay in
+implementing it, but also all the ideas that implementing it would
+have led to.</span> <span class="s s271">In fact, shelving an idea probably even inhibits new
+ideas: as you start to think of some new feature, you catch sight
+of the shelf and think "but I already have a lot of new things I
+want to do for the next release.</span><span class="s s272">"</span></p>
+<p><span class="s s273">What big companies do instead of implementing features is plan
+them.</span> <span class="s s274">At Viaweb we sometimes ran into trouble on this account.</span>
+<span class="s s275">Investors and analysts would ask us what we had planned for the
+future.</span> <span class="s s276">The truthful answer would have been, we didn't have any
+plans.</span> <span class="s s277">We had general ideas about things we wanted to improve,
+but if we knew how we would have done it already.</span> <span class="s s278">What were we
+going to do in the next six months?</span> <span class="s s279">Whatever looked like the biggest
+win.</span> <span class="s s280">I don't know if I ever dared give this answer, but that was
+the truth.</span> <span class="s s281">Plans are just another word for ideas on the shelf.</span>
+<span class="s s282">When we thought of good ideas, we implemented them.</span></p>
+<p><span class="s s283">At Viaweb, as at many software companies, most code had one definite
+owner.</span> <span class="s s284">But when you owned something you really owned it: no one
+except the owner of a piece of software had to approve (or even
+know about) a release.</span> <span class="s s285">There was no protection against breakage
+except the fear of looking like an idiot to one's peers, and that
+was more than enough.</span> <span class="s s286">I may have given the impression that we just
+blithely plowed forward writing code.</span> <span class="s s287">We did go fast, but we
+thought very carefully before we released software onto those
+servers.</span> <span class="s s288">And paying attention is more important to reliability
+than moving slowly.</span> <span class="s s289">Because he pays close attention, a Navy pilot
+can land a 40,000 lb.</span> <span class="s s290">aircraft at 140 miles per hour on a pitching
+carrier deck, at night, more safely than the average teenager can
+cut a bagel.</span></p>
+<p><span class="s s291">This way of writing software is a double-edged sword of course.</span>
+<span class="s s292">It works a lot better for a small team of good, trusted programmers
+than it would for a big company of mediocre ones, where bad ideas
+are caught by committees instead of the people that had them.</span></p>
+<p><span class="s s293">Brooks in Reverse</span></p>
+<p><span class="s s294">Fortunately, Web-based software does require fewer programmers.</span>
+<span class="s s295">I once worked for a medium-sized desktop software company that had
+over 100 people working in engineering as a whole.</span> <span class="s s296">Only 13 of
+these were in product development.</span> <span class="s s297">All the rest were working on
+releases, ports, and so on.</span> <span class="s s298">With Web-based software, all you need
+(at most) are the 13 people, because there are no releases, ports,
+and so on.</span></p>
+<p><span class="s s299">Viaweb was written by just three people.</span> <span class="s s300">[7] I was always under
+pressure to hire more, because we wanted to get bought, and we knew
+that buyers would have a hard time paying a high price for a company
+with only three programmers.</span> <span class="s s301">(Solution: we hired more, but created
+new projects for them.</span><span class="s s302">)</span></p>
+<p><span class="s s303">When you can write software with fewer programmers, it saves you
+more than money.</span> <span class="s s304">As Fred Brooks pointed out in The Mythical
+Man-Month, adding people to a project tends to slow it down.</span> <span class="s s305">The
+number of possible connections between developers grows exponentially
+with the size of the group.</span> <span class="s s306">The larger the group, the more time
+they'll spend in meetings negotiating how their software will work
+together, and the more bugs they'll get from unforseen interactions.</span>
+<span class="s s307">Fortunately, this process also works in reverse: as groups get
+smaller, software development gets exponentially more efficient.</span>
+<span class="s s308">I can't remember the programmers at Viaweb ever having an actual
+meeting.</span> <span class="s s309">We never had more to say at any one time than we could
+say as we were walking to lunch.</span></p>
+<p><span class="s s310">If there is a downside here, it is that all the programmers have
+to be to some degree system administrators as well.</span> <span class="s s311">When you're
+hosting software, someone has to be watching the servers, and in
+practice the only people who can do this properly are the ones who
+wrote the software.</span> <span class="s s312">At Viaweb our system had so many components
+and changed so frequently that there was no definite border between
+software and infrastructure.</span> <span class="s s313">Arbitrarily declaring such a border
+would have constrained our design choices.</span> <span class="s s314">And so although we were
+constantly hoping that one day ("in a couple months") everything
+would be stable enough that we could hire someone whose job was
+just to worry about the servers, it never happened.</span></p>
+<p><span class="s s315">I don't think it could be any other way, as long as you're still
+actively developing the product.</span> <span class="s s316">Web-based software is never going
+to be something you write, check in, and go home.</span> <span class="s s317">It's a live
+thing, running on your servers right now.</span> <span class="s s318">A bad bug might not just
+crash one user's process; it could crash them all.</span> <span class="s s319">If a bug in
+your code corrupts some data on disk, you have to fix it.</span> <span class="s s320">And so
+on.</span> <span class="s s321">We found that you don't have to watch the servers every minute
+(after the first year or so), but you definitely want to keep an
+eye on things you've changed recently.</span> <span class="s s322">You don't release code late
+at night and then go home.</span></p>
+<p><span class="s s323">Watching Users</span></p>
+<p><span class="s s324">With server-based software, you're in closer touch with your code.</span>
+<span class="s s325">You can also be in closer touch with your users.</span> <span class="s s326">Intuit is famous
+for introducing themselves to customers at retail stores and asking
+to follow them home.</span> <span class="s s327">If you've ever watched someone use your
+software for the first time, you know what surprises must have
+awaited them.</span></p>
+<p><span class="s s328">Software should do what users think it will.</span> <span class="s s329">But you can't have
+any idea what users will be thinking, believe me, until you watch
+them.</span> <span class="s s330">And server-based software gives you unprecedented information
+about their behavior.</span> <span class="s s331">You're not limited to small, artificial
+focus groups.</span> <span class="s s332">You can see every click made by every user.</span> <span class="s s333">You
+have to consider carefully what you're going to look at, because
+you don't want to violate users' privacy, but even the most general
+statistical sampling can be very useful.</span></p>
+<p><span class="s s334">When you have the users on your server, you don't have to rely on
+benchmarks, for example.</span> <span class="s s335">Benchmarks are simulated users.</span> <span class="s s336">With
+server-based software, you can watch actual users.</span> <span class="s s337">To decide what
+to optimize, just log into a server and see what's consuming all
+the CPU.</span> <span class="s s338">And you know when to stop optimizing too: we eventually
+got the Viaweb editor to the point where it was memory-bound rather
+than CPU-bound, and since there was nothing we could do to decrease
+the size of users' data (well, nothing easy), we knew we might as
+well stop there.</span></p>
+<p><span class="s s339">Efficiency matters for server-based software, because you're paying
+for the hardware.</span> <span class="s s340">The number of users you can support per server
+is the divisor of your capital cost, so if you can make your software
+very efficient you can undersell competitors and still make a
+profit.</span> <span class="s s341">At Viaweb we got the capital cost per user down to about
+$5.</span> <span class="s s342">It would be less now, probably less than the cost of sending
+them the first month's bill.</span> <span class="s s343">Hardware is free now, if your software
+is reasonably efficient.</span></p>
+<p><span class="s s344">Watching users can guide you in design as well as optimization.</span>
+<span class="s s345">Viaweb had a scripting language called RTML that let advanced users
+define their own page styles.</span> <span class="s s346">We found that RTML became a kind of
+suggestion box, because users only used it when the predefined page
+styles couldn't do what they wanted.</span> <span class="s s347">Originally the editor put
+button bars across the page, for example, but after a number of
+users used RTML to put buttons down the left 
+side, 
+we made that an
+option (in fact the default) in the predefined page styles.</span></p>
+<p><span class="s s348">Finally, by watching users you can often tell when they're in
+trouble.</span> <span class="s s349">And since the customer is always right, that's a sign of
+something you need to fix.</span> <span class="s s350">At Viaweb the key to getting users was
+the online test drive.</span> <span class="s s351">It was not just a series of slides built
+by marketing people.</span> <span class="s s352">In our test drive, users actually used the
+software.</span> <span class="s s353">It took about five minutes, and at the end of it they
+had built a real, working store.</span></p>
+<p>
+<span class="s s354">The test drive was the way we got nearly all our new users.</span> <span class="s s355">I
+think it will be the same for most Web-based applications.</span> <span class="s s356">If
+users can get through a test drive successfully, they'll like the
+product.</span> <span class="s s357">If they get confused or bored, they won't.</span> <span class="s s358">So anything
+we could do to get more people through the test drive would increase
+our growth rate.</span></p>
+<p><span class="s s359">I studied click trails of people taking the test drive and found
+that at a certain step they would get confused and click on the
+browser's Back button.</span> <span class="s s360">(If you try writing Web-based applications,
+you'll find that the Back button becomes one of your most interesting
+philosophical problems.) So I added a message at that point, telling
+users that they were nearly finished, and reminding them not to
+click on the Back button.</span> <span class="s s361">Another great thing about Web-based
+software is that you get instant feedback from changes: the number
+of people completing the test drive rose immediately from 60% to
+90%.</span> <span class="s s362">And since the number of new users was a function of the number
+of completed test drives, our revenue growth increased by 50%, just
+from that change.</span></p>
+<p><span class="s s363">Money</span></p>
+<p><span class="s s364">In the early 1990s I read an article in which someone said that
+software was a subscription business.</span> <span class="s s365">At first this seemed a very
+cynical statement.</span> <span class="s s366">But later I realized that it reflects reality:
+software development is an ongoing process.</span> <span class="s s367">I think it's cleaner
+if you openly charge subscription fees, instead of forcing people
+to keep buying and installing new versions so that they'll keep
+paying you.</span> <span class="s s368">And fortunately, subscriptions are the natural way to
+bill for Web-based applications.</span></p>
+<p><span class="s s369">Hosting applications is an area where companies will play a role
+that is not likely to be filled by freeware.</span> <span class="s s370">Hosting applications
+is a lot of stress, and has real expenses.</span> <span class="s s371">No one is going to want
+to do it for free.</span></p>
+<p><span class="s s372">For companies, Web-based applications are an ideal source of revenue.</span>
+<span class="s s373">Instead of starting each quarter with a blank slate, you have a
+recurring revenue stream.</span> <span class="s s374">Because your software evolves gradually,
+you don't have to worry that a new model will flop; there never
+need be a new model, per se, and if you do something to the software
+that users hate, you'll know right away.</span> <span class="s s375">You have no trouble with
+uncollectable bills; if someone won't pay you can just turn off
+the service.</span> <span class="s s376">And there is no possibility of piracy.</span></p>
+<p><span class="s s377">That last "advantage" may turn out to be a problem.</span> <span class="s s378">Some amount
+of piracy is to the advantage of software companies.</span> <span class="s s379">If some user
+really would not have bought your software at any price, you haven't
+lost anything if he uses a pirated copy.</span> <span class="s s380">In fact you gain, because
+he is one more user helping to make your software the standard--
+or who might buy a copy later, when he graduates from high school.</span></p>
+<p><span class="s s381">When they can, companies like to do something called price
+discrimination, which means charging each customer as much as they
+can afford.</span> <span class="s s382">[8] Software is particularly suitable for price
+discrimination, because the marginal cost is close to zero.</span> <span class="s s383">This
+is why some software costs more to run on Suns than on Intel boxes:
+a company that uses Suns is not interested in saving money and can
+safely be charged more.</span> <span class="s s384">Piracy is effectively the lowest tier of
+price discrimination.</span> <span class="s s385">I think that software companies understand
+this and deliberately turn a blind eye to some kinds of piracy.</span> <span class="s s386">[9] 
+With server-based software they are going to have to come up with 
+some other solution.</span></p>
+<p><span class="s s387">Web-based software sells well, especially in comparison to desktop
+software, because it's easy to buy.</span> <span class="s s388">You might think that people
+decide to buy something, and then buy it, as two separate steps.</span>
+<span class="s s389">That's what I thought before Viaweb, to the extent I thought about
+the question at all.</span> <span class="s s390">In fact the second step can propagate back
+into the first: if something is hard to buy, people will change
+their mind about whether they wanted it.</span> <span class="s s391">And vice versa: you'll
+sell more of something when it's easy to buy.</span> <span class="s s392">I buy more books
+because Amazon exists.</span> <span class="s s393">Web-based software is just about the easiest
+thing in the world to buy, especially if you have just done an
+online demo.</span> <span class="s s394">Users should not have to do much more than enter a
+credit card number.</span> <span class="s s395">(Make them do more at your peril.</span><span class="s s396">)</span></p>
+<p><span class="s s397">Sometimes Web-based software is offered through ISPs acting as
+resellers.</span> <span class="s s398">This is a bad idea.</span> <span class="s s399">You have to be administering the
+servers, because you need to be constantly improving both hardware
+and software.</span> <span class="s s400">If you give up direct control of the servers, you
+give up most of the advantages of developing Web-based applications.</span></p>
+<p><span class="s s401">Several of our competitors shot themselves in the foot this way--
+usually, I think, because they were overrun by suits who were
+excited about this huge potential channel, and didn't realize that
+it would ruin the product they hoped to sell through it.</span> <span class="s s402">Selling
+Web-based software through ISPs is like selling sushi through
+vending machines.</span></p>
+<p><span class="s s403">Customers</span></p>
+<p><span class="s s404">Who will the customers be?</span> <span class="s s405">At Viaweb they were initially individuals
+and smaller companies, and I think this will be the rule with
+Web-based applications.</span> <span class="s s406">These are the users who are ready to try
+new things, partly because they're more flexible, and partly because
+they want the lower costs of new technology.</span></p>
+<p><span class="s s407">Web-based applications will often be the best thing for big companies
+too (though they'll be slow to realize it).</span> <span class="s s408">The best intranet is
+the Internet.</span> <span class="s s409">If a company uses true Web-based applications, the
+software will work better, the servers will be better administered,
+and employees will have access to the system from anywhere.</span></p>
+<p><span class="s s410">The argument against this approach usually hinges on security: if
+access is easier for employees, it will be for bad guys too.</span> <span class="s s411">Some
+larger merchants were reluctant to use Viaweb because they thought
+customers' credit card information would be safer on their own
+servers.</span> <span class="s s412">It was not easy to make this point diplomatically, but
+in fact the data was almost certainly safer in our hands than
+theirs.</span> <span class="s s413">Who can hire better people to manage security, a technology
+startup whose whole business is running servers, or a clothing
+retailer?</span> <span class="s s414">Not only did we have better people worrying about
+security, we worried more about it.</span> <span class="s s415">If someone broke into the
+clothing retailer's servers, it would affect at most one merchant,
+could probably be hushed up, and in the worst case might get one
+person fired.</span> <span class="s s416">If someone broke into ours, it could affect thousands
+of merchants, would probably end up as news on CNet, and could put
+us out of business.</span></p>
+<p><span class="s s417">If you want to keep your money safe, do you keep it under your
+mattress at home, or put it in a bank?</span> <span class="s s418">This argument applies to
+every aspect of server administration: not just security, but
+uptime, bandwidth, load management, backups, etc.</span> <span class="s s419">Our existence
+depended on doing these things right.</span> <span class="s s420">Server problems were the
+big no-no for us, like a dangerous toy would be for a toy maker,
+or a salmonella outbreak for a food processor.</span></p>
+<p><span class="s s421">A big company that uses Web-based applications is to that extent
+outsourcing IT.</span> <span class="s s422">Drastic as it sounds, I think this is generally
+a good idea.</span> <span class="s s423">Companies are likely to get better service this way
+than they would from in-house system administrators.</span> <span class="s s424">System
+administrators can become cranky and unresponsive because they're
+not directly exposed to competitive pressure: a salesman has to
+deal with customers, and a developer has to deal with competitors'
+software, but a system administrator, like an old bachelor, has
+few external forces to keep him in line.</span> <span class="s s425">[10] At Viaweb we had
+external forces in plenty to keep us in line.</span> <span class="s s426">The people calling
+us were customers, not just co-workers.</span> <span class="s s427">If a server got wedged,
+we jumped; just thinking about it gives me a jolt of adrenaline,
+years later.</span></p>
+<p><span class="s s428">So Web-based applications will ordinarily be the right answer for
+big companies too.</span> <span class="s s429">They will be the last to realize it, however,
+just as they were with desktop computers.</span> <span class="s s430">And partly for the same
+reason: it will be worth a lot of money to convince big companies
+that they need something more expensive.</span></p>
+<p><span class="s s431">There is always a tendency for rich customers to buy expensive
+solutions, even when cheap solutions are better, because the people
+offering expensive solutions can spend more to sell them.</span> <span class="s s432">At Viaweb
+we were always up against this.</span> <span class="s s433">We lost several high-end merchants
+to Web consulting firms who convinced them they'd be better off if
+they paid half a million dollars for a custom-made online store on
+their own server.</span> <span class="s s434">They were, as a rule, not better off, as more
+than one discovered when Christmas shopping season came around and
+loads rose on their server.</span> <span class="s s435">Viaweb was a lot more sophisticated
+than what most of these merchants got, but we couldn't afford to
+tell them.</span> <span class="s s436">At $300 a month, we couldn't afford to send a team of
+well-dressed and authoritative-sounding people to make presentations
+to customers.</span></p>
+<p><span class="s s437">A large part of what big companies pay extra for is the cost of
+selling expensive things to them.</span> <span class="s s438">(If the Defense Department pays
+a thousand dollars for toilet seats, it's partly because it costs
+a lot to sell toilet seats for a thousand dollars.</span><span class="s s439">) And this is
+one reason intranet software will continue to thrive, even though
+it is probably a bad idea.</span> <span class="s s440">It's simply more expensive.</span> <span class="s s441">There is
+nothing you can do about this conundrum, so the best plan is to go
+for the smaller customers first.</span> <span class="s s442">The rest will come in time.</span></p>
+<p><span class="s s443">Son of Server</span></p>
+<p><span class="s s444">Running software on the server is nothing new.</span> <span class="s s445">In fact it's the
+old model: mainframe applications are all server-based.</span> <span class="s s446">If
+server-based software is such a good idea, why did it lose last
+time?</span> <span class="s s447">Why did desktop computers eclipse mainframes?</span></p>
+<p><span class="s s448">At first desktop computers didn't look like much of a threat.</span> <span class="s s449">The
+first users were all hackers-- or hobbyists, as they were called
+then.</span> <span class="s s450">They liked microcomputers because they were cheap.</span> <span class="s s451">For the
+first time, you could have your own computer.</span> <span class="s s452">The phrase "personal
+computer" is part of the language now, but when it was first used
+it had a deliberately audacious sound, like the phrase "personal
+satellite" would today.</span></p>
+<p><span class="s s453">Why did desktop computers take over?</span> <span class="s s454">I think it was because they
+had better software.</span> <span class="s s455">And I think the reason microcomputer software
+was better was that it could be written by small companies.</span></p>
+<p><span class="s s456">I don't think many people realize how fragile and tentative startups
+are in the earliest stage.</span> <span class="s s457">Many startups begin almost by accident--
+as a couple guys, either with day jobs or in school, writing a
+prototype of something that might, if it looks promising, turn into
+a company.</span> <span class="s s458">At this larval stage, any significant obstacle will stop
+the startup dead in its tracks.</span> <span class="s s459">Writing mainframe software required
+too much commitment up front.</span> <span class="s s460">Development machines were expensive,
+and because the customers would be big companies, you'd need an
+impressive-looking sales force to sell it to them.</span> <span class="s s461">Starting a
+startup to write mainframe software would be a much more serious
+undertaking than just hacking something together on your Apple II
+in the evenings.</span> <span class="s s462">And so you didn't get a lot of startups writing
+mainframe applications.</span></p>
+<p><span class="s s463">The arrival of desktop computers inspired a lot of new software,
+because writing applications for them seemed an attainable goal to
+larval startups.</span> <span class="s s464">Development was cheap, and the customers would
+be individual people that you could reach through computer stores
+or even by mail-order.</span></p>
+<p><span class="s s465">The application that pushed desktop computers out into the mainstream
+was VisiCalc, the 
+first spreadsheet.</span> <span class="s s466">It was written by two guys
+working in an attic, and yet did things no mainframe software could
+do.</span> <span class="s s467">[11] VisiCalc was such an advance, in its time, that people
+bought Apple IIs just to run it.</span> <span class="s s468">And this was the beginning of a
+trend: desktop computers won because startups wrote software for
+them.</span></p>
+<p><span class="s s469">It looks as if server-based software will be good this time around,
+because startups will write it.</span> <span class="s s470">Computers are so cheap now that
+you can get started, as we did, using a desktop computer as a
+server.</span> <span class="s s471">Inexpensive processors have eaten the workstation market
+(you rarely even hear the word now) and are most of the way through
+the server market; Yahoo's servers, which deal with loads as high
+as any on the Internet, all have the same inexpensive Intel processors
+that you have in your desktop machine.</span> <span class="s s472">And once you've written
+the software, all you need to sell it is a Web site.</span> <span class="s s473">Nearly all
+our users came direct to our site through word of mouth and references
+in the press.</span> <span class="s s474">[12]</span></p>
+<p><span class="s s475">Viaweb was a typical larval startup.</span> <span class="s s476">We were terrified of starting
+a company, and for the first few months comforted ourselves by
+treating the whole thing as an experiment that we might call off
+at any moment.</span> <span class="s s477">Fortunately, there were few obstacles except
+technical ones.</span> <span class="s s478">While we were writing the software, our Web server
+was the same desktop machine we used for development, connected to
+the outside world by a dialup line.</span> <span class="s s479">Our only expenses in that
+phase were food and rent.</span></p>
+<p><span class="s s480">There is all the more reason for startups to write Web-based software
+now, because writing desktop software has become a lot less fun.</span>
+<span class="s s481">If you want to write desktop software now you do it on Microsoft's
+terms, calling their APIs and working around their buggy OS.</span> <span class="s s482">And
+if you manage to write something that takes off, you may find that
+you were merely doing market research for Microsoft.</span></p>
+<p><span class="s s483">If a company wants to make a platform that startups will build on,
+they have to make it something that hackers themselves will want
+to use.</span> <span class="s s484">That means it has to be inexpensive and well-designed.</span>
+<span class="s s485">The Mac was popular with hackers when it first came out, and a lot
+of them wrote software for it.</span> <span class="s s486">[13] You see this less with Windows,
+because hackers don't use it.</span> <span class="s s487">The kind of people who are good at
+writing software tend to be running Linux or FreeBSD now.</span></p>
+<p><span class="s s488">I don't think we would have started a startup to write desktop
+software, because desktop software has to run on Windows, and before
+we could write software for Windows we'd have to use it.</span> <span class="s s489">The Web 
+let us do an end-run around Windows, and deliver software running 
+on Unix direct to users through the browser.</span> <span class="s s490">That is a liberating 
+prospect, a lot like the arrival of PCs twenty-five years ago.</span></p>
+<p><span class="s s491">Microsoft</span></p>
+<p><span class="s s492">Back when desktop computers arrived, IBM was the giant that everyone
+was afraid of.</span> <span class="s s493">It's hard to imagine now, but I remember the feeling
+very well.</span> <span class="s s494">Now the frightening giant is Microsoft, and I don't
+think they are as blind to the threat facing them as IBM was.</span>
+<span class="s s495">After all, Microsoft deliberately built their business in IBM's
+blind spot.</span></p>
+<p><span class="s s496">I mentioned earlier that my mother doesn't really need a desktop
+computer.</span> <span class="s s497">Most users probably don't.</span> <span class="s s498">That's a problem for Microsoft,
+and they know it.</span> <span class="s s499">If applications run on remote servers, no one
+needs Windows.</span> <span class="s s500">What will Microsoft do?</span> <span class="s s501">Will they be able to use
+their control of the desktop to prevent, or constrain, this new
+generation of software?</span></p>
+<p><span class="s s502">My guess is that Microsoft will develop some kind of server/desktop
+hybrid, where the operating system works together with servers they
+control.</span> <span class="s s503">At a minimum, files will be centrally available for users
+who want that.</span> <span class="s s504">I don't expect Microsoft to go all the way to the
+extreme of doing the computations on the server, with only a browser
+for a client, if they can avoid it.</span> <span class="s s505">If you only need a browser for
+a client, you don't need Microsoft on the client, and if Microsoft
+doesn't control the client, they can't push users towards their
+server-based applications.</span></p>
+<p><span class="s s506">I think Microsoft will have a hard time keeping the genie in the
+bottle.</span> <span class="s s507">There will be too many different types of clients for them
+to control them all.</span> <span class="s s508">And if Microsoft's applications only work
+with some clients, competitors will be able to trump them by offering
+applications that work from any client.</span> <span class="s s509">[14]</span></p>
+<p><span class="s s510">In a world of Web-based applications, there is no automatic place
+for Microsoft.</span> <span class="s s511">They may succeed in making themselves a place, but
+I don't think they'll dominate this new world as they did the world
+of desktop applications.</span></p>
+<p><span class="s s512">It's not so much that a competitor will trip them up as that they
+will trip over themselves.</span> <span class="s s513">With the rise of Web-based software,
+they will be facing not just technical problems but their own
+wishful thinking.</span> <span class="s s514">What they need to do is cannibalize their existing
+business, and I can't see them facing that.</span> <span class="s s515">The same single-mindedness
+that has brought them this far will now be working against them.</span>
+<span class="s s516">IBM was in exactly the same situation, and they could not master
+it.</span> <span class="s s517">IBM made a late and half-hearted entry into the microcomputer
+business because they were ambivalent about threatening their cash
+cow, mainframe computing.</span> <span class="s s518">Microsoft will likewise be hampered by
+wanting to save the desktop.</span> <span class="s s519">A cash cow can be a damned heavy
+monkey on your back.</span></p>
+<p><span class="s s520">I'm not saying that no one will dominate server-based applications.</span>
+<span class="s s521">Someone probably will eventually.</span> <span class="s s522">But I think that there will be
+a good long period of cheerful chaos, just as there was in the
+early days of microcomputers.</span> <span class="s s523">That was a good time for startups.</span>
+<span class="s s524">Lots of small companies flourished, and did it by making cool
+things.</span></p>
+<p><span class="s s525">Startups but More So</span></p>
+<p><span class="s s526">The classic startup is fast and informal, with few people and little
+money.</span> <span class="s s527">Those few people work very hard, and technology magnifies
+the effect of the decisions they make.</span> <span class="s s528">If they win, they win big.</span></p>
+<p><span class="s s529">In a startup writing Web-based applications, everything you associate
+with startups is taken to an extreme.</span> <span class="s s530">You can write and launch a
+product with even fewer people and even less money.</span> <span class="s s531">You have to
+be even faster, and you can get away with being more informal.</span>
+<span class="s s532">You can literally launch your product as three guys sitting in the
+living room of an apartment, and a server collocated at an ISP.</span>
+<span class="s s533">We did.</span></p>
+<p><span class="s s534">Over time the teams have gotten smaller, faster, and more informal.</span>
+<span class="s s535">In 1960, software development meant a roomful of men with horn
+rimmed glasses and narrow black neckties, industriously writing
+ten lines of code a day on IBM coding forms. In 1980, it was a
+team of eight to ten people wearing jeans to the office and typing
+into vt100s.</span> <span class="s s536">Now it's a couple of guys sitting in a living room
+with laptops.</span> <span class="s s537">(And jeans turn out not to be the last word in
+informality.</span><span class="s s538">)</span></p>
+<p><span class="s s539">Startups are stressful, and this, unfortunately, is also taken to
+an extreme with Web-based applications.</span> 
+<span class="s s540">Many software companies, especially at the beginning, have periods
+where the developers slept under their desks and so on.</span> <span class="s s541">The alarming
+thing about Web-based software is that there is nothing to prevent
+this becoming the default.</span> <span class="s s542">The stories about sleeping under desks
+usually end: then at last we shipped it and we all went home and
+slept for a week.</span> <span class="s s543">Web-based software never ships.</span> <span class="s s544">You can work
+16-hour days for as long as you want to.</span> <span class="s s545">And because you can, and
+your competitors can, you tend to be forced to.</span> <span class="s s546">You can, so you
+must.</span> <span class="s s547">It's Parkinson's Law running in reverse.</span></p>
+<p><span class="s s548">The worst thing is not the hours but the responsibility.</span> <span class="s s549">Programmers
+and system administrators traditionally each have their own separate
+worries.</span> <span class="s s550">Programmers have to worry about bugs, and system
+administrators have to worry about infrastructure.</span> <span class="s s551">Programmers
+may spend a long day up to their elbows in source code, but at some
+point they get to go home and forget about it.</span> <span class="s s552">System administrators
+never quite leave the job behind, but when they do get paged at
+4:00 AM, they don't usually have to do anything very complicated.</span>
+<span class="s s553">With Web-based applications, these two kinds of stress get combined.</span>
+<span class="s s554">The programmers become system administrators, but without the
+sharply defined limits that ordinarily make the job bearable.</span></p>
+<p><span class="s s555">At Viaweb we spent the first six months just writing software.</span> <span class="s s556">We
+worked the usual long hours of an early startup.</span> <span class="s s557">In a desktop
+software company, this would have been the part where we were
+working hard, but it felt like a vacation compared to the next
+phase, when we took users onto our server.</span> <span class="s s558">The second biggest
+benefit of selling Viaweb to Yahoo (after the money) was to be able
+to dump ultimate responsibility for the whole thing onto the
+shoulders of a big company.</span></p>
+<p><span class="s s559">Desktop software forces users to become system administrators.</span>
+<span class="s s560">Web-based software forces programmers to.</span> <span class="s s561">There is less stress in
+total, but more for the programmers.</span> <span class="s s562">That's not necessarily bad
+news.</span> <span class="s s563">If you're a startup competing with a big company, it's good
+news.</span> <span class="s s564">[15] Web-based applications offer a straightforward way to
+outwork your competitors.</span> <span class="s s565">No startup asks for more.</span></p>
+<p><span class="s s566">Just Good Enough</span></p>
+<p><span class="s s567">One thing that might deter you from writing Web-based applications
+is the lameness of Web pages as a UI.</span> <span class="s s568">That is a problem, I admit.</span>
+<span class="s s569">There were a few things we would have really liked to add to
+HTML and HTTP.</span> <span class="s s570">What matters, though, is that Web pages are just
+good enough.</span></p>
+<p><span class="s s571">There is a parallel here with the first microcomputers.</span> <span class="s s572">The
+processors in those machines weren't actually intended to be the
+CPUs of computers.</span> <span class="s s573">They were designed to be used in things like
+traffic lights.</span> <span class="s s574">But guys like Ed Roberts, who designed the 
+Altair,
+realized that they were just good enough.</span> <span class="s s575">You could combine one
+of these chips with some memory (256 bytes in the first Altair),
+and front panel switches, and you'd have a working computer.</span> <span class="s s576">Being
+able to have your own computer was so exciting that there were
+plenty of people who wanted to buy them, however limited.</span></p>
+<p><span class="s s577">Web pages weren't designed to be a UI for applications, but they're
+just good enough.</span> <span class="s s578">And for a significant number of users, software
+that you can use from any browser will be enough of a win in itself
+to outweigh any awkwardness in the UI.</span> <span class="s s579">Maybe you can't write the
+best-looking spreadsheet using HTML, but you can write a spreadsheet
+that several people can use simultaneously from different locations
+without special client software, or that can incorporate live data
+feeds, or that can page you when certain conditions are triggered.</span>
+<span class="s s580">More importantly, you can write new kinds of applications that
+don't even have names yet.</span> <span class="s s581">VisiCalc was not merely a microcomputer
+version of a mainframe application, after all-- it was a new type
+of application.</span></p>
+<p><span class="s s582">Of course, server-based applications don't have to be Web-based.</span>
+<span class="s s583">You could have some other kind of client.</span> <span class="s s584">But I'm pretty sure
+that's a bad idea.</span> <span class="s s585">It would be very convenient if you could assume
+that everyone would install your client-- so convenient that you
+could easily convince yourself that they all would-- but if they
+don't, you're hosed.</span> <span class="s s586">Because Web-based software assumes nothing
+about the client, it will work anywhere the Web works.</span> <span class="s s587">That's a
+big advantage already, and the advantage will grow as new Web
+devices proliferate.</span> <span class="s s588">Users will like you because your software
+just works, and your life will be easier because you won't have to
+tweak it for every new client.</span>  <span class="s s589">[16]</span></p>
+<p><span class="s s590">I feel like I've watched the evolution of the Web as closely as
+anyone, and I can't predict what's going to happen with clients.</span>
+<span class="s s591">Convergence is probably coming, but where?</span> <span class="s s592">I can't pick a winner.</span>
+<span class="s s593">One thing I can predict is conflict between AOL and Microsoft.</span>
+<span class="s s594">Whatever Microsoft's .</span><span class="s s595">NET turns out to be, it will probably involve
+connecting the desktop to servers.</span> <span class="s s596">Unless AOL fights back, they
+will either be pushed aside or turned into a pipe between Microsoft
+client and server software.</span> <span class="s s597">If Microsoft and AOL get into a client
+war, the only thing sure to work on both will be browsing the Web,
+meaning Web-based applications will be the only kind that work
+everywhere.</span></p>
+<p><span class="s s598">How will it all play out?</span> <span class="s s599">I don't know.</span> <span class="s s600">And you don't have to
+know if you bet on Web-based applications.</span> <span class="s s601">No one can break that
+without breaking browsing.</span> <span class="s s602">The Web may not be the only way to
+deliver software, but it's one that works now and will continue to
+work for a long time.</span> <span class="s s603">Web-based applications are cheap to develop,
+and easy for even the smallest startup to deliver.</span> <span class="s s604">They're a lot
+of work, and of a particularly stressful kind, but that only makes
+the odds better for startups.</span></p>
+<p><span class="s s605">Why Not?</span></p>
+<p><span class="s s606">E.</span> <span class="s s607">B.</span> <span class="s s608">White was amused to learn from a farmer friend that many
+electrified fences don't have any current running through them.</span>
+<span class="s s609">The cows apparently learn to stay away from them, and after that
+you don't need the current.</span> <span class="s s610">"Rise up, cows!</span><span class="s s611">"</span> <span class="s s612">he wrote, "Take your
+liberty while despots snore!</span><span class="s s613">"</span></p>
+<p><span class="s s614">If you're a hacker who has thought of one day starting a startup,
+there are probably two things keeping you from doing it.</span> <span class="s s615">One is
+that you don't know anything about business.</span> <span class="s s616">The other is that
+you're afraid of competition.</span> <span class="s s617">Neither of these fences have any
+current in them.</span></p>
+<p><span class="s s618">There are only two things you have to know about business: build
+something users love, and make more than you spend.</span> <span class="s s619">If you get
+these two right, you'll be ahead of most startups.</span> <span class="s s620">You can figure
+out the rest as you go.</span></p>
+<p><span class="s s621">You may not at first make more than you spend, but as long as the
+gap is closing fast enough you'll be ok.</span> <span class="s s622">If you start out underfunded,
+it will at least encourage a habit of frugality.</span> <span class="s s623">The less you
+spend, the easier it is to make more than you spend.</span> <span class="s s624">Fortunately,
+it can be very cheap to launch a Web-based application.</span> <span class="s s625">We launched
+on under $10,000, and it would be even cheaper today.</span> <span class="s s626">We had to
+spend thousands on a server, and thousands more to get SSL.</span> <span class="s s627">(The
+only company selling SSL software at the time was Netscape.</span><span class="s s628">) Now
+you can rent a much more powerful server, with SSL included, for
+less than we paid for bandwidth alone.</span> <span class="s s629">You could launch a Web-based
+application now for less than the cost of a fancy office chair.</span></p>
+<p><span class="s s630">As for building something users love, here are some general tips.</span>
+<span class="s s631">Start by making something clean and simple that you would want to
+use yourself.</span> <span class="s s632">Get a version 1.</span><span class="s s633">0 out fast, then continue to improve
+the software, listening closely to the users as you do.</span> <span class="s s634">The customer
+is always right, but different customers are right about different
+things; the least sophisticated users show you what you need to
+simplify and clarify, and the most sophisticated tell you what
+features you need to add.</span> <span class="s s635">The best thing software can be is easy,
+but the way to do this is to get the defaults right, not to limit
+users' choices.</span> <span class="s s636">Don't get complacent if your competitors' software
+is lame; the standard to compare your software to is what it could
+be, not what your current competitors happen to have.</span> <span class="s s637">Use your
+software yourself, all the time.</span> <span class="s s638">Viaweb was supposed to be an
+online store builder, but we used it to make our own site too.</span>
+<span class="s s639">Don't listen to marketing people or designers or product managers
+just because of their job titles.</span> <span class="s s640">If they have good ideas, use
+them, but it's up to you to decide; software has to be designed by
+hackers who understand design, not designers who know a little
+about software.</span> <span class="s s641">If you can't design software as well as implement
+it, don't start a startup.</span></p>
+<p><span class="s s642">Now let's talk about competition.</span> <span class="s s643">What you're afraid of is not
+presumably groups of hackers like you, but actual companies, with
+offices and business plans and salesmen and so on, right?</span> <span class="s s644">Well,
+they are more afraid of you than you are of them, and they're right.</span>
+<span class="s s645">It's a lot easier for a couple of hackers to figure out how to rent
+office space or hire sales people than it is for a company of any
+size to get software written.</span> <span class="s s646">I've been on both sides, and I know.</span>
+<span class="s s647">When Viaweb was bought by Yahoo, I suddenly found myself working
+for a big company, and it was like trying to run through waist-deep
+water.</span></p>
+<p><span class="s s648">I don't mean to disparage Yahoo.</span> <span class="s s649">They had some good hackers, and
+the top management were real butt-kickers.</span> <span class="s s650">For a big company, they
+were exceptional.</span> <span class="s s651">But they were still only about a tenth as
+productive as a small startup.</span> <span class="s s652">No big company can do much better
+than that.</span> <span class="s s653">What's scary about Microsoft is that a company so
+big can develop software at all.</span> <span class="s s654">They're like a mountain that
+can walk.</span></p>
+<p><span class="s s655">Don't be intimidated.</span> <span class="s s656">You can do as much that Microsoft can't as
+they can do that you can't.</span> <span class="s s657">And no one can stop you.</span> <span class="s s658">You don't
+have to ask anyone's permission to develop Web-based applications.</span>
+<span class="s s659">You don't have to do licensing deals, or get shelf space in retail
+stores, or grovel to have your application bundled with the OS.</span>
+<span class="s s660">You can deliver software right to the browser, and no one can get
+between you and potential users without preventing them from browsing
+the Web.</span></p>
+<p><span class="s s661">You may not believe it, but I promise you, Microsoft is scared of
+you.</span> <span class="s s662">The complacent middle managers may not be, but Bill is,
+because he was you once, back in 1975, the last time a new way of
+delivering software appeared.</span></p>
+<p><span class="s s663">Notes</span></p>
+<p><span class="s s664">[1] Realizing that much of the money is in the services, companies
+building lightweight clients have usually tried to combine the
+hardware with an 
+online service.</span> 
+ <span class="s s665">This approach has not worked
+well, partly because you need two different kinds of companies to
+build consumer electronics and to run an online service, and partly
+because users hate the idea.</span> <span class="s s666">Giving away the razor and making
+money on the blades may work for Gillette, but a razor is much
+smaller commitment than a Web terminal.</span> <span class="s s667">Cell phone handset makers
+are satisfied to sell hardware without trying to capture the service
+revenue as well.</span> <span class="s s668">That should probably be the model for Internet
+clients too.</span> <span class="s s669">If someone just sold a nice-looking little box with
+a Web browser that you could use to connect through any ISP, every
+technophobe in the country would buy one.</span></p>
+<p><span class="s s670">[2] Security always depends more on not screwing up than any design
+decision, but the nature of server-based software will make developers
+pay more attention to not screwing up.</span> <span class="s s671">Compromising a server could
+cause such damage that ASPs (that want to stay in business) are
+likely to be careful about security.</span></p>
+<p><span class="s s672">[3] In 1995, when we started Viaweb, Java applets were supposed to
+be the technology everyone was going to use to develop server-based
+applications.</span> <span class="s s673">Applets seemed to us an old-fashioned idea.</span> <span class="s s674">Download
+programs to run on the client?</span> <span class="s s675">Simpler just to go all the way and
+run the programs on the server.</span> <span class="s s676">We wasted little time
+on applets, but countless other startups must have been lured into
+this tar pit.</span> <span class="s s677">Few can have escaped alive, or Microsoft could not
+have gotten away with dropping Java in the most recent version of
+Explorer.</span></p>
+<p><span class="s s678">[4] This point is due to Trevor Blackwell, who adds "the cost of
+writing software goes up more than linearly with its size.</span> <span class="s s679">Perhaps
+this is mainly due to fixing old bugs, and the cost can be more
+linear if all bugs are found quickly.</span><span class="s s680">"</span></p>
+<p><span class="s s681">[5] The hardest kind of bug to find may be a variant of compound
+bug where one bug happens to compensate for another.</span> <span class="s s682">When you fix
+one bug, the other becomes visible.</span> <span class="s s683">But it will seem as if the
+fix is at fault, since that was the last thing you changed.</span></p>
+<p><span class="s s684">[6] Within Viaweb we once had a contest to describe the worst thing
+about our software.</span> <span class="s s685">Two customer support people tied for first
+prize with entries I still shiver to recall.</span> <span class="s s686">We fixed both problems
+immediately.</span></p>
+<p><span class="s s687">[7] Robert Morris wrote the ordering system, which shoppers used
+to place orders.</span> <span class="s s688">Trevor Blackwell wrote the image generator and
+the manager, which merchants used to retrieve orders, view statistics,
+and configure domain names etc.</span> <span class="s s689">I wrote the editor, which merchants
+used to build their sites.</span> <span class="s s690">The ordering system and image generator
+were written in C and C++, the manager mostly in Perl, and the editor
+in Lisp.</span></p>
+<p><span class="s s691">[8] Price discrimination is so pervasive (how often have you heard
+a retailer claim that their buying power meant lower prices for
+you?</span><span class="s s692">) that I was surprised to find it was outlawed in the U.</span><span class="s s693">S.</span> <span class="s s694">by
+the Robinson-Patman Act of 1936.</span> <span class="s s695">This law does not appear to be
+vigorously enforced.</span></p>
+<p><span class="s s696">[9] In No Logo, Naomi Klein says that clothing brands favored by
+"urban youth" do not try too hard to prevent shoplifting because
+in their target market the shoplifters are also the fashion leaders.</span></p>
+<p><span class="s s697">[10] Companies often wonder what to outsource and what not to.</span>
+<span class="s s698">One possible answer: outsource any job that's not directly exposed
+to competitive pressure, because outsourcing it will thereby expose
+it to competitive pressure.</span></p>
+<p><span class="s s699">[11] The two guys were Dan Bricklin and Bob Frankston.</span> <span class="s s700">Dan wrote
+a prototype in Basic in a couple days, then over the course of the
+next year they worked together (mostly at night) to make a more
+powerful version written in 6502 machine language.</span> <span class="s s701">Dan was at
+Harvard Business School at the time and Bob nominally had a day
+job writing software.</span> <span class="s s702">"There was no great risk in doing a business,"
+Bob wrote, "If it failed it failed.</span> <span class="s s703">No big deal.</span><span class="s s704">"</span></p>
+<p><span class="s s705">[12] It's not quite as easy as I make it sound.</span> <span class="s s706">It took a painfully
+long time for word of mouth to get going, and we did not start to
+get a lot of press coverage until we hired a 
+PR firm 
+(admittedly
+the best in the business) for $16,000 per month.</span> <span class="s s707">However, it was
+true that the only significant channel was our own Web site.</span></p>
+<p><span class="s s708">[13] If the Mac was so great, why did it lose?</span> <span class="s s709">Cost, again.</span>
+<span class="s s710">Microsoft concentrated on the software business, and unleashed a
+swarm of cheap component suppliers on Apple hardware.</span> <span class="s s711">It did not
+help, either, that suits took over during a critical period.</span></p>
+<p><span class="s s712">[14] One thing that would help Web-based applications, and help
+keep the next generation of software from being overshadowed by
+Microsoft, would be a good open-source browser.</span> <span class="s s713">Mozilla is
+open-source but seems to have suffered from having been corporate
+software for so long.</span> <span class="s s714">A small, fast browser that was actively
+maintained would be a great thing in itself, and would probably
+also encourage companies to build little Web appliances.</span></p>
+<p><span class="s s715">Among other things, a proper open-source browser would cause HTTP
+and HTML to continue to evolve (as e.</span><span class="s s716">g.</span> <span class="s s717">Perl has).</span> <span class="s s718">It would help
+Web-based applications greatly to be able to distinguish between
+selecting a link and following it; all you'd need to do this would
+be a trivial enhancement of HTTP, to allow multiple urls in a
+request.</span> <span class="s s719">Cascading menus would also be good.</span></p>
+<p><span class="s s720">If you want to change the world, write a new Mosaic.</span> <span class="s s721">Think it's
+too late?</span> <span class="s s722">In 1998 a lot of people thought it was too late to launch
+a new search engine, but Google proved them wrong.</span> <span class="s s723">There is always
+room for something new if the current options suck enough.</span> <span class="s s724">Make
+sure it works on all the free OSes first-- new things start with
+their users.</span></p>
+<p><span class="s s725">[15] Trevor Blackwell, who probably knows more about this from
+personal experience than anyone, writes:</span></p>
+<p><span class="s s726">"I would go farther in saying that because server-based software
+is so hard on the programmers, it causes a fundamental economic
+shift away from large companies.</span> <span class="s s727">It requires the kind of intensity
+and dedication from programmers that they will only be willing to
+provide when it's their own company.</span> <span class="s s728">Software companies can hire
+skilled people to work in a not-too-demanding environment, and can
+hire unskilled people to endure hardships, but they can't hire
+highly skilled people to bust their asses.</span> <span class="s s729">Since capital is no
+longer needed, big companies have little to bring to the table.</span><span class="s s730">"</span></p>
+<p><span class="s s731">[16] In the original version of this essay, I advised avoiding
+Javascript. That was a good plan in 2001, but Javascript now works.
+</span></p>
+<p><span class="s s732">Thanks to Sarah Harlin, Trevor Blackwell, Robert Morris, Eric Raymond, Ken Anderson,
+and Dan Giffin for reading drafts of this paper; to Dan Bricklin and
+Bob Frankston for information about VisiCalc; and again to Ken Anderson
+for inviting me to speak at BBN.</span></p>
+<br><br></div></div>
+  </body></html>

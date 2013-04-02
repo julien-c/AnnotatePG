@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="BookId">
+  <metadata xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:identifier opf:scheme="URL">paulgraham.com</dc:identifier>
+    <dc:title>Essays by Paul Graham</dc:title>
+    <dc:language>en</dc:language>
+    <dc:creator>Paul Graham</dc:creator>
+    <dc:publisher>paulgraham.com</dc:publisher>
+    <dc:date>2011-04-13</dc:date>
+  </metadata>
+  <manifest>
+    <item href="file_airbnb.html" media-type="application/xhtml+xml" id="file_airbnb.html"/>
+    <item href="file_control.html" media-type="application/xhtml+xml" id="file_control.html"/>
+    <item href="file_tablets.html" media-type="application/xhtml+xml" id="file_tablets.html"/>
+    <item href="file_founders.html" media-type="application/xhtml+xml" id="file_founders.html"/>
+    <item href="file_superangels.html" media-type="application/xhtml+xml" id="file_superangels.html"/>
+    <item href="file_seesv.html" media-type="application/xhtml+xml" id="file_seesv.html"/>
+    <item href="file_hiresfund.html" media-type="application/xhtml+xml" id="file_hiresfund.html"/>
+    <item href="file_yahoo.html" media-type="application/xhtml+xml" id="file_yahoo.html"/>
+    <item href="file_future.html" media-type="application/xhtml+xml" id="file_future.html"/>
+    <item href="file_addiction.html" media-type="application/xhtml+xml" id="file_addiction.html"/>
+    <item href="file_top.html" media-type="application/xhtml+xml" id="file_top.html"/>
+    <item href="file_selfindulgence.html" media-type="application/xhtml+xml" id="file_selfindulgence.html"/>
+    <item href="file_organic.html" media-type="application/xhtml+xml" id="file_organic.html"/>
+    <item href="file_apple.html" media-type="application/xhtml+xml" id="file_apple.html"/>
+    <item href="file_really.html" media-type="application/xhtml+xml" id="file_really.html"/>
+    <item href="file_discover.html" media-type="application/xhtml+xml" id="file_discover.html"/>
+    <item href="file_publishing.html" media-type="application/xhtml+xml" id="file_publishing.html"/>
+    <item href="file_nthings.html" media-type="application/xhtml+xml" id="file_nthings.html"/>
+    <item href="file_determination.html" media-type="application/xhtml+xml" id="file_determination.html"/>
+    <item href="file_kate.html" media-type="application/xhtml+xml" id="file_kate.html"/>
+    <item href="file_segway.html" media-type="application/xhtml+xml" id="file_segway.html"/>
+    <item href="file_ramenprofitable.html" media-type="application/xhtml+xml" id="file_ramenprofitable.html"/>
+    <item href="file_makersschedule.html" media-type="application/xhtml+xml" id="file_makersschedule.html"/>
+    <item href="file_revolution.html" media-type="application/xhtml+xml" id="file_revolution.html"/>
+    <item href="file_foundervisa.html" media-type="application/xhtml+xml" id="file_foundervisa.html"/>
+    <item href="file_5founders.html" media-type="application/xhtml+xml" id="file_5founders.html"/>
+    <item href="file_relres.html" media-type="application/xhtml+xml" id="file_relres.html"/>
+    <item href="file_angelinvesting.html" media-type="application/xhtml+xml" id="file_angelinvesting.html"/>
+    <item href="file_convergence.html" media-type="application/xhtml+xml" id="file_convergence.html"/>
+    <item href="file_maybe.html" media-type="application/xhtml+xml" id="file_maybe.html"/>
+    <item href="file_hackernews.html" media-type="application/xhtml+xml" id="file_hackernews.html"/>
+    <item href="file_13sentences.html" media-type="application/xhtml+xml" id="file_13sentences.html"/>
+    <item href="file_identity.html" media-type="application/xhtml+xml" id="file_identity.html"/>
+    <item href="file_credentials.html" media-type="application/xhtml+xml" id="file_credentials.html"/>
+    <item href="file_divergence.html" media-type="application/xhtml+xml" id="file_divergence.html"/>
+    <item href="file_highres.html" media-type="application/xhtml+xml" id="file_highres.html"/>
+    <item href="file_artistsship.html" media-type="application/xhtml+xml" id="file_artistsship.html"/>
+    <item href="file_badeconomy.html" media-type="application/xhtml+xml" id="file_badeconomy.html"/>
+    <item href="file_fundraising.html" media-type="application/xhtml+xml" id="file_fundraising.html"/>
+    <item href="file_prcmc.html" media-type="application/xhtml+xml" id="file_prcmc.html"/>
+    <item href="file_cities.html" media-type="application/xhtml+xml" id="file_cities.html"/>
+    <item href="file_distraction.html" media-type="application/xhtml+xml" id="file_distraction.html"/>
+    <item href="file_lies.html" media-type="application/xhtml+xml" id="file_lies.html"/>
+    <item href="file_good.html" media-type="application/xhtml+xml" id="file_good.html"/>
+    <item href="file_googles.html" media-type="application/xhtml+xml" id="file_googles.html"/>
+    <item href="file_heroes.html" media-type="application/xhtml+xml" id="file_heroes.html"/>
+    <item href="file_disagree.html" media-type="application/xhtml+xml" id="file_disagree.html"/>
+    <item href="file_boss.html" media-type="application/xhtml+xml" id="file_boss.html"/>
+    <item href="file_ycombinator.html" media-type="application/xhtml+xml" id="file_ycombinator.html"/>
+    <item href="file_trolls.html" media-type="application/xhtml+xml" id="file_trolls.html"/>
+    <item href="file_newthings.html" media-type="application/xhtml+xml" id="file_newthings.html"/>
+    <item href="file_startuphubs.html" media-type="application/xhtml+xml" id="file_startuphubs.html"/>
+    <item href="file_webstartups.html" media-type="application/xhtml+xml" id="file_webstartups.html"/>
+    <item href="file_philosophy.html" media-type="application/xhtml+xml" id="file_philosophy.html"/>
+    <item href="file_colleges.html" media-type="application/xhtml+xml" id="file_colleges.html"/>
+    <item href="file_die.html" media-type="application/xhtml+xml" id="file_die.html"/>
+    <item href="file_head.html" media-type="application/xhtml+xml" id="file_head.html"/>
+    <item href="file_stuff.html" media-type="application/xhtml+xml" id="file_stuff.html"/>
+    <item href="file_equity.html" media-type="application/xhtml+xml" id="file_equity.html"/>
+    <item href="file_unions.html" media-type="application/xhtml+xml" id="file_unions.html"/>
+    <item href="file_guidetoinvestors.html" media-type="application/xhtml+xml" id="file_guidetoinvestors.html"/>
+    <item href="file_judgement.html" media-type="application/xhtml+xml" id="file_judgement.html"/>
+    <item href="file_microsoft.html" media-type="application/xhtml+xml" id="file_microsoft.html"/>
+    <item href="file_notnot.html" media-type="application/xhtml+xml" id="file_notnot.html"/>
+    <item href="file_wisdom.html" media-type="application/xhtml+xml" id="file_wisdom.html"/>
+    <item href="file_foundersatwork.html" media-type="application/xhtml+xml" id="file_foundersatwork.html"/>
+    <item href="file_goodart.html" media-type="application/xhtml+xml" id="file_goodart.html"/>
+    <item href="file_startupmistakes.html" media-type="application/xhtml+xml" id="file_startupmistakes.html"/>
+    <item href="file_mit.html" media-type="application/xhtml+xml" id="file_mit.html"/>
+    <item href="file_investors.html" media-type="application/xhtml+xml" id="file_investors.html"/>
+    <item href="file_copy.html" media-type="application/xhtml+xml" id="file_copy.html"/>
+    <item href="file_island.html" media-type="application/xhtml+xml" id="file_island.html"/>
+    <item href="file_marginal.html" media-type="application/xhtml+xml" id="file_marginal.html"/>
+    <item href="file_america.html" media-type="application/xhtml+xml" id="file_america.html"/>
+    <item href="file_siliconvalley.html" media-type="application/xhtml+xml" id="file_siliconvalley.html"/>
+    <item href="file_startuplessons.html" media-type="application/xhtml+xml" id="file_startuplessons.html"/>
+    <item href="file_randomness.html" media-type="application/xhtml+xml" id="file_randomness.html"/>
+    <item href="file_softwarepatents.html" media-type="application/xhtml+xml" id="file_softwarepatents.html"/>
+    <item href="file_6631327.html" media-type="application/xhtml+xml" id="file_6631327.html"/>
+    <item href="file_whyyc.html" media-type="application/xhtml+xml" id="file_whyyc.html"/>
+    <item href="file_love.html" media-type="application/xhtml+xml" id="file_love.html"/>
+    <item href="file_procrastination.html" media-type="application/xhtml+xml" id="file_procrastination.html"/>
+    <item href="file_web20.html" media-type="application/xhtml+xml" id="file_web20.html"/>
+    <item href="file_startupfunding.html" media-type="application/xhtml+xml" id="file_startupfunding.html"/>
+    <item href="file_vcsqueeze.html" media-type="application/xhtml+xml" id="file_vcsqueeze.html"/>
+    <item href="file_ideas.html" media-type="application/xhtml+xml" id="file_ideas.html"/>
+    <item href="file_sfp.html" media-type="application/xhtml+xml" id="file_sfp.html"/>
+    <item href="file_inequality.html" media-type="application/xhtml+xml" id="file_inequality.html"/>
+    <item href="file_ladder.html" media-type="application/xhtml+xml" id="file_ladder.html"/>
+    <item href="file_opensource.html" media-type="application/xhtml+xml" id="file_opensource.html"/>
+    <item href="file_hiring.html" media-type="application/xhtml+xml" id="file_hiring.html"/>
+    <item href="file_submarine.html" media-type="application/xhtml+xml" id="file_submarine.html"/>
+    <item href="file_bronze.html" media-type="application/xhtml+xml" id="file_bronze.html"/>
+    <item href="file_mac.html" media-type="application/xhtml+xml" id="file_mac.html"/>
+    <item href="file_writing44.html" media-type="application/xhtml+xml" id="file_writing44.html"/>
+    <item href="file_college.html" media-type="application/xhtml+xml" id="file_college.html"/>
+    <item href="file_venturecapital.html" media-type="application/xhtml+xml" id="file_venturecapital.html"/>
+    <item href="file_start.html" media-type="application/xhtml+xml" id="file_start.html"/>
+    <item href="file_hs.html" media-type="application/xhtml+xml" id="file_hs.html"/>
+    <item href="file_usa.html" media-type="application/xhtml+xml" id="file_usa.html"/>
+    <item href="file_charisma.html" media-type="application/xhtml+xml" id="file_charisma.html"/>
+    <item href="file_polls.html" media-type="application/xhtml+xml" id="file_polls.html"/>
+    <item href="file_laundry.html" media-type="application/xhtml+xml" id="file_laundry.html"/>
+    <item href="file_bubble.html" media-type="application/xhtml+xml" id="file_bubble.html"/>
+    <item href="file_essay.html" media-type="application/xhtml+xml" id="file_essay.html"/>
+    <item href="file_pypar.html" media-type="application/xhtml+xml" id="file_pypar.html"/>
+    <item href="file_gh.html" media-type="application/xhtml+xml" id="file_gh.html"/>
+    <item href="file_gap.html" media-type="application/xhtml+xml" id="file_gap.html"/>
+    <item href="file_wealth.html" media-type="application/xhtml+xml" id="file_wealth.html"/>
+    <item href="file_gba.html" media-type="application/xhtml+xml" id="file_gba.html"/>
+    <item href="file_say.html" media-type="application/xhtml+xml" id="file_say.html"/>
+    <item href="file_ffb.html" media-type="application/xhtml+xml" id="file_ffb.html"/>
+    <item href="file_hp.html" media-type="application/xhtml+xml" id="file_hp.html"/>
+    <item href="file_iflisp.html" media-type="application/xhtml+xml" id="file_iflisp.html"/>
+    <item href="file_hundred.html" media-type="application/xhtml+xml" id="file_hundred.html"/>
+    <item href="file_nerds.html" media-type="application/xhtml+xml" id="file_nerds.html"/>
+    <item href="file_better.html" media-type="application/xhtml+xml" id="file_better.html"/>
+    <item href="file_desres.html" media-type="application/xhtml+xml" id="file_desres.html"/>
+    <item href="file_spam.html" media-type="application/xhtml+xml" id="file_spam.html"/>
+    <item href="file_icad.html" media-type="application/xhtml+xml" id="file_icad.html"/>
+    <item href="file_power.html" media-type="application/xhtml+xml" id="file_power.html"/>
+    <item href="file_fix.html" media-type="application/xhtml+xml" id="file_fix.html"/>
+    <item href="file_taste.html" media-type="application/xhtml+xml" id="file_taste.html"/>
+    <item href="file_noop.html" media-type="application/xhtml+xml" id="file_noop.html"/>
+    <item href="file_diff.html" media-type="application/xhtml+xml" id="file_diff.html"/>
+    <item href="file_road.html" media-type="application/xhtml+xml" id="file_road.html"/>
+    <item href="file_rootsoflisp.html" media-type="application/xhtml+xml" id="file_rootsoflisp.html"/>
+    <item href="file_langdes.html" media-type="application/xhtml+xml" id="file_langdes.html"/>
+    <item href="file_popular.html" media-type="application/xhtml+xml" id="file_popular.html"/>
+    <item href="file_javacover.html" media-type="application/xhtml+xml" id="file_javacover.html"/>
+    <item href="file_avg.html" media-type="application/xhtml+xml" id="file_avg.html"/>
+    <item href="file_lwba.html" media-type="application/xhtml+xml" id="file_lwba.html"/>
+    <item href="file_progbot.html" media-type="application/xhtml+xml" id="file_progbot.html"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="file_airbnb.html"/>
+    <itemref idref="file_control.html"/>
+    <itemref idref="file_tablets.html"/>
+    <itemref idref="file_founders.html"/>
+    <itemref idref="file_superangels.html"/>
+    <itemref idref="file_seesv.html"/>
+    <itemref idref="file_hiresfund.html"/>
+    <itemref idref="file_yahoo.html"/>
+    <itemref idref="file_future.html"/>
+    <itemref idref="file_addiction.html"/>
+    <itemref idref="file_top.html"/>
+    <itemref idref="file_selfindulgence.html"/>
+    <itemref idref="file_organic.html"/>
+    <itemref idref="file_apple.html"/>
+    <itemref idref="file_really.html"/>
+    <itemref idref="file_discover.html"/>
+    <itemref idref="file_publishing.html"/>
+    <itemref idref="file_nthings.html"/>
+    <itemref idref="file_determination.html"/>
+    <itemref idref="file_kate.html"/>
+    <itemref idref="file_segway.html"/>
+    <itemref idref="file_ramenprofitable.html"/>
+    <itemref idref="file_makersschedule.html"/>
+    <itemref idref="file_revolution.html"/>
+    <itemref idref="file_foundervisa.html"/>
+    <itemref idref="file_5founders.html"/>
+    <itemref idref="file_relres.html"/>
+    <itemref idref="file_angelinvesting.html"/>
+    <itemref idref="file_convergence.html"/>
+    <itemref idref="file_maybe.html"/>
+    <itemref idref="file_hackernews.html"/>
+    <itemref idref="file_13sentences.html"/>
+    <itemref idref="file_identity.html"/>
+    <itemref idref="file_credentials.html"/>
+    <itemref idref="file_divergence.html"/>
+    <itemref idref="file_highres.html"/>
+    <itemref idref="file_artistsship.html"/>
+    <itemref idref="file_badeconomy.html"/>
+    <itemref idref="file_fundraising.html"/>
+    <itemref idref="file_prcmc.html"/>
+    <itemref idref="file_cities.html"/>
+    <itemref idref="file_distraction.html"/>
+    <itemref idref="file_lies.html"/>
+    <itemref idref="file_good.html"/>
+    <itemref idref="file_googles.html"/>
+    <itemref idref="file_heroes.html"/>
+    <itemref idref="file_disagree.html"/>
+    <itemref idref="file_boss.html"/>
+    <itemref idref="file_ycombinator.html"/>
+    <itemref idref="file_trolls.html"/>
+    <itemref idref="file_newthings.html"/>
+    <itemref idref="file_startuphubs.html"/>
+    <itemref idref="file_webstartups.html"/>
+    <itemref idref="file_philosophy.html"/>
+    <itemref idref="file_colleges.html"/>
+    <itemref idref="file_die.html"/>
+    <itemref idref="file_head.html"/>
+    <itemref idref="file_stuff.html"/>
+    <itemref idref="file_equity.html"/>
+    <itemref idref="file_unions.html"/>
+    <itemref idref="file_guidetoinvestors.html"/>
+    <itemref idref="file_judgement.html"/>
+    <itemref idref="file_microsoft.html"/>
+    <itemref idref="file_notnot.html"/>
+    <itemref idref="file_wisdom.html"/>
+    <itemref idref="file_foundersatwork.html"/>
+    <itemref idref="file_goodart.html"/>
+    <itemref idref="file_startupmistakes.html"/>
+    <itemref idref="file_mit.html"/>
+    <itemref idref="file_investors.html"/>
+    <itemref idref="file_copy.html"/>
+    <itemref idref="file_island.html"/>
+    <itemref idref="file_marginal.html"/>
+    <itemref idref="file_america.html"/>
+    <itemref idref="file_siliconvalley.html"/>
+    <itemref idref="file_startuplessons.html"/>
+    <itemref idref="file_randomness.html"/>
+    <itemref idref="file_softwarepatents.html"/>
+    <itemref idref="file_6631327.html"/>
+    <itemref idref="file_whyyc.html"/>
+    <itemref idref="file_love.html"/>
+    <itemref idref="file_procrastination.html"/>
+    <itemref idref="file_web20.html"/>
+    <itemref idref="file_startupfunding.html"/>
+    <itemref idref="file_vcsqueeze.html"/>
+    <itemref idref="file_ideas.html"/>
+    <itemref idref="file_sfp.html"/>
+    <itemref idref="file_inequality.html"/>
+    <itemref idref="file_ladder.html"/>
+    <itemref idref="file_opensource.html"/>
+    <itemref idref="file_hiring.html"/>
+    <itemref idref="file_submarine.html"/>
+    <itemref idref="file_bronze.html"/>
+    <itemref idref="file_mac.html"/>
+    <itemref idref="file_writing44.html"/>
+    <itemref idref="file_college.html"/>
+    <itemref idref="file_venturecapital.html"/>
+    <itemref idref="file_start.html"/>
+    <itemref idref="file_hs.html"/>
+    <itemref idref="file_usa.html"/>
+    <itemref idref="file_charisma.html"/>
+    <itemref idref="file_polls.html"/>
+    <itemref idref="file_laundry.html"/>
+    <itemref idref="file_bubble.html"/>
+    <itemref idref="file_essay.html"/>
+    <itemref idref="file_pypar.html"/>
+    <itemref idref="file_gh.html"/>
+    <itemref idref="file_gap.html"/>
+    <itemref idref="file_wealth.html"/>
+    <itemref idref="file_gba.html"/>
+    <itemref idref="file_say.html"/>
+    <itemref idref="file_ffb.html"/>
+    <itemref idref="file_hp.html"/>
+    <itemref idref="file_iflisp.html"/>
+    <itemref idref="file_hundred.html"/>
+    <itemref idref="file_nerds.html"/>
+    <itemref idref="file_better.html"/>
+    <itemref idref="file_desres.html"/>
+    <itemref idref="file_spam.html"/>
+    <itemref idref="file_icad.html"/>
+    <itemref idref="file_power.html"/>
+    <itemref idref="file_fix.html"/>
+    <itemref idref="file_taste.html"/>
+    <itemref idref="file_noop.html"/>
+    <itemref idref="file_diff.html"/>
+    <itemref idref="file_road.html"/>
+    <itemref idref="file_rootsoflisp.html"/>
+    <itemref idref="file_langdes.html"/>
+    <itemref idref="file_popular.html"/>
+    <itemref idref="file_javacover.html"/>
+    <itemref idref="file_avg.html"/>
+    <itemref idref="file_lwba.html"/>
+    <itemref idref="file_progbot.html"/>
+  </spine>
+</package>

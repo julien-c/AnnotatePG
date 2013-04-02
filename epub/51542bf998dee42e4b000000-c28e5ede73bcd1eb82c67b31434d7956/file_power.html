@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Succinctness is Power</title></head><body>
+  <h2><span class="s s1">Succinctness is Power</span></h2>
+<div><div><span class="s s2">May 2002
+"The quantity of meaning compressed into a small space by 
+algebraic signs, is another circumstance that facilitates 
+the reasonings we are accustomed to carry on by their aid.</span><span class="s s3">"</span><span class="s s4">- Charles Babbage, quoted in Iverson's Turing Award Lecture
+In the discussion about issues raised by Revenge 
+of the Nerds on the LL1 mailing list, Paul Prescod wrote
+something that stuck in my mind.</span>
+<span class="s s5">Python's goal is regularity and readability, not succinctness.</span>
+<span class="s s6">On the face of it, this seems a rather damning thing to claim about a 
+programming language.</span> <span class="s s7">As far as I can tell, succinctness = power.</span>
+<span class="s s8">If so, then substituting, we get
+Python's goal is regularity and readability, not power.</span>
+<span class="s s9">and this doesn't seem a tradeoff (if it is a tradeoff)
+that you'd want to make.</span> 
+<span class="s s10">It's not far from saying that Python's goal is not to be effective 
+as a programming language.</span><span class="s s11">Does succinctness = power?</span> <span class="s s12">This seems to me an important question,
+maybe the most important question for anyone interested in
+language design, and one that it would be useful to confront
+directly.</span> <span class="s s13">I don't feel sure yet that the answer is a simple yes, but it seems 
+a good hypothesis to begin with.</span><span class="s s14">HypothesisMy hypothesis is that succinctness is power, or is close enough
+that except in pathological examples you can treat them as 
+identical.</span><span class="s s15">It seems to me that succinctness is what programming languages are 
+for.</span> <span class="s s16">Computers would be just as happy to be told what to
+do directly in machine language.</span> <span class="s s17">I think that the main
+reason we take the trouble to develop high-level languages is to
+get leverage, so that we can say (and more importantly, think)
+in 10 lines of a high-level language what would require 1000
+lines of machine language.</span> <span class="s s18">In other words,
+the main point of high-level languages is to make source code smaller.</span><span class="s s19">If smaller source code is the purpose of high-level languages, and
+the power of something is how well it achieves its purpose, then
+the measure of the power of a programming language is how small it
+makes your programs.Conversely, a language that doesn't make your programs small is
+doing a bad job of what programming languages are supposed to
+do, like a knife that doesn't cut well, or printing that's illegible.</span>
+<span class="s s20">MetricsSmall in what sense though?</span> <span class="s s21">The most common measure of code size is
+lines of code.</span> <span class="s s22">But I think that this metric is the most common because
+it is the easiest to measure.</span> <span class="s s23">I don't think anyone really believes
+it is the true test of the length of a program.</span> <span class="s s24">Different
+languages have different conventions for how much you should put
+on a line; in C a lot of lines have nothing on them but a delimiter or two.</span><span class="s s25">Another easy test is the number of characters in a 
+program, but this is not very good either; some languages (Perl,
+for example) just
+use shorter identifiers than others.</span><span class="s s26">I think a better measure of the size of a program would be the 
+number of elements, where an element is anything that
+would be a distinct node if you drew a tree representing the 
+source code.</span> <span class="s s27">The name of
+a variable or function is an element; 
+an integer or a floating-point number is an element;
+a segment of literal text is an element;
+an element of a pattern, or a format directive, is an element;
+a new block is an element.</span> <span class="s s28">There are borderline cases
+(is -5 two elements or one?</span><span class="s s29">) but I think most of them are the
+same for every language, so they don't affect comparisons much.</span><span class="s s30">This metric needs fleshing out, and
+it could require interpretation in the case of specific languages,
+but I think it tries to measure the right thing, which is the 
+number of parts a program has.</span> <span class="s s31">I think the tree you'd draw in this
+exercise is what you have to make in your head in order to
+conceive of the program, and so its size is proportionate to the
+amount of work you have to do to write or read it.</span><span class="s s32">DesignThis kind of metric would allow us to compare different languages,
+but that is not, at least for me, its main value.</span> <span class="s s33">The main value
+of the succinctness test is as a guide in designing languages.</span>
+<span class="s s34">The most useful comparison between languages is between two
+potential variants of the same language.</span> <span class="s s35">What can I do in the
+language to make programs shorter?</span><span class="s s36">If the conceptual load of
+a program is proportionate to its complexity, and a given programmer
+can tolerate a fixed conceptual load, then this is the same as asking,
+what can I do to enable programmers to get the most done?</span> <span class="s s37">And
+that seems to me identical to asking, how can I design a good
+language?</span><span class="s s38">(Incidentally, nothing makes it more patently obvious that the old
+chestnut "all languages are equivalent" is false than designing
+languages.</span> <span class="s s39">When you are designing a new language, you're constantly
+comparing two languages-- the language if I did x, and if I didn't-- to
+decide which is better.</span> <span class="s s40">If this were really a meaningless question,
+you might as well flip a coin.</span><span class="s s41">)Aiming for succinctness seems a good way to find new ideas.</span>
+<span class="s s42">If you can do something that makes many
+different programs shorter, it is probably not a coincidence: you have 
+probably discovered a useful new abstraction.</span> <span class="s s43">You might even be
+able to write a program to help by searching
+source code for repeated patterns.</span> <span class="s s44">Among other languages, those
+with a reputation for succinctness would be the ones to look to for
+new ideas: Forth, Joy, Icon.</span><span class="s s45">ComparisonThe first person to write about these issues, as far as I know, was
+Fred Brooks in the Mythical Man Month.</span> <span class="s s46">He wrote
+that programmers seemed to generate about the same
+amount of code per day regardless of the language.</span>
+<span class="s s47">When I first read this in my early twenties,
+it was a big surprise to me and seemed to have huge implications.</span>
+<span class="s s48">It meant that (a) the only way to get software written faster was to
+use a more succinct language, and (b) someone who took the
+trouble to do this could leave competitors who didn't in the dust.</span><span class="s s49">Brooks' hypothesis, if it's true, seems to be at the very heart of hacking.</span>
+<span class="s s50">In the years since, I've paid close attention to any evidence I could
+get on the question, from formal studies to anecdotes about individual
+projects.</span> <span class="s s51">I have seen nothing to contradict him.</span><span class="s s52">I have not yet seen evidence that seemed to me conclusive,
+and I don't expect to.</span> <span class="s s53">Studies
+like Lutz Prechelt's comparison of programming languages, while
+generating the kind of results I expected, tend to use problems that
+are too short to be meaningful tests.</span> <span class="s s54">A better test of a language is
+what happens in programs that take a month to write.</span> <span class="s s55">And the only
+real test, if you believe as I do that the main purpose of a language
+is to be good to think in (rather than just to tell a computer what to
+do once you've thought of it) is what new things you can write in it.</span>
+<span class="s s56">So any language comparison where
+you have to meet a predefined spec is testing slightly the wrong
+thing.</span><span class="s s57">The true test of a language is how well you can discover
+and solve new problems, not
+how well you can use it to solve a problem someone else has
+already formulated.</span> <span class="s s58">These two are quite different criteria.</span>
+<span class="s s59">In art, mediums like embroidery and mosaic work well if you
+know beforehand what you want to make, but are absolutely lousy if
+you don't.</span> <span class="s s60">When you want to discover the image as you make it--
+as you have to do with anything as complex as an image of a
+person, for example-- you need to use a more fluid medium like pencil or
+ink wash or oil paint.</span> <span class="s s61">And indeed, the way tapestries and mosaics are made in
+practice is to make a painting first, then copy it.</span> <span class="s s62">(The word
+"cartoon" was originally used to describe a painting intended for
+this purpose).</span><span class="s s63">What this means is that we are never likely to have accurate comparisons
+of the relative power of programming languages.</span> <span class="s s64">We'll have precise
+comparisons, but not accurate ones.</span> <span class="s s65">In particular, explicit studies
+for the purpose of comparing languages,
+because they will probably use small problems, and will necessarily use
+predefined problems, will tend to underestimate the power of the
+more powerful languages.</span><span class="s s66">Reports from the field, though they will necessarily be less precise than
+"scientific" studies, are likely to be more meaningful.</span> <span class="s s67">For example, 
+Ulf Wiger of Ericsson did a 
+study that 
+concluded that Erlang was 4-10x
+more succinct than C++, and proportionately faster to develop 
+software in:
+Comparisons between Ericsson-internal development projects indicate
+similar line/hour productivity, including all phases of software development,
+rather independently of which language (Erlang, PLEX, C, C++, or Java)
+was used.</span> <span class="s s68">What differentiates the different languages then becomes source
+code volume.</span>
+ <span class="s s69">The study also deals explictly with a point that was 
+only implicit in Brooks' book (since he measured lines of debugged code):
+programs written in more powerful languages tend to have fewer bugs.</span>
+<span class="s s70">That becomes an end in itself, possibly more important than programmer
+productivity, in applications like network switches.</span><span class="s s71">The Taste TestUltimately, I think you have to go with your gut.</span> <span class="s s72">What does it feel
+like to program in the language?</span> <span class="s s73">I think the way to find (or design)
+the best language is to become hypersensitive to how well a language
+lets you think, then choose/design the language that feels best.</span> <span class="s s74">If
+some language feature is awkward or restricting, don't worry, you'll
+know about it.</span><span class="s s75">Such hypersensitivity will come at a cost.</span> <span class="s s76">You'll find that you can't
+stand programming in clumsy languages.</span> <span class="s s77">I find it unbearably
+restrictive to program in languages without macros, just as someone used
+to dynamic typing finds it unbearably restrictive to have to go back to
+programming in a language where you have to declare the type of
+every variable, and can't make a list of objects of different types.</span>
+<span class="s s78">I'm not the only one.</span> <span class="s s79">I know many Lisp hackers that this has happened
+to.</span> <span class="s s80">In fact, the most accurate measure of the relative power of programming
+languages might be the percentage of people who know the language
+who will take any job where they get to use that language, regardless
+of the application domain.</span><span class="s s81">RestrictivenessI think most hackers know what it means for a language to feel restrictive.</span>
+<span class="s s82">What's happening when you feel that?</span> <span class="s s83">I think it's the same feeling
+you get when the street you want to take is blocked off, and you have to
+take a long detour to get where you wanted to go.</span> <span class="s s84">There is something
+you want to say, and the language won't let you.</span><span class="s s85">What's really going on here, I think, is that a restrictive language is
+one that isn't succinct enough.</span> <span class="s s86">The problem is not simply that you can't
+say what you planned to.</span> <span class="s s87">It's that the detour the language makes you
+take is longer.</span> <span class="s s88">Try this thought experiment.</span> <span class="s s89">Suppose there were
+some program you wanted to write, and the language wouldn't let you
+express it the way you planned to, but instead forced you to write the
+program in some other way that was shorter.</span> <span class="s s90">For me at least,
+that wouldn't feel very restrictive.</span> <span class="s s91">It would be like the street you
+wanted to take being blocked off, and the policeman at the 
+intersection directing you to a shortcut instead of a detour.</span> <span class="s s92">Great!</span><span class="s s93">I think most (ninety percent?</span><span class="s s94">) of 
+the feeling of restrictiveness comes from being forced to make the program
+you write in the language longer than one you have in your head.</span>
+<span class="s s95">Restrictiveness is mostly lack of succinctness.</span>
+<span class="s s96">So when a language feels restrictive, what that (mostly) means is that it isn't
+succinct enough, and when a language isn't succinct, it will
+feel restrictive.</span><span class="s s97">ReadabilityThe quote I began with mentions two other qualities, regularity and
+readability.</span> <span class="s s98">I'm not sure what regularity is, or what advantage, 
+if any, code that is regular and readable has over code that is merely
+readable.</span> <span class="s s99">But I think I know what is meant by readability, and I think
+it is also related to succinctness.</span><span class="s s100">We have to be careful here to distinguish between the readability of
+an individual line of code and the readability of the whole program.</span>
+<span class="s s101">It's the second that matters.</span> <span class="s s102">I agree that a line of Basic is likely to be
+more readable than a line of Lisp.</span> <span class="s s103">But a program written in Basic is
+is going to have more lines than the same program written in
+Lisp (especially once you cross over into Greenspunland).</span> <span class="s s104">The
+total effort of reading the Basic program will surely be greater.</span>
+<span class="s s105">total effort = effort per line x number of lines
+I'm not as sure that readability is directly proportionate to succinctness
+as I am that power is, but certainly succinctness is a factor 
+(in the mathematical sense; see equation above) in readability.</span>
+<span class="s s106">So it may not even be meaningful to say that the goal of a language is
+readability, not succinctness; it could be like saying the goal was readability,
+not readability.</span><span class="s s107">What readability-per-line does mean, to the user encountering the language
+for the first time, is that source code will look unthreatening.</span> <span class="s s108">So
+readability-per-line
+could be a good marketing decision, even if it is a bad design
+decision.</span> <span class="s s109">It's isomorphic to the very successful technique of letting
+people pay in installments: instead of frightening them with a high
+upfront price, you tell them the low monthly payment.</span> <span class="s s110">Installment plans
+are a net lose for the buyer, though, as mere readability-per-line probably
+is for the programmer.</span>
+<span class="s s111">The buyer is going to make a lot of those low, low payments; and 
+the programmer is going to read a lot of those individually readable lines.</span><span class="s s112">This tradeoff predates programming languages.</span> <span class="s s113">If you're used to reading
+novels and newspaper articles, your first experience of reading a math
+paper can be dismaying.</span> <span class="s s114">It could take half an hour to read a single page.</span> 
+<span class="s s115">And yet, I am pretty sure that the notation is not the problem, even though
+it may feel like it is.</span> <span class="s s116">The math paper is hard to read 
+because the ideas are hard.</span> <span class="s s117">If you expressed the same ideas in prose
+(as mathematicians had to do before they evolved succinct notations),
+they wouldn't be any easier to read, because the paper would grow to the
+size of a book.</span><span class="s s118">To What Extent?</span><span class="s s119">A number of people have rejected
+the idea that succinctness = power.</span> <span class="s s120">I think it would be more useful, instead
+of simply arguing that they are the same or aren't, to ask:
+to what extent does succinctness = power?</span>
+<span class="s s121">Because clearly succinctness is
+a large part of what higher-level languages are for.</span> <span class="s s122">If it is not all they're
+for, then what else are they for, and how important, relatively, are these
+other functions?</span><span class="s s123">I'm not proposing this just to make the debate more civilized.</span> <span class="s s124">I really
+want to know the answer.</span> <span class="s s125">When, if ever, is a language too succinct for 
+its own good?</span><span class="s s126">The hypothesis I began with was that, except in pathological examples,
+I thought succinctness could be considered identical with power.</span> <span class="s s127">What
+I meant was that in any language anyone would design, they
+would be identical, but that if someone wanted to design a language
+explicitly to disprove this hyphothesis, they could probably do it.</span> <span class="s s128">I'm
+not even sure of that, actually.</span><span class="s s129">Languages, not ProgramsWe should be clear that we are talking about the succinctness
+of languages, not of individual programs.
+It certainly is possible for individual programs to be written too densely.</span><span class="s s130">I wrote about this in On Lisp.</span> <span class="s s131">A complex macro
+may have to save many times its own length to be justified.</span> <span class="s s132">If writing
+some hairy macro could save you ten lines of code every time you use it,
+and the macro is itself ten lines of code, then you get a net saving in
+lines if you use it more than twice.</span> <span class="s s133">But that could still be a bad move,
+because macro definitions are harder to read than ordinary code.</span> <span class="s s134">You 
+might have to use the macro ten or twenty times before it yielded a net
+improvement in readability.</span><span class="s s135">I'm sure every language has such tradeoffs (though I suspect the stakes
+get higher as the language gets more powerful).</span> <span class="s s136">Every programmer must
+have seen code that some clever person has made marginally shorter
+by using dubious programming tricks.</span><span class="s s137">So there is no argument about that-- at least, not from me.</span> <span class="s s138">Individual
+programs can certainly be too succinct for their own good.</span> <span class="s s139">The question
+is, can a language be?</span> <span class="s s140">Can a language compel programmers to write
+code that's short (in elements) at the expense of overall readability?</span><span class="s s141">One reason it's hard to imagine a language being too succinct is that if
+there were some excessively compact way to phrase something, there would
+probably also be a longer way.</span> <span class="s s142">For example, if you felt Lisp programs using
+a lot of macros or higher-order functions were too dense, you could, if you
+preferred, write code that was isomorphic to Pascal.</span> <span class="s s143">If you
+don't want to express factorial in Arc as a call to a higher-order function
+(rec zero 1 * 1-)
+you can also write out a recursive definition:
+(rfn fact (x) (if (zero x) 1 (* x (fact (1- x)))))
+Though I can't off the top of my head think of any examples, I am interested
+in the question of whether a language could be too succinct.</span> <span class="s s144">Are there languages 
+that force you to write code in a way that is crabbed and incomprehensible?</span>
+<span class="s s145">If anyone has examples, I would be very interested to see them.</span><span class="s s146">(Reminder: What I'm looking for are programs that are very dense according
+to the metric of "elements" sketched above, not merely programs that are
+short because delimiters can be omitted and everything has a one-character name.</span><span class="s s147">)</span></div></div>
+  </body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>What Made Lisp Different</title></head><body>
+  <h2><span class="s s1">What Made Lisp Different</span></h2>
+<div><div>
+<p><span class="s s2">December 2001 (rev.</span> <span class="s s3">May 2002)
+(This article came about in response to some questions on
+the LL1 mailing list.</span> <span class="s s4">It is now
+incorporated in Revenge of the Nerds.</span><span class="s s5">)When McCarthy designed Lisp in the late 1950s, it was
+a radical departure from existing languages,
+the most important of which was Fortran.</span><span class="s s6">Lisp embodied nine new ideas:1.</span> <span class="s s7">Conditionals.</span> <span class="s s8">A conditional is an if-then-else
+construct.</span> <span class="s s9">We take these for granted now.</span> <span class="s s10">They were 
+invented
+by McCarthy in the course of developing Lisp.</span> 
+<span class="s s11">(Fortran at that time only had a conditional
+goto, closely based on the branch instruction in the 
+underlying hardware.</span><span class="s s12">) McCarthy, who was on the Algol committee, got
+conditionals into Algol, whence they spread to most other
+languages.</span></p>
+<p><span class="s s13">2.</span> <span class="s s14">A function type.</span> <span class="s s15">In Lisp, functions are first class 
+objects-- they're a data type just like integers, strings,
+etc, and have a literal representation, can be stored in variables,
+can be passed as arguments, and so on.</span></p>
+<p><span class="s s16">3.</span> <span class="s s17">Recursion.</span> <span class="s s18">Recursion existed as a mathematical concept
+before Lisp of course, but Lisp was the first programming language to support
+it.</span> <span class="s s19">(It's arguably implicit in making functions first class
+objects.</span><span class="s s20">)</span></p>
+<p><span class="s s21">4.</span> <span class="s s22">A new concept of variables.</span> <span class="s s23">In Lisp, all variables
+are effectively pointers.</span> <span class="s s24">Values are what
+have types, not variables, and assigning or binding
+variables means copying pointers, not what they point to.</span></p>
+<p><span class="s s25">5. Garbage-collection.</span></p>
+<p><span class="s s26">6.</span> <span class="s s27">Programs composed of expressions.</span> <span class="s s28">Lisp programs are 
+trees of expressions, each of which returns a value.</span> 
+<span class="s s29">(In some Lisps expressions
+can return multiple values.</span><span class="s s30">) This is in contrast to Fortran
+and most succeeding languages, which distinguish between
+expressions and statements.</span></p>
+<p><span class="s s31">It was natural to have this
+distinction in Fortran because (not surprisingly in a language
+where the input format was punched cards) the language was
+line-oriented.</span> <span class="s s32">You could not nest statements.</span> <span class="s s33">And
+so while you needed expressions for math to work, there was
+no point in making anything else return a value, because
+there could not be anything waiting for it.</span></p>
+<p><span class="s s34">This limitation
+went away with the arrival of block-structured languages,
+but by then it was too late.</span> <span class="s s35">The distinction between
+expressions and statements was entrenched.</span> <span class="s s36">It spread from 
+Fortran into Algol and thence to both their descendants.</span></p>
+<p><span class="s s37">When a language is made entirely of expressions, you can
+compose expressions however you want. You can say either
+(using Arc syntax)</span></p>
+<p><span class="s s38">(if foo (= x 1) (= x 2))</span></p>
+<p><span class="s s39">or</span></p>
+<p><span class="s s40">(= x (if foo 1 2))</span></p>
+<p><span class="s s41">7. A symbol type. Symbols differ from strings in that
+you can test equality by comparing a pointer.</span></p>
+<p><span class="s s42">8. A notation for code using trees of symbols.</span></p>
+<p><span class="s s43">9.</span> <span class="s s44">The whole language always available.</span> 
+<span class="s s45">There is
+no real distinction between read-time, compile-time, and runtime.</span>
+<span class="s s46">You can compile or run code while reading, read or run code
+while compiling, and read or compile code at runtime.</span></p>
+<p><span class="s s47">Running code at read-time lets users reprogram Lisp's syntax;
+running code at compile-time is the basis of macros; compiling
+at runtime is the basis of Lisp's use as an extension
+language in programs like Emacs; and reading at runtime
+enables programs to communicate using s-expressions, an
+idea recently reinvented as XML.</span>
+</p><span class="s s49">&nbsp;&nbsp;</span><p><span class="s s50">When Lisp was first invented, all these ideas were far
+removed from ordinary programming practice, which was
+dictated largely by the hardware available in the late 1950s.</span></p>
+<p><span class="s s51">Over time, the default language, embodied
+in a succession of popular languages, has
+gradually evolved toward Lisp.</span> <span class="s s52">1-5 are now widespread.</span>
+<span class="s s53">6 is starting to appear in the mainstream.</span>
+<span class="s s54">Python has a form of 7, though there doesn't seem to be
+any syntax for it.</span> 
+<span class="s s55">8, which (with 9) is what makes Lisp macros
+possible, is so far still unique to Lisp,
+perhaps because (a) it requires those parens, or something 
+just as bad, and (b) if you add that final increment of power, 
+you can no 
+longer claim to have invented a new language, but only
+to have designed a new dialect of Lisp ; -)</span></p>
+<p><span class="s s56">Though useful to present-day programmers, it's
+strange to describe Lisp in terms of its
+variation from the random expedients other languages
+adopted.</span> <span class="s s57">That was not, probably, how McCarthy
+thought of it.</span> <span class="s s58">Lisp wasn't designed to fix the mistakes
+in Fortran; it came about more as the byproduct of an
+attempt to axiomatize computation.</span></p>
+</div></div>
+  </body></html>

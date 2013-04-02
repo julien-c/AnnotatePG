@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version='1.0' encoding='utf-8'?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Why Arc Isn't Especially Object-Oriented</title></head><body>
+  <h2><span class="s s1">Why Arc Isn't Especially Object-Oriented</span></h2>
+<div><div>
+<span class="s s2">There is a kind of mania for object-oriented programming at the moment, but
+some of the smartest programmers I know are some of the least excited about it.</span><span class="s s3">My own feeling is that object-oriented
+programming is a useful technique in some
+cases, but it isn't something that has to pervade every program you
+write.</span> <span class="s s4">You should be able to define new types,
+but you shouldn't have to express every program as the
+definition of new types.</span><span class="s s5">I think there are five reasons people like object-oriented 
+programming, and three and a half of them are bad: Object-oriented programming is exciting 
+if you have a statically-typed language without 
+lexical closures or macros.</span> <span class="s s6">To some degree, it offers a way around these
+limitations.</span> <span class="s s7">(See Greenspun's Tenth Rule.</span><span class="s s8">) Object-oriented programming is popular in big companies,
+because it suits the way they write software.</span> <span class="s s9">At big companies,
+software tends to be written by large (and frequently changing) 
+teams of
+mediocre programmers.</span> <span class="s s10">Object-oriented programming imposes a
+discipline on these programmers that prevents any one of them
+from doing too much damage.</span> <span class="s s11">The price is that the resulting
+code is bloated with protocols and full of duplication.</span> 
+<span class="s s12">This is not too high a price for big companies, because their
+software is probably going to be bloated and full of 
+duplication anyway.</span> <span class="s s13">Object-oriented
+programming generates a lot of what looks like work.</span>
+<span class="s s14">Back in the days of fanfold, there was a type of programmer who
+would only put five or ten lines of code on a page, preceded
+by twenty lines of elaborately formatted comments.</span> 
+<span class="s s15">Object-oriented programming is like crack for these people: it lets
+you incorporate all this scaffolding right into your source
+code.</span> <span class="s s16">Something that a Lisp hacker might handle by pushing
+a symbol onto a list becomes a whole file of classes and
+methods.</span> <span class="s s17">So it is a good tool if you want to convince yourself,
+or someone else, that you are doing a lot of work.</span> <span class="s s18">If a language is itself an object-oriented program, it can
+be extended by users.</span> <span class="s s19">Well, maybe.</span> <span class="s s20">Or maybe you can do
+even better by offering the sub-concepts
+of object-oriented programming a la carte.</span> <span class="s s21">Overloading, 
+for example, is not intrinsically tied to classes.</span> <span class="s s22">We'll see.</span> <span class="s s23">Object-oriented abstractions map neatly onto the domains
+of certain specific kinds of programs, like simulations and CAD
+systems. 
+I personally have never needed object-oriented abstractions.</span>
+<span class="s s24">Common Lisp has an enormously powerful object system and I've
+never used it once.</span> <span class="s s25">I've done a lot of things (e.</span><span class="s s26">g.</span> <span class="s s27">making 
+hash tables full of closures) that would have required 
+object-oriented techniques to do in wimpier languages, but
+I have never had to use CLOS.</span><span class="s s28">Maybe I'm just stupid, or have worked on some limited subset
+of applications.</span> <span class="s s29">There is a danger in designing a language
+based on one's own experience of programming.</span> <span class="s s30">But it seems
+more dangerous to put stuff in that you've never needed 
+because it's thought to be a good idea.</span></div></div>
+  </body></html>
