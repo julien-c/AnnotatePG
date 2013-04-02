@@ -287,7 +287,7 @@ App.reader.listen('monocle:pagechange', function(evt) {
 	var doc = iframe.contentDocument;
 	
 	var t = -1;
-	$(doc).find('.s').each(function(i){
+	$(doc).find('span.s').each(function(i){
 		var position = $(this).position();
 		if (position.left === pageOffset) {
 			// Prevent collisions:
