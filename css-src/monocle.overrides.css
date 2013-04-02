@@ -8,3 +8,24 @@ div.monelem_page {
   right: 0;
   border-right: none;
 }
+
+div.monelem_controls_scrubber_container {
+  left: 3em;
+  right: 4em;
+  background: none;
+}
+
+div.monelem_controls_scrubber_track {
+  height: 6px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(135,130,126,0.8);
+}
+
+div.monelem_controls_scrubber_trail {
+  background: #8B402A;
+  top: 10px;
+  left: 0;
+  height: 6px;
+  border-radius: 3px;
+}
