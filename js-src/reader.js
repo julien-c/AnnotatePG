@@ -22,9 +22,9 @@ var events = ['monocle:incompatible', 'monocle:initializing', 'monocle:loading',
 
 events.forEach(function(evtName){
 	Monocle.Events.listen('reader', evtName, function(evt){
-		console.log(evt.type);
+		// console.log(evt.type);
 		if (evt.type === 'monocle:controlshow') {
-			console.log(evt.m.control);
+			// console.log(evt.m.control);
 		}
 	});
 });
@@ -149,57 +149,13 @@ App.reader.listen('monocle:pagechange',
 
 // Ranges and Sentences:
 
-// Monocle.Events.listen('reader', 'monocle:selection', function(evt){
-// 	console.log('rangy serialization:');
-// 	var s = rangy.serializeRange(evt.m.range.range, true, evt.m.document.body);
-// 	console.log(s);
-// });
-
-Monocle.buffer = [];
-Monocle.Events.listen('reader', 'monocle:deselection', function(evt){
-	console.log('DESELECT:');
-	var s = rangy.serializeRange(evt.m.range.range, true, evt.m.document.body);
-	console.log(s);
-	Monocle.buffer.push(s);
-});
 
 App.componentmap = {};
-/*
+
 Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 	var component = evt.m.component.properties.id;
-	App.sentences[component].forEach(function(s){
-		
-		// if (!rangy.canDeserializeRange(s, evt.m.document.body, evt.m.document)) {
-		// 	console.log('canDeserializeRange: FALSE', s);
-		// }
-		
-		var range = rangy.deserializeRange(s, evt.m.document.body, evt.m.document);
-		
-		// console.log(range);
-		
-		// if (!range.canSurroundContents()) {
-		// 	console.log('canSurroundContents: FALSE', range);
-		// }
-		
-		var span = document.createElement('span');
-		span.className = 'sentence';
-		$(span).attr('data-id', s);
-		// Attach click handler:
-		$(span).click(function(){
-			App.panel.open({
-				excerpt: $(this).text(),
-				component: component,
-				sentence: s
-			});
-		});
-		
-		// Insert span:
-		range.surroundContents(span);
-		
-	});
 	
 	$.get(App.API + 'component', {component: component}, function(sentences){
-		
 		App.componentmap = sentences;
 		
 		$.each(sentences, function(sentence, count){
@@ -209,7 +165,7 @@ Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 		});
 	});
 });
-*/
+
 ['monocle:pagechange', 'monocle:boundarystart', 'monocle:boundaryend'].forEach(function(evtName){
 	App.reader.listen(evtName, function(evt){
 		App.panel.retract();
@@ -234,7 +190,6 @@ else {
 	};
 }
 
-console.log(Monocle.user);
 
 
 $(document).ready(function(){
