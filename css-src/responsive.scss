@@ -1,0 +1,15 @@
+@for $i from 10 through 54 {
+	@media (min-height: #{$i * 10 + 100}px) and (max-height: #{$i * 10 + 110}px) {
+		.container {
+			height: #{$i * 10}px;
+		}
+	}
+}
+
+@for $i from 55 through 87 {
+	@media (min-height: #{$i * 10 + 100}px) and (max-height: #{$i * 10 + 110}px) {
+		.container {
+			height: #{$i * 10 - 50}px;
+		}
+	}
+}

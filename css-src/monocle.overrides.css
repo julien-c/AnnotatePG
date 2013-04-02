@@ -1,0 +1,10 @@
+
+div.monelem_container {
+  background-color: white;
+}
+
+div.monelem_page {
+  bottom: 0;
+  right: 0;
+  border-right: none;
+}
