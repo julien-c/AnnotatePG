@@ -58,10 +58,8 @@ App.reader = Monocle.Reader(
 		reader.addControl(Monocle.toc, 'popover', {hidden: true});
 		
 		// @see https://github.com/joseph/Monocle/pull/173
-		var scrubber = document.getElementById('scrubber');
-		scrubber.dom = new Monocle.Factory(scrubber, 'scrubber', null, reader);
 		Monocle.scrubber = new Monocle.Controls.Scrubber(reader);
-		reader.addControl(Monocle.scrubber, 'explicit', {node: scrubber});
+		reader.addControl(Monocle.scrubber, 'standard', {container: 'scrubber'});
 		
 		/* PAGE NUMBER RUNNING HEAD */
 		var pageNumber = {
