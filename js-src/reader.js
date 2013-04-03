@@ -307,4 +307,12 @@ Monocle.Events.listen('reader', 'monocle:componentchange', function(evt) {
 			}
 		};
 	});
+	$(doc).find('body').keydown(function(e){
+		if (e.which == 37) {
+			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() - 1});
+		}
+		else if (e.which == 39) {
+			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() + 1});
+		}
+	});
 });
