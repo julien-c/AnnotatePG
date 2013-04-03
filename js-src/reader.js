@@ -281,14 +281,17 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 			// Prevent collisions:
 			if (position.top >= t) {
 				t = position.top;
+				var data = {
+					excerpt: $(this).text(),
+					component: evt.m.locus.componentId,
+					sentence: $(this).attr('data-id')
+				};
 				if (App.componentmap[$(this).attr('data-id')]) {
-					var data = {
-						excerpt: $(this).text(),
-						component: evt.m.locus.componentId,
-						sentence: $(this).attr('data-id')
-					};
 					App.bar.addBubble(position.top, App.componentmap[$(this).attr('data-id')], data);
 				}
+				$(this).click(function(){
+					App.panel.open(data);
+				});
 			}
 		}
 	});
