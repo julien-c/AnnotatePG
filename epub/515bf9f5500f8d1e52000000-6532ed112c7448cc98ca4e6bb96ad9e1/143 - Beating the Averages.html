@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en"><head><title>
+   Beating the Averages
+  </title></head><body>
+  <h1><span class="s s1">
+   Beating the Averages
+  </span></h1>
+  <h2>
+   </h2><p><span class="s s2">
+    April 2001, rev. April 2003
+   </span></p>
+   <p><span class="s s3">
+    <i>
+     (This article is derived from a talk given at the 2001 Franz
+Developer Symposium.)
+    </i>
+   </span></p>
+   <p><span class="s s4">
+    In the summer of 1995, my friend Robert Morris and I
+started a startup called
+    <a target="_blank" href="http://docs.yahoo.com/docs/pr/release184.html">
+     Viaweb
+    </a>
+    .</span>  
+<span class="s s5">Our plan was to write
+software that would let end users build online stores.</span>
+<span class="s s6">What was novel about this software, at the time, was
+that it ran on our server, using ordinary Web pages
+as the interface.</span>
+   </p>
+   <p>
+    <span class="s s8">A lot of people could have been having this idea at the
+same time, of course, but as far as I know, Viaweb was
+the first Web-based application.</span>  <span class="s s9">It seemed such
+a novel idea to us that we named the company after it:
+Viaweb, because our software worked via the Web,
+instead of running on your desktop computer.</span>
+   </p>
+   <p>
+    <span class="s s11">Another unusual thing about this software was that it
+was written primarily in a programming language called
+Lisp.</span> <span class="s s12">It was one of the first big end-user
+applications to be written in Lisp, which up till then
+had been used mostly in universities and research labs.</span> <span class="s s13">[1]</span>
+   </p>
+   <h3><span class="s s14">
+    The Secret Weapon
+   </span></h3>
+   <p>
+    <span class="s s15">Eric Raymond has written an essay called "How to Become a Hacker,"
+and in it, among other things, he tells would-be hackers what
+languages they should learn.</span>  <span class="s s16">He suggests starting with Python and
+Java, because they are easy to learn.</span>  <span class="s s17">The serious hacker will also
+want to learn C, in order to hack Unix, and Perl for system
+administration and cgi scripts.</span>  <span class="s s18">Finally, the truly serious hacker
+should consider learning Lisp:</span>
+    </p><blockquote>
+     <span class="s s19">Lisp is worth learning for the profound enlightenment experience
+  you will have when you finally get it; that experience will make
+  you a better programmer for the rest of your days, even if you
+  never actually use Lisp itself a lot.</span>
+    </blockquote><span class="s s21">
+    This is the same argument you tend to hear for learning Latin.  It
+won't get you a job, except perhaps as a classics professor, but
+it will improve your mind, and make you a better writer in languages
+you do want to use, like English.
+   
+   </span><p>
+    <span class="s s22">But wait a minute.</span>  <span class="s s23">This metaphor doesn't stretch that far.</span>  <span class="s s24">The
+reason Latin won't get you a job is that no one speaks it.</span>  <span class="s s25">If you
+write in Latin, no one can understand you.</span>  <span class="s s26">But Lisp is a computer
+language, and computers speak whatever language you, the programmer,
+tell them to.</span>
+   </p>
+   <p>
+    <span class="s s28">So if Lisp makes you a better programmer, like he says, why wouldn't
+you want to use it?</span> <span class="s s29">If a painter were offered a brush that would
+make him a better painter, it seems to me that he would want to
+use it in all his paintings, wouldn't he?</span> <span class="s s30">I'm not trying to make
+fun of Eric Raymond here.</span>  <span class="s s31">On the whole, his advice is good.</span>  <span class="s s32">What
+he says about Lisp is pretty much the conventional wisdom.</span>  <span class="s s33">But
+there is a contradiction in the conventional wisdom:  Lisp will
+make you a better programmer, and yet you won't use it.</span>
+   </p>
+   <p>
+    <span class="s s35">Why not?</span>  <span class="s s36">Programming languages are just tools, after all.</span>  <span class="s s37">If Lisp
+really does yield better programs, you should use it.</span>  <span class="s s38">And if it
+doesn't, then who needs it?</span>
+   </p>
+   <p>
+    <span class="s s40">This is not just a theoretical question.</span>  <span class="s s41">Software is a very
+competitive business, prone to natural monopolies.</span>  <span class="s s42">A company that
+gets software written faster and better will, all other things
+being equal, put its competitors out of business.</span>  <span class="s s43">And when you're
+starting a startup, you feel this very keenly.</span>  <span class="s s44">Startups tend to
+be an all or nothing proposition.</span>  <span class="s s45">You either get rich, or you get
+nothing.</span>  <span class="s s46">In a startup, if you bet on the wrong technology, your
+competitors will crush you.</span>
+   </p>
+   <p>
+    <span class="s s48">Robert and I both knew Lisp well, and we couldn't see any reason
+not to trust our instincts and go with Lisp.</span>  <span class="s s49">We knew that everyone
+else was writing their software in C++ or Perl.</span>  <span class="s s50">But we also knew
+that that didn't mean anything.</span>  <span class="s s51">If you chose technology that way,
+you'd be running Windows.</span>  <span class="s s52">When you choose technology, you have to
+ignore what other people are doing, and consider only what will
+work the best.</span>
+   </p>
+   <p>
+    <span class="s s54">This is especially true in a startup.</span>  <span class="s s55">In a big company, you can
+do what all the other big companies are doing.</span>  <span class="s s56">But a startup can't
+do what all the other startups do.</span>  <span class="s s57">I don't think a lot of people
+realize this, even in startups.</span>
+   </p>
+   <p>
+    <span class="s s59">The average big company grows at about ten percent a year.</span>  <span class="s s60">So if
+you're running a big company and you do everything the way the
+average big company does it, you can expect to do as well as the
+average big company-- that is, to grow about ten percent a year.</span>
+   </p>
+   <p>
+    <span class="s s62">The same thing will happen if you're running a startup, of course.</span>
+<span class="s s63">If you do everything the way the average startup does it, you should
+expect average performance.</span>  <span class="s s64">The problem here is, average performance
+means that you'll go out of business.</span>  <span class="s s65">The survival rate for startups
+is way less than fifty percent.</span>  <span class="s s66">So if you're running a startup,
+you had better be doing something odd.</span>  <span class="s s67">If not, you're in trouble.</span>
+   </p>
+   <p>
+    <span class="s s69">Back in 1995, we knew something that I don't think our competitors
+understood, and few understand even now:  when you're writing
+software that only has to run on your own servers, you can use
+any language you want.</span>  <span class="s s70">When you're writing desktop software,
+there's a strong bias toward writing applications in the same
+language as the operating system.</span>  <span class="s s71">Ten years ago, writing applications
+meant writing applications in C.</span>  <span class="s s72">But with Web-based software,
+especially when you have the source code of both the language and
+the operating system, you can use whatever language you want.</span>
+   </p>
+   <p>
+    <span class="s s74">This new freedom is a double-edged sword, however.</span>  <span class="s s75">Now that you
+can use any language, you have to think about which one to use.</span>
+<span class="s s76">Companies that try to pretend nothing has changed risk finding that
+their competitors do not.</span>
+   </p>
+   <p>
+    <span class="s s78">If you can use any language, which do you use?</span>  <span class="s s79">We chose Lisp.</span>
+<span class="s s80">For one thing, it was obvious that rapid development would be
+important in this market.</span>  <span class="s s81">We were all starting from scratch, so
+a company that could get new features done before its competitors
+would have a big advantage.</span>  <span class="s s82">We knew Lisp was a really good language
+for writing software quickly, and server-based applications magnify
+the effect of rapid development, because you can release software
+the minute it's done.</span>
+   </p>
+   <p>
+    <span class="s s84">If other companies didn't want to use Lisp, so much the better.</span>
+<span class="s s85">It might give us a technological edge, and we needed all the help
+we could get.</span>  <span class="s s86">When we started Viaweb, we had no experience in
+business.</span>  <span class="s s87">We didn't know anything about marketing, or hiring
+people, or raising money, or getting customers.</span>  <span class="s s88">Neither of us had
+ever even had what you would call a real job.</span>  <span class="s s89">The only thing we
+were good at was writing software.</span>  <span class="s s90">We hoped that would save us.</span>
+<span class="s s91">Any advantage we could get in the software department, we would
+take.</span>
+   </p>
+   <p>
+    <span class="s s93">So you could say that using Lisp was an experiment.</span>  <span class="s s94">Our hypothesis
+was that if we wrote our software in Lisp, we'd be able to get
+features done faster than our competitors, and also to do things
+in our software that they couldn't do.</span>  <span class="s s95">And because Lisp was so
+high-level, we wouldn't need a big development team, so our costs
+would be lower.</span>  <span class="s s96">If this were so, we could offer a better product
+for less money, and still make a profit.</span>  <span class="s s97">We would end up getting
+all the users, and our competitors would get none, and eventually
+go out of business.</span>  <span class="s s98">That was what we hoped would happen, anyway.</span>
+   </p>
+   <p>
+    <span class="s s100">What were the results of this experiment?</span>  <span class="s s101">Somewhat surprisingly,
+it worked.</span>  <span class="s s102">We eventually had many competitors, on the order of
+twenty to thirty of them, but none of their software could compete
+with ours.</span>  <span class="s s103">We had a wysiwyg online store builder that ran on the
+server and yet felt like a desktop application.</span>  <span class="s s104">Our competitors
+had cgi scripts.</span>  <span class="s s105">And we were always far ahead of them in features.</span>
+<span class="s s106">Sometimes, in desperation, competitors would try to introduce
+features that we didn't have.</span>  <span class="s s107">But with Lisp our development cycle
+was so fast that we could sometimes duplicate a new feature within
+a day or two of a competitor announcing it in a press release.</span>  <span class="s s108">By
+the time journalists covering the press release got round to calling
+us, we would have the new feature too.</span>
+   </p>
+   <p>
+    <span class="s s110">It must have seemed to our competitors that we had some kind of
+secret weapon-- that we were decoding their Enigma traffic or
+something.</span>  <span class="s s111">In fact we did have a secret weapon, but it was simpler
+than they realized.</span>  <span class="s s112">No one was leaking news of their features to
+us.</span>   <span class="s s113">We were just able to develop software faster than anyone
+thought possible.</span>
+   </p>
+   <p><span class="s s115">
+    When I was about nine I happened to get hold of a copy of
+    <i>
+     The Day
+of the Jackal,
+    </i>
+    by Frederick Forsyth.</span>  <span class="s s116">The main character is an
+assassin who is hired to kill the president of France.</span>  <span class="s s117">The assassin
+has to get past the police to get up to an apartment that overlooks
+the president's route.</span>  <span class="s s118">He walks right by them, dressed up as an
+old man on crutches, and they never suspect him.</span>
+   </p>
+   <p>
+    <span class="s s120">Our secret weapon was similar.</span>  <span class="s s121">We wrote our software in a weird
+AI language, with a bizarre syntax full of parentheses.</span>  <span class="s s122">For years
+it had annoyed me to hear Lisp described that way.</span>  <span class="s s123">But now it
+worked to our advantage.</span>  <span class="s s124">In business, there is nothing more valuable
+than a technical advantage your competitors don't understand.</span>  <span class="s s125">In
+business, as in war, surprise is worth as much as force.</span>
+   </p>
+   <p>
+    <span class="s s127">And so, I'm a little embarrassed to say, I never said anything
+publicly about Lisp while we were working on Viaweb.</span>  <span class="s s128">We never
+mentioned it to the press, and if you searched for Lisp on our Web
+site, all you'd find were the titles of two books in my bio.</span>  <span class="s s129">This
+was no accident.</span>  <span class="s s130">A startup should give its competitors as little
+information as possible.</span>  <span class="s s131">If they didn't know what language our
+software was written in, or didn't care, I wanted to keep it that
+way.</span><span class="s s132">[2]</span>
+   </p>
+   <p>
+    <span class="s s133">The people who understood our technology best were the customers.</span>
+<span class="s s134">They didn't care what language Viaweb was written in either, but
+they noticed that it worked really well.</span>  <span class="s s135">It let them build great
+looking online stores literally in minutes.</span>  <span class="s s136">And so, by word of
+mouth mostly, we got more and more users.</span>  <span class="s s137">By the end of 1996 we
+had about 70 stores online.</span>  <span class="s s138">At the end of 1997 we had 500.</span>  <span class="s s139">Six
+months later, when Yahoo bought us, we had 1070 users.</span>  <span class="s s140">Today, as
+Yahoo Store, this software continues to dominate its market.</span>  <span class="s s141">It's
+one of the more profitable pieces of Yahoo, and the stores built
+with it are the foundation of Yahoo Shopping.</span>  <span class="s s142">I left Yahoo in
+1999, so I don't know exactly how many users they have now, but
+the last I heard there were about 20,000.</span>
+   </p>
+   <p>
+    <!-- People sometimes ask me if Yahoo Store still uses Lisp.  Yes, all
+the Lisp code is still there.  Yahoo has server-side software
+written in all five of the languages Eric Raymond recommends to
+hackers.
+-->
+    <b><span class="s s144">
+     The Blub Paradox
+     </span></b></p><p>
+      <span class="s s145">What's so great about Lisp?</span>  <span class="s s146">And if Lisp is so great, why doesn't
+everyone use it?</span>  <span class="s s147">These sound like rhetorical questions, but actually
+they have straightforward answers.</span>  <span class="s s148">Lisp is so great not because
+of some magic quality visible only to devotees, but because it is
+simply the most powerful language available.</span>  <span class="s s149">And the reason everyone
+doesn't use it is that programming languages are not merely
+technologies, but habits of mind as well, and nothing changes
+slower.</span>  <span class="s s150">Of course, both these answers need explaining.</span>
+     </p>
+     <p><span class="s s152">
+      I'll begin with a shockingly controversial statement:  programming
+languages vary in power.
+     </span></p>
+     <p>
+      <span class="s s153">Few would dispute, at least, that high level languages are more
+powerful than machine language.</span>  <span class="s s154">Most programmers today would agree
+that you do not, ordinarily, want to program in machine language.</span>
+<span class="s s155">Instead, you should program in a high-level language, and have a
+compiler translate it into machine language for you.</span>  <span class="s s156">This idea is
+even built into the hardware now: since the 1980s, instruction sets
+have been designed for compilers rather than human programmers.</span>
+     </p>
+     <p>
+      <span class="s s158">Everyone knows it's a mistake to write your whole program by hand
+in machine language.</span>  <span class="s s159">What's less often understood is that there
+is a more general principle here: that if you have a choice of
+several languages, it is, all other things being equal, a mistake
+to program in anything but the most powerful one.</span> <span class="s s160">[3]</span>
+     </p>
+     <p>
+      <span class="s s161">There are many exceptions to this rule.</span>  <span class="s s162">If you're writing a program
+that has to work very closely with a program written in a certain
+language, it might be a good idea to write the new program in the
+same language.</span>  <span class="s s163">If you're writing a program that only has to do
+something very simple, like number crunching or bit manipulation,
+you may as well use a less abstract language, especially since it
+may be slightly faster.</span>  <span class="s s164">And if you're writing a short, throwaway
+program, you may be better off just using whatever language has
+the best library functions for the task.</span>  <span class="s s165">But in general, for
+application software, you want to be using the most powerful
+(reasonably efficient) language you can get, and using anything
+else is a mistake, of exactly the same kind, though possibly in a
+lesser degree, as programming in machine language.</span>
+     </p>
+     <p>
+      <span class="s s167">You can see that machine language is very low level.</span>  <span class="s s168">But, at least
+as a kind of social convention, high-level languages are often all
+treated as equivalent.</span>  <span class="s s169">They're not.</span>  <span class="s s170">Technically the term "high-level
+language" doesn't mean anything very definite.</span>  <span class="s s171">There's no dividing
+line with machine languages on one side and all the high-level
+languages on the other.</span>  <span class="s s172">Languages fall along a continuum [4] of
+abstractness, from the most powerful all the way down to machine
+languages, which themselves vary in power.</span>
+     </p>
+     <p>
+      <span class="s s174">Consider Cobol.</span>  <span class="s s175">Cobol is a high-level language, in the sense that
+it gets compiled into machine language.</span>  <span class="s s176">Would anyone seriously
+argue that Cobol is equivalent in power to, say, Python?</span>  <span class="s s177">It's
+probably closer to machine language than Python.</span>
+     </p>
+     <p>
+      <span class="s s179">Or how about Perl 4?</span>  <span class="s s180">Between Perl 4 and Perl 5, lexical closures
+got added to the language.</span>  <span class="s s181">Most Perl hackers would agree that Perl
+5 is more powerful than Perl 4.</span>  <span class="s s182">But once you've admitted that,
+you've admitted that one high level language can be more powerful
+than another.</span>  <span class="s s183">And it follows inexorably that, except in special
+cases, you ought to use the most powerful you can get.</span>
+     </p>
+     <p>
+      <span class="s s185">This idea is rarely followed to its conclusion, though.</span>  <span class="s s186">After a
+certain age, programmers rarely switch languages voluntarily.</span>
+<span class="s s187">Whatever language people happen to be used to, they tend to consider
+just good enough.</span>
+     </p>
+     <p>
+      <span class="s s189">Programmers get very attached to their favorite languages, and I
+don't want to hurt anyone's feelings, so to explain this point I'm
+going to use a hypothetical language called Blub.</span>  <span class="s s190">Blub falls right
+in the middle of the abstractness continuum.</span>  <span class="s s191">It is not the most
+powerful language, but it is more powerful than Cobol or machine
+language.</span>
+     </p>
+     <p>
+      <span class="s s193">And in fact, our hypothetical Blub programmer wouldn't use either
+of them.</span>  <span class="s s194">Of course he wouldn't program in machine language.</span>  <span class="s s195">That's
+what compilers are for.</span>  <span class="s s196">And as for Cobol, he doesn't know how
+anyone can get anything done with it.</span>  <span class="s s197">It doesn't even have x (Blub
+feature of your choice).</span>
+     </p>
+     <p>
+      <span class="s s199">As long as our hypothetical Blub programmer is looking down the
+power continuum, he knows he's looking down.</span>  <span class="s s200">Languages less powerful
+than Blub are obviously less powerful, because they're missing some
+feature he's used to.</span>  <span class="s s201">But when our hypothetical Blub programmer
+looks in the other direction, up the power continuum, he doesn't
+realize he's looking up.</span>  <span class="s s202">What he sees are merely weird languages.</span>
+<span class="s s203">He probably considers them about equivalent in power to Blub, but
+with all this other hairy stuff thrown in as well.</span>  <span class="s s204">Blub is good
+enough for him, because he thinks in Blub.</span>
+     </p>
+     <p>
+      <span class="s s206">When we switch to the point of view of a programmer using any of
+the languages higher up the power continuum, however, we find that
+he in turn looks down upon Blub.</span>  <span class="s s207">How can you get anything done in
+Blub?</span> <span class="s s208">It doesn't even have y.</span>
+     </p>
+     <p>
+      <span class="s s210">By induction, the only programmers in a position to see all the
+differences in power between the various languages are those who
+understand the most powerful one.</span>  <span class="s s211">(This is probably what Eric
+Raymond meant about Lisp making you a better programmer.</span><span class="s s212">) You can't
+trust the opinions of the others, because of the Blub paradox:
+they're satisfied with whatever language they happen to use, because
+it dictates the way they think about programs.</span>
+     </p>
+     <p>
+      <span class="s s213">I know this from my own experience, as a high school kid writing
+programs in Basic.</span>  <span class="s s214">That language didn't even support recursion.</span>
+<span class="s s215">It's hard to imagine writing programs without using recursion, but
+I didn't miss it at the time.</span>  <span class="s s216">I thought in Basic.</span>  <span class="s s217">And I was a
+whiz at it.</span>  <span class="s s218">Master of all I surveyed.</span>
+     </p>
+     <p>
+      <span class="s s220">The five languages that Eric Raymond recommends to hackers fall at
+various points on the power continuum.</span>  <span class="s s221">Where they fall relative
+to one another is a sensitive topic.</span>  <span class="s s222">What I will say is that I
+think Lisp is at the top.</span>  <span class="s s223">And to support this claim I'll tell you
+about one of the things I find missing when I look at the other
+four languages.</span>  <span class="s s224">How can you get anything done in them, I think,
+without macros?</span> <span class="s s225">[5]</span>
+     </p>
+     <p>
+      <span class="s s226">Many languages have something called a macro.</span>  <span class="s s227">But Lisp macros are
+unique.</span>  <span class="s s228">And believe it or not, what they do is related to the
+parentheses.</span>  <span class="s s229">The designers of Lisp didn't put all those parentheses
+in the language just to be different.</span>  <span class="s s230">To the Blub programmer, Lisp
+code looks weird.</span>  <span class="s s231">But those parentheses are there for a reason.</span>
+<span class="s s232">They are the outward evidence of a fundamental difference between
+Lisp and other languages.</span>
+     </p>
+     <p>
+      <span class="s s234">Lisp code is made out of Lisp data objects.</span>  <span class="s s235">And not in the trivial
+sense that the source files contain characters, and strings are
+one of the data types supported by the language.</span>  <span class="s s236">Lisp code, after
+it's read by the parser, is made of data structures that you can
+traverse.</span>
+     </p>
+     <p>
+      <span class="s s238">If you understand how compilers work, what's really going on is
+not so much that Lisp has a strange syntax as that Lisp has no
+syntax.</span>  <span class="s s239">You write programs in the parse trees that get generated
+within the compiler when other languages are parsed.</span>  <span class="s s240">But these
+parse trees are fully accessible to your programs.  You can write
+programs that manipulate them.</span>  <span class="s s241">In Lisp, these programs are called
+macros.</span>  <span class="s s242">They are programs that write programs.</span>
+     </p>
+     <p>
+      <span class="s s243">Programs that write programs?</span>  <span class="s s244">When would you ever want to do that?</span>
+<span class="s s245">Not very often, if you think in Cobol.</span>  <span class="s s246">All the time, if you think
+in Lisp.</span>  <span class="s s247">It would be convenient here if I could give an example
+of a powerful macro, and say there!</span> <span class="s s248">how about that?</span>  <span class="s s249">But if I did,
+it would just look like gibberish to someone who didn't know Lisp;
+there isn't room here to explain everything you'd need to know to
+understand what it meant.</span><span class="s s250">  In
+      <a target="_blank" href="http://paulgraham.com/acl.html">
+       Ansi Common Lisp
+      </a>
+      I tried to move
+things along as fast as I could, and even so I didn't get to macros
+until page 160.</span>
+     </p>
+     <p>
+      <span class="s s252">But I think I can give a kind of argument that might be convincing.</span>
+<span class="s s253">The source code of the Viaweb editor was probably about 20-25%
+macros.</span>  <span class="s s254">Macros are harder to write than ordinary Lisp functions,
+and it's considered to be bad style to use them when they're not
+necessary.</span>  <span class="s s255">So every macro in that code is there because it has to
+be.</span>  <span class="s s256">What that means is that at least 20-25% of the code in this
+program is doing things that you can't easily do in any other
+language.</span>  <span class="s s257">However skeptical the Blub programmer might be about my
+claims for the mysterious powers of Lisp, this ought to make him
+curious.</span>  <span class="s s258">We weren't writing this code for our own amusement.</span>  <span class="s s259">We
+were a tiny startup, programming as hard as we could in order to
+put technical barriers between us and our competitors.</span>
+     </p>
+     <p>
+      <span class="s s261">A suspicious person might begin to wonder if there was some
+correlation here.</span>  <span class="s s262">A big chunk of our code was doing things that
+are very hard to do in other languages.</span>  <span class="s s263">The resulting software
+did things our competitors' software couldn't do.</span>  <span class="s s264">Maybe there was
+some kind of connection.</span>  <span class="s s265">I encourage you to follow that thread.</span>
+<span class="s s266">There may be more to that old man hobbling along on his crutches
+than meets the eye.</span>
+     </p>
+     <h3><span class="s s268">
+      Aikido for Startups
+     </span></h3>
+     <p><span class="s s269">
+      But I don't expect to convince anyone 
+(
+      <a target="_blank" href="http://www.trollope.org/scheme.html">
+       over 25
+      </a>
+      ) 
+to go out and learn
+Lisp.</span>  <span class="s s270">The purpose of this article is not to change anyone's mind,
+but to reassure people already interested in using Lisp-- people
+who know that Lisp is a powerful language, but worry because it
+isn't widely used.</span>  <span class="s s271">In a competitive situation, that's an advantage.</span>
+<span class="s s272">Lisp's power is multiplied by the fact that your competitors don't
+get it.</span>
+     </p>
+     <p>
+      <span class="s s274">If you think of using Lisp in a startup, you shouldn't worry that
+it isn't widely understood.</span>  <span class="s s275">You should hope that it stays that
+way.</span> <span class="s s276">And it's likely to.</span>  <span class="s s277">It's the nature of programming languages
+to make most people satisfied with whatever they currently use.</span>
+<span class="s s278">Computer hardware changes so much faster than personal habits that
+programming practice is usually ten to twenty years behind the
+processor.</span>  <span class="s s279">At places like MIT they were writing programs in
+high-level languages in the early 1960s, but many companies continued
+to write code in machine language well into the 1980s.</span>  <span class="s s280">I bet a
+lot of people continued to write machine language until the processor,
+like a bartender eager to close up and go home, finally kicked them
+out by switching to a risc instruction set.</span>
+     </p>
+     <p>
+      <span class="s s282">Ordinarily technology changes fast.</span>  <span class="s s283">But programming languages are
+different: programming languages are not just technology, but what
+programmers think in.</span>  <span class="s s284">They're half technology and half religion.</span><span class="s s285">[6]
+And so the median language, meaning whatever language the median
+programmer uses, moves as slow as an iceberg.</span>  <span class="s s286">Garbage collection,
+introduced by Lisp in about 1960, is now widely considered to be
+a good thing.</span>  <span class="s s287">Runtime typing, ditto, is growing in popularity.</span>
+<span class="s s288">Lexical closures, introduced by Lisp in the early 1970s, are now,
+just barely, on the radar screen.</span>  <span class="s s289">Macros, introduced by Lisp in the
+mid 1960s, are still terra incognita.</span>
+     </p>
+     <p>
+      <span class="s s291">Obviously, the median language has enormous momentum.</span>  <span class="s s292">I'm not
+proposing that you can fight this powerful force.</span>  <span class="s s293">What I'm proposing
+is exactly the opposite: that, like a practitioner of Aikido, you
+can use it against your opponents.</span>
+     </p>
+     <p>
+      <span class="s s295">If you work for a big company, this may not be easy.</span>  <span class="s s296">You will have
+a hard time convincing the pointy-haired boss to let you build
+things in Lisp, when he has just read in the paper that some other
+language is poised, like Ada was twenty years ago, to take over
+the world.</span>  <span class="s s297">But if you work for a startup that doesn't have
+pointy-haired bosses yet, you can, like we did, turn the Blub
+paradox to your advantage:  you can use technology that your
+competitors, glued immovably to the median language, will never be
+able to match.</span>
+     </p>
+     <p>
+      <span class="s s299">If you ever do find yourself working for a startup, here's a handy
+tip for evaluating competitors.</span>  <span class="s s300">Read their job listings.</span>  <span class="s s301">Everything
+else on their site may be stock photos or the prose equivalent,
+but the job listings have to be specific about what they want, or
+they'll get the wrong candidates.</span>
+     </p>
+     <p>
+      <span class="s s303">During the years we worked on Viaweb I read a lot of job descriptions.</span>
+<span class="s s304">A new competitor seemed to emerge out of the woodwork every month
+or so.</span>  <span class="s s305">The first thing I would do, after checking to see if they
+had a live online demo, was look at their job listings.</span>  <span class="s s306">After a
+couple years of this I could tell which companies to worry about
+and which not to.</span>  <span class="s s307">The more of an IT flavor the job descriptions
+had, the less dangerous the company was.</span>  <span class="s s308">The safest kind were the
+ones that wanted Oracle experience.</span>  <span class="s s309">You never had to worry about
+those.</span>  <span class="s s310">You were also safe if they said they wanted C++ or Java
+developers.</span>  <span class="s s311">If they wanted Perl or Python programmers, that would
+be a bit frightening-- that's starting to sound like a company
+where the technical side, at least, is run by real hackers.</span>  <span class="s s312">If I
+had ever seen a job posting looking for Lisp hackers, I would have
+been really worried.</span>
+     </p>
+     <p>
+     </p>
+     <h3><span class="s s314">
+      Notes
+     </span></h3>
+     <p>
+      <span class="s s315">[1] Viaweb at first had two parts: the editor, written in Lisp,
+which people used to build their sites, and the ordering system,
+written in C, which handled orders.</span>  <span class="s s316">The first version was mostly
+Lisp, because the ordering system was small.</span>  <span class="s s317">Later we added two
+more modules, an image generator written in C, and a back-office
+manager written mostly in Perl.</span>
+     </p>
+     <p>
+      <span class="s s319">In January 2003, Yahoo released a new version of the editor 
+written in C++ and Perl.</span>  <span class="s s320">It's hard to say whether the program is no
+longer written in Lisp, though, because to translate this program
+into C++ they literally had to write a Lisp interpreter: the source
+files of all the page-generating templates are still, as far as I
+know,  Lisp code.</span><span class="s s321">  (See
+      <a target="_blank" href="http://paulgraham.com/quotes.html">
+       Greenspun's Tenth Rule
+      </a>
+      .</span><span class="s s322">)</span>
+     </p>
+     <p>
+      <span class="s s323">[2] Robert Morris says that I didn't need to be secretive, because
+even if our competitors had known we were using Lisp, they wouldn't
+have understood why:  "If they were that smart they'd already be
+programming in Lisp.</span><span class="s s324">"</span>
+     </p>
+     <p>
+      <span class="s s326">[3] All languages are equally powerful in the sense of being Turing
+equivalent, but that's not the sense of the word programmers care
+about.</span> <span class="s s327">(No one wants to program a Turing machine.</span><span class="s s328">)  The kind of
+power programmers care about may not be formally definable, but
+one way to explain it would be to say that it refers to features
+you could only get in the less powerful language by writing an
+interpreter for the more powerful language in it.</span> <span class="s s329">If language A
+has an operator for removing spaces from strings and language B
+doesn't, that probably doesn't make A more powerful, because you
+can probably write a subroutine to do it in B.</span>  <span class="s s330">But if A supports,
+say, recursion, and B doesn't, that's not likely to be something
+you can fix by writing library functions.</span>
+     </p>
+     <p>
+      <span class="s s332">[4] Note to nerds: or possibly a lattice, narrowing toward the top;
+it's not the shape that matters here but the idea that there is at
+least a partial order.</span>
+     </p>
+     <p>
+      <span class="s s334">[5] It is a bit misleading to treat macros as a separate feature.</span>
+<span class="s s335">In practice their usefulness is greatly enhanced by other Lisp
+features like lexical closures and rest parameters.</span>
+     </p>
+     <p>
+      <span class="s s337">[6] As a result, comparisons of programming languages either take
+the form of religious wars or undergraduate textbooks so determinedly
+neutral that they're really works of anthropology.</span>  <span class="s s338">People who
+value their peace, or want tenure, avoid the topic.</span>  <span class="s s339">But the question
+is only half a religious one; there is something there worth
+studying, especially if you want to design new languages.</span>
+     </p>
+     <p><span class="s s341">
+      This essay was originally published at
+      <a target="_blank" href="http://www.paulgraham.com/avg.html?utm_source=pgebook">
+       paulgraham.com
+      </a>
+      </span></p><p>
+      </p>
+     
+    
+   
+  
+ </body></html>

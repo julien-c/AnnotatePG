@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en"><head><title>
+   Design and Research
+  </title></head><body>
+  <h1><span class="s s1">
+   Design and Research
+  </span></h1>
+  <h2><span class="s s2">
+   January 2003
+  </span></h2>
+  <p><span class="s s3">
+   <i>
+    (This article is derived from a keynote talk at the fall 2002 meeting
+of NEPLS.)
+   </i>
+  </span></p>
+  <p>
+   <span class="s s4">Visitors to this country are often surprised to find that
+Americans like to begin a conversation by asking "what do you do?</span><span class="s s5">"</span>
+<span class="s s6">I've never liked this question.</span>  <span class="s s7">I've rarely had a
+neat answer to it.</span>  <span class="s s8">But I think I have finally solved the problem.</span><span class="s s9">
+Now, when someone asks me what I do, I look them straight
+in the eye and say "I'm designing a
+   <a target="_blank" href="http://paulgraham.com/arc.html">
+    new dialect of Lisp
+   </a>
+   .</span><span class="s s10">"</span>   
+<span class="s s11">I recommend this answer to anyone who doesn't like being asked what
+they do.</span>  <span class="s s12">The conversation will turn immediately to other topics.</span>
+  </p>
+  <p>
+   <span class="s s14">I don't consider myself to be doing research on programming languages.</span>
+<span class="s s15">I'm just designing one, in the same way that someone might design
+a building or a chair or a new typeface.</span>
+<span class="s s16">I'm not trying to discover anything new.</span>  <span class="s s17">I just want
+to make a language that will be good to program in.</span>  <span class="s s18">In some ways,
+this assumption makes life a lot easier.</span>
+  </p>
+  <p>
+   <span class="s s20">The difference between design and research seems to be a question
+of new versus good.</span>  <span class="s s21">Design doesn't have to be new, but it has to  
+be good.</span>  <span class="s s22">Research doesn't have to be good, but it has to be new.</span>
+<span class="s s23">I think these two paths converge at the top: the best design
+surpasses its predecessors by using new ideas, and the best research
+solves problems that are not only new, but actually worth solving.</span>
+<span class="s s24">So ultimately we're aiming for the same destination, just approaching
+it from different directions.</span>
+  </p>
+  <p>
+   <span class="s s26">What I'm going to talk about today is what your target looks like
+from the back.</span>  <span class="s s27">What do you do differently when you treat
+programming languages as a design problem instead of a research topic?</span>
+  </p>
+  <p>
+  </p>
+  <p>
+   <span class="s s29">The biggest difference is that you focus more on the user.</span>
+<span class="s s30">Design begins by asking, who is this
+for and what do they need from it?</span>  <span class="s s31">A good architect,
+for example, does not begin by creating a design that he then
+imposes on the users, but by studying the intended users and figuring
+out what they need.</span>
+  </p>
+  <p>
+   <span class="s s33">Notice I said "what they need," not "what they want.</span><span class="s s34">"</span>  <span class="s s35">I don't mean
+to give the impression that working as a designer means working as 
+a sort of short-order cook, making whatever the client tells you
+to.</span>  <span class="s s36">This varies from field to field in the arts, but
+I don't think there is any field in which the best work is done by
+the people who just make exactly what the customers tell them to.</span>
+  </p>
+  <p><span class="s s38">
+   The customer
+   <i>
+    is
+   </i>
+   always right in
+the sense that the measure of good design is how well it works
+for the user.</span>  <span class="s s39">If you make a novel that bores everyone, or a chair
+that's horribly uncomfortable to sit in, then you've done a bad
+job, period.</span>  <span class="s s40">It's no defense to say that the novel or the chair  
+is designed according to the most advanced theoretical principles.</span>
+  </p>
+  <p>
+   <span class="s s42">And yet, making what works for the user doesn't mean simply making
+what the user tells you to.</span>  <span class="s s43">Users don't know what all the choices
+are, and are often mistaken about what they really want.</span>
+  </p>
+  <p>
+   <span class="s s45">The answer to the paradox, I think, is that you have to design
+for the user, but you have to design what the user needs, not simply  
+what he says he wants.</span>
+<span class="s s46">It's much like being a doctor.</span>  <span class="s s47">You can't just treat a patient's
+symptoms.  When a patient tells you his symptoms, you have to figure
+out what's actually wrong with him, and treat that.</span>
+  </p>
+  <p>
+   <span class="s s49">This focus on the user is a kind of axiom from which most of the
+practice of good design can be derived, and around which most design
+issues center.</span>
+  </p>
+  <p>
+  </p>
+  <p>
+   <span class="s s51">If good design must do what the user needs, who is the user?</span>  <span class="s s52">When
+I say that design must be for users, I don't mean to imply that good 
+design aims at some kind of  
+lowest common denominator.</span>  <span class="s s53">You can pick any group of users you
+want.</span>  <span class="s s54">If you're designing a tool, for example, you can design it
+for anyone from beginners to experts, and what's good design
+for one group might be bad for another.</span>  <span class="s s55">The point
+is, you have to pick some group of users.</span>  <span class="s s56">I don't think you can
+even talk about good or bad design except with
+reference to some intended user.</span>
+  </p>
+  <p>
+   <span class="s s58">You're most likely to get good design if the intended users include
+the designer himself.</span>  <span class="s s59">When you design something
+for a group that doesn't include you, it tends to be for people
+you consider to be less sophisticated than you, not more sophisticated.</span>
+  </p>
+  <p>
+   <span class="s s61">That's a problem, because looking down on the user, however benevolently,
+seems inevitably to corrupt the designer.</span>
+<span class="s s62">I suspect that very few housing
+projects in the US were designed by architects who expected to live
+in them.</span>   <span class="s s63">You can see the same thing
+in programming languages.</span>  <span class="s s64">C, Lisp, and Smalltalk were created for
+their own designers to use.</span>  <span class="s s65">Cobol, Ada, and Java, were created   
+for other people to use.</span>
+  </p>
+  <p><span class="s s67">
+   If you think you're designing something for idiots, the odds are
+that you're not designing something good, even for idiots.
+  </span></p>
+  <p>
+  </p>
+  <p>
+   <span class="s s68">Even if you're designing something for the most sophisticated
+users, though, you're still designing for humans.</span>  <span class="s s69">It's different 
+in research.</span>  <span class="s s70">In math you
+don't choose abstractions because they're
+easy for humans to understand; you choose whichever make the
+proof shorter.</span>  <span class="s s71">I think this is true for the sciences generally.</span>
+<span class="s s72">Scientific ideas are not meant to be ergonomic.</span>
+  </p>
+  <p>
+   <span class="s s74">Over in the arts, things are very different.</span>  <span class="s s75">Design is
+all about people.</span>  <span class="s s76">The human body is a strange
+thing, but when you're designing a chair,
+that's what you're designing for, and there's no way around it.</span>
+<span class="s s77">All the arts have to pander to the interests and limitations
+of humans.</span>   <span class="s s78">In painting, for example, all other things being
+equal a painting with people in it will be more interesting than
+one without.</span>  <span class="s s79">It is not merely an accident of history that
+the great paintings of the Renaissance are all full of people.</span>
+<span class="s s80">If they hadn't been, painting as a medium wouldn't have the prestige
+that it does.</span>
+  </p>
+  <p>
+   <span class="s s82">Like it or not, programming languages are also for people,
+and I suspect the human brain is just as lumpy and idiosyncratic
+as the human body.</span>  <span class="s s83">Some ideas are easy for people to grasp
+and some aren't.</span>  <span class="s s84">For example, we seem to have a very limited
+capacity for dealing with detail.</span>  <span class="s s85">It's this fact that makes
+programing languages a good idea in the first place; if we
+could handle the detail, we could just program in machine
+language.</span>
+  </p>
+  <p>
+   <span class="s s87">Remember, too, that languages are not
+primarily a form for finished programs, but something that
+programs have to be developed in.</span>  <span class="s s88">Anyone in the arts could
+tell you that you might want different mediums for the
+two situations.</span>  <span class="s s89">Marble, for example, is a nice, durable
+medium for finished ideas, but a hopelessly inflexible one
+for developing new ideas.</span>
+  </p>
+  <p>
+   <span class="s s91">A program, like a proof,
+is a pruned version of a tree that in the past has had
+false starts branching off all over it.</span>  <span class="s s92">So the test of
+a language is not simply how clean the finished program looks
+in it, but how clean the path to the finished program was.</span>
+<span class="s s93">A design choice that gives you elegant finished programs
+may not give you an elegant design process.</span>  <span class="s s94">For example, 
+I've written a few macro-defining macros full of nested
+backquotes that look now like little gems, but writing them
+took hours of the ugliest trial and error, and frankly, I'm still
+not entirely sure they're correct.</span>
+  </p>
+  <p>
+   <span class="s s96">We often act as if the test of a language were how good
+finished programs look in it.</span>
+<span class="s s97">It seems so convincing when you see the same program
+written in two languages, and one version is much shorter.</span>
+<span class="s s98">When you approach the problem from the direction of the
+arts, you're less likely to depend on this sort of
+test.</span>  <span class="s s99">You don't want to end up with a programming
+language like marble.</span>
+  </p>
+  <p>
+   <span class="s s101">For example, it is a huge win in developing software to
+have an interactive toplevel, what in Lisp is called a
+read-eval-print loop.</span>  <span class="s s102">And when you have one this has
+real effects on the design of the language.</span>  <span class="s s103">It would not
+work well for a language where you have to declare
+variables before using them, for example.</span>  <span class="s s104">When you're
+just typing expressions into the toplevel, you want to be 
+able to set x to some value and then start doing things
+to x.</span>  <span class="s s105">You don't want to have to declare the type of x
+first.</span>  <span class="s s106">You may dispute either of the premises, but if
+a language has to have a toplevel to be convenient, and
+mandatory type declarations are incompatible with a
+toplevel, then no language that makes type declarations  
+mandatory could be convenient to program in.</span>
+  </p>
+  <p>
+  </p>
+  <p>
+   <span class="s s108">In practice, to get good design you have to get close, and stay
+close, to your users.</span>  <span class="s s109">You have to calibrate your ideas on actual
+users constantly, especially in the beginning.</span>  <span class="s s110">One of the reasons
+Jane Austen's novels are so good is that she read them out loud to
+her family.</span>  <span class="s s111">That's why she never sinks into self-indulgently arty
+descriptions of landscapes,
+or pretentious philosophizing.</span>  <span class="s s112">(The philosophy's there, but it's
+woven into the story instead of being pasted onto it like a label.</span><span class="s s113">)
+If you open an average "literary" novel and imagine reading it out loud
+to your friends as something you'd written, you'll feel all too
+keenly what an imposition that kind of thing is upon the reader.</span>
+  </p>
+  <p>
+   <span class="s s115">In the software world, this idea is known as Worse is Better.</span>
+<span class="s s116">Actually, there are several ideas mixed together in the concept of
+Worse is Better, which is why people are still arguing about
+whether worse
+is actually better or not.</span>  <span class="s s117">But one of the main ideas in that
+mix is that if you're building something new, you should get a
+prototype in front of users as soon as possible.</span>
+  </p>
+  <p>
+   <span class="s s119">The alternative approach might be called the Hail Mary strategy.</span>
+<span class="s s120">Instead of getting a prototype out quickly and gradually refining
+it, you try to create the complete, finished, product in one long
+touchdown pass.</span>  <span class="s s121">As far as I know, this is a
+recipe for disaster.</span>  <span class="s s122">Countless startups destroyed themselves this
+way during the Internet bubble.</span>  <span class="s s123">I've never heard of a case
+where it worked.</span>
+  </p>
+  <p>
+   <span class="s s125">What people outside the software world may not realize is that
+Worse is Better is found throughout the arts.</span>
+<span class="s s126">In drawing, for example, the idea was discovered during the
+Renaissance.</span>  <span class="s s127">Now almost every drawing teacher will tell you that
+the right way to get an accurate drawing is not to
+work your way slowly around the contour of an object, because errors will
+accumulate and you'll find at the end that the lines don't meet.</span>
+<span class="s s128">Instead you should draw a few quick lines in roughly the right place,
+and then gradually refine this initial sketch.</span>
+  </p>
+  <p>
+   <span class="s s130">In most fields, prototypes
+have traditionally been made out of different materials.</span>
+<span class="s s131">Typefaces to be cut in metal were initially designed  
+with a brush on paper.</span>  <span class="s s132">Statues to be cast in bronze   
+were modelled in wax.</span>  <span class="s s133">Patterns to be embroidered on tapestries
+were drawn on paper with ink wash.</span>  <span class="s s134">Buildings to be
+constructed from stone were tested on a smaller scale in wood.</span>
+  </p>
+  <p><span class="s s136">
+   What made oil paint so exciting, when it
+first became popular in the fifteenth century, was that you
+could actually make the finished work
+   <i>
+    from
+   </i>
+   the prototype.</span>
+<span class="s s137">You could make a preliminary drawing if you wanted to, but you
+weren't held to it; you could work out all the details, and
+even make major changes, as you finished the painting.</span>
+  </p>
+  <p>
+   <span class="s s139">You can do this in software too.</span>  <span class="s s140">A prototype doesn't have to
+be just a model; you can refine it into the finished product.</span>
+<span class="s s141">I think you should always do this when you can.</span>  <span class="s s142">It lets you
+take advantage of new insights you have along the way.</span>  <span class="s s143">But
+perhaps even more important, it's good for morale.</span>
+  </p>
+  <p>
+  </p>
+  <p>
+   <span class="s s145">Morale is key in design.</span>  <span class="s s146">I'm surprised people
+don't talk more about it.</span>  <span class="s s147">One of my first
+drawing teachers told me: if you're bored when you're
+drawing something, the drawing will look boring.</span>
+<span class="s s148">For example, suppose you have to draw a building, and you
+decide to draw each brick individually.</span>  <span class="s s149">You can do this
+if you want, but if you get bored halfway through and start
+making the bricks mechanically instead of observing each one,   
+the drawing will look worse than if you had merely suggested
+the bricks.</span>
+  </p>
+  <p>
+   <span class="s s151">Building something by gradually refining a prototype is good
+for morale because it keeps you engaged.</span>  <span class="s s152">In software, my  
+rule is: always have working code.</span>  <span class="s s153">If you're writing
+something that you'll be able to test in an hour, then you
+have the prospect of an immediate reward to motivate you.</span>
+<span class="s s154">The same is true in the arts, and particularly in oil painting.</span>
+<span class="s s155">Most painters start with a blurry sketch and gradually
+refine it.</span>
+<span class="s s156">If you work this way, then in principle
+you never have to end the day with something that actually
+looks unfinished.</span>  <span class="s s157">Indeed, there is even a saying among
+painters: "A painting is never finished, you just stop
+working on it.</span><span class="s s158">"</span>  <span class="s s159">This idea will be familiar to anyone who
+has worked on software.</span>
+  </p>
+  <p>
+   <span class="s s161">Morale is another reason that it's hard to design something
+for an unsophisticated user.</span>   <span class="s s162">It's hard to stay interested in
+something you don't like yourself.</span>  <span class="s s163">To make something  
+good, you have to be thinking, "wow, this is really great,"
+not "what a piece of shit; those fools will love it.</span><span class="s s164">"</span>
+  </p>
+  <p><span class="s s166">
+   Design means making things for humans.  But it's not just the
+user who's human.  The designer is human too.
+  </span></p>
+  <p>
+  </p>
+  <p>
+   <span class="s s167">Notice all this time I've been talking about "the designer.</span><span class="s s168">"</span>
+<span class="s s169">Design usually has to be under the control of a single person to
+be any good.</span>   <span class="s s170">And yet it seems to be possible for several people
+to collaborate on a research project.</span>  <span class="s s171">This seems to
+me one of the most interesting differences between research and
+design.</span>
+  </p>
+  <p>
+   <span class="s s173">There have been famous instances of collaboration in the arts,
+but most of them seem to have been cases of molecular bonding rather
+than nuclear fusion.</span>  <span class="s s174">In an opera it's common for one person to
+write the libretto and another to write the music.</span>   <span class="s s175">And during the Renaissance, 
+journeymen from northern
+Europe were often employed to do the landscapes in the
+backgrounds of Italian paintings.</span>  <span class="s s176">But these aren't true collaborations.</span>
+<span class="s s177">They're more like examples of Robert Frost's
+"good fences make good neighbors.</span><span class="s s178">"</span>  <span class="s s179">You can stick instances
+of good design together, but within each individual project,
+one person has to be in control.</span>
+  </p>
+  <p>
+   <span class="s s181">I'm not saying that good design requires that one person think
+of everything.</span>  <span class="s s182">There's nothing more valuable than the advice
+of someone whose judgement you trust.</span>  <span class="s s183">But after the talking is
+done, the decision about what to do has to rest with one person.</span>
+  </p>
+  <p>
+   <span class="s s185">Why is it that research can be done by collaborators and  
+design can't?</span>  <span class="s s186">This is an interesting question.</span>  <span class="s s187">I don't 
+know the answer.</span>  <span class="s s188">Perhaps,
+if design and research converge, the best research is also
+good design, and in fact can't be done by collaborators.</span>
+<span class="s s189">A lot of the most famous scientists seem to have worked alone.</span>
+<span class="s s190">But I don't know enough to say whether there
+is a pattern here.</span>  <span class="s s191">It could be simply that many famous scientists
+worked when collaboration was less common.</span>
+  </p>
+  <p>
+   <span class="s s193">Whatever the story is in the sciences, true collaboration
+seems to be vanishingly rare in the arts.</span>  <span class="s s194">Design by committee is a
+synonym for bad design.</span>  <span class="s s195">Why is that so?</span>  <span class="s s196">Is there some way to
+beat this limitation?</span>
+  </p>
+  <p>
+   <span class="s s198">I'm inclined to think there isn't-- that good design requires
+a dictator.</span>  <span class="s s199">One reason is that good design has to   
+be all of a piece.</span>  <span class="s s200">Design is not just for humans, but
+for individual humans.</span>  <span class="s s201">If a design represents an idea that  
+fits in one person's head, then the idea will fit in the user's
+head too.</span>
+  </p>
+  <p>
+  </p>
+  <h3><span class="s s203">
+   Related:
+   </span></h3><p><span class="s s204">
+    This essay was originally published at
+    <a target="_blank" href="http://www.paulgraham.com/desres.html?utm_source=pgebook">
+     paulgraham.com
+    </a>
+    </span></p><p>
+    </p>
+   
+  
+ </body></html>

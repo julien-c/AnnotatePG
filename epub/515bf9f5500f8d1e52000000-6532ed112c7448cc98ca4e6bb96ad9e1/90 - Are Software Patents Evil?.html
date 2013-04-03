@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en"><head><title>
+   Are Software Patents Evil?
+  </title></head><body>
+  <h1><span class="s s1">
+   Are Software Patents Evil?
+  </span></h1>
+  <h2>
+   <!--<table width=100% cellspacing=0>
+<tr><img src="http://www.virtumundo.com/images/spacer.gif"
+height=15 width=1>
+<b>April 29:</b> Free one-day
+<a target="_blank" href="http://startupschool.org">startup school</a>
+for hackers.
+
+<img src="http://www.virtumundo.com/images/spacer.gif" height=5 width=1></td
+></tr>
+</table>
+--><span class="s s2">
+   March 2006
+  </span></h2>
+  <p><span class="s s3">
+   <i>
+    (This essay is derived from a talk at Google.)
+   </i>
+  </span></p>
+  <p><span class="s s4">
+   A few weeks ago I found to my surprise that I'd been granted four
+   <a target="_blank" href="http://paulgraham.infogami.com/blog/morepatents">
+    patents
+   </a>
+   .</span>  
+<span class="s s5">This was all the more surprising
+because I'd only applied for three.</span>  <span class="s s6">The patents aren't mine, of
+course.</span>  <span class="s s7">They were assigned to Viaweb, and became Yahoo's when they
+bought us.</span>  <span class="s s8">But the news set me thinking about the question of
+software patents generally.</span>
+  </p>
+  <p>
+   <span class="s s10">Patents are a hard problem.</span>  <span class="s s11">I've had to advise most of the startups
+we've funded about them, and despite years of experience I'm still
+not always sure I'm giving the right advice.</span>
+  </p>
+  <p>
+   <span class="s s13">One thing I do feel pretty certain of is that if you're against
+software patents, you're against patents in general.</span>  <span class="s s14">Gradually our
+machines consist more and more of software.</span>  <span class="s s15">Things that used to
+be done with levers and cams and gears are now done with loops and
+trees and closures.</span>  <span class="s s16">There's nothing special about physical embodiments
+of control systems that should make them patentable, and the software
+equivalent not.</span>
+  </p>
+  <p>
+   <span class="s s18">Unfortunately, patent law is inconsistent on this point.</span>  <span class="s s19">Patent
+law in most countries says that algorithms aren't patentable.</span>  <span class="s s20">This
+rule is left over from a time when "algorithm" meant something like
+the Sieve of Eratosthenes.</span>  <span class="s s21">In 1800, people could not see as readily
+as we can that a great many patents on mechanical objects were
+really patents on the algorithms they embodied.</span>
+  </p>
+  <p>
+   <span class="s s23">Patent lawyers still have to pretend that's what they're doing when
+they patent algorithms.  You must not use the word "algorithm" in
+the title of a patent application, just as you must not use the
+word "essays" in the title of a book.</span>  <span class="s s24">If you want to patent an
+algorithm, you have to frame it as a computer system executing that algorithm.</span>
+<span class="s s25">Then it's mechanical; phew.</span>  <span class="s s26">The default euphemism for algorithm
+is "system and method.</span><span class="s s27">"</span>  <span class="s s28">Try a patent search for that phrase and
+see how many results you get.</span>
+  </p>
+  <p>
+   <span class="s s30">Since software patents are no different from hardware patents,
+people who say "software patents are evil" are saying simply "patents
+are evil.</span><span class="s s31">"</span>  <span class="s s32">So why do so many people complain about software patents
+specifically?</span>
+  </p>
+  <p>
+   <span class="s s34">I think the problem is more with the patent office than the concept
+of software patents.</span>  <span class="s s35">Whenever software meets government, bad things
+happen, because software changes fast and government changes slow.</span>
+<span class="s s36">The patent office has been overwhelmed by both the volume and the
+novelty of applications for software patents, and as a result they've
+made a lot of mistakes.</span>
+  </p>
+  <p>
+   <span class="s s38">The most common is to grant patents that shouldn't be granted.</span>  <span class="s s39">To
+be patentable, an invention has to be more than new.</span>  <span class="s s40">It also has
+to be non-obvious.</span>  <span class="s s41">And this, especially, is where the USPTO has
+been dropping the ball.</span> <span class="s s42">Slashdot has an icon that expresses the
+problem vividly: a knife and fork with the words "patent pending"
+superimposed.</span>
+  </p>
+  <p><span class="s s44">
+   The scary thing is, this is the
+   <i>
+    only
+   </i>
+   icon they have for
+patent stories.</span>  <span class="s s45">Slashdot readers now take it for granted that a
+story about a patent will be about a bogus patent.</span>
+<span class="s s46">That's how bad the problem has become.</span>
+  </p>
+  <p>
+   <span class="s s48">The problem with Amazon's notorious one-click patent, for example,
+is not that it's a software patent, but that it's obvious.</span>  <span class="s s49">Any
+online store that kept people's shipping addresses would have
+implemented this.</span>  <span class="s s50">The reason Amazon did it first was not that they
+were especially smart, but because they were one of the earliest
+sites with enough clout to force customers to log in before they
+could buy something.</span><span class="s s51">
+                           
+                            [
+   <a name="f1" href="#f1n">
+    1
+   </a>
+   ]
+  </span></p>
+  <p>
+   <span class="s s52">We, as hackers, know the USPTO is letting people patent the knives
+and forks of our world.</span>  <span class="s s53">The problem is, the USPTO are not hackers.</span>
+<span class="s s54">They're probably good at judging new inventions for casting steel
+or grinding lenses, but they don't understand software yet.</span>
+  </p>
+  <p>
+   <span class="s s56">At this point an optimist would be tempted to add "but they will
+eventually.</span><span class="s s57">"</span>  <span class="s s58">Unfortunately that might not be true.</span>  <span class="s s59">The problem
+with software patents is an instance of a more general one: the
+patent office takes a while to understand new technology.</span>  <span class="s s60">If so,
+this problem will only get worse, because the rate of technological
+change seems to be increasing.</span>  <span class="s s61">In thirty years, the patent office
+may understand the sort of things we now patent as software, but
+there will be other new types of inventions they understand even
+less.</span>
+  </p>
+  <p>
+   <span class="s s63">Applying for a patent is a negotiation.</span>  <span class="s s64">You generally apply for a
+broader patent than you think you'll be granted, and the examiners
+reply by throwing out some of your claims and granting others.</span>  <span class="s s65">So
+I don't really blame Amazon for applying for the one-click patent.</span>
+<span class="s s66">The big mistake was the patent office's, for not insisting on
+something narrower, with real technical content.</span>  <span class="s s67">By granting such
+an over-broad patent, the USPTO in effect slept with Amazon on the
+first date.</span>  <span class="s s68">Was Amazon supposed to say no?</span>
+  </p>
+  <p>
+   <span class="s s70">Where Amazon went over to the dark side was not in applying for the
+patent, but in enforcing it.</span>  <span class="s s71">A lot of companies (Microsoft, for
+example) have been granted large numbers of preposterously over-broad
+patents,  but they keep them mainly for defensive purposes.</span>  <span class="s s72">Like
+nuclear weapons, the main role of big companies' patent portfolios
+is to threaten anyone who attacks them with a counter-suit.</span>  <span class="s s73">Amazon's
+suit against Barnes &amp; Noble was thus the equivalent of a nuclear
+first strike.</span>
+  </p>
+  <p>
+   <span class="s s75">That suit probably hurt Amazon more than it helped them.</span>  <span class="s s76">Barnes &amp;
+Noble was a lame site; Amazon would have crushed them anyway.</span>  <span class="s s77">To
+attack a rival they could have ignored, Amazon put a lasting black
+mark on their own reputation.</span>  <span class="s s78">Even now I think if you asked hackers
+to free-associate about Amazon, the one-click patent would turn up
+in the first ten topics.</span>
+  </p>
+  <p>
+   <span class="s s80">Google clearly doesn't feel that merely holding patents is evil.</span>
+<span class="s s81">They've applied for a lot of them.</span>  <span class="s s82">Are they hypocrites?</span>  <span class="s s83">Are patents
+evil?</span>
+  </p>
+  <p>
+   <span class="s s85">There are really two variants of that question, and people answering
+it often aren't clear in their own minds which they're answering.</span>
+<span class="s s86">There's a narrow variant: is it bad, given the current legal system,
+to apply for patents?</span> <span class="s s87">and also a broader one: is it bad that the
+current legal system allows patents?</span>
+  </p>
+  <p>
+   <span class="s s89">These are separate questions.</span>  <span class="s s90">For example, in preindustrial societies
+like medieval Europe, when someone attacked you, you didn't call
+the police.</span>  <span class="s s91">There were no police.</span>  <span class="s s92">When attacked, you were supposed
+to fight back, and there were conventions about how to do it.</span>  <span class="s s93">Was
+this wrong?</span>  <span class="s s94">That's two questions: was it wrong to take justice
+into your own hands, and was it wrong that you had to?</span>  <span class="s s95">We tend to
+say yes to the second, but no to the first.</span>  <span class="s s96">If no one else will
+defend you, you have to defend yourself.</span><span class="s s97">
+                                           
+                                            [
+   <a name="f2" href="#f2n">
+    2
+   </a>
+   ]
+  </span></p>
+  <p>
+   <span class="s s98">The situation with patents is similar.</span>  <span class="s s99">Business is a kind of
+ritualized warfare.</span>  <span class="s s100">Indeed, it evolved from actual warfare: most
+early traders switched on the fly from merchants to pirates depending
+on how strong you seemed.</span>  <span class="s s101">In business there are certain rules
+describing how companies may and may not compete with one another,
+and someone deciding that they're going to play by their own rules
+is missing the point.</span>  <span class="s s102">Saying "I'm not going to apply for patents
+just because everyone else does" is not like saying "I'm not going
+to lie just because everyone else does.</span><span class="s s103">"</span>  <span class="s s104">It's more like saying
+"I'm not going to use TCP/IP just because everyone else does.</span><span class="s s105">"</span> <span class="s s106">Oh
+yes you are.</span>
+  </p>
+  <p><span class="s s108">
+   A closer comparison might be someone seeing a hockey game for the
+first time, realizing with shock that the players were
+   <i>
+    deliberately
+   </i>
+   bumping into one another, and deciding that one would on no account
+be so rude when playing hockey oneself.</span>
+  </p>
+  <p>
+   <span class="s s110">Hockey allows checking.</span>  <span class="s s111">It's part of the game.</span>  <span class="s s112">If your team refuses
+to do it, you simply lose.</span>  <span class="s s113">So it is in business.</span>  <span class="s s114">Under the present
+rules, patents are part of the game.</span>
+  </p>
+  <p>
+   <span class="s s116">What does that mean in practice?</span>  <span class="s s117">We tell the startups we fund not
+to worry about infringing patents, because startups rarely get sued
+for patent infringement.</span>  <span class="s s118">There are only two reasons someone might
+sue you: for money, or to prevent you from competing with them.</span>
+<span class="s s119">Startups are too poor to be worth suing for money.</span> <span class="s s120">And in practice
+they don't seem to get sued much by competitors, either.</span>  <span class="s s121">They don't
+get sued by other startups because (a) patent suits are an expensive
+distraction, and (b) since the other startups are as young as they
+are, their patents probably haven't issued yet.</span><span class="s s122">
+                                                   
+                                                    [
+   <a name="f3" href="#f3n">
+    3
+   </a>
+   ]
+                                                   
+                                                   Nor do startups,
+at least in the software business, seem to get sued much by established
+competitors.</span>  <span class="s s123">Despite all the patents Microsoft holds, I don't know
+of an instance where they sued a startup for patent infringement.</span>
+<span class="s s124">Companies like Microsoft and Oracle don't win by winning lawsuits.</span>
+<span class="s s125">That's too uncertain.</span>  <span class="s s126">They win by locking competitors out of their
+sales channels.</span>  <span class="s s127">If you do manage to threaten them, they're more
+likely to buy you than sue you.</span>
+  </p>
+  <p>
+   <span class="s s129">When you read of big companies filing patent suits against smaller
+ones, it's usually a big company on the way down, grasping at
+straws.</span>  <span class="s s130">For example, Unisys's attempts to enforce their patent on
+LZW compression.</span>  <span class="s s131">When you see a big company threatening patent
+suits, sell.</span>  <span class="s s132">When a company starts fighting over IP, it's a sign
+they've lost the real battle, for users.</span>
+  </p>
+  <p>
+   <span class="s s134">A company that sues competitors for patent infringement is like
+a defender who has been beaten so thoroughly that he turns to plead
+with the referee.</span>  <span class="s s135">You don't do that if you can still reach the
+ball, even if you genuinely believe you've been fouled.</span><span class="s s136">  So a company
+threatening patent suits is a company in
+   <a target="_blank" href="http://www.theregister.co.uk/2006/03/15/azul_sues_sun/">
+    trouble
+   </a>
+   .</span>
+  </p>
+  <p>
+   <span class="s s138">When we were working on Viaweb, a bigger company in the e-commerce
+business was granted a patent on online ordering, or something like
+that.</span>  <span class="s s139">I got a call from a VP there asking if we'd like to license
+it.</span>  <span class="s s140">I replied that I thought the patent was completely bogus, and
+would never hold up in court.</span>  <span class="s s141">"Ok," he replied.</span>  <span class="s s142">"So, are you guys
+hiring?</span><span class="s s143">"</span>
+  </p>
+  <p>
+   <span class="s s145">If your startup grows big enough, however, you'll start to get sued,
+no matter what you do.</span>  <span class="s s146">If you go public, for example, you'll be
+sued by multiple patent trolls who hope you'll pay them off to go
+away.</span>  <span class="s s147">More on them later.</span>
+  </p>
+  <p>
+   <span class="s s149">In other words, no one will sue you for patent infringement till
+you have money, and once you have money, people will sue you whether
+they have grounds to or not.</span>  <span class="s s150">So I advise fatalism.</span>  <span class="s s151">Don't waste
+your time worrying about patent infringement.</span>  <span class="s s152">You're probably
+violating a patent every time you tie your shoelaces.</span>  <span class="s s153">At the start,
+at least, just worry about making something great and getting lots
+of users.</span>  <span class="s s154">If you grow to the point where anyone considers you worth
+attacking, you're doing well.</span>
+  </p>
+  <p>
+   <span class="s s156">We do advise the companies we fund to apply for patents, but not
+so they can sue competitors.</span>  <span class="s s157">Successful startups either get bought
+or grow into big companies.</span>  <span class="s s158">If a startup wants to grow into a big
+company, they should apply for patents to build up the patent
+portfolio they'll need to maintain an armed truce with other big
+companies.</span>  <span class="s s159">If they want to get bought, they should apply for patents
+because patents are part of the mating dance with acquirers.</span>
+  </p>
+  <p>
+   <span class="s s161">Most startups that succeed do it by getting bought, and most acquirers
+care about patents.</span>  <span class="s s162">Startup acquisitions are usually a build-vs-buy
+decision for the acquirer.</span>  <span class="s s163">Should we buy this little startup or
+build our own?</span>  <span class="s s164">And two things, especially, make them decide not
+to build their own: if you already have a large and rapidly growing
+user base, and if you have a fairly solid patent application on
+critical parts of your software.</span>
+  </p>
+  <p>
+   <span class="s s166">There's a third reason big companies should prefer buying to building:
+that if they built their own, they'd screw it up.</span>  <span class="s s167">But few big
+companies are smart enough yet to admit this to themselves.</span>  <span class="s s168">It's
+usually the acquirer's engineers who are asked how hard it would
+be for the company to build their own, and they overestimate their
+abilities.</span><span class="s s169">
+                                                                   
+                                                                    [
+   <a name="f4" href="#f4n">
+    4
+   </a>
+   ]
+                                                                   
+                                                                   A patent seems to change the balance.</span>  <span class="s s170">It gives the
+acquirer an excuse to admit they couldn't copy what you're doing.</span>
+<span class="s s171">It may also help them to grasp what's special about your technology.</span>
+  </p>
+  <p>
+   <span class="s s173">Frankly, it surprises me how small a role patents play in the
+software business.</span>  <span class="s s174">It's kind of ironic, considering all the dire
+things experts say about software patents stifling innovation, but
+when one looks closely at the software business, the most striking
+thing is how little patents seem to matter.</span>
+  </p>
+  <p>
+   <span class="s s176">In other fields, companies regularly sue competitors for patent
+infringement.</span>  <span class="s s177">For example, the airport baggage scanning business
+was for many years a cozy duopoly shared between two companies,
+InVision and L-3.</span>  <span class="s s178">In 2002 a startup called Reveal appeared, with
+new technology that let them build scanners a third the size.</span>  <span class="s s179">They
+were sued for patent infringement before they'd even released a
+product.</span>
+  </p>
+  <p>
+   <span class="s s181">You rarely hear that kind of story in our world.</span>  <span class="s s182">The one example
+I've found is, embarrassingly enough, Yahoo, which filed a patent
+suit against a gaming startup called Xfire in 2005.</span>  <span class="s s183">Xfire doesn't
+seem to be a very big deal, and it's hard to say why Yahoo felt
+threatened.</span>  <span class="s s184">Xfire's VP of engineering had worked at Yahoo on similar
+stuff-- in fact, he was listed as an inventor on the patent Yahoo
+sued over-- so perhaps there was something personal about it.</span>  <span class="s s185">My
+guess is that someone at Yahoo goofed.</span>  <span class="s s186">At any rate they didn't
+pursue the suit very vigorously.</span>
+  </p>
+  <p><span class="s s188">
+   Why do patents play so small a role in software?  I can think of
+three possible reasons.
+  </span></p>
+  <p>
+   <span class="s s189">One is that software is so complicated that patents by themselves
+are not worth very much.</span>  <span class="s s190">I may be maligning other fields here, but
+it seems that in most types of engineering you can hand the details
+of some new technique to a group of medium-high quality people and
+get the desired result.</span>  <span class="s s191">For example, if someone develops a new
+process for smelting ore that gets a better yield, and you assemble
+a team of qualified experts and tell them about it, they'll be able
+to get the same yield.</span>  <span class="s s192">This doesn't seem to work in software.</span>
+<span class="s s193">Software is so subtle and unpredictable that "qualified experts"
+don't get you very far.</span>
+  </p>
+  <p>
+   <span class="s s195">That's why we rarely hear phrases like "qualified expert" in the
+software business.</span>  <span class="s s196">What that level of ability can get you is, say,
+to make your software compatible with some other piece of software--
+in eight months, at enormous cost.</span>  <span class="s s197">To do anything harder you need
+individual brilliance.</span>  <span class="s s198">If you assemble a team of qualified experts
+and tell them to make a new web-based email program, they'll get
+their asses kicked by a team of inspired nineteen year olds.</span>
+  </p>
+  <p><span class="s s200">
+   Experts can implement, but they can't
+   <a target="_blank" href="http://paulgraham.com/taste.html">
+    design
+   </a>
+   .</span>
+<span class="s s201">Or rather, expertise in implementation is the only kind most people,
+including the experts themselves, can measure.</span><span class="s s202">
+                                                                                 
+                                                                                  [
+   <a name="f5" href="#f5n">
+    5
+   </a>
+   ]
+  </span></p>
+  <p>
+   <span class="s s203">But design is a definite skill.</span>  <span class="s s204">It's not just an airy intangible.</span>
+<span class="s s205">Things always seem intangible when you don't understand them.</span>
+<span class="s s206">Electricity seemed an airy intangible to most people in 1800.</span>  <span class="s s207">Who
+knew there was so much to know about it?</span>  <span class="s s208">So it is with design.</span>
+<span class="s s209">Some people are good at it and some people are bad at it, and there's
+something very tangible they're good or bad at.</span>
+  </p>
+  <p>
+   <span class="s s211">The reason design counts so much in software is probably that there
+are fewer constraints than on physical things.</span>  <span class="s s212">Building physical
+things is expensive and dangerous.</span>  <span class="s s213">The space of possible choices
+is smaller; you tend to have to work as part of a larger group; and
+you're subject to a lot of regulations.</span>  <span class="s s214">You don't have any of that
+if you and a couple friends decide to create a new web-based
+application.</span>
+  </p>
+  <p>
+   <span class="s s216">Because there's so much scope for design in software, a successful
+application tends to be way more than the sum of its patents.</span>  <span class="s s217">What
+protects little companies from being copied by bigger competitors
+is not just their patents, but the thousand little things the big
+company will get wrong if they try.</span>
+  </p>
+  <p>
+   <span class="s s219">The second reason patents don't count for much in our world is that
+startups rarely attack big companies head-on, the way Reveal did.</span>
+<span class="s s220">In the software business, startups beat established companies by
+transcending them.</span>  <span class="s s221">Startups don't build desktop word processing
+programs to compete with Microsoft Word.</span><span class="s s222">
+                                                                                         
+                                                                                          [
+   <a name="f6" href="#f6n">
+    6
+   </a>
+   ]
+                                                                                         
+                                                                                         They build Writely.</span>
+<span class="s s223">If this paradigm is crowded, just wait for the next one; they run
+pretty frequently on this route.</span>
+  </p>
+  <p>
+   <span class="s s225">Fortunately for startups, big companies are extremely good at denial.</span>
+<span class="s s226">If you take the trouble to attack them from an oblique angle, they'll
+meet you half-way and maneuver to keep you in their blind spot.</span>  <span class="s s227">To
+sue a startup would mean admitting it was dangerous, and that often
+means seeing something the big company doesn't want to see.</span>  <span class="s s228">IBM
+used to sue its mainframe competitors regularly, but they didn't
+bother much about the microcomputer industry because they didn't
+want to see the threat it posed.</span>  <span class="s s229">Companies building web based apps
+are similarly protected from Microsoft, which even now doesn't want
+to imagine a world in which Windows is irrelevant.</span>
+  </p>
+  <p>
+   <span class="s s231">The third reason patents don't seem to matter very much in software
+is public opinion-- or rather, hacker opinion.</span><span class="s s232">  In a recent
+   <a target="_blank" href="http://www.computing.co.uk/forbes/news/2152720/interview-steve-ballmer-linux">
+    interview
+   </a>
+   ,
+Steve Ballmer coyly left open the possibility of attacking Linux
+on patent grounds.</span>  <span class="s s233">But I doubt Microsoft would ever be so stupid.</span>
+<span class="s s234">They'd face the mother of all boycotts.</span>  <span class="s s235">And not just from the
+technical community in general; a lot of their own people would
+rebel.</span>
+  </p>
+  <p>
+   <span class="s s237">Good hackers care a lot about matters of principle, and they are
+highly mobile.</span>  <span class="s s238">If a company starts misbehaving, smart people won't
+work there.</span>  <span class="s s239">For some reason this seems to be more true in software
+than other businesses.</span>  <span class="s s240">I don't think it's because hackers have
+intrinsically higher principles so much as that their skills are
+easily transferrable.</span>  <span class="s s241">Perhaps we can split the difference and say
+that mobility gives hackers the luxury of being principled.</span>
+  </p>
+  <p>
+   <span class="s s243">Google's "don't be evil" policy may for this reason be the most
+valuable thing they've discovered.</span>  <span class="s s244">It's very constraining in some
+ways.</span>  <span class="s s245">If Google does do something evil, they get doubly whacked
+for it: once for whatever they did, and again for hypocrisy.</span>  <span class="s s246">But
+I think it's worth it.</span>  <span class="s s247">It helps them to hire the best people, and
+it's better, even from a purely selfish point of view, to be
+constrained by principles than by stupidity.</span>
+  </p>
+  <p><span class="s s249">
+   (I wish someone would get this point across to the present
+administration.)
+  </span></p>
+  <p>
+   <span class="s s250">I'm not sure what the proportions are of the preceding three
+ingredients, but the custom among the big companies seems to be not
+to sue the small ones, and the startups are mostly too busy and too
+poor to sue one another.</span>  <span class="s s251">So despite the huge number of software
+patents there's not a lot of suing going on.</span>  <span class="s s252">With one exception:
+patent trolls.</span>
+  </p>
+  <p>
+   <span class="s s254">Patent trolls are companies consisting mainly of lawyers whose whole
+business is to accumulate patents and threaten to sue companies who
+actually make things.</span>  <span class="s s255">Patent trolls, it seems safe to say, are
+evil.</span>  <span class="s s256">I feel a bit stupid saying that, because when you're saying
+something that Richard Stallman and Bill Gates would both agree
+with, you must be perilously close to tautologies.</span>
+  </p>
+  <p>
+   <span class="s s258">The CEO of Forgent, one of the most notorious patent trolls, says
+that what his company does is "the American way.</span><span class="s s259">"</span> <span class="s s260">Actually that's
+not true.</span><span class="s s261"> The American way is to make money by
+   <a target="_blank" href="http://paulgraham.com/wealth.html">
+    creating wealth
+   </a>
+   , not by suing people.</span><span class="s s262">
+                                                                                                         
+                                                                                                          [
+   <a name="f7" href="#f7n">
+    7
+   </a>
+   ]
+                                                                                                         
+                                                                                                         What companies like Forgent do is actually the proto-industrial
+way.</span>  <span class="s s263">In the period just before the industrial revolution, some of
+the greatest fortunes in countries like England and France were
+made by courtiers who extracted some lucrative right from the crown--
+like the right to collect taxes on the import of silk-- and then
+used this to squeeze money from the merchants in that business.</span>  <span class="s s264">So
+when people compare patent trolls to the mafia, they're more right
+than they know, because the mafia too are not merely bad, but bad
+specifically in the sense of being an obsolete business model.</span>
+  </p>
+  <p>
+   <span class="s s266">Patent trolls seem to have caught big companies by surprise.</span>  <span class="s s267">In
+the last couple years they've extracted hundreds of millions of
+dollars from them.</span>  <span class="s s268">Patent trolls are hard to fight precisely because
+they create nothing.</span>  <span class="s s269">Big companies are safe from being sued by
+other big companies because they can threaten a counter-suit.</span>  <span class="s s270">But
+because patent trolls don't make anything, there's nothing they can
+be sued for.</span>  <span class="s s271">I predict this loophole will get closed fairly quickly,
+at least by legal standards.</span>  <span class="s s272">It's clearly an abuse of the system,
+and the victims are powerful.</span><span class="s s273">
+                                                                                                           
+                                                                                                            [
+   <a name="f8" href="#f8n">
+    8
+   </a>
+   ]
+  </span></p>
+  <p>
+   <span class="s s274">But evil as patent trolls are, I don't think they hamper innovation
+much.</span>  <span class="s s275">They don't sue till a startup has made money, and by that
+point the innovation that generated it has already happened.</span>  <span class="s s276">I
+can't think of a startup that avoided working on some problem because
+of patent trolls.</span>
+  </p>
+  <p>
+   <span class="s s278">So much for hockey as the game is played now.</span>  <span class="s s279">What about the more
+theoretical question of whether hockey would be a better game without
+checking?</span>  <span class="s s280">Do patents encourage or discourage innovation?</span>
+  </p>
+  <p>
+   <span class="s s282">This is a very hard question to answer in the general case.</span>  <span class="s s283">People
+write whole books on the topic.</span>  <span class="s s284">One of my main hobbies is the
+history of technology, and even though I've studied the subject for
+years, it would take me several weeks of research to be able to say
+whether patents have in general been a net win.</span>
+  </p>
+  <p>
+   <span class="s s286">One thing I can say is that 99.</span><span class="s s287">9% of the people who express opinions
+on the subject do it not based on such research, but out of a kind
+of religious conviction.</span>  <span class="s s288">At least, that's the polite way of putting
+it; the colloquial version involves speech coming out of organs not
+designed for that purpose.</span>
+  </p>
+  <p>
+   <span class="s s290">Whether they encourage innovation or not, patents were at least
+intended to.</span>  <span class="s s291">You don't get a patent for nothing.</span><span class="s s292">  In return for
+the exclusive right to use an idea, you have to
+   <i>
+    publish
+   </i>
+   it,
+and it was largely to encourage such openness that patents were
+established.</span>
+  </p>
+  <p>
+   <span class="s s294">Before patents, people protected ideas by keeping them secret.</span>  <span class="s s295">With
+patents, central governments said, in effect, if you tell everyone
+your idea, we'll protect it for you.</span>  <span class="s s296">There is a parallel here to
+the rise of civil order, which happened at roughly the same time.</span>
+<span class="s s297">Before central governments were powerful enough to enforce order,
+rich people had private armies.</span>  <span class="s s298">As governments got more powerful,
+they gradually compelled magnates to cede most responsibility for
+protecting them.</span>  <span class="s s299">(Magnates still have bodyguards, but no longer
+to protect them from other magnates.</span><span class="s s300">)</span>
+  </p>
+  <p>
+   <span class="s s301">Patents, like police, are involved in many abuses.</span>  <span class="s s302">But in both
+cases the default is something worse.</span> <span class="s s303">The choice is not "patents
+or freedom?</span><span class="s s304">"</span> <span class="s s305">any more than it is "police or freedom?</span><span class="s s306">"</span> <span class="s s307">The actual
+questions are respectively "patents or secrecy?</span><span class="s s308">"</span> <span class="s s309">and "police or
+gangs?</span><span class="s s310">"</span>
+  </p>
+  <p>
+   <span class="s s312">As with gangs, we have some idea what secrecy would be like, because
+that's how things used to be.</span>  <span class="s s313">The economy of medieval Europe was
+divided up into little tribes, each jealously guarding their
+privileges and secrets.</span>  <span class="s s314">In Shakespeare's time, "mystery" was
+synonymous with "craft.</span><span class="s s315">"</span>   <span class="s s316">Even today we can see an echo of the
+secrecy of medieval guilds, in the now pointless secrecy of the
+Masons.</span>
+  </p>
+  <p>
+   <span class="s s318">The most memorable example of medieval industrial secrecy is probably
+Venice, which forbade glassblowers to leave the city, and sent
+assassins after those who tried.</span><span class="s s319">  We might like to think we wouldn't
+go so far, but the movie industry has already tried to pass
+   <a target="_blank" href="http://news.com.com/2100-1026_3-5106684.html">
+    laws
+   </a>
+   prescribing three year prison terms just for putting movies on
+public networks.</span>  <span class="s s320">Want to try a frightening thought experiment?</span> <span class="s s321">If
+the movie industry could have any law they wanted, where would they
+stop?</span>  <span class="s s322">Short of the death penalty, one assumes, but how close would
+they get?</span>
+  </p>
+  <p>
+   <span class="s s324">Even worse than the spectacular abuses might be the overall decrease
+in efficiency that would accompany increased secrecy.</span>  <span class="s s325">As anyone
+who has dealt with organizations that operate on a "need to know"
+basis can attest, dividing information up into little cells is
+terribly inefficient.</span><span class="s s326">  The flaw in the "need to know" principle is
+that you don't
+   <i>
+    know
+   </i>
+   who needs to know something.</span>  <span class="s s327">An idea
+from one area might spark a great discovery in another.</span>  <span class="s s328">But the
+discoverer doesn't know he needs to know it.</span>
+  </p>
+  <p>
+   <span class="s s330">If secrecy were the only protection for ideas, companies wouldn't
+just have to be secretive with other companies; they'd have to be
+secretive internally.</span>  <span class="s s331">This would encourage what is already the
+worst trait of big companies.</span>
+  </p>
+  <p>
+   <span class="s s333">I'm not saying secrecy would be worse than patents, just that we
+couldn't discard patents for free.</span>  <span class="s s334">Businesses would become more
+secretive to compensate, and in some fields this might get ugly.</span>
+<span class="s s335">Nor am I defending the current patent system.</span>  <span class="s s336">There is clearly a
+lot that's broken about it.</span>   <span class="s s337">But the breakage seems to affect
+software less than most other fields.</span>
+  </p>
+  <p>
+   <span class="s s339">In the software business I know from experience whether patents
+encourage or discourage innovation, and the answer is the type that
+people who like to argue about public policy least like to hear:
+they don't affect innovation much, one way or the other.</span>  <span class="s s340">Most
+innovation in the software business happens in startups, and startups
+should simply ignore other companies' patents.</span>  <span class="s s341">At least, that's
+what we advise, and we bet money on that advice.</span>
+  </p>
+  <p>
+   <span class="s s343">The only real role of patents, for most startups, is as an element
+of the mating dance with acquirers.</span>  <span class="s s344">There patents do help a little.</span>
+<span class="s s345">And so they do encourage innovation indirectly, in that they give
+more power to startups, which is where, pound for pound, the most
+innovation happens.</span>  <span class="s s346">But even in the mating dance, patents are of
+secondary importance.</span>  <span class="s s347">It matters more to make something great and
+get a lot of users.</span>
+  </p>
+  <p>
+  </p>
+  <h3><span class="s s349">
+   Notes
+  </span></h3>
+  <p><span class="s s350">
+   [
+   <a href="#f1" name="f1n">
+    1
+   </a>
+   ]
+You have to be careful here, because a great discovery often
+seems obvious in retrospect.</span>  <span class="s s351">One-click ordering, however, is not
+such a discovery.</span>
+  </p>
+  <p><span class="s s353">
+   [
+   <a href="#f2" name="f2n">
+    2
+   </a>
+   ]
+"Turn the other cheek" skirts the issue; the critical question
+is not how to deal with slaps, but sword thrusts.
+  </span></p>
+  <p><span class="s s354">
+   [
+   <a href="#f3" name="f3n">
+    3
+   </a>
+   ]
+Applying for a patent is now very slow, but it might actually
+be bad if that got fixed.</span>  <span class="s s355">At the moment the time it takes to get
+a patent is conveniently just longer than the time it takes a startup
+to succeed or fail.</span>
+  </p>
+  <p><span class="s s357">
+   [
+   <a href="#f4" name="f4n">
+    4
+   </a>
+   ]
+Instead of the canonical "could you build this?</span><span class="s s358">"</span> <span class="s s359">maybe the corp
+dev guys should be asking "will you build this?</span><span class="s s360">"</span> <span class="s s361">or even "why haven't
+you already built this?</span><span class="s s362">"</span>
+  </p>
+  <p><span class="s s364">
+   [
+   <a href="#f5" name="f5n">
+    5
+   </a>
+   ]
+Design ability is so hard to measure that you can't even trust
+the design world's internal standards.</span>  <span class="s s365">You can't assume that someone
+with a degree in design is any good at design, or that an eminent
+designer is any better than his peers.</span>  <span class="s s366">If that worked, any company
+could build products as good as Apple's just by hiring 
+sufficiently qualified designers.</span>
+  </p>
+  <p><span class="s s368">
+   [
+   <a href="#f6" name="f6n">
+    6
+   </a>
+   ]
+If anyone wanted to try, we'd be interested to hear from them.</span>
+<span class="s s369">I suspect it's one of those things that's not as hard as everyone
+assumes.</span>
+  </p>
+  <p><span class="s s371">
+   [
+   <a href="#f7" name="f7n">
+    7
+   </a>
+   ]
+Patent trolls can't even claim, like speculators, that they
+"create" liquidity.
+  </span></p>
+  <p><span class="s s372">
+   [
+   <a href="#f8" name="f8n">
+    8
+   </a>
+   ]
+If big companies don't want to wait for the government to take
+action, there is a way to fight back themselves.</span>  <span class="s s373">For a long time
+I thought there wasn't, because there was nothing to grab onto.</span>
+<span class="s s374">But there is one resource patent trolls need: lawyers.</span>  <span class="s s375">Big technology
+companies between them generate a lot of legal business.</span>  <span class="s s376">If they
+agreed among themselves never to do business with any firm employing
+anyone who had worked for a patent troll, either as an employee or
+as outside counsel, they could probably starve the trolls of the
+lawyers they need.</span>
+  </p>
+  <h3>
+   <span class="s s378">Thanks
+   to Dan Bloomberg, Paul Buchheit, Sarah Harlin, 
+Jessica Livingston, and Peter Norvig
+for reading drafts of this, to Joel Lehrer and Peter Eng for answering
+my questions about patents, and to Ankur Pansari for inviting me
+to speak.</span>
+   </h3><p><span class="s s380">
+    This essay was originally published at
+    <a target="_blank" href="http://www.paulgraham.com/softwarepatents.html?utm_source=pgebook">
+     paulgraham.com
+    </a>
+    </span></p><p>
+    </p>
+   
+  
+ </body></html>

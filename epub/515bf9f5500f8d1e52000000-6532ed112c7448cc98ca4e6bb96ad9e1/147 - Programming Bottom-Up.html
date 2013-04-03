@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en"><head><title>
+   Programming Bottom-Up
+  </title></head><body>
+  <h1><span class="s s1">
+   Programming Bottom-Up
+  </span></h1>
+  <h2><span class="s s2">
+   1993
+   </span></h2><p align="justif"><span class="s s3">
+    <i>
+     (This essay is from the introduction to
+    </i>
+    <a target="_blank" href="http://paulgraham.com/onlisp.html">
+     On Lisp
+    </a>
+    .</span><span class="s s4">
+    <i>
+     The red text
+explains the origins of
+     <a target="_blank" href="http://paulgraham.com/arc.html">
+      Arc
+     </a>
+     's name.)
+    </i>
+   </span></p>
+   <p>
+    <span class="s s5">It's a long-standing principle of programming style that the functional
+elements of a program should not be too large.</span>  <span class="s s6">If some component of a
+program grows beyond the stage where it's readily comprehensible,
+it becomes a mass of complexity which conceals errors as easily
+as a big city conceals fugitives.</span>  <span class="s s7">Such software will be
+hard to read, hard to test, and hard to debug.</span>
+   </p>
+   <p>
+    <span class="s s9">In accordance with this principle, a large program must be divided
+into pieces, and the larger the program, the more it must be divided.</span>
+<span class="s s10">How do you divide a program?</span><span class="s s11">  The traditional approach is
+called
+    <i>
+     top-down design:
+    </i>
+    you say "the purpose of the
+program is to do these seven things, so I divide it into seven major
+subroutines.</span>  <span class="s s12">The first subroutine has to do these four things, so
+it in turn will have four of its own subroutines," and so on.</span>
+<span class="s s13">This process continues until the whole program has the right level
+of granularity-- each part large enough to do something substantial,
+but small enough to be understood as a single unit.</span>
+   </p>
+   <p>
+    <span class="s s15">Experienced Lisp programmers divide up their programs differently.</span><span class="s s16">
+As well as top-down design, they follow a principle which
+could be called
+    <i>
+     bottom-up design
+    </i>
+    -- changing the language
+to suit the problem.</span>
+<span class="s s17">In Lisp, you don't just write your program down toward the language,
+you also build the language up toward your program.</span>  <span class="s s18">As you're
+writing a program you may think "I wish Lisp had such-and-such an
+operator.</span><span class="s s19">"</span> <span class="s s20">So you go and write it.</span> <span class="s s21">Afterward
+you realize that using the new operator would simplify the design  
+of another part of the program, and so on.</span>
+<span class="s s22">Language and program evolve together.</span>
+<span class="s s23">Like the border between two warring states,
+the boundary between language and program is drawn and redrawn,
+until eventually it comes to rest along the mountains and rivers,
+the natural frontiers of your problem.</span>
+<span class="s s24">In the end your program will look as if the language had been
+designed for it.</span>
+<span class="s s25">And when language and
+program fit one another well, you end up with code which is
+clear, small, and efficient.</span>
+   </p>
+   <p>
+    <span class="s s27">It's worth emphasizing that bottom-up design doesn't mean
+just writing the same program in a different order.</span>  <span class="s s28">When you
+work bottom-up, you usually end up with a different program.</span>
+<span class="s s29">Instead of a single, monolithic program,
+you will get a larger language with more abstract operators,   
+and a smaller program written in it.</span>  <span class="s s30">Instead of a lintel,
+you'll get an arch.</span>
+   </p>
+   <p>
+    <span class="s s32">In typical code, once you abstract out the parts which are
+merely bookkeeping, what's left is much shorter;
+the higher you build up the language, the less distance you
+will have to travel from the top down to it.</span>
+<span class="s s33">This brings several advantages:</span>
+   </p>
+   <p>
+    </p><ol><li>
+      <span class="s s34">By making the language do more of the work, bottom-up design
+yields programs which are smaller and more agile.</span>  <span class="s s35">A shorter
+program doesn't have to be divided into so many components, and
+fewer components means programs which are easier to read or
+modify.</span>  <span class="s s36">Fewer components also means fewer connections between   
+components, and thus less chance for errors there.</span>  <span class="s s37">As
+industrial designers strive to reduce the number of moving parts
+in a machine, experienced Lisp programmers use bottom-up design
+to reduce the size and complexity of their programs.</span>
+     </li>
+    </ol><p>
+    </p><li>
+     <span class="s s38">Bottom-up design promotes code re-use.</span>
+<span class="s s39">When you write two
+or more programs, many of the utilities you wrote for the first
+program will also be useful in the succeeding ones.</span>  <span class="s s40">Once you've  
+acquired a large substrate of utilities, writing a new program can
+take only a fraction of the effort it would require if you had to 
+start with raw Lisp.</span>
+    </li>
+   
+   <p>
+    </p><li><span class="s s42">
+     Bottom-up design makes programs easier to read.
+     </span><!--
+%It yields the same result as top-down design
+%with foresight---the foresight to arrange the branches near the
+%root of the tree so that among the leaves there is as little
+%duplication of effort as possible.
+--><span class="s s43">
+     An instance of this type
+of abstraction asks the reader to understand a general-purpose operator;
+an instance of functional abstraction asks the reader to understand
+a special-purpose subroutine. [1]
+    </span></li>
+   
+   <p>
+    </p><li>
+     <span class="s s44">Because it causes you always to be on the lookout for patterns
+in your code, working bottom-up helps to clarify your ideas about
+the design of your program.</span>  <span class="s s45">If two distant components of a program
+are similar in form, you'll be led to notice the similarity and
+perhaps to redesign the program in a simpler way.</span>
+    </li>
+    <p align="justif">
+     <span class="s s47">Bottom-up design is possible to a certain degree in languages
+other than Lisp.</span>  <span class="s s48">Whenever you see library functions,
+bottom-up design is happening.</span>  <span class="s s49">However, Lisp gives you much broader
+powers in this department, and augmenting the language plays a
+proportionately larger role in Lisp style-- so much so that
+Lisp is not just a different language, but a whole different way
+of programming.</span>
+    </p>
+    <p>
+     <span class="s s51">It's true that this style of development is better suited to
+programs which can be written by small groups.</span>  <span class="s s52">However, at the
+same time, it extends the limits of what can be done by a small
+group.</span><span class="s s53">  In
+     <i>
+      The Mythical Man-Month
+     </i>
+     ,
+Frederick Brooks
+proposed that the productivity of a group of programmers
+does not grow linearly with its size.</span>  <span class="s s54">As the size of the
+group increases, the productivity of individual programmers
+goes down.</span>  <span class="s s55">The experience of Lisp programming  
+suggests a more cheerful way
+to phrase this law: as the size of the group decreases, the
+productivity of individual programmers goes up.</span>
+<span class="s s56">A small group wins, relatively speaking, simply because it's
+smaller.</span><span class="s s57">  When a small group also takes advantage of the
+techniques that Lisp makes possible, it can
+     <a target="_blank" href="http://paulgraham.com/avg.html">
+      win outright
+     </a>
+     .</span>
+    </p>
+    <p>
+    </p>
+    <h3><span class="s s59">
+     New:
+     <a target="_blank" href="http://paulgraham.com/onlisptext.html">
+      Download On Lisp for Free
+     </a>
+     .
+    </span></h3>
+   
+   <p>
+   </p>
+   <p>
+    </p><hr><p>
+    <span class="s s60">[1] "But no one can read
+the program without understanding all your new utilities.</span><span class="s s61">"</span>
+<span class="s s62">To see why such statements are usually mistaken,
+see Section 4.</span><span class="s s63">8.</span>
+   </p>
+  
+  <p><span class="s s65">
+   This essay was originally published at
+   <a target="_blank" href="http://www.paulgraham.com/progbot.html?utm_source=pgebook">
+    paulgraham.com
+   </a>
+   </span></p><p>
+   </p>
+  
+ </body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en"><head><title>
+   The Roots of Lisp
+  </title></head><body>
+  <a target="_blank" href="http://ep.yimg.com/ca/I/paulgraham_2202_11667583">
+   <img align="left" border="0" height="769" hspace="0" src="http://ep.yimg.com/ca/I/paulgraham_2202_11681153" vspace="0" width="71"></a>
+  <img align="left" border="0" height="777" src="http://ep.yimg.com/ca/Img/trans_1x1.gif" width="10"><h1><span class="s s1">
+    The Roots of Lisp
+   </span></h1>
+   <h2><span class="s s2">
+    May 2001
+    </span></h2><p align="justif"><span class="s s3">
+     <i>
+      (I wrote this article to help myself understand exactly
+what McCarthy discovered.  You don't need to know this stuff
+to program in Lisp, but it should be helpful to 
+anyone who wants to
+understand the essence of Lisp-- both in the sense of its
+origins and its semantic core.  The fact that it has such a core
+is one of Lisp's distinguishing features, and the reason why,
+unlike other languages, Lisp has dialects.)
+     </i>
+    </span></p>
+    <p><span class="s s4">
+     In 1960,
+     <a target="_blank" href="http://www-formal.stanford.edu/jmc/index.html">
+      John 
+McCarthy
+     </a>
+     published a remarkable paper in
+which he did for programming something like what Euclid did for
+geometry.</span> <span class="s s5">He showed how, given a handful of simple
+operators and a notation for functions, you can
+build a whole programming language.</span><span class="s s6">
+He called this language Lisp, for "List Processing,"
+because one of his key ideas was to use a simple
+data structure called a
+     <i>
+      list
+     </i>
+     for both
+code and data.</span>
+    </p>
+    <p>
+     <span class="s s8">It's worth understanding what McCarthy discovered, not
+just as a landmark in the history of computers, but as
+a model for what programming is tending to become in
+our own time.</span>  <span class="s s9">It seems to me that there have been
+two really clean, consistent models of programming so
+far: the C model and the Lisp model.</span>
+<span class="s s10">These two seem points of high ground, with swampy lowlands
+between them.</span><span class="s s11">  As computers have grown more powerful,
+the new languages being developed have been
+     <a target="_blank" href="http://paulgraham.com/diff.html">
+      moving
+steadily
+     </a>
+     toward the Lisp model.</span>  <span class="s s12">A popular recipe
+for new programming languages in the past 20 years 
+has been to take the C model of computing and add to
+it, piecemeal, parts taken from the Lisp model,
+like runtime typing and garbage collection.</span>
+    </p>
+    <p>
+     <span class="s s14">In this article I'm going to try to explain in the
+simplest possible terms what McCarthy discovered.</span>
+<span class="s s15">The point is not just to learn about an interesting
+theoretical result someone figured out forty years ago,
+but to show where languages are heading.</span>
+<span class="s s16">The unusual thing about Lisp-- in fact, the defining
+quality of Lisp-- is that it can be written in
+itself.</span>  <span class="s s17">To understand what McCarthy meant by this,
+we're going to retrace his steps, with his mathematical
+notation translated into running Common Lisp code.</span>
+    </p>
+    <p>
+     <br clear="all"></p>
+    <p><span class="s s19">
+     This essay was originally published at
+     <a target="_blank" href="http://www.paulgraham.com/rootsoflisp.html?utm_source=pgebook">
+      paulgraham.com
+     </a>
+     </span></p><p>
+     </p>
+    
+   
+  
+ </body></html>
