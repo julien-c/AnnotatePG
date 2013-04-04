@@ -179,7 +179,7 @@ App.panel = {
 	},
 	addComment: function(comment){
 		if (comment.time) {
-			comment.timeago = moment.unix(comment.time.sec).fromNow();
+			comment.timeago = moment.unix(comment.time).fromNow();
 		}
 		else {
 			comment.timeago = "a few seconds ago";
