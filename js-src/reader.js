@@ -146,6 +146,7 @@ $(document).ready(function(){
 			xhrFields: { withCredentials: true }
 		});
 		$('textarea.comment', this).val('');
+		comment.user = App.user;
 		App.panel.addComment(comment);
 		App.panel.countComments();
 		if (!App.componentmap[comment.sentence]){
@@ -175,7 +176,6 @@ App.panel = {
 		else {
 			comment.timeago = "a few seconds ago";
 		}
-		comment.user = App.user;
 		var output = Mustache.render(App.panel.templateComment, comment);
 		$('.comments-container').prepend(output);
 	},
