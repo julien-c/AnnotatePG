@@ -187,19 +187,19 @@ App.componentmap = {};
 Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 	var component = evt.m.component.properties.id;
 	
-	$.ajax({
-		url: App.API + 'components/annotations/counts',
-		data: {component: component},
-		success: function(sentences){
+	$.get(
+		App.API + 'components/annotations/counts',
+		{component: component},
+		function(sentences){
 			App.componentmap = sentences;
+			App.bar.createBubbles(evt);
 			$.each(sentences, function(sentence, count){
 				$(evt.m.document.body).find('.s'+sentence).each(function(){
 					$(this).addClass('highlight');
 				});
 			});
-		},
-		async: false
-	});
+		}
+	);
 });
 
 ['monocle:pagechange', 'monocle:boundarystart', 'monocle:boundaryend'].forEach(function(evtName){
@@ -226,6 +226,9 @@ $(document).ready(function(){
 		$('textarea.comment', this).val('');
 		App.panel.addComment(comment);
 		App.panel.countComments();
+		if (!App.componentmap[comment.sentence]){
+			App.componentmap[comment.sentence] = 0;
+		}
 		App.componentmap[comment.sentence] += 1;
 		App.bar.addBubble({sentence: comment.sentence});
 	});
@@ -266,7 +269,6 @@ App.panel = {
 	},
 	open: function(data){
 		App.panel.clear();
-		// console.log(data.sentence);
 		
 		$('.excerpt', '.ctrl-panel').text(data.excerpt);
 		$('.component', '.ctrl-panel').val(data.component);
@@ -286,7 +288,7 @@ App.panel = {
 App.bar = {
 	addBubble: function(data, top){
 		var bubbleId = 'bubble_' + data.sentence;
-		if ($('#' + bubbleId).length === 0) {
+		if ($('#' + bubbleId).length === 0 && top) {
 			var bubble = $('<div id="' + bubbleId + '" class="bubble"></div>').css('top', top + 30);
 			bubble.click(function(){
 				App.panel.open(data);
@@ -294,50 +296,54 @@ App.bar = {
 			bubble.appendTo('.ctrl-bar');
 		}
 		$('#' + bubbleId).text(App.componentmap[data.sentence]);
+	},
+	createBubbles: function(evt){
+		// evt.m.pageNumber isn't available when evt is a componentchange
+		var locus = evt.m.page.m.place.getLocus();
+		var pageOffset = evt.m.page.m.dimensions.locusToOffset({page: locus.page});
+		var nextPageOffset = evt.m.page.m.dimensions.locusToOffset({page: locus.page + 1});
+
+		$('.ctrl-bar').empty();
+		
+		// @see http://stackoverflow.com/a/11107977/593036
+		var doc = evt.m.page.m.activeFrame.contentDocument;
+		
+		var t = -1;
+		$(doc).find('span.s').each(function(i){
+			var sId = /s[0-9]+/.exec($(this).attr('class'))[0].substring(1);
+			var position = $(this).position();
+			if (position.left >= pageOffset && position.left < nextPageOffset) {
+				if (t < 0) {
+					// Use the first sentence to update document.location
+					$.cookie('current_component', App.reader.getPlace().componentId());
+					$.cookie('current_sentence', 's'+sId);
+				}
+				// Prevent collisions:
+				if (position.top >= t) {
+					t = position.top;
+					var data = {
+						excerpt: $(this).text(),
+						component: locus.componentId,
+						sentence: sId
+					};
+					if (App.componentmap[sId]) {
+						if (!$(this).hasClass('highlight')) {
+							$(this).addClass('highlight');
+						}
+						App.bar.addBubble(data, position.top);
+					}
+					this.onclick = function(){
+						App.panel.open(data);
+					};
+				}
+			}
+		});
 	}
 };
 
 
 
-Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
-	$('.ctrl-bar').empty();
-	
-	var pageOffset     = evt.m.page.m.dimensions.locusToOffset({page: evt.m.pageNumber});
-	var nextPageOffset = evt.m.page.m.dimensions.locusToOffset({page: evt.m.pageNumber + 1});
-	
-	var iframe = evt.m.page.m.activeFrame;
-	// @see http://stackoverflow.com/a/11107977/593036
-	var doc = iframe.contentDocument;
-	
-	var t = -1;
-	$(doc).find('span.s').each(function(i){
-		var sId = /s[0-9]+/.exec($(this).attr('class'))[0].substring(1);
-		var position = $(this).position();
-		if (position.left >= pageOffset && position.left < nextPageOffset) {
-			if (t < 0) {
-				// Use the first sentence to update document.location
-				$.cookie('current_component', App.reader.getPlace().componentId());
-				$.cookie('current_sentence', 's'+sId);
-			}
-			// Prevent collisions:
-			if (position.top >= t) {
-				t = position.top;
-				var data = {
-					excerpt: $(this).text(),
-					component: evt.m.locus.componentId,
-					sentence: sId
-				};
-				if (App.componentmap[sId]) {
-					App.bar.addBubble(data, position.top);
-				}
-				this.onclick = function(){
-					App.panel.open(data);
-				};
-			}
-		}
-	});
-	
-});
+Monocle.Events.listen('reader', 'monocle:pagechange', App.bar.createBubbles);
 
 Monocle.Events.listen('reader', 'monocle:componentchange', function(evt) {
 	var doc = evt.m.page.m.activeFrame.contentDocument;
