@@ -178,6 +178,17 @@ $(document).ready(function(){
 	$('button.tweet').click(function(){
 		$(this).toggleClass('active');
 	});
+	
+	// Initialize the large-screen TOC
+	components = bookData.getContents();
+	for(var i in components) {
+		$('#menu-large').append('<li id="' + components[i].src + '">' + components[i].title + '</li>');
+	}
+	$('#menu-large li').each(function(){
+		$(this).click(function(){
+			App.reader.moveTo({componentId: this.id, page: 1});
+		});
+	});
 });
 
 
