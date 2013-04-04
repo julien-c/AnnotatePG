@@ -62,16 +62,16 @@
 	<script id="tpl-comment" type="text/html">
 		<div class="comment clearfix media">
 			<div class="pull-left">
-				<img src="http://www.gravatar.com/avatar/{{ user.md5 }}?s=55" class="avatar">
+				<img src="{{ user.profile_image_url }}" class="avatar">
 			</div>
 			<div class="media-body comment-content">
 				<div class="media-heading">
-					<span class="name">{{ user.name }}</span>
+					<a class="name" href="http://twitter.com/{{ user.screen_name }}" target="_blank">{{ user.name }}</a>
 					·
 					<span class="time">{{ timeago }}</span>
 				</div>
 				<span class="comment-text">
-				{{ comment }}
+				{{ content }}
 				</span>
 			</div>
 		</div>

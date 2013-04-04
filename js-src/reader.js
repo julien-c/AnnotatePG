@@ -5,7 +5,16 @@ App.API = (window.location.hostname === 'annotatepg.dev') ? 'http://api.annotate
 
 App.Utils = {
 	postJSON: function(url, data){
-		return $.post(url, data, function(){}, 'json');
+		return $.ajax({
+			type: 'POST',
+			url: url,
+			data: data,
+			success: function(){},
+			dataType: 'json',
+			xhrFields: {
+				withCredentials: true
+			}
+		});
 	}
 };
 
@@ -109,7 +118,7 @@ $(document).ready(function(){
 		url: App.API + 'me',
 		dataType: 'json',
 		success: function(data){
-			console.log(data);
+			// console.log(data);
 			if(data.status && data.status === "guest") {
 				$('.sign-in').click(function(){
 					window.location = App.API + 'user/signin';
@@ -176,11 +185,11 @@ App.componentmap = {};
 Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 	var component = evt.m.component.properties.id;
 	
-	$.get(App.API + 'component', {component: component}, function(sentences){
+	$.get(App.API + 'components/annotations/counts', {component: component}, function(sentences){
 		App.componentmap = sentences;
 		
 		$.each(sentences, function(sentence, count){
-			$(evt.m.document.body).find('.sentence[data-id="' + sentence + '"]').each(function(){
+			$(evt.m.document.body).find('.s'+sentence).each(function(){
 				$(this).addClass('highlight');
 			});
 		});
@@ -201,14 +210,12 @@ $(document).ready(function(){
 			return false;
 		}
 		var comment = {
-			user: App.user,
-			document: $('.document', this).val(),
 			component: $('.component', this).val(),
 			sentence: $('.sentence', this).val(),
-			comment: $('textarea.comment', this).val()
+			content: $('textarea.comment', this).val()
 		};
 		// console.log(comment);
-		App.Utils.postJSON(App.API + 'comments', comment);
+		App.Utils.postJSON(App.API + 'annotations', comment);
 		App.panel.addComment(comment);
 		App.panel.countComments();
 	});
@@ -232,6 +239,7 @@ App.panel = {
 		else {
 			comment.timeago = "a few seconds ago";
 		}
+		comment.user = App.user;
 		var output = Mustache.render(App.panel.templateComment, comment);
 		$('.comments-container').prepend(output);
 	},
@@ -248,14 +256,14 @@ App.panel = {
 	},
 	open: function(data){
 		App.panel.clear();
-		console.log(data.sentence);
+		// console.log(data.sentence);
 		
 		$('.excerpt', '.ctrl-panel').text(data.excerpt);
 		$('.component', '.ctrl-panel').val(data.component);
 		$('.sentence', '.ctrl-panel').val(data.sentence);
 		$('.ctrl-panel').removeClass('hidden');
 		
-		$.get(App.API + 'sentence', {component: data.component, sentence: data.sentence}, function(comments){
+		$.get(App.API + 'sentences/annotations', {component: data.component, sentence: data.sentence}, function(comments){
 			comments.forEach(function(comment){
 				App.panel.addComment(comment);
 			});
@@ -289,13 +297,13 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 	
 	var t = -1;
 	$(doc).find('span.s').each(function(i){
+		var sId = /s[0-9]+/.exec($(this).attr('class'))[0].substring(1);
 		var position = $(this).position();
 		if (position.left >= pageOffset && position.left < nextPageOffset) {
 			if (t < 0) {
 				// Use the first sentence to update document.location
-				var sId = /s[0-9]+/.exec($(this).attr('class'))[0];
 				$.cookie('current_component', App.reader.getPlace().componentId());
-				$.cookie('current_sentence', sId);
+				$.cookie('current_sentence', 's'+sId);
 			}
 			// Prevent collisions:
 			if (position.top >= t) {
@@ -303,10 +311,10 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 				var data = {
 					excerpt: $(this).text(),
 					component: evt.m.locus.componentId,
-					sentence: $(this).attr('data-id')
+					sentence: sId
 				};
-				if (App.componentmap[$(this).attr('data-id')]) {
-					App.bar.addBubble(position.top, App.componentmap[$(this).attr('data-id')], data);
+				if (App.componentmap[sId]) {
+					App.bar.addBubble(position.top, App.componentmap[sId], data);
 				}
 				$(this).click(function(){
 					App.panel.open(data);
