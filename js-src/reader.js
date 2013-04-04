@@ -117,8 +117,11 @@ $(document).ready(function(){
 				$('.sign-in').show();
 				return;
 			}
-			$('#comment-fields').show();
-			App.user = data;
+			else {
+				App.user = data;
+				$('img.avatar', '#comment-fields').attr('src', App.user.profile_image_url);
+				$('#comment-fields').show();
+			}
 		},
 		xhrFields: {
 			withCredentials: true
