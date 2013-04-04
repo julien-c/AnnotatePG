@@ -136,7 +136,7 @@ $(document).ready(function(){
 			component: $('.component', this).val(),
 			sentence: $('.sentence', this).val(),
 			content: $('textarea.comment', this).val(),
-			tweet: true
+			tweet: $('button.tweet').hasClass('active')
 		};
 		$.ajax({
 			type: 'POST',
@@ -155,6 +155,10 @@ $(document).ready(function(){
 		App.componentmap[comment.sentence] += 1;
 		console.log(App.componentmap);
 		App.bar.addBubble({sentence: comment.sentence});
+	});
+	
+	$('button.tweet').click(function(){
+		$(this).toggleClass('active');
 	});
 });
 
