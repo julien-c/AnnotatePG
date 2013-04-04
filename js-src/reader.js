@@ -185,14 +185,18 @@ App.componentmap = {};
 Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 	var component = evt.m.component.properties.id;
 	
-	$.get(App.API + 'components/annotations/counts', {component: component}, function(sentences){
-		App.componentmap = sentences;
-		
-		$.each(sentences, function(sentence, count){
-			$(evt.m.document.body).find('.s'+sentence).each(function(){
-				$(this).addClass('highlight');
+	$.ajax({
+		url: App.API + 'components/annotations/counts',
+		data: {component: component},
+		success: function(sentences){
+			App.componentmap = sentences;
+			$.each(sentences, function(sentence, count){
+				$(evt.m.document.body).find('.s'+sentence).each(function(){
+					$(this).addClass('highlight');
+				});
 			});
-		});
+		},
+		async: false
 	});
 });
 
@@ -217,8 +221,11 @@ $(document).ready(function(){
 		};
 		// console.log(comment);
 		App.Utils.postJSON(App.API + 'annotations', comment);
+		$('textarea.comment', this).val('');
 		App.panel.addComment(comment);
 		App.panel.countComments();
+		App.componentmap[comment.sentence] += 1;
+		App.bar.addBubble({sentence: comment.sentence});
 	});
 });
 
@@ -275,12 +282,16 @@ App.panel = {
 
 
 App.bar = {
-	addBubble: function(top, i, data){
-		var bubble = $('<div class="bubble"></div>').text(i).css('top', top + 30);
-		bubble.click(function(){
-			App.panel.open(data);
-		});
-		bubble.appendTo('.ctrl-bar');
+	addBubble: function(data, top){
+		var bubbleId = 'bubble_' + data.sentence;
+		if ($('#' + bubbleId).length === 0 && top) {
+			var bubble = $('<div id="' + bubbleId + '" class="bubble"></div>').css('top', top + 30);
+			bubble.click(function(){
+				App.panel.open(data);
+			});
+			bubble.appendTo('.ctrl-bar');
+		}
+		$('#' + bubbleId).text(App.componentmap[data.sentence]);
 	}
 };
 
@@ -308,6 +319,7 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 			}
 			// Prevent collisions:
 			if (position.top >= t) {
+				console.log(this);
 				t = position.top;
 				var data = {
 					excerpt: $(this).text(),
@@ -315,7 +327,7 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 					sentence: sId
 				};
 				if (App.componentmap[sId]) {
-					App.bar.addBubble(position.top, App.componentmap[sId], data);
+					App.bar.addBubble(data, position.top);
 				}
 				$(this).click(function(){
 					App.panel.open(data);
