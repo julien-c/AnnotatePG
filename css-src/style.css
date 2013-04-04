@@ -143,6 +143,10 @@ body {
 	float: right;
 	margin-top: 6px;
 	font-size: 13px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .top-sign-in .separator {
