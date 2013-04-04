@@ -5,11 +5,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     meta: {
       version: '0.1.0',
-      banner: '/*! Reaaad - v<%= meta.version %> - ' +
+      banner: '/*! AnnotatePG - v<%= meta.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '* http://reaaad.com/\n' +
+        '* http://annotatepg.com/\n' +
         '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
-        'Reaaad */'
+        'AnnotatePG */'
     },
     min: {
       dist: {
@@ -18,9 +18,7 @@ module.exports = function(grunt) {
           "js-src/jquery.min.js",
           "js-src/mustache.js",
           "js-src/moment.min.js",
-          "js-src/md5.js",
-          "sentences.js",
-          "js-src/reader.new.js",
+          "js-src/reader.js",
         ],
         dest: 'reaaad.js'
       }
@@ -30,9 +28,7 @@ module.exports = function(grunt) {
         "js-src/jquery.min.js",
         "js-src/mustache.js",
         "js-src/moment.min.js",
-        "js-src/md5.js",
-        "sentences.js",
-        "js-src/reader.new.js",
+        "js-src/reader.js",
       ]
     }
   });
