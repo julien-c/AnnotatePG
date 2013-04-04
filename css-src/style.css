@@ -134,6 +134,14 @@ body {
 	font-size: 18px;
 	text-align: center;
 	margin-top: 6px;
+	margin-left: 25%;
+	float: left;
+}
+
+.top-sign-in {
+	cursor: pointer;
+	float: right;
+	margin-top: 6px;
 }
 
 .bubble {
@@ -261,6 +269,10 @@ div.comment .time {
 }
 .close:active {
 	color: #000;
+}
+
+.hidden {
+	display: none;
 }
 
 /* Media Queries */

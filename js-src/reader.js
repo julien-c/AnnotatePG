@@ -105,18 +105,26 @@ Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 
 $(document).ready(function(){
 	// Check if the user is signed in
-	$.get(App.API + 'me', function(data){
-		if(data.status === "guest") {
-			$('.sign-in').click(function(){
-				window.location = App.API + 'user/signin';
-			});
-			$('.sign-in').show();
-			return;
-		}
-		$('#comment-fields').show();
-		App.user = data;
-	}, 'json');
-	
+	$.ajax({
+		url: App.API + 'me',
+		dataType: 'json',
+		success: function(data){
+			console.log(data);
+			if(data.status && data.status === "guest") {
+				$('.sign-in').click(function(){
+					window.location = App.API + 'user/signin';
+				});
+				$('.sign-in').show();
+				return;
+			}
+			$('#comment-fields').show();
+			App.user = data;
+		},
+		xhrFields: {
+			withCredentials: true
+		},
+	});
+		
 	$('.toc-handle').click(function(){
 		if (Monocle.toc.properties.hidden) {
 			App.reader.showControl(Monocle.toc);
