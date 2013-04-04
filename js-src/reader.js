@@ -1,17 +1,11 @@
 var App = App || {};
 
-App.API = (window.location.hostname === 'localhost') ? 'http://localhost/AnnotatePG-api/' : 'http://api.annotatepg.com/';
+App.API = (window.location.hostname === 'annotatepg.dev') ? 'http://api.annotatepg.dev/' : 'http://api.annotatepg.com/';
 
 
 App.Utils = {
 	postJSON: function(url, data){
-		return $.ajax({
-			url: url,
-			type: 'POST',
-			data: JSON.stringify(data), 
-			contentType: 'application/json',
-			dataType: 'json'
-		});
+		return $.post(url, data, function(){}, 'json');
 	}
 };
 
@@ -38,10 +32,14 @@ var bookData = Monocle.bookData({
 	}
 });
 
+// Move the reader to the requested page
+$.cookie.defaults.expire = 365;
 var startLocus = null;
-if (window.location.hash) {
-	var loc = window.location.hash.substring(1).split(':');
-	startLocus = {componentId: loc[0], selector: 'span.s' + loc[1]};
+if ($.cookie('current_component')) {
+	startLocus = {
+		componentId: $.cookie('current_component'), 
+		selector: 'span.' + $.cookie('current_sentence')
+	};
 }
 
 App.reader = Monocle.Reader(
@@ -93,12 +91,6 @@ App.reader = Monocle.Reader(
 	}
 );
 
-// TOFIX
-Monocle.user = {
-	email: "chaumond@gmail.com",
-	name: "Julien Chaumond"
-};
-
 // Apply content styles:
 
 Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
@@ -112,6 +104,19 @@ Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 
 
 $(document).ready(function(){
+	// Check if the user is signed in
+	$.get(App.API + 'me', function(data){
+		if(data.status === "guest") {
+			$('.sign-in').click(function(){
+				window.location = App.API + 'user/signin';
+			});
+			$('.sign-in').show();
+			return;
+		}
+		$('#comment-fields').show();
+		App.user = data;
+	}, 'json');
+	
 	$('.toc-handle').click(function(){
 		if (Monocle.toc.properties.hidden) {
 			App.reader.showControl(Monocle.toc);
@@ -181,8 +186,11 @@ Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 $(document).ready(function(){
 	$('form', '.ctrl-panel').submit(function(e){
 		e.preventDefault();
+		if (!App.user) {
+			return false;
+		}
 		var comment = {
-			user: Monocle.user,
+			user: App.user,
 			document: $('.document', this).val(),
 			component: $('.component', this).val(),
 			sentence: $('.sentence', this).val(),
@@ -190,7 +198,6 @@ $(document).ready(function(){
 		};
 		// console.log(comment);
 		App.Utils.postJSON(App.API + 'comments', comment);
-		comment.user.md5 = md5(comment.user.email);
 		App.panel.addComment(comment);
 		App.panel.countComments();
 	});
@@ -276,7 +283,8 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 			if (t < 0) {
 				// Use the first sentence to update document.location
 				var sId = /s[0-9]+/.exec($(this).attr('class'))[0];
-				document.location = '#' + App.reader.getPlace().componentId() + ':' + sId.substring(1);
+				$.cookie('current_component', App.reader.getPlace().componentId());
+				$.cookie('current_sentence', sId);
 			}
 			// Prevent collisions:
 			if (position.top >= t) {
