@@ -88,6 +88,10 @@ $(document).ready(function(){
 				return;
 			}
 			else {
+				$('.log-out').click(function(){
+					window.location = App.API + 'user/logout';
+				});
+				$('.log-out').show();
 				App.user = data;
 				$('img.avatar', '#comment-fields').attr('src', App.user.profile_image_url);
 				$('#comment-fields').show();
