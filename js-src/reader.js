@@ -97,6 +97,8 @@ App.reader = Monocle.Reader(
 				pageNumber.update(evt.m.page, evt.m.pageNumber);
 			}
 		);
+		
+		Monocle.scrubber.updateNeedles();
 	}
 );
 
@@ -284,7 +286,7 @@ App.panel = {
 App.bar = {
 	addBubble: function(data, top){
 		var bubbleId = 'bubble_' + data.sentence;
-		if ($('#' + bubbleId).length === 0 && top) {
+		if ($('#' + bubbleId).length === 0) {
 			var bubble = $('<div id="' + bubbleId + '" class="bubble"></div>').css('top', top + 30);
 			bubble.click(function(){
 				App.panel.open(data);
@@ -319,7 +321,6 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 			}
 			// Prevent collisions:
 			if (position.top >= t) {
-				console.log(this);
 				t = position.top;
 				var data = {
 					excerpt: $(this).text(),
@@ -329,9 +330,9 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function(evt) {
 				if (App.componentmap[sId]) {
 					App.bar.addBubble(data, position.top);
 				}
-				$(this).click(function(){
+				this.onclick = function(){
 					App.panel.open(data);
-				});
+				};
 			}
 		}
 	});
