@@ -145,6 +145,10 @@ body {
 	font-size: 13px;
 }
 
+.top-sign-in .separator {
+	margin: 0 3px;
+}
+
 .bubble {
 	cursor: pointer;
 	background: url('img/bubble.png');
