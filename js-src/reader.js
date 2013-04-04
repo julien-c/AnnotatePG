@@ -212,7 +212,8 @@ $(document).ready(function(){
 		var comment = {
 			component: $('.component', this).val(),
 			sentence: $('.sentence', this).val(),
-			content: $('textarea.comment', this).val()
+			content: $('textarea.comment', this).val(),
+			tweet: true
 		};
 		// console.log(comment);
 		App.Utils.postJSON(App.API + 'annotations', comment);
