@@ -11,6 +11,8 @@ var bookData = Monocle.bookData({
 	}
 });
 
+App.aboutUs = document.getElementById('about-us').innerHTML;
+
 // Move the reader to the requested page
 $.cookie.defaults.expire = 365;
 var startLocus = null;
@@ -69,6 +71,9 @@ App.reader = Monocle.Reader(
 		);
 		
 		Monocle.scrubber.updateNeedles();
+		
+		Monocle.overlay = Monocle.Controls.CustomOverlay(reader, App.aboutUs);
+		reader.addControl(Monocle.overlay, 'popover', {hidden: true});
 	}
 );
 
@@ -108,6 +113,15 @@ $(document).ready(function(){
 		}
 		else {
 			App.reader.hideControl(Monocle.toc);
+		}
+	});
+	
+	$('.about-us').click(function(){
+		if (Monocle.overlay.properties.hidden) {
+			App.reader.showControl(Monocle.overlay);
+		}
+		else {
+			App.reader.hideControl(Monocle.overlay);
 		}
 	});
 	
