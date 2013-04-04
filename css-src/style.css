@@ -242,6 +242,12 @@ button.btn {
 	background-color: #98D8FB;
 }
 
+.btn.sign-in {
+	background: url('img/twitterbird.png') no-repeat 10px center;
+	background-color: #98D8FB;
+	padding-left: 50px;
+}
+
 img.avatar {
 	border-radius: 3px;
 }
