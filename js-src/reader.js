@@ -1,6 +1,6 @@
 var App = App || {};
 
-App.API = (window.location.hostname === 'annotatepg.dev') ? 'http://api.annotatepg.dev/' : 'http://api.annotatepg.com/';
+App.API = (window.location.hostname === 'www.annotatepg.dev') ? 'http://api.annotatepg.dev/' : 'http://api.annotatepg.com/';
 
 var bookData = Monocle.bookData({
 	components: ["0 - How to Get Startup Ideas.html", "1 - The Hardware Renaissance.html", "2 - Startup = Growth.html", "3 - Black Swan Farming.html", "4 - The Top of My Todo List.html", "5 - Writing and Speaking.html", "6 - Defining Property.html", "7 - Frighteningly Ambitious Startup Ideas.html", "8 - A Word to the Resourceful.html", "9 - Schlep Blindness.html", "10 - Snapshot Viaweb, June 1998.html", "11 - Why Startup Hubs Work.html", "12 - The Patent Pledge.html", "13 - Subject Airbnb.html", "14 - Founder Control.html", "15 - Tablets.html", "16 - What We Look for in Founders.html", "17 - The New Funding Landscape.html", "18 - Where to See Silicon Valley.html", "19 - High Resolution Fundraising.html", "20 - What Happened to Yahoo.html", "21 - The Future of Startup Funding.html", "22 - The Acceleration of Addictiveness.html", "23 - The Top Idea in Your Mind.html", "24 - How to Lose Time and Money.html", "25 - Organic Startup Ideas.html", "26 - Apple\'s Mistake.html", "27 - What Startups Are Really Like.html", "28 - Persuade xor Discover.html", "29 - Post-Medium Publishing.html", "30 - The List of N Things.html", "31 - The Anatomy of Determination.html", "32 - What Kate Saw in Silicon Valley.html", "33 - The Trouble with the Segway.html", "34 - Ramen Profitable.html", "35 - Maker\'s Schedule, Manager\'s Schedule.html", "36 - A Local Revolution.html", "37 - The Founder Visa.html", "38 - Five Founders.html", "39 - Relentlessly Resourceful.html", "40 - How to Be an Angel Investor.html", "41 - Why TV Lost.html", "42 - Can You Buy a Silicon Valley  Maybe..html", "43 - What I\'ve Learned from Hacker News.html", "44 - Startups in 13 Sentences.html", "45 - Keep Your Identity Small.html", "46 - After Credentials.html", "47 - Could VC be a Casualty of the Recession.html", "48 - The High-Res Society.html", "49 - The Other Half of \"Artists Ship\".html", "50 - Why to Start a Startup in a Bad Economy.html", "51 - A Fundraising Survival Guide.html", "52 - The Pooled-Risk Company Management Company.html", "53 - Cities and Ambition.html", "54 - Disconnecting Distraction.html", "55 - Lies We Tell Kids.html", "56 - Be Good.html", "57 - Why There Aren\'t More Googles.html", "58 - Some Heroes.html", "59 - How to Disagree.html", "60 - You Weren\'t Meant to Have a Boss.html", "61 - A New Venture Animal.html", "62 - Trolls.html", "63 - Six Principles for Making New Things.html", "64 - Why to Move to a Startup Hub.html", "65 - The Future of Web Startups.html", "66 - How to Do Philosophy.html", "67 - News from the Front.html", "68 - How Not to Die.html", "69 - Holding a Program in One\'s Head.html", "70 - Stuff.html", "71 - The Equity Equation.html", "72 - An Alternative Theory of Unions.html", "73 - The Hacker\'s Guide to Investors.html", "74 - Two Kinds of Judgement.html", "75 - Microsoft is Dead.html", "76 - Why to Not Not Start a Startup.html", "77 - Is It Worth Being Wise.html", "78 - Learning from Founders.html", "79 - How Art Can Be Good.html", "80 - The 18 Mistakes That Kill Startups.html", "81 - A Student\'s Guide to Startups.html", "82 - How to Present to Investors.html", "83 - Copy What You Like.html", "84 - The Island Test.html", "85 - The Power of the Marginal.html", "86 - Why Startups Condense in America.html", "87 - How to Be Silicon Valley.html", "88 - The Hardest Lessons for Startups to Learn.html", "89 - See Randomness.html", "90 - Are Software Patents Evil.html", "91 - 6,631,372.html", "92 - Why YC.html", "93 - How to Do What You Love.html", "94 - Good and Bad Procrastination.html", "95 - Web 2.0.html", "96 - How to Fund a Startup.html", "97 - The Venture Capital Squeeze.html", "98 - Ideas for Startups.html", "99 - What I Did this Summer.html", "100 - Inequality and Risk.html", "101 - After the Ladder.html", "102 - What Business Can Learn from Open Source.html", "103 - Hiring is Obsolete.html", "104 - The Submarine.html", "105 - Why Smart People Have Bad Ideas.html", "106 - Return of the Mac.html", "107 - Writing,  Briefly.html", "108 - Undergraduation.html", "109 - A Unified Theory of VC Suckage.html", "110 - How to Start a Startup.html", "111 - What You\'ll Wish You\'d Known.html", "112 - Made in USA.html", "113 - It\'s Charisma, Stupid.html", "114 - Bradley\'s Ghost.html", "115 - A Version 1.0.html", "116 - What the Bubble Got Right.html", "117 - The Age of the Essay.html", "118 - The Python Paradox.html", "119 - Great Hackers.html", "120 - Mind the Gap.html", "121 - How to Make Wealth.html", "122 - The Word \"Hacker\".html", "123 - What You Can\'t Say.html", "124 - Filters that Fight Back.html", "125 - Hackers and Painters.html", "126 - If Lisp is So Great.html", "127 - The Hundred-Year Language.html", "128 - Why Nerds are Unpopular.html", "129 - Better Bayesian Filtering.html", "130 - Design and Research.html", "131 - A Plan for Spam.html", "132 - Revenge of the Nerds.html", "133 - Succinctness is Power.html", "134 - What Languages Fix.html", "135 - Taste for Makers.html", "136 - Why Arc Isn\'t Especially Object-Oriented.html", "137 - What Made Lisp Different.html", "138 - The Other Road Ahead.html", "139 - The Roots of Lisp.html", "140 - Five Questions about Language Design.html", "141 - Being Popular.html", "142 - Java\'s Cover.html", "143 - Beating the Averages.html", "144 - Lisp for Web-Based Applications.html", "147 - Programming Bottom-Up.html"],
@@ -16,7 +16,13 @@ App.aboutUs = document.getElementById('about-us').innerHTML;
 // Move the reader to the requested page
 $.cookie.defaults.expire = 365;
 var startLocus = null;
-if ($.cookie('current_component')) {
+var openPanel = null;
+if (window.location.hash) {
+	var loc = window.location.hash.substring(1).split(':');
+	startLocus = {componentId: loc[0], selector: 'span.s' + loc[1]};
+	openPanel = {component: loc[0], sentence: loc[1]};
+}
+else if ($.cookie('current_component')) {
 	startLocus = {
 		componentId: $.cookie('current_component'), 
 		selector: 'span.' + $.cookie('current_sentence')
@@ -197,6 +203,7 @@ $(document).ready(function(){
 
 App.panel = {
 	templateComment: $('#tpl-comment').html(),
+	keepOpened: false,
 	retract: function(){
 		$('.ctrl-panel').addClass('hidden');
 		App.panel.clear();
@@ -244,6 +251,7 @@ App.panel = {
 			});
 			App.panel.countComments();
 		});
+		document.location.hash = data.component + ':' + data.sentence;
 	}
 };
 
@@ -304,6 +312,18 @@ App.bar = {
 	}
 };
 
+
+Monocle.Events.listen('reader', 'monocle:firstcomponentchange', function(evt) {
+	if (openPanel) {
+		var doc = evt.m.page.m.activeFrame.contentDocument;
+		console.log(doc);
+		console.log(openPanel);
+		openPanel.excerpt = $(doc).find('span.s' + openPanel.sentence).text();
+		App.panel.keepOpened = true;
+		App.panel.open(openPanel);
+		openPanel = null;
+	}
+});
 
 // Apply content styles:
 Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
@@ -370,6 +390,11 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function (evt) {
 
 ['monocle:pagechange', 'monocle:boundarystart', 'monocle:boundaryend'].forEach(function(evtName){
 	Monocle.Events.listen('reader', evtName, function(evt){
-		App.panel.retract();
+		if (!App.panel.keepOpened) {
+			App.panel.retract();
+		}
+		else {
+			App.panel.keepOpened = false;
+		}
 	});
 });
