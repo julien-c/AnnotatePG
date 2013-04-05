@@ -34,7 +34,7 @@ body {
 .container {
 	width: 740px;
 	height: 880px;
-	margin-left: 60px;
+	margin-left: 80px;
 	margin-top: 80px;
 	position: relative;
 	border-radius: 4px;
@@ -126,7 +126,7 @@ body {
 
 .navbar-inner {
 	width: 740px;
-	margin-left: 60px;
+	margin-left: 80px;
 	padding-top: 8px;
 }
 
@@ -179,7 +179,7 @@ body {
 
 #scrubber {
 	width: 720px;
-	margin-left: 70px;
+	margin-left: 90px;
 	margin-top: 26px;
 	height: 40px;
 	position: relative;
@@ -330,7 +330,7 @@ div.comment .time {
 /* Media Queries */
 @media (min-width: 1210px) {
 	#menu-large {
-		width: 350px;
+		width: 270px;
 		float: left;
 		position: relative;
 		box-shadow: 2px 0px 2px rgba(20,20,20,0.6);
@@ -342,7 +342,6 @@ div.comment .time {
 		overflow: auto;
 		height: 100%;
 		z-index: 10;
-		border-radius: 4px;
 	}
 	#menu-large li {
 		font-size: small;
@@ -358,7 +357,7 @@ div.comment .time {
 		cursor: pointer;
 	}
 	.navbar-inner {
-		margin-left: 410px;
+		margin-left: 350px;
 	}
 }
 
