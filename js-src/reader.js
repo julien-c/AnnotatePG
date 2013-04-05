@@ -138,6 +138,9 @@ $(document).ready(function(){
 		else if (e.which == 39) {
 			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() + 1});
 		}
+		else if (e.which == 27) {
+			App.panel.retract();
+		}
 	});
 	
 	$('a.close').click(function(e){

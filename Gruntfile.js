@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 					"js-src/monocle.overlay.js",
 					"js-src/reader.js",
 				],
-				task: ['uglify:reaaad']
+				tasks: ['uglify:reaaad']
 			}
 		}
 	});
