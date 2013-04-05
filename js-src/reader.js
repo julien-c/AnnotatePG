@@ -310,6 +310,7 @@ Monocle.Events.listen('reader', 'monocle:componentmodify', function(evt){
 Monocle.Events.listen('reader', 'monocle:componentchange', function(evt) {
 	var component = evt.m.component.properties.id;
 	var doc = evt.m.page.m.activeFrame.contentDocument;
+	App.componentmap = null;
 	
 	$.get(
 		App.API + 'components/annotations/counts',
