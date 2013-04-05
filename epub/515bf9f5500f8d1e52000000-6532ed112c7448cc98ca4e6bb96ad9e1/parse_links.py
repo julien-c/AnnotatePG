@@ -4,6 +4,12 @@ python parse_links.py <input_file.html> <output_dir>
 
 Add target="_blank" to external links that are missing it
 fix inter-components links
+
+workflow : html from https://github.com/samiq/pg/tree/master/src/templates
+	-> ./peregrinate segment_html
+	-> ./parse_links
+	-> cp to AnnotatePG-api/app/documents/...
+	-> ./artisan import:sentences
 """
 
 import os.path, re, sys
@@ -53,7 +59,8 @@ def main():
 	
 	html = parse(html)
 	
-	with open(os.path.join(sys.argv[2], os.path.basename(sys.argv[1])), 'w') as f:
+	out_file = os.path.basename(sys.argv[1]).replace(':','').replace('?','')
+	with open(os.path.join(sys.argv[2], out_file), 'w') as f:
 		f.write(html)
 
 
