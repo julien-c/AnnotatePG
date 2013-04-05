@@ -212,6 +212,10 @@ App.panel = {
 		else {
 			comment.timeago = "a few seconds ago";
 		}
+		// HTML-escape the comment
+		comment.content = $('<div>').text(comment.content).html();
+		// replace the URL by <a> tags
+		comment.content = linkify(comment.content);
 		var output = Mustache.render(App.panel.templateComment, comment);
 		$('.comments-container').prepend(output);
 	},

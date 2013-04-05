@@ -19,6 +19,7 @@ module.exports = function(grunt) {
           "js-src/mustache.js",
           "js-src/moment.min.js",
           "js-src/jquery.cookie.js",
+          "js-src/ba-linkify.js",
           "js-src/monocle.overlay.js",
           "js-src/reader.js",
         ],
@@ -31,6 +32,7 @@ module.exports = function(grunt) {
         "js-src/mustache.js",
         "js-src/moment.min.js",
         "js-src/jquery.cookie.js",
+        "js-src/ba-linkify.js",
         "js-src/monocle.overlay.js",
         "js-src/reader.js",
       ]
