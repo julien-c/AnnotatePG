@@ -112,7 +112,7 @@ $(document).ready(function(){
 			withCredentials: true
 		},
 	});
-		
+	
 	$('.toc-handle').click(function(){
 		if (Monocle.toc.properties.hidden) {
 			App.reader.showControl(Monocle.toc);
@@ -190,7 +190,7 @@ $(document).ready(function(){
 	
 	// Initialize the large-screen TOC
 	components = bookData.getContents();
-	for(var i in components) {
+	for (var i in components) {
 		$('#menu-large').append('<li id="' + components[i].src + '">' + components[i].title + '</li>');
 	}
 	$('#menu-large li').each(function(){
@@ -204,6 +204,9 @@ $(document).ready(function(){
 App.panel = {
 	templateComment: $('#tpl-comment').html(),
 	keepOpened: false,
+	location: {
+		sentence: null
+	},
 	retract: function(){
 		$('.ctrl-panel').addClass('hidden');
 		App.panel.clear();
@@ -211,6 +214,7 @@ App.panel = {
 	clear: function(){
 		$('.header', '.ctrl-panel-bottom').html('');
 		$('.comments-container').html('');
+		App.panel.location.sentence  = null;
 	},
 	addComment: function(comment){
 		if (comment.time) {
@@ -239,6 +243,7 @@ App.panel = {
 	},
 	open: function(data){
 		App.panel.clear();
+		App.panel.location.sentence  = data.sentence;
 		
 		$('.excerpt', '.ctrl-panel').text(data.excerpt);
 		$('.component', '.ctrl-panel').val(data.component);
@@ -262,7 +267,12 @@ App.bar = {
 		if ($('#' + bubbleId).length === 0 && top) {
 			var bubble = $('<div id="' + bubbleId + '" class="bubble"></div>').css('top', top + 30);
 			bubble.click(function(){
-				App.panel.open(data);
+				if (App.panel.location.sentence === data.sentence) {
+					App.panel.retract();
+				}
+				else {
+					App.panel.open(data);
+				}
 			});
 			bubble.appendTo('.ctrl-bar');
 		}
