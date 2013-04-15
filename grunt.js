@@ -21,6 +21,7 @@ module.exports = function(grunt) {
           "js-src/jquery.cookie.js",
           "js-src/ba-linkify.js",
           "js-src/monocle.overlay.js",
+          "js-src/jquery.mousewheel.js",
           "js-src/reader.js",
         ],
         dest: 'reaaad.js'
@@ -34,6 +35,7 @@ module.exports = function(grunt) {
         "js-src/jquery.cookie.js",
         "js-src/ba-linkify.js",
         "js-src/monocle.overlay.js",
+        "js-src/jquery.mousewheel.js",
         "js-src/reader.js",
       ]
     }
