@@ -268,7 +268,7 @@ App.panel = {
 		$('.ctrl-panel').removeClass('hidden');
 		
 		$.get(App.API + 'sentences/annotations', {component: data.component, sentence: data.sentence}, function(comments){
-			comments.forEach(function(comment){
+			$.each(comments, function(comment){
 				App.panel.addComment(comment);
 			});
 			App.panel.countComments();
@@ -415,7 +415,7 @@ Monocle.Events.listen('reader', 'monocle:pagechange', function (evt) {
 	$('.chapter-title').text(App.reader.getPlace(evt.m.page).chapterTitle());
 });
 
-['monocle:pagechange', 'monocle:boundarystart', 'monocle:boundaryend'].forEach(function(evtName){
+$.each(['monocle:pagechange', 'monocle:boundarystart', 'monocle:boundaryend'], function(evtName){
 	Monocle.Events.listen('reader', evtName, function(evt){
 		if (!App.panel.keepOpened) {
 			App.panel.retract();
