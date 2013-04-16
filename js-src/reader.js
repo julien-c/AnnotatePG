@@ -148,13 +148,16 @@ $(document).ready(function(){
 			App.panel.retract();
 		}
 	});
-	$('body').mousewheel(function(event, delta, deltaX, deltaY) {
+	$('#app').mousewheel(function(event, delta, deltaX, deltaY) {
 		if (deltaX < 0 || deltaY > 0) {
 			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() - 1});
 		}
 		else if (deltaX > 0 || deltaY < 0) {
 			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() + 1});
 		}
+	});
+	$('.ctrl-panel, .monelem_controls_contents_container').mousewheel(function(event) {
+		event.stopPropagation();
 	});
 	
 	$('a.close').click(function(e){
