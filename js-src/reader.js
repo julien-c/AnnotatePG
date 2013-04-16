@@ -159,7 +159,7 @@ $(document).ready(function(){
 			App.isScrolling = true;
 			window.setTimeout(function(){
 				App.isScrolling = false;
-			}, 200);
+			}, 3000);
 		}
 	});
 	$('.ctrl-panel, .monelem_controls_contents_container').mousewheel(function(event) {
