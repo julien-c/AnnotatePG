@@ -265,7 +265,7 @@ App.panel = {
 		$('.sentence', '.ctrl-panel').val(data.sentence);
 		$('.ctrl-panel').removeClass('hidden');
 		
-		$.get(App.API + 'sentences/annotations', {component: data.component, sentence: data.sentence}, function(comments){
+		$.getJSON(App.API + 'sentences/annotations', {component: data.component, sentence: data.sentence}, function(comments){
 			$.each(comments, function(i, comment){
 				App.panel.addComment(comment);
 			});
@@ -337,7 +337,6 @@ App.bar = {
 	}
 };
 
-
 Monocle.Events.listen('reader', 'monocle:firstcomponentchange', function(evt) {
 	if (openPanel) {
 		var doc = evt.m.page.m.activeFrame.contentDocument;
@@ -362,7 +361,7 @@ Monocle.Events.listen('reader', 'monocle:componentchange', function(evt) {
 	var doc = evt.m.page.m.activeFrame.contentDocument;
 	App.componentmap = null;
 	
-	$.get(
+	$.getJSON(
 		App.API + 'components/annotations/counts',
 		{component: component},
 		function(sentences){
