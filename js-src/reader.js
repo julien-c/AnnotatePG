@@ -149,11 +149,17 @@ $(document).ready(function(){
 		}
 	});
 	$('#app').mousewheel(function(event, delta, deltaX, deltaY) {
-		if (deltaX < 0 || deltaY > 0) {
-			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() - 1});
-		}
-		else if (deltaX > 0 || deltaY < 0) {
-			App.reader.moveTo({ page: App.reader.getPlace().pageNumber() + 1});
+		if (!App.isScrolling) {
+			if (deltaX < 0 || deltaY > 0) {
+				App.reader.moveTo({ page: App.reader.getPlace().pageNumber() - 1});
+			}
+			else if (deltaX > 0 || deltaY < 0) {
+				App.reader.moveTo({ page: App.reader.getPlace().pageNumber() + 1});
+			}
+			App.isScrolling = true;
+			window.setTimeout(function(){
+				App.isScrolling = false;
+			}, 200);
 		}
 	});
 	$('.ctrl-panel, .monelem_controls_contents_container').mousewheel(function(event) {
