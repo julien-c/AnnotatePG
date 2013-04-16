@@ -23,7 +23,7 @@ div.monelem_controls_scrubber_track {
 }
 
 div.monelem_controls_scrubber_trail {
-  background: #8B402A;
+  background: rgb(223, 112, 79);
   top: 10px;
   left: 0;
   height: 6px;
