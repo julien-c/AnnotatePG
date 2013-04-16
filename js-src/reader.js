@@ -90,7 +90,6 @@ $(document).ready(function(){
 		url: App.API + 'me',
 		dataType: 'json',
 		success: function(data){
-			// console.log(data);
 			if(data.status && data.status === "guest") {
 				$('.sign-in').click(function(){
 					window.location = App.API + 'user/signin';
@@ -197,7 +196,6 @@ $(document).ready(function(){
 			App.componentmap[comment.sentence] = 0;
 		}
 		App.componentmap[comment.sentence] += 1;
-		console.log(App.componentmap);
 		App.bar.addBubble({sentence: comment.sentence});
 	});
 	
@@ -343,8 +341,6 @@ App.bar = {
 Monocle.Events.listen('reader', 'monocle:firstcomponentchange', function(evt) {
 	if (openPanel) {
 		var doc = evt.m.page.m.activeFrame.contentDocument;
-		console.log(doc);
-		console.log(openPanel);
 		openPanel.excerpt = $(doc).find('span.s' + openPanel.sentence).text();
 		App.panel.keepOpened = true;
 		App.panel.open(openPanel);
